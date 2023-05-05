@@ -2,13 +2,40 @@ package com.example.progetto_ispw;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 
 public class ProfileRecensioneViewController {
 
     @FXML
     public AnchorPane AnchorPaneProfileRecensione;
+    @FXML
+    public Pane Addreview;
+    @FXML
+    public Button Profile;
+    @FXML
+    public Button Favorites;
+    @FXML
+    public Button Home;
+    @FXML
+    public Button Send;
+    @FXML
+    public Button AddRievew;
+    @FXML
+    public Button BookedServices;
+    @FXML
+    public Button MyDetails;
+    @FXML
+    public Button ChangePassword;
+    @FXML
+    public Button Addresses;
+    @FXML
+    public Button NeedHelp;
+    @FXML
+    public Button Exit;
+
 
     public void AddReviewMethod(MouseEvent mouseEvent) {
     }

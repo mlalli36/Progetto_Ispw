@@ -6,7 +6,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="AnchorPane_Profile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="1219.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.progetto_ispw.ProfileViewController">
+<AnchorPane fx:id="AnchorPaneProfile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="1219.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.progetto_ispw.ProfileViewController">
    <children>
       <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="1219.0" style="-fx-background-image: #0000;">
          <children>
@@ -137,9 +137,9 @@
                </image>
             </ImageView>
             <ImageView layoutX="64.0" layoutY="396.0">
-               <image>
+
                   <Image url="@icon/position.png" />
-               </image>
+
             </ImageView>
          </children>
       </Pane>
