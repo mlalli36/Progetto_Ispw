@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="AnchorPane_Profile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="1219.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.progetto_ispw.Profile_View_Controller" >
+<AnchorPane fx:id="AnchorPane_Profile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="1219.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.progetto_ispw.ProfileViewController" >
    <children>
       <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="1219.0" style="-fx-background-image: #0000;">
          <children>
@@ -20,17 +20,17 @@
                   <Button layoutX="1144.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #74c69d;" />
                   <Button layoutX="1069.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #74c69d;" />
                   <Button layoutX="994.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #74c69d;" />
-                  <ImageView fx:id="Home" fitHeight="53.0" fitWidth="66.0" layoutX="1005.0" layoutY="-1.0" onDragDetected="#Home_Method">
+                  <ImageView fx:id="Home" fitHeight="53.0" fitWidth="66.0" layoutX="1005.0" layoutY="-1.0" onDragDetected="#HomeMethod">
                      <image>
                         <Image url="@icon/home 2.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="Profile" layoutX="1158.0" layoutY="4.0" onDragDetected="#Profile_Method">
+                  <ImageView fx:id="Profile" layoutX="1158.0" layoutY="4.0" onDragDetected="#ProfileMethod">
                      <image>
                         <Image url="@icon/profile 2.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="Favorites" fitHeight="53.0" fitWidth="58.0" layoutX="1084.0" layoutY="1.0" onDragDetected="#Favorites_Method">
+                  <ImageView fx:id="Favorites" fitHeight="53.0" fitWidth="58.0" layoutX="1084.0" layoutY="1.0" onDragDetected="#FavoritesMethod">
                      <image>
                         <Image url="@icon/star.png" />
                      </image>
@@ -47,7 +47,7 @@
                   <TextField layoutX="44.0" layoutY="191.0" prefHeight="44.0" prefWidth="322.0" style="-fx-background-radius: 10;" />
                   <TextField layoutX="44.0" layoutY="307.0" prefHeight="44.0" prefWidth="322.0" style="-fx-background-radius: 10;" />
                   <TextField layoutX="44.0" layoutY="424.0" prefHeight="44.0" prefWidth="322.0" style="-fx-background-radius: 10;" />
-                  <Button fx:id="Save_Edits" layoutX="400.0" layoutY="487.0" mnemonicParsing="false" onAction="#Save_Edits_Method" prefHeight="56.0" prefWidth="190.0" style="-fx-background-radius: 10; -fx-background-color: #74c69d;" text="SAVE EDITS">
+                  <Button fx:id="Save_Edits" layoutX="400.0" layoutY="487.0" mnemonicParsing="false" onAction="#SaveEditsMethod" prefHeight="56.0" prefWidth="190.0" style="-fx-background-radius: 10; -fx-background-color: #74c69d;" text="SAVE EDITS">
                      <font>
                         <Font name="Bookman Old Style" size="21.0" />
                      </font>
@@ -86,32 +86,32 @@
                   <Font name="Bookman Old Style" size="30.0" />
                </font>
             </Label>
-            <Button fx:id="Booked_Services" layoutX="63.0" layoutY="240.0" mnemonicParsing="false" onAction="#Booked_Services_Method" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="Booked services">
+            <Button fx:id="Booked_Services" layoutX="63.0" layoutY="240.0" mnemonicParsing="false" onAction="#BookedServicesMethod" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="Booked services">
                <font>
                   <Font name="Bookman Old Style" size="22.0" />
                </font>
             </Button>
-            <Button fx:id="My_Details" layoutX="63.0" layoutY="297.0" mnemonicParsing="false" onAction="#My_Details_Method" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="My details">
+            <Button fx:id="My_Details" layoutX="63.0" layoutY="297.0" mnemonicParsing="false" onAction="#MyDetailsMethod" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="My details">
                <font>
                   <Font name="Bookman Old Style" size="22.0" />
                </font>
             </Button>
-            <Button fx:id="Change_Password" layoutX="63.0" layoutY="353.0" mnemonicParsing="false" onAction="#Change_Password_Method" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="Change password">
+            <Button fx:id="Change_Password" layoutX="63.0" layoutY="353.0" mnemonicParsing="false" onAction="#ChangePasswordMethod" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="Change password">
                <font>
                   <Font name="Bookman Old Style" size="22.0" />
                </font>
             </Button>
-            <Button fx:id="Addresses" layoutX="63.0" layoutY="408.0" mnemonicParsing="false" onAction="#Addresses_Method" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="Addresses">
+            <Button fx:id="Addresses" layoutX="63.0" layoutY="408.0" mnemonicParsing="false" onAction="#AddressesMethod" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="Addresses">
                <font>
                   <Font name="Bookman Old Style" size="22.0" />
                </font>
             </Button>
-            <Button fx:id="Need_Help" layoutX="63.0" layoutY="465.0" mnemonicParsing="false" onAction="#Need_Help_Method" prefHeight="28.0" prefWidth="322.0" style="-fx-background-radius: 10; -fx-background-color: #74c69d;" text="Need help?">
+            <Button fx:id="Need_Help" layoutX="63.0" layoutY="465.0" mnemonicParsing="false" onAction="#NeedHelpMethod" prefHeight="28.0" prefWidth="322.0" style="-fx-background-radius: 10; -fx-background-color: #74c69d;" text="Need help?">
                <font>
                   <Font name="Bookman Old Style" size="22.0" />
                </font>
             </Button>
-            <Button fx:id="Exit" layoutX="63.0" layoutY="655.0" mnemonicParsing="false" onAction="#Exit_Method" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="Exit">
+            <Button fx:id="Exit" layoutX="63.0" layoutY="655.0" mnemonicParsing="false" onAction="#ExitMethod" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="Exit">
                <font>
                   <Font name="Bookman Old Style" size="22.0" />
                </font>
