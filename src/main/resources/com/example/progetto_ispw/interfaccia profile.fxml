@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="AnchorPane_Profile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="1219.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="1219.0" style="-fx-background-image: #0000;">
+         <children>
+            <Pane prefHeight="53.0" prefWidth="1219.0" style="-fx-background-color: #74c69d;">
+               <children>
+                  <Button layoutX="1144.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #74c69d;" />
+                  <Button layoutX="1069.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #74c69d;" />
+                  <Button layoutX="994.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #74c69d;" />
+                  <ImageView fx:id="Home" fitHeight="53.0" fitWidth="66.0" layoutX="1005.0" layoutY="-1.0" onDragDetected="#Home_Method">
+                     <image>
+                        <Image url="@icon/home 2.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Profile" layoutX="1158.0" layoutY="4.0" onDragDetected="#Profile_Method">
+                     <image>
+                        <Image url="@icon/profile 2.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Favorites" fitHeight="53.0" fitWidth="58.0" layoutX="1084.0" layoutY="1.0" onDragDetected="#Favorites_Method">
+                     <image>
+                        <Image url="@icon/star.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="538.0" layoutY="96.0" prefHeight="603.0" prefWidth="639.0" style="-fx-border-color: #40916c; -fx-border-radius: 10;">
+               <children>
+                  <Text fill="#2d6a4f" layoutX="44.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="My details" wrappingWidth="242.98828125">
+                     <font>
+                        <Font name="Bookman Old Style" size="36.0" />
+                     </font>
+                  </Text>
+                  <TextField layoutX="44.0" layoutY="191.0" prefHeight="44.0" prefWidth="322.0" style="-fx-background-radius: 10;" />
+                  <TextField layoutX="44.0" layoutY="307.0" prefHeight="44.0" prefWidth="322.0" style="-fx-background-radius: 10;" />
+                  <TextField layoutX="44.0" layoutY="424.0" prefHeight="44.0" prefWidth="322.0" style="-fx-background-radius: 10;" />
+                  <Button fx:id="Save_Edits" layoutX="400.0" layoutY="487.0" mnemonicParsing="false" onAction="#Save_Edits_Method" prefHeight="56.0" prefWidth="190.0" style="-fx-background-radius: 10; -fx-background-color: #74c69d;" text="SAVE EDITS">
+                     <font>
+                        <Font name="Bookman Old Style" size="21.0" />
+                     </font>
+                  </Button>
+                  <Text layoutX="44.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NAME* :">
+                     <font>
+                        <Font name="Bookman Old Style" size="12.0" />
+                     </font></Text>
+                  <Text layoutX="44.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SURNAME* :">
+                     <font>
+                        <Font name="Bookman Old Style" size="12.0" />
+                     </font></Text>
+                  <Text layoutX="44.0" layoutY="414.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-MAIL ADDRESS* :">
+                     <font>
+                        <Font name="Bookman Old Style" size="12.0" />
+                     </font></Text>
+                  <Label layoutX="451.0" layoutY="550.0" text="(* Required field.)">
+                     <font>
+                        <Font name="Bookman Old Style" size="12.0" />
+                     </font></Label>
+                  <Label layoutX="44.0" layoutY="89.0" prefHeight="53.0" prefWidth="545.0" text="Edit yout information below so that your account is always update.">
+                     <font>
+                        <Font name="Bookman Old Style" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Circle fill="#74c69d" layoutX="130.0" layoutY="163.0" radius="67.0" stroke="BLACK" strokeType="INSIDE" />
+            <TextField layoutX="79.0" layoutY="121.0" prefHeight="84.0" prefWidth="103.0" style="-fx-background-color: #74c69d;" text="RM">
+               <font>
+                  <Font name="Bookman Old Style" size="35.0" />
+               </font>
+            </TextField>
+            <Label layoutX="204.0" layoutY="137.0" prefHeight="53.0" prefWidth="295.0" text="Rossi Mario">
+               <font>
+                  <Font name="Bookman Old Style" size="30.0" />
+               </font>
+            </Label>
+            <Button fx:id="Booked_Services" layoutX="63.0" layoutY="240.0" mnemonicParsing="false" onAction="#Booked_Services_Method" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="Booked services">
+               <font>
+                  <Font name="Bookman Old Style" size="22.0" />
+               </font>
+            </Button>
+            <Button fx:id="My_Details" layoutX="63.0" layoutY="297.0" mnemonicParsing="false" onAction="#My_Details_Method" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="My details">
+               <font>
+                  <Font name="Bookman Old Style" size="22.0" />
+               </font>
+            </Button>
+            <Button fx:id="Change_Password" layoutX="63.0" layoutY="353.0" mnemonicParsing="false" onAction="#Change_Password_Method" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="Change password">
+               <font>
+                  <Font name="Bookman Old Style" size="22.0" />
+               </font>
+            </Button>
+            <Button fx:id="Addresses" layoutX="63.0" layoutY="408.0" mnemonicParsing="false" onAction="#Addresses_Method" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="Addresses">
+               <font>
+                  <Font name="Bookman Old Style" size="22.0" />
+               </font>
+            </Button>
+            <Button fx:id="Need_Help" layoutX="63.0" layoutY="465.0" mnemonicParsing="false" onAction="#Need_Help_Method" prefHeight="28.0" prefWidth="322.0" style="-fx-background-radius: 10; -fx-background-color: #74c69d;" text="Need help?">
+               <font>
+                  <Font name="Bookman Old Style" size="22.0" />
+               </font>
+            </Button>
+            <Button fx:id="Exit" layoutX="63.0" layoutY="655.0" mnemonicParsing="false" onAction="#Exit_Method" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="Exit">
+               <font>
+                  <Font name="Bookman Old Style" size="22.0" />
+               </font>
+            </Button>
+            <ImageView layoutX="73.0" layoutY="653.0">
+               <image>
+                  <Image url="@icon/back door 4.png" />
+               </image>
+            </ImageView>
+            <ImageView layoutX="73.0" layoutY="295.0">
+               <image>
+                  <Image url="@icon/personal card.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="42.0" fitWidth="48.0" layoutX="72.0" layoutY="466.0">
+               <image>
+                  <Image url="@icon/question mark.png" />
+               </image>
+            </ImageView>
+            <ImageView layoutX="63.0" layoutY="351.0">
+               <image>
+                  <Image url="@icon/lock.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="44.0" fitWidth="44.0" layoutX="75.0" layoutY="240.0">
+               <image>
+                  <Image url="@icon/book services.png" />
+               </image>
+            </ImageView>
+            <ImageView layoutX="64.0" layoutY="396.0">
+               <image>
+                  <Image url="@icon/position.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
