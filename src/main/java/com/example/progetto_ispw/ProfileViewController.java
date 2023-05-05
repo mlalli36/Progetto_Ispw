@@ -10,15 +10,25 @@ import javafx.scene.layout.AnchorPane;
 public class ProfileViewController {
     @FXML
     public AnchorPane AnchorPaneProfile;
+    @FXML
     public Button MyDetails;
+    @FXML
     public Button BookedServices;
+    @FXML
     public Button ChangePassword;
+    @FXML
     public Button Addresses;
+    @FXML
     public Button NeedHelp;
+    @FXML
     public Button Exit;
+    @FXML
     public Button SaveEdits;
+    @FXML
     public ImageView Profile;
+    @FXML
     public ImageView Home;
+    @FXML
     public Button Favorites;
 
     public void HomeMethod(MouseEvent mouseEvent) {
