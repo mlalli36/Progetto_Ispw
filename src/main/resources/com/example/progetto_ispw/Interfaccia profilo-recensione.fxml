@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane fx:id="AnchorPane_Profilo_Recensione" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="1219.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="AnchorPane_Profilo_Recensione" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="1219.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.progetto_ispw.Profile_Recensione_View_Controller" >
    <children>
       <Pane fx:id="Add_review" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onDragDetected="#Add_Revie_Method" prefHeight="749.0" prefWidth="1219.0" style="-fx-background-image: #0000;">
          <children>
@@ -82,7 +82,7 @@
                         </Label>
                         <ImageView fx:id="Add_review" layoutX="276.0" layoutY="-26.0">
                            <image>
-                              <Image url="@icon/stars%20rating.png" />
+                              <Image url="@icon/stars rating.png" />
                            </image>
                         </ImageView>
                         <Label layoutX="34.0" layoutY="62.0" prefHeight="17.0" prefWidth="103.0" text="Write review:">

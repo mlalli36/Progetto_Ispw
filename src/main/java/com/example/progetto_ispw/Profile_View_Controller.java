@@ -1,21 +1,16 @@
 package com.example.progetto_ispw;
 
 import javafx.event.ActionEvent;
+import javafx.scene.input.MouseEvent;
 
-public class Notifica_Da_Cliente_View_Controller {
-    public void Profile_Method(ActionEvent actionEvent) {
+public class Profile_View_Controller {
+    public void Home_Method(MouseEvent mouseEvent) {
     }
 
-    public void Favorites_Method(ActionEvent actionEvent) {
+    public void Favorites_Method(MouseEvent mouseEvent) {
     }
 
-    public void Home_Method(ActionEvent actionEvent) {
-    }
-
-    public void Read_Form_Method(ActionEvent actionEvent) {
-    }
-
-    public void Delete_Method(ActionEvent actionEvent) {
+    public void Save_Edits_Method(ActionEvent actionEvent) {
     }
 
     public void Booked_Services_Method(ActionEvent actionEvent) {
@@ -34,8 +29,5 @@ public class Notifica_Da_Cliente_View_Controller {
     }
 
     public void Exit_Method(ActionEvent actionEvent) {
-    }
-
-    public void Notification_Method(ActionEvent actionEvent) {
     }
 }
