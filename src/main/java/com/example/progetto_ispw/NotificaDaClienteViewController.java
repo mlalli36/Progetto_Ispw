@@ -1,8 +1,14 @@
 package com.example.progetto_ispw;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.layout.AnchorPane;
 
 public class NotificaDaClienteViewController {
+    @FXML
+    public AnchorPane AnchorsPaneNotificaDaCliente;
+
+    @FXML
     public void ProfileMethod(ActionEvent actionEvent) {
     }
 

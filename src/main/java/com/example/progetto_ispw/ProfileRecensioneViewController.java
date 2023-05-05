@@ -1,9 +1,15 @@
 package com.example.progetto_ispw;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 
 public class ProfileRecensioneViewController {
+
+    @FXML
+    public AnchorPane AnchorPaneProfileRecensione;
+
     public void AddReviewMethod(MouseEvent mouseEvent) {
     }
 

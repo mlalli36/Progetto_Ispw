@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane fx:id="AnchorsPane_Notifica_Da_Cliente" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="1219.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.progetto_ispw.NotificaDaClienteViewController" >
+<AnchorPane fx:id="AnchorsPaneNotificaDaCliente" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="1219.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.progetto_ispw.NotificaDaClienteViewController" >
    <children>
       <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="1219.0" style="-fx-background-image: #0000;">
          <children>
@@ -59,7 +59,7 @@
                                     <Font name="Bookman Old Style" size="21.0" />
                                  </font>
                               </TextField>
-                              <Button fx:id="Read_Form" layoutX="354.0" layoutY="84.0" mnemonicParsing="false" onAction="#ReadFormMethod" prefHeight="44.0" prefWidth="225.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="READ FORM">
+                              <Button fx:id="ReadForm" layoutX="354.0" layoutY="84.0" mnemonicParsing="false" onAction="#ReadFormMethod" prefHeight="44.0" prefWidth="225.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="READ FORM">
                                  <font>
                                     <Font name="Bookman Old Style" size="20.0" />
                                  </font>
@@ -80,17 +80,17 @@
                   </Pane>
                </children>
             </Pane>
-            <Button fx:id="Booked_Services" layoutX="63.0" layoutY="295.0" mnemonicParsing="false" onAction="#BookedServicesMethod" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="Booked services">
+            <Button fx:id="BookedServices" layoutX="63.0" layoutY="295.0" mnemonicParsing="false" onAction="#BookedServicesMethod" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="Booked services">
                <font>
                   <Font name="Bookman Old Style" size="20.0" />
                </font>
             </Button>
-            <Button fx:id="My_Details" layoutX="63.0" layoutY="351.0" mnemonicParsing="false" onAction="#MyDetailsMethod" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="My details">
+            <Button fx:id="MyDetails" layoutX="63.0" layoutY="351.0" mnemonicParsing="false" onAction="#MyDetailsMethod" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="My details">
                <font>
                   <Font name="Bookman Old Style" size="20.0" />
                </font>
             </Button>
-            <Button fx:id="Change_Password" layoutX="63.0" layoutY="407.0" mnemonicParsing="false" onAction="#ChangePasswordMethod" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="Change password">
+            <Button fx:id="ChangePassword" layoutX="63.0" layoutY="407.0" mnemonicParsing="false" onAction="#ChangePasswordMethod" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="Change password">
                <font>
                   <Font name="Bookman Old Style" size="20.0" />
                </font>
@@ -100,7 +100,7 @@
                   <Font name="Bookman Old Style" size="20.0" />
                </font>
             </Button>
-            <Button fx:id="Need_Help" layoutX="63.0" layoutY="519.0" mnemonicParsing="false" onAction="#NeedHelpMethod" prefHeight="28.0" prefWidth="322.0" style="-fx-background-radius: 10; -fx-background-color: #74c69d;" text="Need help?">
+            <Button fx:id="NeedHelp" layoutX="63.0" layoutY="519.0" mnemonicParsing="false" onAction="#NeedHelpMethod" prefHeight="28.0" prefWidth="322.0" style="-fx-background-radius: 10; -fx-background-color: #74c69d;" text="Need help?">
                <font>
                   <Font name="Bookman Old Style" size="20.0" />
                </font>
