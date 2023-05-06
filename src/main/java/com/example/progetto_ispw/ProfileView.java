@@ -7,7 +7,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
-public class ProfileViewController {
+public class ProfileView {
     @FXML
     public AnchorPane AnchorPaneProfile;
     @FXML

@@ -6,7 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 
-public class FillOutFormViewController {
+public class FillOutFormView {
     @FXML
     public AnchorPane AnchorPaneFillOutForm;
     @FXML
@@ -17,9 +17,9 @@ public class FillOutFormViewController {
     public Button Favorites;
     public Button Home;
     @FXML
-    private Button SendForm; //non so se va private o public
+    public Button SendForm; //non so se va private o public
     @FXML
-    private Button Back;
+    public Button Back;
 
     public void ProfileMethod(ActionEvent actionEvent) {
     }

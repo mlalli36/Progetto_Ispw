@@ -6,7 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.layout.AnchorPane;
 
-public class LoginViewController {
+public class LoginView {
     @FXML
     public AnchorPane AnchorPaneLogin;
     @FXML

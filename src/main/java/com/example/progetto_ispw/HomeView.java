@@ -5,21 +5,21 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 
-public class HomeViewController {
+public class HomeView  {
     @FXML
-    private AnchorPane AnchorPaneHome;
+    public AnchorPane AnchorPaneHome;
     @FXML
-    private Button Plumbers;
+    public Button Plumbers;
     @FXML
-    private Button seeMore;
+    public Button seeMore;
     @FXML
-    private Button Hairdressers;
+    public Button Hairdressers;
     @FXML
-    private Button Electricians;
+    public Button Electricians;
     @FXML
-    private Button Painters;
+    public Button Painters;
     @FXML
-    private Button Beauticians;
+    public Button Beauticians;
 
     public void PlumbersMethod(ActionEvent actionEvent) {
     }

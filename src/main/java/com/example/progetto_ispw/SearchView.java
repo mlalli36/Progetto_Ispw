@@ -5,17 +5,19 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 
-public class SearchViewController {
+public class SearchView {
     @FXML
-    private AnchorPane AnchorPaneSearch;
+    public AnchorPane AnchorPaneSearch;
     @FXML
-    private Button Profile;
+    public Button Profile;
     @FXML
-    private Button Favorites;
+    public Button Favorites;
     @FXML
-    private Button Home;
+    public Button Home;
     @FXML
-    private Button FillOutForm;
+    public Button FillOutForm1;
+    @FXML
+    public Button FillOutForm2;
 
     public void ProfileMethod(ActionEvent actionEvent) {
         // TODO document why this method is empty

@@ -3,16 +3,11 @@ package com.example.progetto_ispw;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
 
-public class ProfileRecensioneViewController {
-
+public class NotificaDaClienteView {
     @FXML
-    public AnchorPane AnchorPaneProfileRecensione;
-    @FXML
-    public Pane Addreview;
+    public AnchorPane AnchorsPaneNotificaDaCliente;
     @FXML
     public Button Profile;
     @FXML
@@ -20,9 +15,9 @@ public class ProfileRecensioneViewController {
     @FXML
     public Button Home;
     @FXML
-    public Button Send;
+    public Button ReadForm;
     @FXML
-    public Button AddRievew;
+    public Button Delete;
     @FXML
     public Button BookedServices;
     @FXML
@@ -35,11 +30,10 @@ public class ProfileRecensioneViewController {
     public Button NeedHelp;
     @FXML
     public Button Exit;
+    @FXML
+    public Button Notification;
 
-
-    public void AddReviewMethod(MouseEvent mouseEvent) {
-    }
-
+    @FXML
     public void ProfileMethod(ActionEvent actionEvent) {
     }
 
@@ -49,19 +43,19 @@ public class ProfileRecensioneViewController {
     public void HomeMethod(ActionEvent actionEvent) {
     }
 
-    public void SendMethod(ActionEvent actionEvent) {
+    public void ReadFormMethod(ActionEvent actionEvent) {
     }
 
-    public void AddReviewMethod(ActionEvent actionEvent) {
+    public void DeleteMethod(ActionEvent actionEvent) {
     }
 
     public void BookedServicesMethod(ActionEvent actionEvent) {
     }
 
-    public void ChangePasswordMethod(ActionEvent actionEvent) {
+    public void MyDetailsMethod(ActionEvent actionEvent) {
     }
 
-    public void MyDetailsMethod(ActionEvent actionEvent) {
+    public void ChangePasswordMethod(ActionEvent actionEvent) {
     }
 
     public void AddressesMethod(ActionEvent actionEvent) {
@@ -71,5 +65,8 @@ public class ProfileRecensioneViewController {
     }
 
     public void ExitMethod(ActionEvent actionEvent) {
+    }
+
+    public void NotificationMethod(ActionEvent actionEvent) {
     }
 }
