@@ -27,6 +27,8 @@ public class HomeView  {
     public Button Painters;
     @FXML
     public Button Beauticians;
+    @FXML
+    public Button Profile;
 
     public void PlumbersMethod(ActionEvent actionEvent) {
         try{
@@ -63,5 +65,21 @@ public class HomeView  {
     }
 
     public void BeauticiansMethod(ActionEvent actionEvent) {
+    }
+
+    public void ProfileMethod(ActionEvent actionEvent) {
+        try{//crea pagina nuova
+            FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("ProfileView.fxml"));
+            Parent root = fxmlLoader.load();
+
+            //crea uno stage per la nuova pagina
+            Stage stage=new Stage();
+            stage.setScene(new Scene(root));
+
+            //chiudi la pagina precedente
+            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
+        }catch (IOException e){
+            e.printStackTrace();
+        }
     }
 }
