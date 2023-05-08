@@ -2,8 +2,15 @@ package com.example.progetto_ispw;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class SearchView {
     @FXML
@@ -32,6 +39,21 @@ public class SearchView {
     }
 
     public void FillOutFormMethod(ActionEvent actionEvent) {
-        // TODO document why this method is empty
+       try {
+
+
+            //crea pagina nuova
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("interfacciaForm.fxml"));
+            Parent root = fxmlLoader.load();
+
+            //Crea uno stage per la nuova pagina
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+
+            //Chiudi la vista di login
+            ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

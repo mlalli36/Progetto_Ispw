@@ -2,8 +2,15 @@ package com.example.progetto_ispw;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class NotificaDaClienteView {
     @FXML
@@ -65,6 +72,19 @@ public class NotificaDaClienteView {
     }
 
     public void ExitMethod(ActionEvent actionEvent) {
+        try{
+            FXMLLoader fxmlLoader = new FXMLLoader((getClass().getResource("interfacciaHome.fxml")));
+            Parent root= fxmlLoader.load();
+
+            //crea uno stage per la nuova pagina
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+
+            //chiudi pagina del login
+            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
+        }catch (IOException e ){
+            e.printStackTrace();
+        }
     }
 
     public void NotificationMethod(ActionEvent actionEvent) {
