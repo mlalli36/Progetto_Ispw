@@ -33,7 +33,7 @@ public class HomeView  {
     public void plumbersMethod(ActionEvent actionEvent) {
         try{
             //caricare la nuova pagina
-            FXMLLoader fxmlLoader = new FXMLLoader((getClass().getResource("interfacciaSearch.fxml")));
+            FXMLLoader fxmlLoader = new FXMLLoader((getClass().getResource("interfacciaSearch Dinamica.fxml")));
             Parent root = fxmlLoader.load();
 
             //Crea uno stage per la nuova pagina
