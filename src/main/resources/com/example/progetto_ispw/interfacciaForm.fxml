@@ -14,15 +14,15 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="AnchorPaneFillOutForm" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="1219.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.progetto_ispw.FillOutFormView">
+<AnchorPane fx:id="anchorPaneFillOutForm" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="1219.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.progetto_ispw.FillOutFormView">
    <children>
-      <Pane fx:id="PaneFillOutForm" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="1219.0">
+      <Pane fx:id="paneFillOutForm" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="1219.0">
          <children>
             <Pane prefHeight="53.0" prefWidth="1219.0" style="-fx-background-color: #74c69d;">
                <children>
-                  <Button fx:id="Profile" layoutX="1144.0" mnemonicParsing="false" onAction="#ProfileMethod" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #74c69d;" />
-                  <Button fx:id="Favorites" layoutX="1069.0" mnemonicParsing="false" onAction="#FavoritesMethod" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #74c69d;" />
-                  <Button fx:id="Home" layoutX="994.0" mnemonicParsing="false" onAction="#HomeMethod" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #74c69d;" />
+                  <Button fx:id="profile" layoutX="1144.0" mnemonicParsing="false" onAction="#profileMethod" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #74c69d;" />
+                  <Button fx:id="favorites" layoutX="1069.0" mnemonicParsing="false" onAction="#favoritesMethod" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #74c69d;" />
+                  <Button fx:id="home" layoutX="994.0" mnemonicParsing="false" onAction="#homeMethod" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #74c69d;" />
                   <ImageView fitHeight="56.0" fitWidth="66.0" layoutX="1074.0">
                      <image>
                         <Image url="@icon/star.2.png" />
@@ -64,12 +64,12 @@
                   <TextField layoutX="97.0" layoutY="336.0" prefHeight="44.0" prefWidth="322.0" style="-fx-background-radius: 10;" />
                   <TextField layoutX="604.0" layoutY="103.0" prefHeight="44.0" prefWidth="322.0" style="-fx-background-radius: 10;" />
                   <TextField layoutX="604.0" layoutY="219.0" prefHeight="161.0" prefWidth="322.0" style="-fx-background-radius: 10;" />
-                  <Button fx:id="SendForm" layoutX="163.0" layoutY="424.0" mnemonicParsing="false" onAction="#SendFormMethod" prefHeight="56.0" prefWidth="190.0" style="-fx-background-radius: 10; -fx-background-color: #74c69d;" text="Send Form">
+                  <Button fx:id="sendForm" layoutX="163.0" layoutY="424.0" mnemonicParsing="false" onAction="#sendFormMethod" prefHeight="56.0" prefWidth="190.0" style="-fx-background-radius: 10; -fx-background-color: #74c69d;" text="Send Form">
                      <font>
                         <Font name="Bookman Old Style" size="21.0" />
                      </font>
                   </Button>
-                  <Button fx:id="Back" layoutX="670.0" layoutY="424.0" mnemonicParsing="false" onAction="#BackMethod" prefHeight="56.0" prefWidth="190.0" style="-fx-background-radius: 10; -fx-background-color: #74c69d;" text="Back">
+                  <Button fx:id="back" layoutX="670.0" layoutY="424.0" mnemonicParsing="false" onAction="#backMethod" prefHeight="56.0" prefWidth="190.0" style="-fx-background-radius: 10; -fx-background-color: #74c69d;" text="Back">
                      <font>
                         <Font name="Bookman Old Style" size="21.0" />
                      </font>

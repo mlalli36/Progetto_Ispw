@@ -14,31 +14,28 @@ import java.io.IOException;
 
 public class SearchView {
     @FXML
-    public AnchorPane AnchorPaneSearch;
+    public AnchorPane anchorPaneSearch;
     @FXML
-    public Button Profile;
+    public Button profile;
     @FXML
-    public Button Favorites;
+    public Button favorites;
     @FXML
-    public Button Home;
+    public Button home;
     @FXML
-    public Button FillOutForm1;
+    public Button fillOutForm1;
     @FXML
-    public Button FillOutForm2;
+    public Button fillOutForm2;
 
-    public void ProfileMethod(ActionEvent actionEvent) {
-        // TODO document why this method is empty
+    public void profileMethod(ActionEvent actionEvent) {//da implementare
     }
 
-    public void FavoritesMethod(ActionEvent actionEvent) {
-        // TODO document why this method is empty
+    public void favoritesMethod(ActionEvent actionEvent) {//da implementare
     }
 
-    public void HomeMethod(ActionEvent actionEvent) {
-        // TODO document why this method is empty
+    public void homeMethod(ActionEvent actionEvent) {//da implementare
     }
 
-    public void FillOutFormMethod(ActionEvent actionEvent) {
+    public void fillOutFormMethod(ActionEvent actionEvent) {
        try {
 
 

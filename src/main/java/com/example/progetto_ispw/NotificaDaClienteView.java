@@ -14,64 +14,64 @@ import java.io.IOException;
 
 public class NotificaDaClienteView {
     @FXML
-    public AnchorPane AnchorsPaneNotificaDaCliente;
+    public AnchorPane anchorsPaneNotificaDaCliente;
     @FXML
-    public Button Profile;
+    public Button profile;
     @FXML
-    public Button Favorites;
+    public Button favorites;
     @FXML
-    public Button Home;
+    public Button home;
     @FXML
-    public Button ReadForm;
+    public Button readForm;
     @FXML
-    public Button Delete;
+    public Button delete;
     @FXML
-    public Button BookedServices;
+    public Button bookedServices;
     @FXML
-    public Button MyDetails;
+    public Button myDetails;
     @FXML
-    public Button ChangePassword;
+    public Button changePassword;
     @FXML
-    public Button Addresses;
+    public Button addresses;
     @FXML
-    public Button NeedHelp;
+    public Button needHelp;
     @FXML
-    public Button Exit;
+    public Button exit;
     @FXML
-    public Button Notification;
+    public Button notification;
 
     @FXML
-    public void ProfileMethod(ActionEvent actionEvent) {
+    public void profileMethod(ActionEvent actionEvent) {//da implementare
     }
 
-    public void FavoritesMethod(ActionEvent actionEvent) {
+    public void favoritesMethod(ActionEvent actionEvent) {//da implementare
     }
 
-    public void HomeMethod(ActionEvent actionEvent) {
+    public void homeMethod(ActionEvent actionEvent) {//da implementare
     }
 
-    public void ReadFormMethod(ActionEvent actionEvent) {
+    public void readFormMethod(ActionEvent actionEvent) {//da implementare
     }
 
-    public void DeleteMethod(ActionEvent actionEvent) {
+    public void deleteMethod(ActionEvent actionEvent) {//da implementare
     }
 
-    public void BookedServicesMethod(ActionEvent actionEvent) {
+    public void bookedServicesMethod(ActionEvent actionEvent) {//da implementare
     }
 
-    public void MyDetailsMethod(ActionEvent actionEvent) {
+    public void myDetailsMethod(ActionEvent actionEvent) {//da implementare
     }
 
-    public void ChangePasswordMethod(ActionEvent actionEvent) {
+    public void changePasswordMethod(ActionEvent actionEvent) {//da implementare
     }
 
-    public void AddressesMethod(ActionEvent actionEvent) {
+    public void addressesMethod(ActionEvent actionEvent) {//da implementare
     }
 
-    public void NeedHelpMethod(ActionEvent actionEvent) {
+    public void needHelpMethod(ActionEvent actionEvent) {//da implementare
     }
 
-    public void ExitMethod(ActionEvent actionEvent) {
+    public void exitMethod(ActionEvent actionEvent) {
         try{
             FXMLLoader fxmlLoader = new FXMLLoader((getClass().getResource("interfacciaHome.fxml")));
             Parent root= fxmlLoader.load();
@@ -87,6 +87,6 @@ public class NotificaDaClienteView {
         }
     }
 
-    public void NotificationMethod(ActionEvent actionEvent) {
+    public void notificationMethod(ActionEvent actionEvent) {//da implementare
     }
 }

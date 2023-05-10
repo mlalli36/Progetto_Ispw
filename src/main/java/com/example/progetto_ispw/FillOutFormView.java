@@ -8,31 +8,38 @@ import javafx.scene.layout.Pane;
 
 public class FillOutFormView {
     @FXML
-    public AnchorPane AnchorPaneFillOutForm;
+    public AnchorPane anchorPaneFillOutForm;
     @FXML
-    public Pane PaneFillOutForm;
+    public Pane paneFillOutForm;
     @FXML
-    public Button Profile;
+    public Button profile;
     @FXML
-    public Button Favorites;
-    public Button Home;
-    @FXML
-    public Button SendForm; //non so se va private o public
-    @FXML
-    public Button Back;
+    public Button favorites;
 
-    public void ProfileMethod(ActionEvent actionEvent) {
+    @FXML
+    public Button home;
+    @FXML
+    public Button sendForm; //non so se va private o public
+    @FXML
+    public Button back;
+
+    public void profileMethod(ActionEvent actionEvent) {
+        //da implementare
     }
 
-    public void FavoritesMethod(ActionEvent actionEvent) {
+    public void favoritesMethod(ActionEvent actionEvent) {
+        //da implementare
     }
 
-    public void HomeMethod(ActionEvent actionEvent) {
+    public void homeMethod(ActionEvent actionEvent) {
+        //da implementare
     }
 
-    public void SendFormMethod(ActionEvent actionEvent) {
+    public void sendFormMethod(ActionEvent actionEvent) {
+        //da implementare
     }
 
-    public void BackMethod(ActionEvent actionEvent) {
+    public void backMethod(ActionEvent actionEvent) {
+        //da implementare
     }
 }

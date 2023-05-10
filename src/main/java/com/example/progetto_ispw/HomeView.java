@@ -14,23 +14,23 @@ import java.io.IOException;
 
 public class HomeView  {
     @FXML
-    public AnchorPane AnchorPaneHome;
+    public AnchorPane anchorPaneHome;
     @FXML
-    public Button Plumbers;
+    public Button plumbers;
     @FXML
     public Button seeMore;
     @FXML
-    public Button Hairdressers;
+    public Button hairdressers;
     @FXML
-    public Button Electricians;
+    public Button electricians;
     @FXML
-    public Button Painters;
+    public Button painters;
     @FXML
-    public Button Beauticians;
+    public Button beauticians;
     @FXML
-    public Button Profile;
+    public Button profile;
 
-    public void PlumbersMethod(ActionEvent actionEvent) {
+    public void plumbersMethod(ActionEvent actionEvent) {
         try{
             //caricare la nuova pagina
             FXMLLoader fxmlLoader = new FXMLLoader((getClass().getResource("interfacciaSearch.fxml")));
@@ -51,23 +51,28 @@ public class HomeView  {
         }
     }
 
-    public void SeeMoreMethod(ActionEvent actionEvent) {
+    public void seeMoreMethod(ActionEvent actionEvent) {
+        //da implementare
 
     }
 
-    public void HairdressersMethod(ActionEvent actionEvent) {
+    public void hairdressersMethod(ActionEvent actionEvent) {
+        //da implementare
     }
 
-    public void ElectriciansMethod(ActionEvent actionEvent) {
+    public void electriciansMethod(ActionEvent actionEvent) {
+        //da implementare
     }
 
-    public void PaintersMethod(ActionEvent actionEvent) {
+    public void paintersMethod(ActionEvent actionEvent) {
+        //da implementare
     }
 
-    public void BeauticiansMethod(ActionEvent actionEvent) {
+    public void beauticiansMethod(ActionEvent actionEvent) {
+        //da implementare
     }
 
-    public void ProfileMethod(ActionEvent actionEvent) {
+    public void profileMethod(ActionEvent actionEvent) {
         try{//crea pagina nuova
             FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("ProfileView.fxml"));
             Parent root = fxmlLoader.load();

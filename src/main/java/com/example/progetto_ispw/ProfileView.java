@@ -9,55 +9,55 @@ import javafx.scene.layout.AnchorPane;
 
 public class ProfileView {
     @FXML
-    public AnchorPane AnchorPaneProfile;
+    public AnchorPane anchorPaneProfile;
     @FXML
-    public Button MyDetails;
+    public Button myDetails;
     @FXML
-    public Button BookedServices;
+    public Button bookedServices;
     @FXML
-    public Button ChangePassword;
+    public Button changePassword;
     @FXML
-    public Button Addresses;
+    public Button addresses;
     @FXML
-    public Button NeedHelp;
+    public Button needHelp;
     @FXML
-    public Button Exit;
+    public Button exit;
     @FXML
-    public Button SaveEdits;
+    public Button saveEdits;
     @FXML
-    public ImageView Profile;
+    public ImageView profile;
     @FXML
-    public ImageView Home;
+    public ImageView home;
     @FXML
-    public Button Favorites;
+    public Button favorites;
 
-    public void HomeMethod(MouseEvent mouseEvent) {
+    public void homeMethod(MouseEvent mouseEvent) {//da implementare
     }
 
-    public void FavoritesMethod(MouseEvent mouseEvent) {
+    public void favoritesMethod(MouseEvent mouseEvent) {//da implementare
     }
 
-    public void SaveEditsMethod(ActionEvent actionEvent) {
+    public void saveEditsMethod(ActionEvent actionEvent) {//da implementare
     }
 
-    public void BookedServicesMethod(ActionEvent actionEvent) {
+    public void bookedServicesMethod(ActionEvent actionEvent) {//da implementare
     }
 
-    public void MyDetailsMethod(ActionEvent actionEvent) {
+    public void myDetailsMethod(ActionEvent actionEvent) {//da implementare
     }
 
-    public void ChangePasswordMethod(ActionEvent actionEvent) {
+    public void changePasswordMethod(ActionEvent actionEvent) {//da implementare
     }
 
-    public void AddressesMethod(ActionEvent actionEvent) {
+    public void addressesMethod(ActionEvent actionEvent) {//da implementare
     }
 
-    public void NeedHelpMethod(ActionEvent actionEvent) {
+    public void needHelpMethod(ActionEvent actionEvent) {//da implementare
     }
 
-    public void ExitMethod(ActionEvent actionEvent) {
+    public void exitMethod(ActionEvent actionEvent) {//da implementare
     }
 
-    public void ProfileMethod(MouseEvent mouseEvent) {
+    public void profileMethod(MouseEvent mouseEvent) {//da implementare
     }
 }

@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="AnchorPaneHome" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="1219.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.progetto_ispw.HomeView">
+<AnchorPane fx:id="anchorPaneHome" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="1219.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.progetto_ispw.HomeView">
    <children>
       <Pane layoutY="8.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="1219.0">
          <children>
@@ -51,7 +51,7 @@
                   </ImageView>
                </children>
             </Pane>
-            <Button fx:id="seeMore" layoutX="901.0" layoutY="512.0" mnemonicParsing="false" onAction="#SeeMoreMethod" prefHeight="44.0" prefWidth="163.0" style="-fx-background-radius: 10; -fx-background-color: #74c69d;" text="SEE MORE">
+            <Button fx:id="seeMore" layoutX="901.0" layoutY="512.0" mnemonicParsing="false" onAction="#seeMoreMethod" prefHeight="44.0" prefWidth="163.0" style="-fx-background-radius: 10; -fx-background-color: #74c69d;" text="SEE MORE">
                <font>
                   <Font name="Bookman Old Style" size="21.0" />
                </font>
@@ -81,7 +81,7 @@
                         <Image url="@icon/colori.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="Painters" layoutX="-1.0" layoutY="3.0" mnemonicParsing="false" onAction="#PaintersMethod" opacity="0.0" prefHeight="143.0" prefWidth="153.0" style="-fx-background-radius: 10; -fx-background-color: #fffff; -fx-border-radius: 10; -fx-border-color: #f05e81;" textFill="WHITE">
+                  <Button fx:id="painters" layoutX="-1.0" layoutY="3.0" mnemonicParsing="false" onAction="#paintersMethod" opacity="0.0" prefHeight="143.0" prefWidth="153.0" style="-fx-background-radius: 10; -fx-background-color: #fffff; -fx-border-radius: 10; -fx-border-color: #f05e81;" textFill="WHITE">
                      <font>
                         <Font name="Bookman Old Style" size="21.0" />
                      </font>
@@ -122,27 +122,27 @@
                   <Font name="Bookman Old Style" size="18.0" />
                </font>
             </Text>
-            <Button fx:id="Plumbers" layoutX="107.0" layoutY="223.0" mnemonicParsing="false" onAction="#PlumbersMethod" opacity="0.0" prefHeight="143.0" prefWidth="153.0" style="-fx-background-radius: 10; -fx-background-color: #fffff; -fx-border-color: #4577c1; -fx-border-radius: 10;" textFill="WHITE">
+            <Button fx:id="plumbers" layoutX="107.0" layoutY="223.0" mnemonicParsing="false" onAction="#plumbersMethod" opacity="0.0" prefHeight="143.0" prefWidth="153.0" style="-fx-background-radius: 10; -fx-background-color: #fffff; -fx-border-color: #4577c1; -fx-border-radius: 10;" textFill="WHITE">
                <font>
                   <Font name="Bookman Old Style" size="21.0" />
                </font>
             </Button>
-            <Button fx:id="Hairdressers" layoutX="525.0" layoutY="222.0" mnemonicParsing="false" onAction="#HairdressersMethod" opacity="0.0" prefHeight="143.0" prefWidth="153.0" style="-fx-background-radius: 10; -fx-background-color: #fffff; -fx-border-color: #9334dd; -fx-border-radius: 10;" textFill="WHITE">
+            <Button fx:id="hairdressers" layoutX="525.0" layoutY="222.0" mnemonicParsing="false" onAction="#hairdressersMethod" opacity="0.0" prefHeight="143.0" prefWidth="153.0" style="-fx-background-radius: 10; -fx-background-color: #fffff; -fx-border-color: #9334dd; -fx-border-radius: 10;" textFill="WHITE">
                <font>
                   <Font name="Bookman Old Style" size="21.0" />
                </font>
             </Button>
-            <Button fx:id="Electricians" layoutX="905.0" layoutY="222.0" mnemonicParsing="false" onAction="#ElectriciansMethod" opacity="0.0" prefHeight="143.0" prefWidth="153.0" style="-fx-background-radius: 10; -fx-background-color: #fffff; -fx-border-color: #b0bc22; -fx-border-radius: 10;" textFill="WHITE">
+            <Button fx:id="electricians" layoutX="905.0" layoutY="222.0" mnemonicParsing="false" onAction="#electriciansMethod" opacity="0.0" prefHeight="143.0" prefWidth="153.0" style="-fx-background-radius: 10; -fx-background-color: #fffff; -fx-border-color: #b0bc22; -fx-border-radius: 10;" textFill="WHITE">
                <font>
                   <Font name="Bookman Old Style" size="21.0" />
                </font>
             </Button>
-            <Button fx:id="Beauticians" layoutX="526.0" layoutY="484.0" mnemonicParsing="false" onAction="#BeauticiansMethod" opacity="0.0" prefHeight="143.0" prefWidth="153.0" style="-fx-background-radius: 10; -fx-background-color: #fffff; -fx-border-color: #c746ba; -fx-border-radius: 10;" textFill="WHITE">
+            <Button fx:id="beauticians" layoutX="526.0" layoutY="484.0" mnemonicParsing="false" onAction="#beauticiansMethod" opacity="0.0" prefHeight="143.0" prefWidth="153.0" style="-fx-background-radius: 10; -fx-background-color: #fffff; -fx-border-color: #c746ba; -fx-border-radius: 10;" textFill="WHITE">
                <font>
                   <Font name="Bookman Old Style" size="21.0" />
                </font>
             </Button>
-            <Button fx:id="Profile" layoutX="1144.0" layoutY="-3.0" mnemonicParsing="false" onAction="#ProfileMethod" opacity="0.0" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #74c69d;" />
+            <Button fx:id="profile" layoutX="1144.0" layoutY="-3.0" mnemonicParsing="false" onAction="#profileMethod" opacity="0.0" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #74c69d;" />
          </children>
       </Pane>
    </children>

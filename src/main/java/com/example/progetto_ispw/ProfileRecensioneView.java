@@ -10,66 +10,66 @@ import javafx.scene.layout.Pane;
 public class ProfileRecensioneView {
 
     @FXML
-    public AnchorPane AnchorPaneProfileRecensione;
+    public AnchorPane anchorPaneProfileRecensione;
     @FXML
-    public Pane Addreview;
+    public Pane addreview;
     @FXML
-    public Button Profile;
+    public Button profile;
     @FXML
-    public Button Favorites;
+    public Button favorites;
     @FXML
-    public Button Home;
+    public Button home;
     @FXML
-    public Button Send;
+    public Button send;
     @FXML
-    public Button AddRievew;
+    public Button addRievew;
     @FXML
-    public Button BookedServices;
+    public Button bookedServices;
     @FXML
-    public Button MyDetails;
+    public Button myDetails;
     @FXML
-    public Button ChangePassword;
+    public Button changePassword;
     @FXML
-    public Button Addresses;
+    public Button addresses;
     @FXML
-    public Button NeedHelp;
+    public Button needHelp;
     @FXML
-    public Button Exit;
+    public Button exit;
 
 
-    public void AddReviewMethod(MouseEvent mouseEvent) {
+    public void addReviewMethod(MouseEvent mouseEvent) {//da implementare
     }
 
-    public void ProfileMethod(ActionEvent actionEvent) {
+    public void profileMethod(ActionEvent actionEvent) {//da implementare
     }
 
-    public void FavoritesMethod(ActionEvent actionEvent) {
+    public void favoritesMethod(ActionEvent actionEvent) {//da implementare
     }
 
-    public void HomeMethod(ActionEvent actionEvent) {
+    public void homeMethod(ActionEvent actionEvent) {//da implementare
     }
 
-    public void SendMethod(ActionEvent actionEvent) {
+    public void sendMethod(ActionEvent actionEvent) {//da implementare
     }
 
-    public void AddReviewMethod(ActionEvent actionEvent) {
+    public void addReviewMethod(ActionEvent actionEvent) {//da implementare
     }
 
-    public void BookedServicesMethod(ActionEvent actionEvent) {
+    public void bookedServicesMethod(ActionEvent actionEvent) {//da implementare
     }
 
-    public void ChangePasswordMethod(ActionEvent actionEvent) {
+    public void changePasswordMethod(ActionEvent actionEvent) {//da implementare
     }
 
-    public void MyDetailsMethod(ActionEvent actionEvent) {
+    public void myDetailsMethod(ActionEvent actionEvent) {//da implementare
     }
 
-    public void AddressesMethod(ActionEvent actionEvent) {
+    public void addressesMethod(ActionEvent actionEvent) {//da implementare
     }
 
-    public void NeedHelpMethod(ActionEvent actionEvent) {
+    public void needHelpMethod(ActionEvent actionEvent) {//da implementare
     }
 
-    public void ExitMethod(ActionEvent actionEvent) {
+    public void exitMethod(ActionEvent actionEvent) {//da implementare
     }
 }

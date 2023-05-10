@@ -15,16 +15,16 @@ import java.io.IOException;
 
 public class LoginView {
     @FXML
-    public AnchorPane AnchorPaneLogin;
+    public AnchorPane anchorPaneLogin;
     @FXML
-    public CheckBox RememberMe;
+    public CheckBox rememberMe;
     @FXML
-    public Button Login;
+    public Button login;
 
-    public void RememberMeMethod(ActionEvent actionEvent) {
+    public void rememberMeMethod(ActionEvent actionEvent) {//da implementare
     }
 
-    public void LoginMethod(ActionEvent actionEvent) {
+    public void loginMethod(ActionEvent actionEvent) {
         try{
         //Carica la nuova pagina
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("interfacciaHome.fxml"));
