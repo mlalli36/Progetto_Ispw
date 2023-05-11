@@ -22,11 +22,29 @@ public class SearchView {
     @FXML
     public Button home;
     @FXML
-    public Button fillOutForm1;
-    @FXML
-    public Button fillOutForm2;
+    public Button fillOutForm;
 
-    public void profileMethod(ActionEvent actionEvent) {//da implementare
+
+    public void profileMethod(ActionEvent actionEvent) {
+        try{
+            //crea pagina nuova
+            FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("interfacciaprofilodinamica.fxml"));
+            Parent root=fxmlLoader.load();
+
+            //crea uno stage per la nuova pagina
+            Stage stage= new Stage();
+            stage.setScene((new Scene(root)));
+
+            //mostra la pagina caricata nellos stage
+            stage.show();
+
+            //chiudi la vista di login
+            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
+
+
+        } catch(IOException e){
+            e.printStackTrace();
+        }
     }
 
     public void favoritesMethod(ActionEvent actionEvent) {//da implementare
@@ -46,6 +64,9 @@ public class SearchView {
             //Crea uno stage per la nuova pagina
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
+
+            //mostra la pagina caricata nello stage
+            stage.show();
 
             //Chiudi la vista di login
             ((Node) (actionEvent.getSource())).getScene().getWindow().hide();

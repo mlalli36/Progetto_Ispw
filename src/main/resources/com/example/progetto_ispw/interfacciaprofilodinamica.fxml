@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="anchorPaneProfile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="1219.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.progetto_ispw.ProfileDinamicaView">
+   <children>
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="1219.0" style="-fx-background-image: #0000;">
+         <children>
+            <Pane prefHeight="53.0" prefWidth="1219.0" style="-fx-background-color: #74c69d;">
+               <children>
+                  <Button fx:id="profile" layoutX="1144.0" mnemonicParsing="false" onAction="#profileMethod" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #74c69d;" />
+                  <Button layoutX="1069.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #74c69d;" />
+                  <Button layoutX="994.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #74c69d;" />
+                  <ImageView fx:id="home" fitHeight="53.0" fitWidth="66.0" layoutX="1005.0" layoutY="-1.0" onDragDetected="#homeMethod">
+                     <image>
+                        <Image url="@icon/home 2.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="favorites" fitHeight="53.0" fitWidth="58.0" layoutX="1084.0" layoutY="1.0" onDragDetected="#favoritesMethod">
+                     <image>
+                        <Image url="@icon/star.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView layoutX="1157.0" layoutY="4.0">
+                     <image>
+                        <Image url="@icon/profile 2.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Circle fill="#74c69d" layoutX="130.0" layoutY="163.0" radius="67.0" stroke="BLACK" strokeType="INSIDE" />
+            <TextField layoutX="79.0" layoutY="121.0" prefHeight="84.0" prefWidth="103.0" style="-fx-background-color: #74c69d;">
+               <font>
+                  <Font name="Bookman Old Style" size="35.0" />
+               </font>
+            </TextField>
+            <Label layoutX="204.0" layoutY="137.0" prefHeight="53.0" prefWidth="295.0">
+               <font>
+                  <Font name="Bookman Old Style" size="30.0" />
+               </font>
+            </Label>
+            <Button fx:id="bookedServices" layoutX="63.0" layoutY="240.0" mnemonicParsing="false" onAction="#bookedServicesMethod" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="Booked services">
+               <font>
+                  <Font name="Bookman Old Style" size="22.0" />
+               </font>
+            </Button>
+            <Button fx:id="myDetails" layoutX="63.0" layoutY="297.0" mnemonicParsing="false" onAction="#myDetailsMethod" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="My details">
+               <font>
+                  <Font name="Bookman Old Style" size="22.0" />
+               </font>
+            </Button>
+            <Button fx:id="changePassword" layoutX="63.0" layoutY="353.0" mnemonicParsing="false" onAction="#changePasswordMethod" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="Change password">
+               <font>
+                  <Font name="Bookman Old Style" size="22.0" />
+               </font>
+            </Button>
+            <Button fx:id="addresses" layoutX="63.0" layoutY="408.0" mnemonicParsing="false" onAction="#addressesMethod" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="Addresses">
+               <font>
+                  <Font name="Bookman Old Style" size="22.0" />
+               </font>
+            </Button>
+            <Button fx:id="needHelp" layoutX="63.0" layoutY="465.0" mnemonicParsing="false" onAction="#needHelpMethod" prefHeight="28.0" prefWidth="322.0" style="-fx-background-radius: 10; -fx-background-color: #74c69d;" text="Need help?">
+               <font>
+                  <Font name="Bookman Old Style" size="22.0" />
+               </font>
+            </Button>
+            <Button fx:id="exit" layoutX="63.0" layoutY="655.0" mnemonicParsing="false" onAction="#exitMethod" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="Exit">
+               <font>
+                  <Font name="Bookman Old Style" size="22.0" />
+               </font>
+            </Button>
+            <ImageView layoutX="73.0" layoutY="653.0">
+               <image>
+                  <Image url="@icon/back door 4.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="44.0" fitWidth="44.0" layoutX="73.0" layoutY="295.0">
+               <image>
+                  <Image url="@icon/personal card.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="34.0" fitWidth="44.0" layoutX="72.0" layoutY="469.0">
+               <image>
+                  <Image url="@icon/question mark.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="41.0" fitWidth="44.0" layoutX="63.0" layoutY="353.0">
+               <image>
+                  <Image url="@icon/lock.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="41.0" fitWidth="38.0" layoutX="75.0" layoutY="240.0">
+               <image>
+                  <Image url="@icon/book services.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="53.0" fitWidth="58.0" layoutX="63.0" layoutY="402.0">
+               <image>
+                  <Image url="@icon/position.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
