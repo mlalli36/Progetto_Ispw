@@ -9,7 +9,7 @@
    <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="1219.0">
       <Pane prefHeight="53.0" prefWidth="1219.0" style="-fx-background-color: #74c69d;">
          <children>
-            <Button fx:id="profile" layoutX="1144.0" mnemonicParsing="false" onAction="#profileMethod" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #74c69d;" />
+            <Button fx:id="profile" layoutX="1140.0" mnemonicParsing="false" onAction="#profileMethod" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #74c69d;" />
             <Button fx:id="favorites" layoutX="1069.0" mnemonicParsing="false" onAction="#favoritesMethod" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #74c69d;" />
             <Button fx:id="home" layoutX="994.0" mnemonicParsing="false" onAction="#homeMethod" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #74c69d;" />
             <ImageView fitHeight="56.0" fitWidth="66.0" layoutX="1074.0">

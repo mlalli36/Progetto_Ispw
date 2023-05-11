@@ -102,4 +102,6 @@ public class ProfileDinamicaView {
 
     public void exitMethod(ActionEvent actionEvent) {//da implementare
     }
+
+
 }

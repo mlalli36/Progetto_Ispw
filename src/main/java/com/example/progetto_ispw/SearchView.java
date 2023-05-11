@@ -33,7 +33,7 @@ public class SearchView {
 
             //crea uno stage per la nuova pagina
             Stage stage= new Stage();
-            stage.setScene((new Scene(root)));
+            stage.setScene(new Scene(root));
 
             //mostra la pagina caricata nellos stage
             stage.show();

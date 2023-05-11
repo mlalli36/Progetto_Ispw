@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HomeView  {
+public class HomeView {
     @FXML
     public AnchorPane anchorPaneHome;
     @FXML
@@ -35,7 +35,7 @@ public class HomeView  {
     public Button home;
 
     public void plumbersMethod(ActionEvent actionEvent) {
-        try{
+        try {
             //caricare la nuova pagina
             FXMLLoader fxmlLoader = new FXMLLoader((getClass().getResource("interfacciaSearch Dinamica.fxml")));
             Parent root = fxmlLoader.load();
@@ -48,9 +48,9 @@ public class HomeView  {
             stage.show();
 
             //Chiudi la pagina del login
-            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
+            ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
 
-        }catch(IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -77,17 +77,20 @@ public class HomeView  {
     }
 
     public void profileMethod(ActionEvent actionEvent) {
-        try{//crea pagina nuova
-            FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("ProfileView.fxml"));
+        try {//crea pagina nuova
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("interfacciaprofilodinamica.fxml"));
             Parent root = fxmlLoader.load();
 
             //crea uno stage per la nuova pagina
-            Stage stage=new Stage();
+            Stage stage = new Stage();
             stage.setScene(new Scene(root));
 
+            //mostra lo stage
+            stage.show();
+
             //chiudi la pagina precedente
-            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
-        }catch (IOException e){
+            ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -95,24 +98,6 @@ public class HomeView  {
     public void favoritesMethod(ActionEvent actionEvent) {//da implementare
     }
 
-    public void homeMethod(ActionEvent actionEvent) {  try{
-        //crea pagina nuova
-        FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("interfacciaprofile.fxml"));
-        Parent root=fxmlLoader.load();
-
-        //crea uno stage per la nuova pagina
-        Stage stage= new Stage();
-        stage.setScene((new Scene(root)));
-
-        //mostra la pagina caricata nellos stage
-        stage.show();
-
-        //chiudi la vista di login
-        ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
-
-
-    } catch(IOException e){
-        e.printStackTrace();
-    }
+    public void homeMethod(ActionEvent actionEvent) {  //da implementare
     }
 }
