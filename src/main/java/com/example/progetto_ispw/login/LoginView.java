@@ -17,6 +17,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.EventObject;
 
 public class LoginView {
     @FXML
@@ -33,10 +34,11 @@ public class LoginView {
     public TextField emailTextField;
     @FXML
     public Text popUpPane;
+    public Button signUp;
+    public TextField confermaPassTextField;
+    public TextField nomeTextField;
+    public TextField cognomeTextField;
 
-
-    public void rememberMeMethod(ActionEvent actionEvent) {//da implementare
-    }
 
     public void handleLogin() throws IOException{
             this.errorLabel.setOpacity(0.0);
@@ -60,12 +62,14 @@ public class LoginView {
         }
 
     }
+}
 
-
+    public void signUpMethod(ActionEvent actionEvent) { //da implementare
+    }
 
     public void loginMethod(ActionEvent actionEvent) {
         try{
-        //Carica la nuova pagina
+            //Carica la nuova pagina
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("interfacciaHome.fxml"));
             Parent root = fxmlLoader.load();
 
@@ -82,6 +86,7 @@ public class LoginView {
         }catch (IOException e){
             e.printStackTrace();
         }
+    }
     }
 }
 
