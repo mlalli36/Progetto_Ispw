@@ -47,7 +47,7 @@ public class HomeView {
             // mostra la pagina caricata nello stage
             stage.show();
 
-            //Chiudi la pagina del login
+            //Chiudi la pagina del com.example.progetto_ispw.login
             ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
 
         } catch (IOException e) {

@@ -52,7 +52,7 @@ public class ProfileDinamicaView {
             //mostra la pagina caricata nellos stage
             stage.show();
 
-            //chiudi la vista di login
+            //chiudi la vista di com.example.progetto_ispw.login
             ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
 
 
@@ -81,7 +81,7 @@ public class ProfileDinamicaView {
             //mostra la pagina caricata nellos stage
             stage.show();
 
-            //chiudi la vista di login
+            //chiudi la vista di com.example.progetto_ispw.login
             ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
 
 

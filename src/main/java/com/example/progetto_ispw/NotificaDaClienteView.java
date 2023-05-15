@@ -80,7 +80,7 @@ public class NotificaDaClienteView {
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
 
-            //chiudi pagina del login
+            //chiudi pagina del com.example.progetto_ispw.login
             ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
         }catch (IOException e ){
             e.printStackTrace();
