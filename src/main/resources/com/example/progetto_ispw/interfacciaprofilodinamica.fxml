@@ -73,32 +73,32 @@
                   <Font name="Bookman Old Style" size="22.0" />
                </font>
             </Button>
-            <ImageView layoutX="73.0" layoutY="653.0">
+            <ImageView fitHeight="42.0" fitWidth="44.0" layoutX="73.0" layoutY="653.0">
                <image>
                   <Image url="@icon/back door 4.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="44.0" fitWidth="44.0" layoutX="73.0" layoutY="295.0">
+            <ImageView fitHeight="42.0" fitWidth="37.0" layoutX="75.0" layoutY="297.0">
                <image>
                   <Image url="@icon/personal card.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="37.0" fitWidth="38.0" layoutX="72.0" layoutY="466.0">
+            <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="75.0" layoutY="466.0">
                <image>
                   <Image url="@icon/question mark.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="37.0" fitWidth="48.0" layoutX="63.0" layoutY="353.0">
+            <ImageView fitHeight="37.0" fitWidth="48.0" layoutX="63.0" layoutY="354.0">
                <image>
                   <Image url="@icon/lock.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="41.0" fitWidth="38.0" layoutX="75.0" layoutY="240.0">
+            <ImageView fitHeight="42.0" fitWidth="37.0" layoutX="75.0" layoutY="238.0">
                <image>
                   <Image url="@icon/book services.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="53.0" fitWidth="58.0" layoutX="63.0" layoutY="402.0">
+            <ImageView fitHeight="53.0" fitWidth="58.0" layoutX="64.0" layoutY="400.0">
                <image>
                   <Image url="@icon/position.png" />
                </image>
