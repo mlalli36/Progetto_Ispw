@@ -66,13 +66,13 @@
                <Font name="Bookman Old Style" size="48.0" />
             </font>
          </Text>
-         <TextField fx:id="emailTextField" layoutX="55.0" layoutY="317.0" prefHeight="41.0" prefWidth="434.0" style="-fx-background-radius: 10;" />
+         <TextField fx:id="emailTextFieldSignUp" layoutX="55.0" layoutY="317.0" prefHeight="41.0" prefWidth="434.0" style="-fx-background-radius: 10;" />
          <Text fill="#000000a8" layoutX="55.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-Mail">
             <font>
                <Font name="Bookman Old Style" size="15.0" />
             </font>
          </Text>
-         <TextField fx:id="cognomeTextField" layoutX="55.0" layoutY="233.0" prefHeight="41.0" prefWidth="434.0" style="-fx-background-radius: 10;" />
+         <TextField fx:id="cognomeTextFieldSignUp" layoutX="55.0" layoutY="233.0" prefHeight="41.0" prefWidth="434.0" style="-fx-background-radius: 10;" />
          <Text fill="#000000a8" layoutX="55.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Surname">
             <font>
                <Font name="Bookman Old Style" size="15.0" />
@@ -84,7 +84,7 @@
                <Font name="Bookman Old Style" size="15.0" />
             </font>
          </Text>
-         <TextField fx:id="confermaPassTextField" layoutX="55.0" layoutY="485.0" prefHeight="41.0" prefWidth="434.0" style="-fx-background-radius: 10;" />
+         <TextField fx:id="confermaPassTextFieldSignUp" layoutX="55.0" layoutY="485.0" prefHeight="41.0" prefWidth="434.0" style="-fx-background-radius: 10;" />
          <Text fill="#000000a8" layoutX="55.0" layoutY="475.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirm Password">
             <font>
                <Font name="Bookman Old Style" size="15.0" />
@@ -95,12 +95,12 @@
                <Font name="Bookman Old Style" size="15.0" />
             </font>
          </Text>
-         <Button fx:id="signUp" layoutX="212.0" layoutY="594.0" mnemonicParsing="false" onAction="#signUpMethod" prefHeight="56.0" prefWidth="190.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="Sign Up">
+         <Button fx:id="buttonSignUp" layoutX="212.0" layoutY="594.0" mnemonicParsing="false" onAction="#signUpMethod" prefHeight="56.0" prefWidth="190.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="Sign Up">
             <font>
                <Font name="Bookman Old Style" size="22.0" />
             </font>
          </Button>
-         <TextField fx:id="passwordTextField" layoutX="55.0" layoutY="401.0" prefHeight="41.0" prefWidth="434.0" style="-fx-background-radius: 10;" />
+         <TextField fx:id="passwordTextFieldSignUp" layoutX="55.0" layoutY="401.0" prefHeight="41.0" prefWidth="434.0" style="-fx-background-radius: 10;" />
       </Pane>
          <opaqueInsets>
             <Insets />

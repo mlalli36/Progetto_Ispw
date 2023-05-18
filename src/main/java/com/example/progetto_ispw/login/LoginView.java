@@ -48,6 +48,16 @@ public class LoginView {
     public Text getHelp;
     @FXML
     public Text signUpText;
+    @FXML
+    public TextField cognomeTextFieldSignUp;
+    @FXML
+    public TextField emailTextFieldSignUp;
+    @FXML
+    public TextField confermaPassTextFieldSignUp;
+    @FXML
+    public Button buttonSignUp;
+    @FXML
+    public TextField passwordTextFieldSignUp;
 
 
     public void handleLogin() throws IOException{
