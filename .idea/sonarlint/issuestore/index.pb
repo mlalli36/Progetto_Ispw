@@ -16,11 +16,7 @@ Q.idea/sonarlint/securityhotspotstore/8/2/82930ae2a9f24a180f26f8d261d5beff6fd6b9
 Å
 Q.idea/sonarlint/securityhotspotstore/5/0/50c7cbcb0054d43257e122e2d111f9785fe39d3c,6\5\65ab22a64fe15424cd8816d2342e76c802628de1
 w
-G.idea/sonarlint/issuestore/d/5/d5050a9bb413ecb53f33f9a68a24905418ecb49a,b\c\bc2972e7e154235b0c6f3d71daecfcf85ba9014b
-w
 G.idea/sonarlint/issuestore/f/b/fbd0c99ecbcd993920a0939eb5e877f21b9a0093,1\4\144b7fb296da62403ee4959800f25d8cd4d94e47
-Å
-Q.idea/sonarlint/securityhotspotstore/d/5/d5050a9bb413ecb53f33f9a68a24905418ecb49a,1\d\1d462ab9e6ea16adab93e91fc6ed4c930ecf6450
 Å
 Q.idea/sonarlint/securityhotspotstore/f/b/fbd0c99ecbcd993920a0939eb5e877f21b9a0093,6\7\67c8ad8db6f08174a557b5765f46c53a526dcf5c
 w
@@ -87,12 +83,6 @@ w
 G.idea/sonarlint/issuestore/6/5/65ab22a64fe15424cd8816d2342e76c802628de1,6\0\60a86091df9585563ee23fbfaab8fdcc07577b21
 g
 7src/main/java/com/example/progetto_ispw/SearchView.java,6\c\6c388e279bb0c3f7a6e647328c9697f68c3028fd
-Å
-Qsrc/main/java/com/example/progetto_ispw/login/exception/LoginFailedException.java,f\e\fe0809c0fad405ea0f69eafdde9b8d16a3258ee9
-Ç
-Rsrc/main/java/com/example/progetto_ispw/login/exception/userNotFoundException.java,f\d\fd4617214de437b38c5ce1da0b40590db61789aa
-o
-?src/main/java/com/example/progetto_ispw/login/UIController.java,1\8\18b010b0fb2c5c4a3fe442184a3bbfda2b10f15c
 g
 7src/main/java/com/example/progetto_ispw/SignUpView.java,3\a\3a5e8ea5a99c955b24728dfa0e769b1c075df805
 N

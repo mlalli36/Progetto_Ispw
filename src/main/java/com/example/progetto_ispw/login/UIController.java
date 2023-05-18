@@ -108,6 +108,9 @@ public class UIController {
 
     }
 
+    public void setPreviousStageStyles(String[] previousStageStyles) {
+        this.previousStageStyles = previousStageStyles;
+    }
 }
 
 
