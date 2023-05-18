@@ -87,13 +87,7 @@ w
 G.idea/sonarlint/issuestore/6/5/65ab22a64fe15424cd8816d2342e76c802628de1,6\0\60a86091df9585563ee23fbfaab8fdcc07577b21
 g
 7src/main/java/com/example/progetto_ispw/SearchView.java,6\c\6c388e279bb0c3f7a6e647328c9697f68c3028fd
-o
-?src/main/java/com/example/progetto_ispw/login/UIController.java,1\8\18b010b0fb2c5c4a3fe442184a3bbfda2b10f15c
 g
 7src/main/java/com/example/progetto_ispw/SignUpView.java,3\a\3a5e8ea5a99c955b24728dfa0e769b1c075df805
 N
 src/main/java/module-info.java,1\c\1c89a5491fbfda3fb050196d6a239f20200296e7
-Ç
-Rsrc/main/java/com/example/progetto_ispw/login/exception/userNotFoundException.java,f\d\fd4617214de437b38c5ce1da0b40590db61789aa
-Å
-Qsrc/main/java/com/example/progetto_ispw/login/exception/LoginFailedException.java,f\e\fe0809c0fad405ea0f69eafdde9b8d16a3258ee9
