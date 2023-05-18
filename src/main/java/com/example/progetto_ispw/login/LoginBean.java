@@ -8,9 +8,6 @@ public class LoginBean {
     private static final Pattern VALID_EMAIL_ADDRESS_REGEX = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$",2);
 
 
-
-
-
     public LoginBean() {
         // implentare
     }
@@ -19,11 +16,6 @@ public class LoginBean {
         // implentare
         }
 
-    public void setPassword(String password) {
-        // implentare}
+    public void setPassword(String password) { //da implementare }
 
-
-    //  public void setPassword(
-
-
-}
+    }

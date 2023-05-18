@@ -7,6 +7,6 @@ module com.example.progetto_ispw {
     exports com.example.progetto_ispw;
     exports com.example.progetto_ispw.login;
     opens com.example.progetto_ispw.login to javafx.fxml;
-    exports com.example.progetto_ispw.login.Exception;
-    opens com.example.progetto_ispw.login.Exception to javafx.fxml;
+    exports com.example.progetto_ispw.login.exception;
+    opens com.example.progetto_ispw.login.exception to javafx.fxml;
 }

@@ -1,6 +1,7 @@
 package com.example.progetto_ispw.login;
 
-import com.example.progetto_ispw.login.Exception.LoginFailedException;
+import com.example.progetto_ispw.login.exception.LoginFailedException;
+import com.example.progetto_ispw.login.exception.userNotFoundException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,7 +18,6 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.EventObject;
 
 public class LoginView {
     @FXML
@@ -73,12 +73,12 @@ public class LoginView {
                 UIController viewController = UIController.getUIControllerInstance();//è singletone
                 viewController.showHome();
 
-            }catch(IllegalArgumentException | LoginFailedException exception) {
+            } catch (IllegalArgumentException | LoginFailedException exception) {
                 errorLabel.setText(exception.getMessage());
                 errorLabel.setOpacity(1);
-            }catch{userNotFoundException e ){
-            this.popUpPane();
-            this.popUpPane();
+            } catch (userNotFoundException e){
+            this.popUpPane.setOpacity(1);
+            this.popUpPane.setMouseTransparent(false);
         }
 
     }
