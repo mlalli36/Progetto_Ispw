@@ -34,10 +34,20 @@ public class LoginView {
     public TextField emailTextField;
     @FXML
     public Text popUpPane;
+    @FXML
     public Button signUp;
+    @FXML
     public TextField confermaPassTextField;
+    @FXML
     public TextField nomeTextField;
+    @FXML
     public TextField cognomeTextField;
+    @FXML
+    public Text scritta;
+    @FXML
+    public Text getHelp;
+    @FXML
+    public Text signUpText;
 
 
     public void handleLogin() throws IOException{

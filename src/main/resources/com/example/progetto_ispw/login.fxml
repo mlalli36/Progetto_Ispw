@@ -61,7 +61,7 @@
          </font>
       </Text>
       <Pane layoutX="563.0" layoutY="14.0" prefHeight="688.0" prefWidth="615.0" style="-fx-background-color: #ffffff; -fx-border-radius: 10;">
-         <Text fx:id="signUp" fill="#2d6a4f" layoutX="212.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign Up">
+         <Text fx:id="signUpText" fill="#2d6a4f" layoutX="212.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign Up">
             <font>
                <Font name="Bookman Old Style" size="48.0" />
             </font>
