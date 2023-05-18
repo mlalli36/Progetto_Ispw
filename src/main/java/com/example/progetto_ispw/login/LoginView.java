@@ -2,13 +2,10 @@ package com.example.progetto_ispw.login;
 
 import com.example.progetto_ispw.login.exception.LoginFailedException;
 import com.example.progetto_ispw.login.exception.UserNotFoundException;
-//import com.example.progetto_ispw.login.exception.UserNotFoundException;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-//import javafx.fxml.FXMLLoader;
-//import javafx.scene.Node;
-//import javafx.scene.Parent;
-//import javafx.scene.Scene;
+
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
@@ -16,7 +13,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
-//import javafx.stage.Stage;
+
 
 import java.io.IOException;
 
