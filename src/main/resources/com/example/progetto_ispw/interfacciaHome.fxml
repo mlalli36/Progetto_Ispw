@@ -52,9 +52,9 @@
                   </ImageView>
                </children>
             </Pane>
-            <Button fx:id="seeMore" layoutX="901.0" layoutY="512.0" mnemonicParsing="false" onAction="#seeMoreMethod" prefHeight="44.0" prefWidth="163.0" style="-fx-background-radius: 10; -fx-background-color: #74c69d;" text="SEE MORE">
+            <Button fx:id="seeMore" layoutX="901.0" layoutY="512.0" mnemonicParsing="false" onAction="#seeMoreMethod" prefHeight="44.0" prefWidth="163.0" style="-fx-background-radius: 10; -fx-background-color: #74c69d;" text="See More">
                <font>
-                  <Font name="Bookman Old Style" size="21.0" />
+                  <Font name="Bookman Old Style" size="20.0" />
                </font>
             </Button>
             <Pane layoutX="527.0" layoutY="221.0" prefHeight="143.0" prefWidth="153.0" style="-fx-border-color: #9334DD; -fx-border-radius: 10;">

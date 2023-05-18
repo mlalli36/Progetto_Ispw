@@ -1,0 +1,25 @@
+.text-field {
+    -fx-background-radius: 10;
+
+}
+
+
+.button:hover{
+    -fx-cursor: hand;
+    -fx-scale-x: 1.2;
+    -fx-scale-y: 1.2;
+    -fx-scale-z: 1.2;
+}
+
+.button:pressed{
+
+    -fx-rotate: 5;
+
+}
+
+.button{
+    -fx-background-radius: 10;
+    -fx-font-family: "Bookman Old Style";
+    -fx-font-size: 20;
+
+}

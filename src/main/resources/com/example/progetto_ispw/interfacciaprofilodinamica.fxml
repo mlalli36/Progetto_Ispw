@@ -12,20 +12,20 @@
          <children>
             <Pane prefHeight="53.0" prefWidth="1219.0" style="-fx-background-color: #74c69d;">
                <children>
-                  <Button fx:id="profile" layoutX="1144.0" mnemonicParsing="false" onAction="#profileMethod" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #74c69d;" />
-                  <Button layoutX="1069.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #74c69d;" />
-                  <Button layoutX="994.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #74c69d;" />
-                  <ImageView fx:id="home" fitHeight="53.0" fitWidth="66.0" layoutX="1005.0" layoutY="-1.0" onDragDetected="#homeMethod">
+                  <Button fx:id="profile" layoutX="1144.0" layoutY="-1.0" mnemonicParsing="false" onAction="#profileMethod" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #74c69d;" />
+                  <Button layoutX="1069.0" layoutY="-1.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #74c69d;" />
+                  <Button layoutX="994.0" layoutY="-1.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #74c69d;" />
+                  <ImageView fx:id="home" fitHeight="44.0" fitWidth="56.0" layoutX="1004.0" layoutY="5.0" onDragDetected="#homeMethod">
                      <image>
                         <Image url="@icon/home 2.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="favorites" fitHeight="53.0" fitWidth="58.0" layoutX="1084.0" layoutY="1.0" onDragDetected="#favoritesMethod">
+                  <ImageView fx:id="favorites" fitHeight="56.0" fitWidth="66.0" layoutX="1074.0" onDragDetected="#favoritesMethod">
                      <image>
-                        <Image url="@icon/star.png" />
+                        <Image url="@icon/star.2.png" />
                      </image>
                   </ImageView>
-                  <ImageView layoutX="1157.0" layoutY="4.0">
+                  <ImageView layoutX="1158.0" layoutY="4.0">
                      <image>
                         <Image url="@icon/profile 2.png" />
                      </image>
@@ -45,27 +45,27 @@
             </Label>
             <Button fx:id="bookedServices" layoutX="63.0" layoutY="240.0" mnemonicParsing="false" onAction="#bookedServicesMethod" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="Booked services">
                <font>
-                  <Font name="Bookman Old Style" size="22.0" />
+                  <Font name="Bookman Old Style" size="20.0" />
                </font>
             </Button>
             <Button fx:id="myDetails" layoutX="63.0" layoutY="297.0" mnemonicParsing="false" onAction="#myDetailsMethod" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="My details">
                <font>
-                  <Font name="Bookman Old Style" size="22.0" />
+                  <Font name="Bookman Old Style" size="20.0" />
                </font>
             </Button>
             <Button fx:id="changePassword" layoutX="63.0" layoutY="353.0" mnemonicParsing="false" onAction="#changePasswordMethod" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="Change password">
                <font>
-                  <Font name="Bookman Old Style" size="22.0" />
+                  <Font name="Bookman Old Style" size="20.0" />
                </font>
             </Button>
             <Button fx:id="addresses" layoutX="63.0" layoutY="408.0" mnemonicParsing="false" onAction="#addressesMethod" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="Addresses">
                <font>
-                  <Font name="Bookman Old Style" size="22.0" />
+                  <Font name="Bookman Old Style" size="20.0" />
                </font>
             </Button>
             <Button fx:id="needHelp" layoutX="63.0" layoutY="465.0" mnemonicParsing="false" onAction="#needHelpMethod" prefHeight="28.0" prefWidth="322.0" style="-fx-background-radius: 10; -fx-background-color: #74c69d;" text="Need help?">
                <font>
-                  <Font name="Bookman Old Style" size="22.0" />
+                  <Font name="Bookman Old Style" size="20.0" />
                </font>
             </Button>
             <Button fx:id="exit" layoutX="63.0" layoutY="655.0" mnemonicParsing="false" onAction="#exitMethod" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="Exit">
@@ -73,32 +73,32 @@
                   <Font name="Bookman Old Style" size="22.0" />
                </font>
             </Button>
-            <ImageView layoutX="73.0" layoutY="653.0">
+            <ImageView fitHeight="42.0" fitWidth="44.0" layoutX="73.0" layoutY="653.0">
                <image>
                   <Image url="@icon/back door 4.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="44.0" fitWidth="44.0" layoutX="73.0" layoutY="295.0">
+            <ImageView fitHeight="42.0" fitWidth="37.0" layoutX="75.0" layoutY="297.0">
                <image>
                   <Image url="@icon/personal card.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="34.0" fitWidth="44.0" layoutX="72.0" layoutY="469.0">
+            <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="75.0" layoutY="466.0">
                <image>
                   <Image url="@icon/question mark.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="41.0" fitWidth="44.0" layoutX="63.0" layoutY="353.0">
+            <ImageView fitHeight="37.0" fitWidth="48.0" layoutX="63.0" layoutY="354.0">
                <image>
                   <Image url="@icon/lock.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="41.0" fitWidth="38.0" layoutX="75.0" layoutY="240.0">
+            <ImageView fitHeight="42.0" fitWidth="37.0" layoutX="75.0" layoutY="238.0">
                <image>
                   <Image url="@icon/book services.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="53.0" fitWidth="58.0" layoutX="63.0" layoutY="402.0">
+            <ImageView fitHeight="53.0" fitWidth="58.0" layoutX="64.0" layoutY="400.0">
                <image>
                   <Image url="@icon/position.png" />
                </image>

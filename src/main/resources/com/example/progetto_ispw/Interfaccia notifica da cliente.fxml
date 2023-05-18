@@ -1,40 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.shape.Circle?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-
-<AnchorPane fx:id="anchorsPaneNotificaDaCliente" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="1219.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.progetto_ispw.NotificaDaClienteView" >
+<AnchorPane fx:id="anchorsPaneNotificaDaCliente" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="1219.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.progetto_ispw.NotificaDaClienteView">
    <children>
       <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="1219.0" style="-fx-background-image: #0000;">
          <children>
             <Pane prefHeight="53.0" prefWidth="1219.0" style="-fx-background-color: #74c69d;">
                <children>
-                  <Button fx:id="profile" layoutX="1144.0" mnemonicParsing="false" onAction="#profileMethod" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #308a5d;" />
-                  <Button fx:id="favorites" layoutX="1069.0" mnemonicParsing="false" onAction="#favoritesMethod" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #74c69d;" />
-                  <Button fx:id="home" layoutX="994.0" mnemonicParsing="false" onAction="#homeMethod" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #74c69d;" />
-                  <ImageView fitHeight="53.0" fitWidth="66.0" layoutX="1003.0">
+                  <Button fx:id="profile" layoutX="1144.0" layoutY="-1.0" mnemonicParsing="false" onAction="#profileMethod" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #308a5d;" />
+                  <Button fx:id="favorites" layoutX="1069.0" layoutY="-1.0" mnemonicParsing="false" onAction="#favoritesMethod" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #74c69d;" />
+                  <Button fx:id="home" layoutX="994.0" layoutY="-1.0" mnemonicParsing="false" onAction="#homeMethod" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #74c69d;" />
+                  <ImageView fitHeight="44.0" fitWidth="56.0" layoutX="1004.0" layoutY="5.0">
                      <image>
                         <Image url="@icon/home 2.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="53.0" fitWidth="58.0" layoutX="1078.0" layoutY="2.0">
+                  <ImageView fitHeight="56.0" fitWidth="66.0" layoutX="1074.0">
                      <image>
-                        <Image url="@icon/star.png" />
+                        <Image url="@icon/star.2.png" />
                      </image>
                   </ImageView>
-                  <ImageView layoutX="1156.0" layoutY="5.0">
+                  <ImageView layoutX="1158.0" layoutY="4.0">
                      <image>
                         <Image url="@icon/profile 2.png" />
                      </image>
                   </ImageView>
+                  <Text fill="#2d6a4f" layoutX="32.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MyProject">
+                     <font>
+                        <Font name="Bookman Old Style" size="30.0" />
+                     </font></Text>
                </children>
             </Pane>
             <Pane layoutX="460.0" layoutY="86.0" prefHeight="613.0" prefWidth="723.0" style="-fx-border-color: #40916c; -fx-border-radius: 10;">
@@ -59,17 +58,17 @@
                                     <Font name="Bookman Old Style" size="21.0" />
                                  </font>
                               </TextField>
-                              <Button fx:id="readForm" layoutX="354.0" layoutY="84.0" mnemonicParsing="false" onAction="#readFormMethod" prefHeight="44.0" prefWidth="225.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="READ FORM">
+                              <Button fx:id="readForm" layoutX="354.0" layoutY="84.0" mnemonicParsing="false" onAction="#readFormMethod" prefHeight="44.0" prefWidth="225.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="Read Form">
                                  <font>
                                     <Font name="Bookman Old Style" size="20.0" />
                                  </font>
                               </Button>
-                              <Button fx:id="delete" layoutX="354.0" layoutY="150.0" mnemonicParsing="false" onAction="#deleteMethod" prefHeight="44.0" prefWidth="225.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="DELETE">
+                              <Button fx:id="delete" layoutX="354.0" layoutY="150.0" mnemonicParsing="false" onAction="#deleteMethod" prefHeight="44.0" prefWidth="225.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="Delete">
                                  <font>
-                                    <Font size="20.0" />
+                                    <Font name="Bookman Old Style" size="20.0" />
                                  </font>
                               </Button>
-                              <Label layoutX="98.0" layoutY="30.0" prefHeight="53.0" prefWidth="444.0" text="Rossi Mario sent you a form.">
+                              <Label layoutX="126.0" layoutY="23.0" prefHeight="53.0" prefWidth="444.0" text="Rossi Mario sent you a form.">
                                  <font>
                                     <Font name="Bookman Old Style" size="28.0" />
                                  </font>
@@ -110,27 +109,27 @@
                   <Font name="Bookman Old Style" size="20.0" />
                </font>
             </Button>
-            <ImageView layoutX="73.0" layoutY="653.0">
+            <ImageView fitHeight="42.0" fitWidth="44.0" layoutX="73.0" layoutY="653.0">
                <image>
                   <Image url="@icon/back door 4.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="42.0" fitWidth="44.0" layoutX="73.0" layoutY="349.0">
+            <ImageView fitHeight="42.0" fitWidth="37.0" layoutX="75.0" layoutY="349.0">
                <image>
                   <Image url="@icon/personal card.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="35.0" fitWidth="44.0" layoutX="72.0" layoutY="521.0">
+            <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="75.0" layoutY="521.0">
                <image>
                   <Image url="@icon/question mark.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="42.0" fitWidth="48.0" layoutX="63.0" layoutY="405.0">
+            <ImageView fitHeight="37.0" fitWidth="48.0" layoutX="63.0" layoutY="405.0">
                <image>
                   <Image url="@icon/lock.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="44.0" fitWidth="44.0" layoutX="72.0" layoutY="292.0">
+            <ImageView fitHeight="42.0" fitWidth="37.0" layoutX="75.0" layoutY="292.0">
                <image>
                   <Image url="@icon/book services.png" />
                </image>
@@ -142,10 +141,10 @@
             </ImageView>
             <Button fx:id="notification" layoutX="63.0" layoutY="238.0" mnemonicParsing="false" onAction="#notificationMethod" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #308a5d; -fx-background-radius: 10;" text="Notification">
                <font>
-                  <Font size="20.0" />
+                  <Font name="Bookman Old Style" size="20.0" />
                </font>
             </Button>
-            <ImageView fitHeight="44.0" fitWidth="48.0" layoutX="75.0" layoutY="238.0">
+            <ImageView fitHeight="37.0" fitWidth="44.0" layoutX="75.0" layoutY="238.0">
                <image>
                   <Image url="@icon/bell con notifica.png" />
                </image>
