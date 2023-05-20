@@ -25,7 +25,7 @@
             <Font name="Bookman Old Style" size="15.0" />
          </font>
       </Text>
-      <TextField fx:id="passwordTextField" layoutX="660.0" layoutY="344.0" prefHeight="41.0" prefWidth="434.0" style="-fx-background-radius: 10;" />
+      <PasswordField fx:id="passwordTextField" layoutX="661.0" layoutY="340.0" prefHeight="41.0" prefWidth="434.0" style="-fx-background-radius: 10;" />
       <Text fill="#000000a8" layoutX="660.0" layoutY="334.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
          <font>
             <Font name="Bookman Old Style" size="15.0" />
