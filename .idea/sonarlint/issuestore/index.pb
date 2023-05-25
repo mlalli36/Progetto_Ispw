@@ -81,8 +81,6 @@ w
 G.idea/sonarlint/issuestore/6/5/65ab22a64fe15424cd8816d2342e76c802628de1,6\0\60a86091df9585563ee23fbfaab8fdcc07577b21
 g
 7src/main/java/com/example/progetto_ispw/SearchView.java,6\c\6c388e279bb0c3f7a6e647328c9697f68c3028fd
-g
-7src/main/java/com/example/progetto_ispw/SignUpView.java,3\a\3a5e8ea5a99c955b24728dfa0e769b1c075df805
 w
 G.idea/sonarlint/issuestore/4/d/4d55ec5c8919b6965dbfb4af1e471cf9a846bcac,1\5\15c0630f13ed1fa86a4b94128136afa881cadc5f
 w
@@ -1105,8 +1103,6 @@ Q.idea/sonarlint/securityhotspotstore/b/1/b1435d01887a6012afaaa13e48be8114425cab
 Q.idea/sonarlint/securityhotspotstore/a/b/ab3cdd686caf88d322c002e11a7297424e958c5a,d\5\d5fcff845f7f05418ac6ab1c68f4502338247fa7
 
 Q.idea/sonarlint/securityhotspotstore/a/e/ae6c633f31a1311bea239ec420603aa6fce97ad3,6\d\6d0a02646ab93e465762578a62bcfa052a2b954e
-N
-src/main/java/module-info.java,1\c\1c89a5491fbfda3fb050196d6a239f20200296e7
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 
@@ -1115,3 +1111,11 @@ Qsrc/main/java/com/example/progetto_ispw/login/exception/LoginFailedException.ja
 Rsrc/main/java/com/example/progetto_ispw/login/exception/UserNotFoundException.java,f\a\fa0b8255dde0a7f861340886c007806da19aaf34
 n
 >src/main/java/com/example/progetto_ispw/utile/DBConnector.java,2\5\2593bbb05478eca9dc614cbf85825d21e95c85cc
+l
+<src/main/java/com/example/progetto_ispw/User/UserEntity.java,3\6\36a15dfebcaa52143ec3a6b3f3f0e6aa679343f3
+e
+5src/main/java/com/example/progetto_ispw/StartApp.java,d\5\d5050a9bb413ecb53f33f9a68a24905418ecb49a
+l
+<src/main/java/com/example/progetto_ispw/login/LoginBean.java,f\8\f832c2a5fbaaaba359db50ab7613350b8f79677c
+i
+9src/main/java/com/example/progetto_ispw/User/UserDAO.java,5\c\5c4bab23777112e77860cf54c9447191e8fd309b

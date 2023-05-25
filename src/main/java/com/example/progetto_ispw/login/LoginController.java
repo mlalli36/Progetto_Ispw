@@ -14,7 +14,7 @@ import static java.lang.System.out;
 
 public class LoginController {
 
-     public static final String ENCRYPTION_KEY ="ISPW_PROJECT_WORKER-LINK_2023";
+     public static final String ENCRYPTION_KEY ="ISPWPROJECTWORKERLINK2023";
 
 
      public void loginUser(LoginBean bean) throws UserNotFoundException, LoginFailedException {
@@ -25,11 +25,11 @@ public class LoginController {
          dao.getUser(bean.getEmail());
          UserEntity user = UserEntity.getInstance();
 
-     //    String decryptedPassword = this.decryptPassword(user.getPassword());
-       //    System.out.println(user.getPassword());
-       //   System.out.println(bean.getPassword());    controllo delle password a schermo eliminare poi
+         String decryptedPassword = this.decryptPassword(user.getPassword());
+           System.out.println(decryptedPassword);
+           System.out.println(bean.getPassword());   // controllo delle password a schermo eliminare poi
 
-         if (!Objects.equals(user.getPassword(), bean.getPassword()))
+         if (!Objects.equals(decryptedPassword, bean.getPassword()))
              throw new LoginFailedException("The password is incorrect");
 
      }
@@ -37,7 +37,7 @@ public class LoginController {
 
 
     private String decryptPassword(String psw) {
-         //Viene passata la stringa criptata della password e non l'istanza
+        //Viene passata la stringa criptata della password e non l'istanza
         //dell'user così il metodo non deve conoscere come è realizzata la
         //classe user
 

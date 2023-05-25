@@ -71,8 +71,7 @@ public class LoginView {
                 LoginController controller  = new LoginController();
                 controller.loginUser(bean);
                 UIController viewController = UIController.getUIControllerInstance();//è singletone
-                //Stage stage = new Stage();
-              //  viewController.showHome(stage);
+
                 viewController.showHome();
 
             } catch (IllegalArgumentException | LoginFailedException exception) {

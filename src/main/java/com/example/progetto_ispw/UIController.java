@@ -1,5 +1,6 @@
 package com.example.progetto_ispw;
 
+import com.example.progetto_ispw.SignUp.SignUpView;
 import javafx.animation.FadeTransition;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -32,12 +33,6 @@ public class UIController {
     public void showHome() throws IOException{//mostra a schermo la home
         this.loadStage("interfacciaHome.fxml","home.css" );
     }
- /*   public void loadStage(String stageFxml) throws IOException{
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(stageFxml));
-        Scene scene = new Scene(fxmlLoader.load());
-        stage.setScene(scene);
-        stage.show();
-    }*/
 
     private void loadStage(String stageFXML, String stageCSS) throws IOException { //mostra a schermo la schermata passato con i parametri
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(stageFXML));
@@ -49,63 +44,30 @@ public class UIController {
         this.stage.setScene(new Scene(root1));
     }
 
-/*
-    public void showHome(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(StartApp.class.getResource("interfacciaHome.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Home");
-        stage.setScene(scene);
-        stage.show();
-
-    }
-*/
-
-
-
-
-
-    /*
-
-    public void showNotificheDaCliente() throws IOException{//mostra le notifiche da cliente
-        this.loadStage("interfaccia notifica da cliente.fxml");
+   public void showNotificheDaCliente() throws IOException{//mostra le notifiche da cliente
+        this.loadStage("interfaccia notifica da cliente.fxml","notificheDaCliente.css");
     }
 
     public void showProfileRecensione() throws IOException{//mostra il profilo sulla sezione recensione
-        this.loadStage("interfaccia profilerecensione.fxml");
+        this.loadStage("interfaccia profilerecensione.fxml","profileMyDetails.css");
     }
 
     public void showForm() throws IOException{//mostra il form
-        this.loadStage("interfacciaForm.fxml");
+        this.loadStage("interfacciaForm.fxml","form.css");
     }
 
     public void showProfileMyDetails() throws IOException{//mostra i dettagli del proprio profilo
-        this.loadStage("interfacciaprofileMyDetails.fxml");
+        this.loadStage("interfacciaprofileMyDetails.fxml","profileMyDetails.css");
     }
 
     public void showProfiloDinamica() throws  IOException{//mostra il profilo
-        this.loadStage("interfacciaprofilodinamica.fxml");
+        this.loadStage("interfacciaprofilodinamica.fxml", "profileMyDetails.css");
     }
 
     public void showSearchDinamica() throws IOException{//mostra la schermata di search
         //this.loadStage("interfacciaSearch Dinamica.fxml", "search.css");
-        this.loadStage("interfacciaSearch Dinamica.fxml");
-    }*/
-/*
-    private void loadStage(String stageFXML, String stageCSS) throws IOException { //mostra a schermo la schermata passato con i parametri
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(stageFXML));
-        Parent root1 = fxmlLoader.load();
-        root1.getStylesheets().add(Objects.requireNonNull(getClass().getResource(stageCSS)).toExternalForm());
-
-        this.fadeAnimation(root1, this.stage.getScene().getRoot());
-
-        this.stage.setScene(new Scene(root1));
-    }*/
-
-
-
-
-
-
+        this.loadStage("interfacciaSearch Dinamica.fxml","search.css");
+    }
 
     public String getPreviousFxml(){
         return  previousStageStyles[0];
@@ -151,6 +113,9 @@ public class UIController {
 
     public void setPreviousStageStyles(String[] previousStageStyles) {
         this.previousStageStyles = previousStageStyles;
+    }
+
+    public void showLogin() {
     }
 }
 
