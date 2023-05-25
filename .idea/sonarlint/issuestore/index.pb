@@ -1105,13 +1105,13 @@ Q.idea/sonarlint/securityhotspotstore/b/1/b1435d01887a6012afaaa13e48be8114425cab
 Q.idea/sonarlint/securityhotspotstore/a/b/ab3cdd686caf88d322c002e11a7297424e958c5a,d\5\d5fcff845f7f05418ac6ab1c68f4502338247fa7
 
 Q.idea/sonarlint/securityhotspotstore/a/e/ae6c633f31a1311bea239ec420603aa6fce97ad3,6\d\6d0a02646ab93e465762578a62bcfa052a2b954e
-e
-5src/main/java/com/example/progetto_ispw/StartApp.java,d\5\d5050a9bb413ecb53f33f9a68a24905418ecb49a
 N
 src/main/java/module-info.java,1\c\1c89a5491fbfda3fb050196d6a239f20200296e7
-o
-?src/main/java/com/example/progetto_ispw/login/UIController.java,1\8\18b010b0fb2c5c4a3fe442184a3bbfda2b10f15c
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 
 Qsrc/main/java/com/example/progetto_ispw/login/exception/LoginFailedException.java,f\e\fe0809c0fad405ea0f69eafdde9b8d16a3258ee9
+‚
+Rsrc/main/java/com/example/progetto_ispw/login/exception/UserNotFoundException.java,f\a\fa0b8255dde0a7f861340886c007806da19aaf34
+n
+>src/main/java/com/example/progetto_ispw/utile/DBConnector.java,2\5\2593bbb05478eca9dc614cbf85825d21e95c85cc

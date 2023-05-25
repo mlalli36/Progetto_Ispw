@@ -1,6 +1,5 @@
-package com.example.progetto_ispw.login;
+package com.example.progetto_ispw;
 
-import com.example.progetto_ispw.SignUpView;
 import javafx.animation.FadeTransition;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -17,9 +16,10 @@ public class UIController {
     private static UIController singleUIControllerInstance = null;
 
     private Stage stage;
-   private String[] previousStageStyles;  //tiene traccia del file .fxml ( previousStageStyle[0] e di quello .css (previousStageSyle[1])
-                                         //della schermata precedente, per poterli usare in caso di pulsante back
-                                        //con static non va
+    private String[] previousStageStyles;
+    //tiene traccia del file .fxml ( previousStageStyle[0] e di quello .css (previousStageSyle[1])
+    //della schermata precedente, per poterli usare in caso di pulsante back
+    //con static non va
     private UIController(){} // Singleton GoF Pattern applicato to UIController
 
     public static UIController getUIControllerInstance() {
@@ -30,32 +30,14 @@ public class UIController {
     }
 
     public void showHome() throws IOException{//mostra a schermo la home
-        this.loadStage("interfacciaHome.fxml","home.css");
+        this.loadStage("interfacciaHome.fxml","home.css" );
     }
-
-    public void showNotificheDaCliente() throws IOException{//mostra le notifiche da cliente
-        this.loadStage("interfaccia notifica da cliente.fxml" , " notificaDaCliente.css" );
-    }
-
-    public void showProfileRecensione() throws IOException{//mostra il profilo sulla sezione recensione
-        this.loadStage("interfaccia profilerecensione.fxml","recensione.css");
-    }
-
-    public void showForm() throws IOException{//mostra il form
-        this.loadStage("interfacciaForm.fxml","form.css");
-    }
-
-    public void showProfileMyDetails() throws IOException{//mostra i dettagli del proprio profilo
-        this.loadStage("interfacciaprofileMyDetails.fxml","profileMyDetails.css");
-    }
-
-    public void showProfiloDinamica() throws  IOException{//mostra il profilo
-        this.loadStage("interfacciaprofilodinamica.fxml","profileMyDetails.css");
-    }
-
-    public void showSearchDinamica() throws IOException{//mostra la schermata di search
-        this.loadStage("interfacciaSearch Dinamica.fxml", "search.css");
-    }
+ /*   public void loadStage(String stageFxml) throws IOException{
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(stageFxml));
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setScene(scene);
+        stage.show();
+    }*/
 
     private void loadStage(String stageFXML, String stageCSS) throws IOException { //mostra a schermo la schermata passato con i parametri
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(stageFXML));
@@ -66,6 +48,65 @@ public class UIController {
 
         this.stage.setScene(new Scene(root1));
     }
+
+/*
+    public void showHome(Stage stage) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(StartApp.class.getResource("interfacciaHome.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setTitle("Home");
+        stage.setScene(scene);
+        stage.show();
+
+    }
+*/
+
+
+
+
+
+    /*
+
+    public void showNotificheDaCliente() throws IOException{//mostra le notifiche da cliente
+        this.loadStage("interfaccia notifica da cliente.fxml");
+    }
+
+    public void showProfileRecensione() throws IOException{//mostra il profilo sulla sezione recensione
+        this.loadStage("interfaccia profilerecensione.fxml");
+    }
+
+    public void showForm() throws IOException{//mostra il form
+        this.loadStage("interfacciaForm.fxml");
+    }
+
+    public void showProfileMyDetails() throws IOException{//mostra i dettagli del proprio profilo
+        this.loadStage("interfacciaprofileMyDetails.fxml");
+    }
+
+    public void showProfiloDinamica() throws  IOException{//mostra il profilo
+        this.loadStage("interfacciaprofilodinamica.fxml");
+    }
+
+    public void showSearchDinamica() throws IOException{//mostra la schermata di search
+        //this.loadStage("interfacciaSearch Dinamica.fxml", "search.css");
+        this.loadStage("interfacciaSearch Dinamica.fxml");
+    }*/
+/*
+    private void loadStage(String stageFXML, String stageCSS) throws IOException { //mostra a schermo la schermata passato con i parametri
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(stageFXML));
+        Parent root1 = fxmlLoader.load();
+        root1.getStylesheets().add(Objects.requireNonNull(getClass().getResource(stageCSS)).toExternalForm());
+
+        this.fadeAnimation(root1, this.stage.getScene().getRoot());
+
+        this.stage.setScene(new Scene(root1));
+    }*/
+
+
+
+
+
+
+
     public String getPreviousFxml(){
         return  previousStageStyles[0];
     }

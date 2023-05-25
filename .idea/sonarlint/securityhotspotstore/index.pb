@@ -535,8 +535,6 @@ Q.idea/sonarlint/securityhotspotstore/2/d/2d9ece6e288de4e033ad2c6a351a679b53eb6b
 Q.idea/sonarlint/securityhotspotstore/2/e/2e1b0309bef0ee7d0efcb2d2cd6dff906bba8a5a,c\7\c7ef787811f9e7076359275b37390714af0e3221
 
 Q.idea/sonarlint/securityhotspotstore/1/e/1e08e3bf3602f7deb0866aa45b5f89bd6eef3a91,c\5\c5f8183ca7b9c47a535bf2b1e9de653f77287111
-e
-5src/main/java/com/example/progetto_ispw/StartApp.java,d\5\d5050a9bb413ecb53f33f9a68a24905418ecb49a
 
 Q.idea/sonarlint/securityhotspotstore/1/e/1e02f2bcf6cbf75179019f531671f5fb2230537e,7\0\7031eaffdde72d79e33278f8f4bde988c86debba
 
@@ -1109,9 +1107,11 @@ Q.idea/sonarlint/securityhotspotstore/b/1/b1435d01887a6012afaaa13e48be8114425cab
 Q.idea/sonarlint/securityhotspotstore/a/b/ab3cdd686caf88d322c002e11a7297424e958c5a,d\5\d5fcff845f7f05418ac6ab1c68f4502338247fa7
 
 Q.idea/sonarlint/securityhotspotstore/a/e/ae6c633f31a1311bea239ec420603aa6fce97ad3,6\d\6d0a02646ab93e465762578a62bcfa052a2b954e
-o
-?src/main/java/com/example/progetto_ispw/login/UIController.java,1\8\18b010b0fb2c5c4a3fe442184a3bbfda2b10f15c
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 
 Qsrc/main/java/com/example/progetto_ispw/login/exception/LoginFailedException.java,f\e\fe0809c0fad405ea0f69eafdde9b8d16a3258ee9
+‚
+Rsrc/main/java/com/example/progetto_ispw/login/exception/UserNotFoundException.java,f\a\fa0b8255dde0a7f861340886c007806da19aaf34
+n
+>src/main/java/com/example/progetto_ispw/utile/DBConnector.java,2\5\2593bbb05478eca9dc614cbf85825d21e95c85cc

@@ -12,8 +12,12 @@ public class StartApp extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(StartApp.class.getResource("login.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Mi offro.");
+        stage.setTitle("WORKER-LINK");
         stage.setScene(scene);
+
+        UIController viewController = UIController.getUIControllerInstance();
+        viewController.setStage(stage);
+
         stage.show();
     }
 // c'è un problema di percorso per trovare la schermata dice chatgpt

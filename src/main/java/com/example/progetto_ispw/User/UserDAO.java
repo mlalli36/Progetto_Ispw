@@ -31,7 +31,7 @@ public class UserDAO {
             Connection con = getConnector();
             if (con == null)
                 throw new SQLException();
-            String query = "SELECT Email, Password, Type FROM usersCredenziali WHERE Email = ?;";
+            String query = "SELECT Email, Password, Tipoaccesso FROM usersCredenziali WHERE Email = ?;";
             try (PreparedStatement preparedStatement = con.prepareStatement(query)) {
                 preparedStatement.setString(1, email);
                 ResultSet rs = preparedStatement.executeQuery();
@@ -41,7 +41,7 @@ public class UserDAO {
                 UserEntity user = UserEntity.getInstance();
                 user.setEmail(rs.getString("Email"));
                 user.setPassword(rs.getString("Password"));
-                user.setType(rs.getString("Type"));
+                user.setType(rs.getString("Tipoaccesso"));
                 rs.close();
 
             }

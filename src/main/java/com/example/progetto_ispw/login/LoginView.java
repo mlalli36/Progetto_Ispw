@@ -1,5 +1,6 @@
 package com.example.progetto_ispw.login;
 
+import com.example.progetto_ispw.UIController;
 import com.example.progetto_ispw.login.exception.LoginFailedException;
 import com.example.progetto_ispw.login.exception.UserNotFoundException;
 
@@ -13,6 +14,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 
 import java.io.IOException;
@@ -69,6 +71,8 @@ public class LoginView {
                 LoginController controller  = new LoginController();
                 controller.loginUser(bean);
                 UIController viewController = UIController.getUIControllerInstance();//è singletone
+                //Stage stage = new Stage();
+              //  viewController.showHome(stage);
                 viewController.showHome();
 
             } catch (IllegalArgumentException | LoginFailedException exception) {
@@ -85,7 +89,11 @@ public class LoginView {
     }
 
 
-    
+    public void precompleSignup() throws IOException {
+        UIController viewController = UIController.getUIControllerInstance();
+        viewController.precompileSignUp(emailTextField.getText(), passwordTextField.getText());
+    }
 }
+
 
 
