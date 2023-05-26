@@ -1113,9 +1113,11 @@ n
 >src/main/java/com/example/progetto_ispw/utile/DBConnector.java,2\5\2593bbb05478eca9dc614cbf85825d21e95c85cc
 l
 <src/main/java/com/example/progetto_ispw/User/UserEntity.java,3\6\36a15dfebcaa52143ec3a6b3f3f0e6aa679343f3
-e
-5src/main/java/com/example/progetto_ispw/StartApp.java,d\5\d5050a9bb413ecb53f33f9a68a24905418ecb49a
 l
 <src/main/java/com/example/progetto_ispw/login/LoginBean.java,f\8\f832c2a5fbaaaba359db50ab7613350b8f79677c
 i
 9src/main/java/com/example/progetto_ispw/User/UserDAO.java,5\c\5c4bab23777112e77860cf54c9447191e8fd309b
+r
+Bsrc/main/java/com/example/progetto_ispw/login/LoginController.java,5\0\5003bf1b1ff7abbff84d41413db43c45a6e935ce
+t
+Dsrc/main/resources/com/example/progetto_ispw/interfaccia SignUp.fxml,f\1\f13492059c8eeef61f286521503571270f1bc438

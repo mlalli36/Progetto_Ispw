@@ -1,4 +1,4 @@
-package com.example.progetto_ispw.SignUp;
+package com.example.progetto_ispw.signUp;
 
 
 import com.example.progetto_ispw.login.LoginBean;

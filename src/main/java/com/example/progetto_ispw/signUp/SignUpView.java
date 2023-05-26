@@ -1,13 +1,13 @@
-package com.example.progetto_ispw.SignUp;
+package com.example.progetto_ispw.signUp;
 
-import com.example.progetto_ispw.SignUp.exception.DifferentPasswordException;
-import com.example.progetto_ispw.SignUp.exception.UserAlreadyExistsException;
 import com.example.progetto_ispw.UIController;
 import com.example.progetto_ispw.login.exception.LoginFailedException;
-import javafx.event.ActionEvent;
+import com.example.progetto_ispw.signUp.exception.DifferentPasswordException;
+import com.example.progetto_ispw.signUp.exception.UserAlreadyExistsException;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
@@ -35,6 +35,8 @@ public class SignUpView {
     public CheckBox checkClient;
     @FXML
     public CheckBox checkWorker;
+    @FXML
+    public Label statusLabel;
 
 
     public void goToLogIn() throws IOException {
@@ -50,19 +52,21 @@ public class SignUpView {
             bean.setEmail(emailTextFieldSignUp.getText());
             bean.setPsw(passwordTextFieldSignUp.getText());
             bean.setConfirmPsw(confirmPasswordTextFieldSignUp.getText());
-            bean.setOwner(isOwnerCheckBox.isSelected());
+            bean.setOwner(checkWorker.isSelected());
             SignUpController controller = new SignUpController();
             controller.signUpUser(bean);
             UIController.getUIControllerInstance().showSettings();
 
 
-        } catch (DifferentPasswordException e) {
-            statusLabel.setText("Passwords are not the same, check them and try again");
-        } catch (LoginFailedException e) {
+        }// catch (DifferentPasswordException e) {
+           // statusLabel.setText("Passwords are not the same, check them and try again");
+        //}
+        catch (LoginFailedException e) {
             statusLabel.setText("The email is not valid");
-        } catch (UserAlreadyExistsException e) {
-            statusLabel.setText("User already registered. Go to Log In!");
-        } finally {
+        } //catch (UserAlreadyExistsException e) {
+            //statusLabel.setText("User already registered. Go to Log In!");
+        //}
+        finally {
             statusLabel.setOpacity(1);
         }
 
@@ -75,20 +79,3 @@ public class SignUpView {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}

@@ -60,6 +60,7 @@
             <Font name="Bookman Old Style" size="13.0" />
          </font>
       </Text>
+      <Button fx:id="createAccountButton" layoutX="873.0" layoutY="555.0" mnemonicParsing="false" onAction="#showSignUp" opacity="0.0" prefHeight="25.0" prefWidth="97.0" />
          <opaqueInsets>
             <Insets />
          </opaqueInsets>

@@ -1,6 +1,6 @@
 package com.example.progetto_ispw;
 
-import com.example.progetto_ispw.SignUp.SignUpView;
+import com.example.progetto_ispw.signUp.SignUpView;
 import javafx.animation.FadeTransition;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -34,6 +34,9 @@ public class UIController {
         this.loadStage("interfacciaHome.fxml","home.css" );
     }
 
+    public void showLogin() throws IOException {//mostra la schermata login, la invoco dopo la registrazione
+        this.loadStage("login.fxml","login.css");
+    }
     private void loadStage(String stageFXML, String stageCSS) throws IOException { //mostra a schermo la schermata passato con i parametri
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(stageFXML));
         Parent root1 = fxmlLoader.load();
@@ -115,7 +118,8 @@ public class UIController {
         this.previousStageStyles = previousStageStyles;
     }
 
-    public void showLogin() {
+
+    public void showSettings() { // da implementare
     }
 }
 
