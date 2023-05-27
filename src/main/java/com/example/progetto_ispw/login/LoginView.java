@@ -1,16 +1,11 @@
 package com.example.progetto_ispw.login;
 
-import com.example.progetto_ispw.StartApp;
 import com.example.progetto_ispw.UIController;
 import com.example.progetto_ispw.login.exception.LoginFailedException;
 import com.example.progetto_ispw.login.exception.UserNotFoundException;
 
-import com.example.progetto_ispw.signUp.SignUpView;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
@@ -18,7 +13,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
 
 
 import java.io.IOException;
@@ -64,7 +58,7 @@ public class LoginView {
     public TextField passwordTextFieldSignUp;
     @FXML
     public Button createAccountButton;
-    private ActionEvent clickbutton;
+
 
 
     public void loginMethod() throws IOException{
@@ -91,8 +85,6 @@ public class LoginView {
 
     }
 
-    public void signUpMethod(ActionEvent actionEvent) { //da implementare
-    }
 
 
     public void precompleSignup() throws IOException {
@@ -101,31 +93,9 @@ public class LoginView {
     }
 
 
-
-/*
-    public void showSignUp(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("interfaccia SignUp.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("SignUp");
-        stage.setScene(scene);
-
-        UIController viewController = UIController.getUIControllerInstance();
-        viewController.setStage(stage);
-
-        stage.show();
-    }*/
-
-    public void showSignUp(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(StartApp.class.getResource("interfaccia SignUp.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        Stage stage = new Stage();
-        stage.setTitle("SignUp");
-        stage.setScene(scene);
-
-        UIController viewController = UIController.getUIControllerInstance();
-        viewController.setStage(stage);
-
-        stage.show();
+    public void showSignUp() throws IOException {
+      UIController controller = UIController.getUIControllerInstance();
+      controller.showSignUp();
     }
 }
 

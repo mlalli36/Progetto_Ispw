@@ -1,6 +1,6 @@
 package com.example.progetto_ispw;
 
-import com.example.progetto_ispw.signUp.SignUpView;
+import com.example.progetto_ispw.signup.SignUpView;
 import javafx.animation.FadeTransition;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -36,6 +36,9 @@ public class UIController {
 
     public void showLogin() throws IOException {//mostra la schermata login, la invoco dopo la registrazione
         this.loadStage("login.fxml","login.css");
+    }
+    public void showSignUp() throws IOException {//mostra la schermata login, la invoco dopo la registrazione
+        this.loadStage("interfaccia SignUp.fxml","signup.css");
     }
     private void loadStage(String stageFXML, String stageCSS) throws IOException { //mostra a schermo la schermata passato con i parametri
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(stageFXML));
