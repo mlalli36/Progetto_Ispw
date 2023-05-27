@@ -10,6 +10,8 @@ public class LoginBean {
     protected String email = null;
     protected String password = null;
 
+
+
     //Regex di una email valida, da usare per confrontarla con quella dell'utente
     private static final Pattern VALID_EMAIL_ADDRESS_REGEX = Pattern.compile("^[A-Z0-9.%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
 

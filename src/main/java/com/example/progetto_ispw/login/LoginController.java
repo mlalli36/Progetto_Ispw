@@ -1,7 +1,7 @@
 package com.example.progetto_ispw.login;
 
-import com.example.progetto_ispw.User.UserDAO;
-import com.example.progetto_ispw.User.UserEntity;
+import com.example.progetto_ispw.user.UserDAO;
+import com.example.progetto_ispw.user.UserEntity;
 import com.example.progetto_ispw.login.exception.LoginFailedException;
 import com.example.progetto_ispw.login.exception.UserNotFoundException;
 import org.jasypt.encryption.pbe.StandardPBEStringEncryptor;
@@ -9,8 +9,6 @@ import org.jasypt.salt.ZeroSaltGenerator;
 
 
 import java.util.Objects;
-
-import static java.lang.System.out;
 
 public class LoginController {
 
@@ -25,11 +23,12 @@ public class LoginController {
          dao.getUser(bean.getEmail());
          UserEntity user = UserEntity.getInstance();
 
-         String decryptedPassword = this.decryptPassword(user.getPassword());
-           System.out.println(decryptedPassword);
-           System.out.println(bean.getPassword());   // controllo delle password a schermo eliminare poi
+         System.out.println(bean.getPassword());   // controllo delle password a schermo eliminare poi
+         String decryptPassword = this.decryptPassword(user.getPassword());
+         System.out.println(decryptPassword);
 
-         if (!Objects.equals(decryptedPassword, bean.getPassword()))
+
+         if (!Objects.equals(decryptPassword, bean.getPassword()))
              throw new LoginFailedException("The password is incorrect");
 
      }
@@ -47,7 +46,7 @@ public class LoginController {
 
         //Non utilizzare salt per l'encryption, così da avere
         //risultati uguali ogni volta che si cripta e decripta la
-        //la stessa parola
+        //stessa parola
 
         return encryptor.decrypt(psw);
     }
