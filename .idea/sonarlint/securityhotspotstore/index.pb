@@ -1095,13 +1095,23 @@ Q.idea/sonarlint/securityhotspotstore/b/1/b1435d01887a6012afaaa13e48be8114425cab
 Q.idea/sonarlint/securityhotspotstore/a/b/ab3cdd686caf88d322c002e11a7297424e958c5a,d\5\d5fcff845f7f05418ac6ab1c68f4502338247fa7
 Å
 Q.idea/sonarlint/securityhotspotstore/a/e/ae6c633f31a1311bea239ec420603aa6fce97ad3,6\d\6d0a02646ab93e465762578a62bcfa052a2b954e
-7
-pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 Ç
 Rsrc/main/java/com/example/progetto_ispw/login/exception/UserNotFoundException.java,f\a\fa0b8255dde0a7f861340886c007806da19aaf34
 n
 >src/main/java/com/example/progetto_ispw/utile/DBConnector.java,2\5\2593bbb05478eca9dc614cbf85825d21e95c85cc
 t
 Dsrc/main/resources/com/example/progetto_ispw/interfaccia SignUp.fxml,f\1\f13492059c8eeef61f286521503571270f1bc438
-à
-Xsrc/main/java/com/example/progetto_ispw/signUp/exception/DifferentPasswordException.java,f\5\f5fe293c8b67629b76ec35b630be36d2ec9b3f5b
+w
+G.idea/sonarlint/issuestore/2/5/2593bbb05478eca9dc614cbf85825d21e95c85cc,9\d\9dbfeef11662191e7303de49b5315e8e771f19a1
+Å
+Q.idea/sonarlint/securityhotspotstore/5/4/54e10b79611c4c6073a983c48a04ce4d6518e769,9\e\9e354ca74380c165277536a7a225c3d9221fe613
+Å
+Q.idea/sonarlint/securityhotspotstore/2/5/2593bbb05478eca9dc614cbf85825d21e95c85cc,e\5\e5fb5f391f06ff8b7b7bbc53e0802ea1bd51cee1
+7
+pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
+e
+5src/main/java/com/example/progetto_ispw/StartApp.java,d\5\d5050a9bb413ecb53f33f9a68a24905418ecb49a
+r
+Bsrc/main/java/com/example/progetto_ispw/login/LoginController.java,5\0\5003bf1b1ff7abbff84d41413db43c45a6e935ce
+Å
+Qsrc/main/java/com/example/progetto_ispw/login/exception/LoginFailedException.java,f\e\fe0809c0fad405ea0f69eafdde9b8d16a3258ee9

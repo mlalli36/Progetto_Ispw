@@ -1,6 +1,8 @@
 package com.example.progetto_ispw.signup;
 
 
+import com.example.progetto_ispw.signup.exception.DifferentPasswordException;
+import com.example.progetto_ispw.signup.exception.UserAlreadyExistsException;
 import com.example.progetto_ispw.user.UserDAO;
 import org.jasypt.encryption.pbe.StandardPBEStringEncryptor;
 import org.jasypt.salt.ZeroSaltGenerator;
@@ -18,7 +20,7 @@ public class SignUpController {
         checkedPassword = bean.getPsw(); //Se sono uguali è indifferente scegliere la prima o la seconda
         String encryptedPassword = this.encryptPassword(checkedPassword);
         String tipoaccesso = bean.isWorker() ? "Worker" : "Client";
-        dao.addUser(bean.getEmail(), encryptedPassword,tipoaccesso);
+        dao.addUser(bean.getName(), bean.getSurname(), bean.getEmail(), encryptedPassword,tipoaccesso);
        // UserEntity user = UserEntity.getInstance();
     }
 

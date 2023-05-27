@@ -2,6 +2,8 @@ package com.example.progetto_ispw.signup;
 
 import com.example.progetto_ispw.UIController;
 import com.example.progetto_ispw.login.exception.LoginFailedException;
+import com.example.progetto_ispw.signup.exception.DifferentPasswordException;
+import com.example.progetto_ispw.signup.exception.UserAlreadyExistsException;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
@@ -47,6 +49,8 @@ public class SignUpView {
         try{
 
             SignUpBean bean = new SignUpBean();
+            bean.setName(nomeTextFieldSignUp.getText());
+            bean.setSurname(cognomeTextFieldSignUp.getText());
             bean.setEmail(emailTextFieldSignUp.getText());
             bean.setPsw(passwordTextFieldSignUp.getText());
             bean.setConfirmPsw(confirmPasswordTextFieldSignUp.getText());

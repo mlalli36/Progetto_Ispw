@@ -1,7 +1,7 @@
 package com.example.progetto_ispw.user;
 
 import com.example.progetto_ispw.login.exception.UserNotFoundException;
-import com.example.progetto_ispw.signup.UserAlreadyExistsException;
+import com.example.progetto_ispw.signup.exception.UserAlreadyExistsException;
 
 import java.sql.*;
 
@@ -52,15 +52,18 @@ public class UserDAO {
 
 
 
-   public void addUser(String email, String password,String tipoaccesso) throws UserAlreadyExistsException {
+   public void addUser(String name, String surname, String email, String password,String tipoaccesso) throws UserAlreadyExistsException {
         try (Connection con = getConnector()) {
             if (con == null)
                 throw new SQLException();
-            String query = "INSERT INTO `databaseispw`.`userscredenziali` (`Email`, `Password`,`Tipoaccesso`) VALUES (?, ?, ?);";
+            String query = "INSERT INTO `databaseispw`.`usersCredenziali` (`Nome`,`Cognome`,`Email`, `Password`,`Tipoaccesso`) VALUES (?, ?, ?, ?, ?);";
             try (PreparedStatement preparedStatement = con.prepareStatement(query)) {
-                preparedStatement.setString(1, email);
-                preparedStatement.setString(2, password);
-                preparedStatement.setString(3, tipoaccesso);
+                preparedStatement.setString(1, name);
+                preparedStatement.setString(2, surname);
+                preparedStatement.setString(3, email);
+                preparedStatement.setString(4, password);
+                preparedStatement.setString(5, tipoaccesso);
+
                 preparedStatement.executeUpdate();
                 UserEntity user = UserEntity.getInstance();
                 user.setEmail(email);

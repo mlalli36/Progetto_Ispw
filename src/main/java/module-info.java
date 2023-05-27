@@ -15,4 +15,6 @@ module com.example.progetto_ispw {
     opens com.example.progetto_ispw.user to javafx.fxml;
     exports com.example.progetto_ispw.signup;
     opens com.example.progetto_ispw.signup to javafx.fxml;
+    exports com.example.progetto_ispw.signup.exception;
+    opens com.example.progetto_ispw.signup.exception to javafx.fxml;
 }

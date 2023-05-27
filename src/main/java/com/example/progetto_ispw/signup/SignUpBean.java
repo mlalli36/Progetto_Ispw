@@ -8,8 +8,16 @@ public class SignUpBean extends LoginBean {
     private String Psw;
     private String confirmPsw;
     private boolean isWorker;
+    private String name;
+    private String surname;
 
+    public void setName(String name) {
+        this.name=name;
+    }
 
+    public void setSurname(String surname) {
+        this.surname=surname;
+    }
     public void setWorker(boolean worker) {
         isWorker = worker;
     }
@@ -38,6 +46,13 @@ public class SignUpBean extends LoginBean {
 
     public String getConfirmPsw() {
         return confirmPsw;
+    }
+
+
+    public String getName() { return name;
+    }
+
+    public String getSurname() { return surname;
     }
 }
 

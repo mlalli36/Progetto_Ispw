@@ -5,6 +5,7 @@ public class UserEntity {
     private String email;
     private String password;
     private String tipoaccesso;
+
     private static UserEntity singleInstance = null;
 
 
@@ -32,14 +33,5 @@ public class UserEntity {
     public String getPassword() {
         return password;
     }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getTipoaccesso() {
-        return tipoaccesso;
-    }
-
 
 }

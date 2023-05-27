@@ -4,6 +4,7 @@ import com.example.progetto_ispw.UIController;
 import com.example.progetto_ispw.login.exception.LoginFailedException;
 import com.example.progetto_ispw.login.exception.UserNotFoundException;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
 import javafx.scene.control.Button;
@@ -11,6 +12,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 
@@ -20,8 +22,7 @@ import java.io.IOException;
 public class LoginView {
     @FXML
     public AnchorPane anchorPaneLogin;
-    @FXML
-    public CheckBox rememberMe;
+
     @FXML
     public Button login;
     @FXML
@@ -30,8 +31,7 @@ public class LoginView {
     public TextField passwordTextField;
     @FXML
     public TextField emailTextField;
-    @FXML
-    public Text popUpPane;
+
     @FXML
     public Button signUp;
     @FXML
@@ -58,7 +58,12 @@ public class LoginView {
     public TextField passwordTextFieldSignUp;
     @FXML
     public Button createAccountButton;
-
+    @FXML
+    public Pane popUpPane;
+    @FXML
+    public Button goToSignUp;
+    @FXML
+    public Button Back;
 
 
     public void loginMethod() throws IOException{
@@ -67,6 +72,7 @@ public class LoginView {
             LoginBean bean = new LoginBean();
 
             try {
+
                 bean.setEmail(emailTextField.getText());
                 bean.setPassword(passwordTextField.getText());
                 LoginController controller  = new LoginController();
@@ -86,16 +92,14 @@ public class LoginView {
     }
 
 
-
-    public void precompleSignup() throws IOException {
-        UIController viewController = UIController.getUIControllerInstance();
-        viewController.precompileSignUp(emailTextField.getText(), passwordTextField.getText());
-    }
-
-
     public void showSignUp() throws IOException {
       UIController controller = UIController.getUIControllerInstance();
       controller.showSignUp();
+    }
+
+    public void precompiledSignUp() throws IOException{
+        UIController viewController = UIController.getUIControllerInstance();
+        viewController.precompileSignUp(emailTextField.getText(), passwordTextField.getText());
     }
 }
 
