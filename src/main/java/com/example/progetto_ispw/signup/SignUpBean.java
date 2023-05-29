@@ -5,7 +5,7 @@ import com.example.progetto_ispw.login.LoginBean;
 
 public class SignUpBean extends LoginBean {
 
-    private String Psw;
+    private String psw;
     private String confirmPsw;
     private boolean isWorker;
     private String name;
@@ -22,10 +22,10 @@ public class SignUpBean extends LoginBean {
         isWorker = worker;
     }
 
-    public void setPsw(String Psw) {
-        if (Psw.isEmpty())
+    public void setPsw(String psw) {
+        if (psw.isEmpty())
             throw new IllegalArgumentException("Password cannot be empty");
-        this.Psw = Psw;
+        this.psw = psw;
     }
 
     public void setConfirmPsw(String confirmPsw) {
@@ -41,7 +41,7 @@ public class SignUpBean extends LoginBean {
 
 
     public String getPsw() {
-        return Psw;
+        return psw;
     }
 
     public String getConfirmPsw() {
