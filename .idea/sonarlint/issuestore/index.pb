@@ -1107,8 +1107,6 @@ Q.idea/sonarlint/securityhotspotstore/5/4/54e10b79611c4c6073a983c48a04ce4d6518e7
 Q.idea/sonarlint/securityhotspotstore/2/5/2593bbb05478eca9dc614cbf85825d21e95c85cc,e\5\e5fb5f391f06ff8b7b7bbc53e0802ea1bd51cee1
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
-e
-5src/main/java/com/example/progetto_ispw/StartApp.java,d\5\d5050a9bb413ecb53f33f9a68a24905418ecb49a
 Å
 Qsrc/main/java/com/example/progetto_ispw/login/exception/LoginFailedException.java,f\e\fe0809c0fad405ea0f69eafdde9b8d16a3258ee9
 à
