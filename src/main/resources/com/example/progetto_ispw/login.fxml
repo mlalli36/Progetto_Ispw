@@ -73,9 +73,9 @@
    <Label fx:id="errorLabel" layoutX="668.0" layoutY="597.0" prefHeight="99.0" prefWidth="434.0" style="-fx-opacity: 0;" text="email or password is not valid, check and retry." />
    <Pane fx:id="popUpPane" layoutX="30.0" layoutY="34.0" opacity="0.0" prefHeight="666.0" prefWidth="531.0" style="-fx-background-color: ffffff;">
       <children>
-         <Text layoutX="59.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="We couldn't find your email in our system." wrappingWidth="413.9970703125001">
+         <Text fill="#ff0101" layoutX="30.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="We couldn't find your email in our system." wrappingWidth="480.00003051757824">
             <font>
-               <Font name="Bookman Old Style" size="18.0" />
+               <Font name="Bookman Old Style" size="22.0" />
             </font>
          </Text>
          <Text layoutX="59.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="It looks like we couldn't find your email in our system.                                            Please check the spell of your email and try again.                                 If you are not registered, please press the &quot;Go To Sign Up&quot; button below to open the registration page." wrappingWidth="423.4000000000001">

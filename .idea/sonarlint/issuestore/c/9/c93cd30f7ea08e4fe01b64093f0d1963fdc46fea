@@ -1,0 +1,9 @@
+
+v
+java:S1450"TRemove the "email" field and declare it as a local variable in the relevant methods.(ª«Õìùÿÿÿÿ8«ıîö…1
+|
+java:S1450"ZRemove the "tipoaccesso" field and declare it as a local variable in the relevant methods.(¸å¤Úúÿÿÿÿ8¹´üö…1
+K
+java:S1068")Remove this unused "email" private field.(ª«Õìùÿÿÿÿ8»ıîö…1
+Q
+java:S1068"/Remove this unused "tipoaccesso" private field.(¸å¤Úúÿÿÿÿ8Á´üö…1

@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class StartApp extends Application {
     @Override
@@ -14,6 +15,7 @@ public class StartApp extends Application {
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("WORKER-LINK");
         stage.setScene(scene);
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("Login.css")).toExternalForm());
 
         UIController viewController = UIController.getUIControllerInstance();
         viewController.setStage(stage);
