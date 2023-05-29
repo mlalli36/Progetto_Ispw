@@ -1095,8 +1095,6 @@ Q.idea/sonarlint/securityhotspotstore/b/1/b1435d01887a6012afaaa13e48be8114425cab
 Q.idea/sonarlint/securityhotspotstore/a/b/ab3cdd686caf88d322c002e11a7297424e958c5a,d\5\d5fcff845f7f05418ac6ab1c68f4502338247fa7
 Å
 Q.idea/sonarlint/securityhotspotstore/a/e/ae6c633f31a1311bea239ec420603aa6fce97ad3,6\d\6d0a02646ab93e465762578a62bcfa052a2b954e
-Ç
-Rsrc/main/java/com/example/progetto_ispw/login/exception/UserNotFoundException.java,f\a\fa0b8255dde0a7f861340886c007806da19aaf34
 n
 >src/main/java/com/example/progetto_ispw/utile/DBConnector.java,2\5\2593bbb05478eca9dc614cbf85825d21e95c85cc
 t
@@ -1113,5 +1111,11 @@ e
 5src/main/java/com/example/progetto_ispw/StartApp.java,d\5\d5050a9bb413ecb53f33f9a68a24905418ecb49a
 Å
 Qsrc/main/java/com/example/progetto_ispw/login/exception/LoginFailedException.java,f\e\fe0809c0fad405ea0f69eafdde9b8d16a3258ee9
-r
-Bsrc/main/java/com/example/progetto_ispw/login/LoginController.java,5\0\5003bf1b1ff7abbff84d41413db43c45a6e935ce
+à
+Xsrc/main/java/com/example/progetto_ispw/signup/exception/DifferentPasswordException.java,7\c\7c4c8a37acb2001febe203769890ced1be0d4849
+N
+src/main/java/module-info.java,1\c\1c89a5491fbfda3fb050196d6a239f20200296e7
+à
+Xsrc/main/java/com/example/progetto_ispw/signup/exception/UserAlreadyExistsException.java,8\4\84e313fa1a38b402cd0c62f5e03ccb5e2d878fd9
+l
+<src/main/java/com/example/progetto_ispw/user/UserEntity.java,c\9\c93cd30f7ea08e4fe01b64093f0d1963fdc46fea
