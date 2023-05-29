@@ -1145,3 +1145,15 @@ r
 Bsrc/main/java/com/example/progetto_ispw/login/LoginController.java,5\0\5003bf1b1ff7abbff84d41413db43c45a6e935ce
 l
 <src/main/java/com/example/progetto_ispw/login/LoginBean.java,f\8\f832c2a5fbaaaba359db50ab7613350b8f79677c
+h
+8src/main/java/com/example/progetto_ispw/ProfileView.java,5\0\5025fdf1eeb44afc04e9d1614d293bae9f49b294
+n
+>src/main/java/com/example/progetto_ispw/signup/SignUpBean.java,c\a\cada8ba157ac582f44dcbbcf93caced5ec6ff1c2
+i
+9src/main/java/com/example/progetto_ispw/UIController.java,8\4\842b801d61f704170ddfeb7e912ad03afb118c22
+l
+<src/main/java/com/example/progetto_ispw/login/LoginView.java,b\4\b45fbdcb11c621f884809975bf7c71d4fefe56bc
+n
+>src/main/java/com/example/progetto_ispw/ProfileSignUpView.java,5\9\595a7c41cc07097687614d7220cd6a5f72e70dd1
+n
+>src/main/java/com/example/progetto_ispw/signup/SignUpView.java,2\b\2b6efe551a938dd5b2ec467e444badbc167b55e2

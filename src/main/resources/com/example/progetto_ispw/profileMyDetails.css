@@ -13,7 +13,7 @@
 
 .button:pressed{
 
-    -fx-rotate: 5;
+    -fx-rotate: 2;
 
 }
 .button{
