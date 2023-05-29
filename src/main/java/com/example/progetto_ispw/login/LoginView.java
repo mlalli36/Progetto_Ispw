@@ -63,7 +63,7 @@ public class LoginView {
     @FXML
     public Button goToSignUp;
     @FXML
-    public Button Back;
+    public Button back;
 
 
     public void loginMethod() throws IOException{
@@ -90,14 +90,12 @@ public class LoginView {
             }
 
     }
-
-
     public void showSignUp() throws IOException {
       UIController controller = UIController.getUIControllerInstance();
       controller.showSignUp();
     }
 
-    public void precompiledSignUp() throws IOException{
+    public void precompiledSignUp() throws IOException {
         UIController viewController = UIController.getUIControllerInstance();
         viewController.precompileSignUp(emailTextField.getText(), passwordTextField.getText());
     }

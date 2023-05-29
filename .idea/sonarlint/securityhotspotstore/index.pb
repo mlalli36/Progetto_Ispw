@@ -1,6 +1,4 @@
 
-h
-8src/main/java/com/example/progetto_ispw/ProfileView.java,5\0\5025fdf1eeb44afc04e9d1614d293bae9f49b294
 r
 Bsrc/main/java/com/example/progetto_ispw/ProfileRecensioneView.java,6\c\6c56ef9540d9bf3d41c6c35ac6307bfb43cb381d
 p
@@ -169,8 +167,6 @@ Q.idea/sonarlint/securityhotspotstore/f/9/f9c2d1030a3af9bdb5b4d5084f68217c109a8b
 Q.idea/sonarlint/securityhotspotstore/0/7/075cdb50b5befcd0c282bc5ec5877be88e3a1e4a,6\5\65916768ecad2c13236d60b915c543af7db8e295
 w
 G.idea/sonarlint/issuestore/b/2/b2a22d50b129454c1bfae023aa5dee6ee2d5b077,3\6\36ba9e534e1688380e018ff751e34eb792807b1f
-Å
-Q.idea/sonarlint/securityhotspotstore/8/1/810e5fd8e3026dbf6c5a1a90371f7b57a4328b58,d\9\d9975bd9b57d71671a970cd0636db94581d9a1a7
 Å
 Q.idea/sonarlint/securityhotspotstore/4/c/4cb0e8e4d29258d71a4161df8676c9ecf23761d8,3\5\35a6d4ea77c3014eb2e34b8137d7631d0b5e18ad
 w
@@ -403,8 +399,6 @@ w
 G.idea/sonarlint/issuestore/4/c/4cb0e8e4d29258d71a4161df8676c9ecf23761d8,e\5\e51fcbea68de4941008a14541e11979121176c0e
 Å
 Q.idea/sonarlint/securityhotspotstore/f/6/f6d8310b47b1802ff534ff6900f24d2d3b76c4f1,d\4\d49052b5c99e4aed190a06219a866f7dc2d8b67d
-w
-G.idea/sonarlint/issuestore/8/1/810e5fd8e3026dbf6c5a1a90371f7b57a4328b58,5\f\5fa186f8db447d2f4c0525f09cf66aeea3657ad4
 w
 G.idea/sonarlint/issuestore/5/1/51a0a4a1bb60f1358f43f25e4d1fdbda9bc0c0a9,0\2\02a6240867fa19e19bcec43550900e0c03c31b59
 w
@@ -848,8 +842,6 @@ Q.idea/sonarlint/securityhotspotstore/8/b/8b9f6755f26962983414a19a402e114bc958b2
 Å
 Q.idea/sonarlint/securityhotspotstore/6/1/612f86043ed5ae5e2f75f63a640a618596fc00f8,8\d\8dc2f9f20ababf673cce8378069f36e0b12b109e
 Å
-Q.idea/sonarlint/securityhotspotstore/5/f/5fa186f8db447d2f4c0525f09cf66aeea3657ad4,b\f\bf3d6a7a7bd1a6df1826f64bf1c43edb5729ecfd
-Å
 Q.idea/sonarlint/securityhotspotstore/9/7/97fa0d7370c657d0cb422af6ba136bdb2f29aa21,0\4\0425908afffba92104080b3170975e597e03bb32
 Å
 Q.idea/sonarlint/securityhotspotstore/5/1/514b6d877eef468c1c9a41623112799416b0a485,1\7\17c3a69553b4b8fdc13058850602d237b53f93e2
@@ -877,8 +869,6 @@ Q.idea/sonarlint/securityhotspotstore/5/e/5e45823ad9dd6c09ffc53115b5ec2f192af4f1
 Q.idea/sonarlint/securityhotspotstore/d/c/dc359b71d9b83aaa81b1cc50b1230bfafcd1ed0d,2\3\23080e0d47bf4afc0fcf73d59bf083217c113912
 Å
 Q.idea/sonarlint/securityhotspotstore/e/a/ea59b6e41422834c2894964e22c2987e55a243b1,9\3\9375b9456082b6751980ccb07771de9a242dbf42
-Å
-Q.idea/sonarlint/securityhotspotstore/d/9/d9975bd9b57d71671a970cd0636db94581d9a1a7,0\c\0c643fec634ab72e1a7457faf3469cc6214e2dc8
 Å
 Q.idea/sonarlint/securityhotspotstore/4/6/46b1e47422dc9bb27d66232520441f7cb61c8c1d,4\a\4ac3aad60f9e1c3bf1fd79aabe004d7004597766
 Å
@@ -1016,8 +1006,6 @@ G.idea/sonarlint/issuestore/5/5/552b8ff4a7228abfce81f18139f5e33ffb917bd6,b\7\b7
 w
 G.idea/sonarlint/issuestore/4/a/4acb7bff02b6245ab56deb3ddc6f2f752a04aa67,8\7\87c5346af18ba72c25ad1386d3392ff5740de0ff
 w
-G.idea/sonarlint/issuestore/5/f/5fa186f8db447d2f4c0525f09cf66aeea3657ad4,5\a\5afc7f5590e432c1405e212c3bfb4faaf12a94cd
-w
 G.idea/sonarlint/issuestore/8/b/8b262f1e117399184f5d45e0398f9318dc317dbd,8\e\8e82cb2200189fc67bec9e6cec6a6519c19a7d05
 w
 G.idea/sonarlint/issuestore/4/2/4291a6ab95c696f29dcedea66516b99a0fd0f28a,e\f\ef4cd31a84c761223d0a9cdf11b67ca163eda157
@@ -1045,8 +1033,6 @@ w
 G.idea/sonarlint/issuestore/4/6/46b1e47422dc9bb27d66232520441f7cb61c8c1d,9\b\9b56dcfb24a81ea60f3f4f729d9fc56c2a60d980
 w
 G.idea/sonarlint/issuestore/6/6/663807ccaf59a6712efc485e363c0f88738dda5b,b\b\bbfeb02227030a6f4cdc72fcede4531c5c497e87
-w
-G.idea/sonarlint/issuestore/d/9/d9975bd9b57d71671a970cd0636db94581d9a1a7,c\2\c2a71df7d085e441fd3d3b40b61f21392116a90b
 w
 G.idea/sonarlint/issuestore/2/6/2643a1f113d5e0e3b5ab7a1d60baf5913e027b85,b\c\bc14779edec0d7f2380b857bc03903609e63e6d8
 Å
@@ -1151,3 +1137,11 @@ w
 G.idea/sonarlint/issuestore/9/d/9dbfeef11662191e7303de49b5315e8e771f19a1,6\5\65725ef346edebff75eaec26992882f2609a6111
 e
 5src/main/java/com/example/progetto_ispw/StartApp.java,d\5\d5050a9bb413ecb53f33f9a68a24905418ecb49a
+i
+9src/main/java/com/example/progetto_ispw/user/UserDAO.java,2\c\2cb788990c2e97ed808b0828dd093896ad8d23f2
+r
+Bsrc/main/java/com/example/progetto_ispw/login/LoginController.java,5\0\5003bf1b1ff7abbff84d41413db43c45a6e935ce
+t
+Dsrc/main/java/com/example/progetto_ispw/signup/SignUpController.java,5\f\5f8003c51d21d34171fe08ab3beaced645849233
+l
+<src/main/java/com/example/progetto_ispw/login/LoginBean.java,f\8\f832c2a5fbaaaba359db50ab7613350b8f79677c

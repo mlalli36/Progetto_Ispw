@@ -57,7 +57,12 @@ public class SignUpView {
             bean.setWorker(checkWorker.isSelected());
             SignUpController controller = new SignUpController();
             controller.signUpUser(bean);
-            UIController.getUIControllerInstance().showSettings();
+            UIController viewController= UIController.getUIControllerInstance();
+            if(!bean.isWorker()){
+                viewController.showHome();
+            } else{
+                viewController.showProfileSignUp();
+            }
 
 
         } catch (DifferentPasswordException e) {
@@ -74,10 +79,11 @@ public class SignUpView {
 
 
     }
-
     public void preCompile(String email, String password) {
         this.emailTextFieldSignUp.setText(email);
         this.passwordTextFieldSignUp.setText(password);
     }
+
+
 }
 

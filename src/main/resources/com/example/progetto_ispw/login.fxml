@@ -88,7 +88,7 @@
                <Font name="Bookman Old Style" size="22.0" />
             </font>
          </Button>
-         <Button fx:id="Back" layoutX="197.0" layoutY="502.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="147.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="Back">
+         <Button fx:id="back" layoutX="197.0" layoutY="502.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="147.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="Back">
             <font>
                <Font name="Bookman Old Style" size="22.0" />
             </font>

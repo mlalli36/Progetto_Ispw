@@ -3,6 +3,7 @@ package com.example.progetto_ispw;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -30,6 +31,9 @@ public class ProfileView {
     public ImageView home;
     @FXML
     public Button favorites;
+    @FXML
+    public TextField emailTextFild;
+
 
     public void homeMethod(MouseEvent mouseEvent) {//da implementare
     }

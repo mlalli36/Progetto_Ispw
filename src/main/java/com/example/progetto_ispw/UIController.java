@@ -107,7 +107,7 @@ public class UIController {
     public void precompileSignUp(String email, String password) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("interfaccia SignUp.fxml"));
         Parent root1 = fxmlLoader.load();
-        root1.getStylesheets().add(Objects.requireNonNull(getClass().getResource("login.css")).toExternalForm());
+        root1.getStylesheets().add(Objects.requireNonNull(getClass().getResource("signup.css")).toExternalForm());
         SignUpView signUpView = fxmlLoader.getController();
         signUpView.preCompile(email, password);
 
@@ -117,12 +117,17 @@ public class UIController {
 
     }
 
+
     public void setPreviousStageStyles(String[] previousStageStyles) {
         this.previousStageStyles = previousStageStyles;
     }
 
 
     public void showSettings() { // da implementare
+    }
+
+    public void showProfileSignUp()throws IOException {
+        this.loadStage("interfaccia profileSignUp.fxml","profileMyDetails.css");
     }
 }
 
