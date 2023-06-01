@@ -4,6 +4,7 @@ import com.example.progetto_ispw.UIController;
 import com.example.progetto_ispw.login.exception.LoginFailedException;
 import com.example.progetto_ispw.signup.exception.DifferentPasswordException;
 import com.example.progetto_ispw.signup.exception.UserAlreadyExistsException;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
@@ -43,9 +44,7 @@ public class SignUpView {
         UIController controller = UIController.getUIControllerInstance();
         controller.showLogin();
     }
-
-    public void signUpMethod() throws IOException {
-
+    public void signUpMethod()throws IOException  {
         try{
 
             SignUpBean bean = new SignUpBean();
@@ -62,6 +61,8 @@ public class SignUpView {
                 viewController.showHome();
             } else{
                 viewController.showProfileSignUp();
+                viewController.signUpMethod(emailTextFieldSignUp.getText(), nomeTextFieldSignUp.getText(), cognomeTextFieldSignUp.getText());
+
             }
 
 
@@ -76,13 +77,13 @@ public class SignUpView {
         finally {
             statusLabel.setOpacity(1);
         }
-
-
     }
+
     public void preCompile(String email, String password) {
         this.emailTextFieldSignUp.setText(email);
         this.passwordTextFieldSignUp.setText(password);
     }
+
 
 
 }

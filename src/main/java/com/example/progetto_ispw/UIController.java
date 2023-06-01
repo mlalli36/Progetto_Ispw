@@ -116,7 +116,17 @@ public class UIController {
         this.stage.setScene(new Scene(root1));
 
     }
+    public void signUpMethod(String email, String nome, String cognome) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("interfaccia profileSignUp.fxml"));
+        Parent root1 = fxmlLoader.load();
+        root1.getStylesheets().add(Objects.requireNonNull(getClass().getResource("signup.css")).toExternalForm());
+        ProfileSignUpView profileSignUpView = fxmlLoader.getController();
+        profileSignUpView.signUpMethodPrecompile(email, nome, cognome);
 
+        this.fadeAnimation(root1, this.stage.getScene().getRoot());
+
+        this.stage.setScene(new Scene(root1));
+    }
 
     public void setPreviousStageStyles(String[] previousStageStyles) {
         this.previousStageStyles = previousStageStyles;
@@ -129,6 +139,8 @@ public class UIController {
     public void showProfileSignUp()throws IOException {
         this.loadStage("interfaccia profileSignUp.fxml","profileMyDetails.css");
     }
+
+
 }
 
 

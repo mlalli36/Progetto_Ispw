@@ -35,6 +35,13 @@ public class ProfileSignUpView {
     @FXML
     public Label infoLabel;
 
+    public void signUpMethodPrecompile(String email, String nome, String cognome) {
+        this.emailTextFild.setText(email);
+        this.nomeTextFild.setText(nome);
+        this.surnameTextFild.setText(cognome);
+
+    }
+
     public void saveEditsMethod(ActionEvent actionEvent) { //da implementare
     }
 
