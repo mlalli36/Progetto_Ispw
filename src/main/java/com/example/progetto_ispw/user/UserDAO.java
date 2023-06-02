@@ -80,4 +80,51 @@ public class UserDAO {
 
 
     }
+
+    public void addWorker (String email, String description, String work,String nome , String cognome, String indirizzo, String location ) throws UserAlreadyExistsException {
+        try (Connection con = getConnector()) {
+            if (con == null)
+                throw new SQLException();
+            String query = "INSERT INTO `databaseispw`.`tabella informazioni` (`Email`,`Description`,`Work`, `Name`,`Surname`,`Address`,`Location`) VALUES (?, ?, ?, ?, ?, ?, ?);";
+            try (PreparedStatement preparedStatement = con.prepareStatement(query)) {
+                preparedStatement.setString(1, email);
+                preparedStatement.setString(2, description);
+                preparedStatement.setString(3, work);
+                preparedStatement.setString(4, nome);
+                preparedStatement.setString(5, cognome);
+                preparedStatement.setString(6, indirizzo);
+                preparedStatement.setString(7, location);
+
+                preparedStatement.executeUpdate();
+                UserEntity user = UserEntity.getInstance();
+                user.setEmail(email);
+                user.setDescription(description);
+                user.setWork(work);
+                user.setName(nome);
+                user.setSurname(cognome);
+                user.setAddress(indirizzo);
+                user.setLocation(location);
+
+            }
+
+        } catch (SQLIntegrityConstraintViolationException e) {
+            throw new UserAlreadyExistsException();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+// continuare di qui, bisogna aggiungere anche il campo località in scene builder in profile sign up
+    // poi bisogna collegare il db a quello e salvare i dati
+
+
+
+
+
+
+
+
+
 }

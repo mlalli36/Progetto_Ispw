@@ -5,7 +5,12 @@ public class UserEntity {
     private String email;
     private String password;
     private String tipoaccesso;
-
+    private String description;
+    private String location;
+    private String address;
+    private String name;
+    private String surname;
+    private String work;
     private static UserEntity singleInstance = null;
 
 
@@ -34,4 +39,16 @@ public class UserEntity {
         return password;
     }
 
+    public void setDescription(String description) {this.description = description;}
+
+    public void setWork(String work) { this.work = work;}
+
+    public void setName(String nome) {this.name =nome;}
+
+    public void setSurname(String cognome) {this.surname=cognome;}
+
+
+    public void setAddress(String indirizzo) {this.address=indirizzo;}
+
+    public void setLocation(String località) {this.location= località;}
 }

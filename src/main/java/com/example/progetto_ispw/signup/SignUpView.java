@@ -4,7 +4,6 @@ import com.example.progetto_ispw.UIController;
 import com.example.progetto_ispw.login.exception.LoginFailedException;
 import com.example.progetto_ispw.signup.exception.DifferentPasswordException;
 import com.example.progetto_ispw.signup.exception.UserAlreadyExistsException;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
@@ -57,7 +56,7 @@ public class SignUpView {
             SignUpController controller = new SignUpController();
             controller.signUpUser(bean);
             UIController viewController= UIController.getUIControllerInstance();
-            if(!bean.isWorker()){
+           if(!bean.isWorker()){
                 viewController.showHome();
             } else{
                 viewController.showProfileSignUp();
@@ -66,7 +65,10 @@ public class SignUpView {
             }
 
 
-        } catch (DifferentPasswordException e) {
+        }
+
+
+        catch (DifferentPasswordException e) {
             statusLabel.setText("Passwords are not the same, check them and try again");
         }
         catch (LoginFailedException e) {

@@ -1,5 +1,6 @@
 package com.example.progetto_ispw;
 
+import com.example.progetto_ispw.profileSignUp.ProfileSignUpView;
 import com.example.progetto_ispw.signup.SignUpView;
 import javafx.animation.FadeTransition;
 import javafx.fxml.FXMLLoader;

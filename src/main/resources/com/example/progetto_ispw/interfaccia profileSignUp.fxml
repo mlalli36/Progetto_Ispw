@@ -6,7 +6,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="anchorPaneProfile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="1219.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.progetto_ispw.ProfileSignUpView">
+<AnchorPane fx:id="anchorPaneProfile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="1219.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.progetto_ispw.profileSignUp.ProfileSignUpView">
    <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="1219.0" style="-fx-background-image: #0000;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Pane prefHeight="53.0" prefWidth="1219.0" style="-fx-background-color: #74c69d;">
@@ -42,9 +42,9 @@
                   <Font name="Bookman Old Style" size="36.0" />
                </font>
             </Text>
-            <TextField fx:id="nomeTextFild" layoutX="44.0" layoutY="153.0" prefHeight="44.0" prefWidth="322.0" style="-fx-background-radius: 10;" />
-            <TextField fx:id="surnameTextFild" layoutX="44.0" layoutY="251.0" prefHeight="44.0" prefWidth="322.0" style="-fx-background-radius: 10;" />
-            <TextField fx:id="emailTextFild" layoutX="44.0" layoutY="345.0" prefHeight="44.0" prefWidth="322.0" style="-fx-background-radius: 10;" />
+            <TextField fx:id="nomeTextField" layoutX="44.0" layoutY="153.0" prefHeight="44.0" prefWidth="322.0" style="-fx-background-radius: 10;" />
+            <TextField fx:id="surnameTextField" layoutX="44.0" layoutY="251.0" prefHeight="44.0" prefWidth="322.0" style="-fx-background-radius: 10;" />
+            <TextField fx:id="emailTextField" layoutX="44.0" layoutY="345.0" prefHeight="44.0" prefWidth="322.0" style="-fx-background-radius: 10;" />
             <Button fx:id="saveEdits" layoutX="498.0" layoutY="545.0" mnemonicParsing="false" onAction="#saveEditsMethod" prefHeight="56.0" prefWidth="190.0" style="-fx-background-radius: 10; -fx-background-color: #74c69d;" text="Save Edits">
                <font>
                   <Font name="Bookman Old Style" size="20.0" />
@@ -72,20 +72,37 @@
                      <Font name="Bookman Old Style" size="18.0" />
                   </font>
             </Label>
-            <TextField fx:id="descriptionTextFild" layoutX="434.0" layoutY="156.0" prefHeight="227.0" prefWidth="254.0" style="-fx-background-radius: 10;" />
+            <TextField fx:id="descriptionTextField" layoutX="434.0" layoutY="156.0" prefHeight="227.0" prefWidth="254.0" style="-fx-background-radius: 10;" />
             <Text layoutX="440.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description*:">
                   <font>
                      <Font name="Bookman Old Style" size="15.0" />
                   </font></Text>
-            <TextField fx:id="professionTextFild" layoutX="44.0" layoutY="450.0" prefHeight="44.0" prefWidth="322.0" style="-fx-background-radius: 10;" />
+            <TextField fx:id="professionTextField" layoutX="44.0" layoutY="450.0" prefHeight="44.0" prefWidth="322.0" style="-fx-background-radius: 10;" />
             <Text layoutX="45.0" layoutY="436.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Profession*:">
                   <font>
                      <Font name="Bookman Old Style" size="15.0" />
                   </font></Text>
+               <TextField fx:id="addressTextField" layoutX="45.0" layoutY="527.0" prefHeight="44.0" prefWidth="322.0" style="-fx-background-radius: 10;" />
+               <Text layoutX="47.0" layoutY="522.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address*:">
+                  <font>
+                     <Font name="Bookman Old Style" size="15.0" />
+                  </font>
+               </Text>
+               <TextField fx:id="locationTextField" layoutX="434.0" layoutY="450.0" prefHeight="44.0" prefWidth="254.0" style="-fx-background-radius: 10;" />
+               <Text layoutX="437.0" layoutY="440.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Location*:">
+                  <font>
+                     <Font name="Bookman Old Style" size="15.0" />
+                  </font>
+               </Text>
+               <Label fx:id="errorLabel" layoutX="47.0" layoutY="584.0" opacity="0.0" prefHeight="35.0" prefWidth="346.0" text="Label" textFill="RED">
+                  <font>
+                     <Font name="Bookman Old Style" size="15.0" />
+                  </font>
+               </Label>
          </children>
       </Pane>
       <Circle fill="#74c69d" layoutX="89.0" layoutY="162.0" radius="26.0" stroke="BLACK" strokeType="INSIDE" />
-      <Label fx:id="infoLabel" layoutX="129.0" layoutY="137.0" prefHeight="53.0" prefWidth="295.0" text="Rossi Mario">
+      <Label fx:id="infoLabel" layoutX="129.0" layoutY="137.0" prefHeight="53.0" prefWidth="295.0">
          <font>
             <Font name="Bookman Old Style" size="30.0" />
          </font>

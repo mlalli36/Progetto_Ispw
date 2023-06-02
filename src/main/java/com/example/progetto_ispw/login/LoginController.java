@@ -23,10 +23,7 @@ public class LoginController {
          dao.getUser(bean.getEmail());
          UserEntity user = UserEntity.getInstance();
 
-         System.out.println(bean.getPassword());   // controllo delle password a schermo eliminare poi
          String decryptPassword = this.decryptPassword(user.getPassword());
-         System.out.println(decryptPassword);
-
 
          if (!Objects.equals(decryptPassword, bean.getPassword()))
              throw new LoginFailedException("The password is incorrect");
