@@ -48,12 +48,19 @@ public class ProfileSignUpView {
     public TextField locationTextField;
     @FXML
     public Label errorLabel;
+    @FXML
+    public Button logoutButton;
+    @FXML
+    public Label nameLabel;
+    @FXML
+    public Label cognomeLabel;
 
     public void signUpMethodPrecompile(String email, String nome, String cognome)  {
         this.emailTextField.setText(email);
         this.nomeTextField.setText(nome);
         this.surnameTextField.setText(cognome);
-
+        this.nameLabel.setText(nome);
+        this.cognomeLabel.setText(cognome);
 
     }
 
@@ -97,4 +104,8 @@ public class ProfileSignUpView {
     }
 
 
+    public void logoutMethod() throws IOException {
+        UIController viewController = UIController.getUIControllerInstance();//è singletone
+        viewController.showLogin();
+    }
 }
