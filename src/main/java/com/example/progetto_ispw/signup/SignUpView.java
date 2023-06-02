@@ -52,7 +52,8 @@ public class SignUpView {
             bean.setEmail(emailTextFieldSignUp.getText());
             bean.setPsw(passwordTextFieldSignUp.getText());
             bean.setConfirmPsw(confirmPasswordTextFieldSignUp.getText());
-            bean.setWorker(checkWorker.isSelected());
+            bean.setWorker(checkWorker.isSelected()); //se isSelected è false, cioè il checkbox non è stato spuntato, allora alla bean viene passato false e quindi nella bean si entrerà nel ramo else e verrà impostato come client
+
             SignUpController controller = new SignUpController();
             controller.signUpUser(bean);
             UIController viewController= UIController.getUIControllerInstance();
@@ -80,6 +81,7 @@ public class SignUpView {
             statusLabel.setOpacity(1);
         }
     }
+
 
     public void preCompile(String email, String password) {
         this.emailTextFieldSignUp.setText(email);

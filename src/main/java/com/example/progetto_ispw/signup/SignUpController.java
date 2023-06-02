@@ -20,6 +20,7 @@ public class SignUpController {
         checkedPassword = bean.getPsw(); //Se sono uguali è indifferente scegliere la prima o la seconda
         String encryptedPassword = this.encryptPassword(checkedPassword);
         String tipoaccesso = bean.isWorker() ? "Worker" : "Client";
+
         dao.addUser(bean.getName(), bean.getSurname(), bean.getEmail(), encryptedPassword,tipoaccesso);
        // UserEntity user = UserEntity.getInstance();
     }
