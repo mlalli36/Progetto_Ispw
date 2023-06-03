@@ -99,6 +99,11 @@ public class LoginView {
         UIController viewController = UIController.getUIControllerInstance();
         viewController.precompileSignUp(emailTextField.getText(), passwordTextField.getText());
     }
+
+    public void backMethod() throws IOException {
+        UIController controller = UIController.getUIControllerInstance();
+        controller.showLogin();
+    }
 }
 
 
