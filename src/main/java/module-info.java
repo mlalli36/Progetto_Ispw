@@ -3,6 +3,7 @@ module com.example.progetto_ispw {
     requires javafx.fxml;
     requires java.sql;
     requires jasypt;
+    requires java.desktop;
 
 
     opens com.example.progetto_ispw to javafx.fxml;
@@ -19,4 +20,6 @@ module com.example.progetto_ispw {
     opens com.example.progetto_ispw.signup.exception to javafx.fxml;
     exports com.example.progetto_ispw.profileSignUp;
     opens com.example.progetto_ispw.profileSignUp to javafx.fxml;
+    exports com.example.progetto_ispw.home;
+    opens com.example.progetto_ispw.home to javafx.fxml;
 }

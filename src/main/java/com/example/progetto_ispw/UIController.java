@@ -72,7 +72,7 @@ public class UIController {
     }
 
     public void showSearchDinamica() throws IOException{//mostra la schermata di search
-        //this.loadStage("interfacciaSearch Dinamica.fxml", "search.css");
+
         this.loadStage("interfacciaSearch Dinamica.fxml","search.css");
     }
 

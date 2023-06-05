@@ -5,142 +5,58 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="anchorPaneHome" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="1219.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.progetto_ispw.HomeView">
+<AnchorPane fx:id="anchorPaneHome" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="1219.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.progetto_ispw.home.HomeView">
    <children>
-      <Pane layoutY="8.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="1219.0">
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="1219.0" style="-fx-background-color: #fffffff;">
          <children>
             <Pane prefHeight="53.0" prefWidth="1219.0" style="-fx-background-color: #74c69d;">
                <children>
+                  <Button fx:id="profile" layoutX="1144.0" mnemonicParsing="false" onAction="#profileMethod" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #74c69d;" />
                   <Button fx:id="favorites" layoutX="1069.0" mnemonicParsing="false" onAction="#favoritesMethod" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #74c69d;" />
                   <Button fx:id="home" layoutX="994.0" mnemonicParsing="false" onAction="#homeMethod" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #40916c;" />
-                  <Button fx:id="profile" layoutX="1150.0" layoutY="-1.0" mnemonicParsing="false" onAction="#profileMethod" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #74c69d;" />
-                  <ImageView fitHeight="56.0" fitWidth="66.0" layoutX="1075.0">
+                  <ImageView fitHeight="56.0" fitWidth="66.0" layoutX="1074.0">
                      <image>
                         <Image url="@icon/star.2.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="44.0" fitWidth="56.0" layoutX="1004.0" layoutY="4.0">
+                  <ImageView fitHeight="44.0" fitWidth="56.0" layoutX="1004.0" layoutY="5.0">
                      <image>
                         <Image url="@icon/home.png" />
                      </image>
                   </ImageView>
-                  <Text fill="#2d6a4f" layoutX="32.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MyProject">
+                  <Text fill="#2d6a4f" layoutX="32.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WorkerLink">
                      <font>
                         <Font name="Bookman Old Style" size="30.0" />
                      </font>
                   </Text>
-                  <ImageView layoutX="1162.0" layoutY="5.0">
+                  <ImageView layoutX="1158.0" layoutY="4.0">
                      <image>
                         <Image url="@icon/profile 2.png" />
                      </image>
                   </ImageView>
                </children>
             </Pane>
-            <Pane layoutY="53.0" prefHeight="64.0" prefWidth="1219.0" style="-fx-background-color: #40916c; -fx-background-radius: 10;">
-               <children>
-                  <ChoiceBox layoutX="649.0" layoutY="17.0" prefHeight="31.0" prefWidth="190.0" style="-fx-background-radius: 10; -fx-background-color: #74c69d;" />
-                  <TextField layoutX="55.0" layoutY="17.0" prefHeight="31.0" prefWidth="346.0" style="-fx-background-radius: 10; -fx-background-color: #74c69d;" />
-                  <TextField layoutX="928.0" layoutY="17.0" style="-fx-background-radius: 10; -fx-background-color: #74c69d;" />
-               </children>
-            </Pane>
-            <Pane layoutX="108.0" layoutY="221.0" prefHeight="143.0" prefWidth="153.0" style="-fx-border-color: #4577C1; -fx-border-radius: 10;">
-               <children>
-                  <ImageView layoutX="14.0" layoutY="7.0">
-                     <image>
-                        <Image url="@icon/acqua.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </Pane>
-            <Button fx:id="seeMore" layoutX="901.0" layoutY="512.0" mnemonicParsing="false" onAction="#seeMoreMethod" prefHeight="44.0" prefWidth="163.0" style="-fx-background-radius: 10; -fx-background-color: #74c69d;" text="See More">
+            <Text layoutX="423.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Insert the Name of the craftsman :">
                <font>
                   <Font name="Bookman Old Style" size="20.0" />
                </font>
-            </Button>
-            <Pane layoutX="527.0" layoutY="221.0" prefHeight="143.0" prefWidth="153.0" style="-fx-border-color: #9334DD; -fx-border-radius: 10;">
-               <children>
-                  <ImageView layoutX="13.0" layoutY="8.0">
-                     <image>
-                        <Image url="@icon/Phon.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </Pane>
-            <Pane layoutX="906.0" layoutY="221.0" prefHeight="143.0" prefWidth="153.0" style="-fx-border-color: #B0BC22; -fx-border-radius: 10;">
-               <children>
-                  <ImageView layoutX="14.0" layoutY="5.0">
-                     <image>
-                        <Image url="@icon/luce.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </Pane>
-            <Pane layoutX="108.0" layoutY="484.0" prefHeight="143.0" prefWidth="153.0" style="-fx-border-color: #F05E81; -fx-border-radius: 10;">
-               <children>
-                  <ImageView layoutX="13.0" layoutY="8.0">
-                     <image>
-                        <Image url="@icon/colori.png" />
-                     </image>
-                  </ImageView>
-                  <Button fx:id="painters" layoutX="-1.0" layoutY="3.0" mnemonicParsing="false" onAction="#paintersMethod" opacity="0.0" prefHeight="143.0" prefWidth="153.0" style="-fx-background-radius: 10; -fx-background-color: #fffff; -fx-border-radius: 10; -fx-border-color: #f05e81;" textFill="WHITE">
-                     <font>
-                        <Font name="Bookman Old Style" size="21.0" />
-                     </font>
-                  </Button>
-               </children>
-            </Pane>
-            <Pane layoutX="527.0" layoutY="484.0" prefHeight="143.0" prefWidth="153.0" style="-fx-border-color: #C746BA; -fx-border-radius: 10;">
-               <children>
-                  <ImageView layoutX="13.0" layoutY="6.0">
-                     <image>
-                        <Image url="@icon/smalto.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </Pane>
-            <Text fill="#4577c1" layoutX="108.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Plumbers ">
+            </Text>
+            <TextField fx:id="nameWorkerTextField" layoutX="393.0" layoutY="215.0" prefHeight="41.0" prefWidth="434.0" style="-fx-background-radius: 10;" />
+            <Text layoutX="431.0" layoutY="322.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Insert the Job of the craftsman :">
                <font>
-                  <Font name="Bookman Old Style" size="18.0" />
+                  <Font name="Bookman Old Style" size="20.0" />
                </font>
             </Text>
-            <Text fill="#9334dd" layoutX="527.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hairdressers">
+            <TextField fx:id="jobWorkerTextField" layoutX="393.0" layoutY="354.0" prefHeight="41.0" prefWidth="434.0" style="-fx-background-radius: 10;" />
+            <Text layoutX="428.0" layoutY="459.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Insert the Location of the craftsman :">
                <font>
-                  <Font name="Bookman Old Style" size="18.0" />
+                  <Font name="Bookman Old Style" size="20.0" />
                </font>
             </Text>
-            <Text fill="#b0bc22" layoutX="901.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Electricians">
+            <TextField fx:id="locationWorkerTextField" layoutX="393.0" layoutY="499.0" prefHeight="41.0" prefWidth="434.0" style="-fx-background-radius: 10;" />
+            <Button fx:id="searchButton" layoutX="515.0" layoutY="601.0" mnemonicParsing="false" onAction="#searchMethod" prefHeight="56.0" prefWidth="190.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="Search">
                <font>
-                  <Font name="Bookman Old Style" size="18.0" />
-               </font>
-            </Text>
-            <Text fill="#f05e81" layoutX="108.0" layoutY="466.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Painters">
-               <font>
-                  <Font name="Bookman Old Style" size="18.0" />
-               </font>
-            </Text>
-            <Text fill="#c746ba" layoutX="527.0" layoutY="465.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Beauticians">
-               <font>
-                  <Font name="Bookman Old Style" size="18.0" />
-               </font>
-            </Text>
-            <Button fx:id="plumbers" layoutX="107.0" layoutY="223.0" mnemonicParsing="false" onAction="#plumbersMethod" opacity="0.0" prefHeight="143.0" prefWidth="153.0" style="-fx-background-radius: 10; -fx-background-color: #fffff; -fx-border-color: #4577c1; -fx-border-radius: 10;" textFill="WHITE">
-               <font>
-                  <Font name="Bookman Old Style" size="21.0" />
-               </font>
-            </Button>
-            <Button fx:id="hairdressers" layoutX="525.0" layoutY="222.0" mnemonicParsing="false" onAction="#hairdressersMethod" opacity="0.0" prefHeight="143.0" prefWidth="153.0" style="-fx-background-radius: 10; -fx-background-color: #fffff; -fx-border-color: #9334dd; -fx-border-radius: 10;" textFill="WHITE">
-               <font>
-                  <Font name="Bookman Old Style" size="21.0" />
-               </font>
-            </Button>
-            <Button fx:id="electricians" layoutX="905.0" layoutY="222.0" mnemonicParsing="false" onAction="#electriciansMethod" opacity="0.0" prefHeight="143.0" prefWidth="153.0" style="-fx-background-radius: 10; -fx-background-color: #fffff; -fx-border-color: #b0bc22; -fx-border-radius: 10;" textFill="WHITE">
-               <font>
-                  <Font name="Bookman Old Style" size="21.0" />
-               </font>
-            </Button>
-            <Button fx:id="beauticians" layoutX="526.0" layoutY="484.0" mnemonicParsing="false" onAction="#beauticiansMethod" opacity="0.0" prefHeight="143.0" prefWidth="153.0" style="-fx-background-radius: 10; -fx-background-color: #fffff; -fx-border-color: #c746ba; -fx-border-radius: 10;" textFill="WHITE">
-               <font>
-                  <Font name="Bookman Old Style" size="21.0" />
+                  <Font name="Bookman Old Style" size="22.0" />
                </font>
             </Button>
          </children>
