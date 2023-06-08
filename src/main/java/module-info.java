@@ -22,4 +22,6 @@ module com.example.progetto_ispw {
     opens com.example.progetto_ispw.profileSignUp to javafx.fxml;
     exports com.example.progetto_ispw.home;
     opens com.example.progetto_ispw.home to javafx.fxml;
+    exports com.example.progetto_ispw.searchDinamica;
+    opens com.example.progetto_ispw.searchDinamica to javafx.fxml;
 }

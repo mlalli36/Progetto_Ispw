@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="1219.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.progetto_ispw.SearchDinamicaView">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="1219.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.progetto_ispw.searchDinamica.SearchDinamicaView">
    <children>
       <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="1219.0">
          <children>
@@ -45,11 +45,11 @@
             </Pane>
 
 
-            <ScrollPane hbarPolicy="NEVER" layoutY="117.0" prefHeight="633.0" prefWidth="1219.0" vbarPolicy="ALWAYS">
+            <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" layoutY="117.0" prefHeight="633.0" prefWidth="1219.0" vbarPolicy="ALWAYS">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="225.0" prefWidth="1003.0">
                  <VBox fx:id="myVBox" layoutX="118.0" layoutY="50.0" prefHeight="225.0" prefWidth="1003.0">
-                    <Pane layoutX="118.0" layoutY="50.0" prefHeight="225.0" prefWidth="1169.0" style="-fx-border-color: #40916c; -fx-border-radius: 10;">
+                    <Pane fx:id="paneDinamico" layoutX="118.0" layoutY="50.0" prefHeight="225.0" prefWidth="1169.0" style="-fx-border-color: #40916c; -fx-border-radius: 10;">
                        <children>
                           <Button fx:id="fillOutForm" layoutX="772.0" layoutY="155.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="190.0" style="-fx-background-radius: 10; -fx-background-color: #74c69d;" text="Fill Out Form">
                              <font>

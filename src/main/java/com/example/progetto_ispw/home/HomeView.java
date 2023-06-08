@@ -63,5 +63,5 @@ public class HomeView {
         UIController viewController = UIController.getUIControllerInstance();//è singletone
         viewController.showSearchDinamica();
     }
-    ResultSetEntity resultSet = bean.getResultSet();
+
 }
