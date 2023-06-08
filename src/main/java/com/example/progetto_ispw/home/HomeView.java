@@ -32,7 +32,7 @@ public class HomeView {
     public TextField locationWorkerTextField;
     @FXML
     public Button searchButton;
-
+    private HomeBean bean =new HomeBean();
 
     public void profileMethod(ActionEvent actionEvent) throws IOException {
         UIController viewController = UIController.getUIControllerInstance();//è singletone
@@ -48,7 +48,7 @@ public class HomeView {
 
 
     public void searchMethod(ActionEvent actionEvent) throws IOException {
-        HomeBean bean =new HomeBean();
+
         try{
             bean.setNameWork(nameWorkerTextField.getText());
             bean.setJobWork(jobWorkerTextField.getText());
@@ -63,4 +63,5 @@ public class HomeView {
         UIController viewController = UIController.getUIControllerInstance();//è singletone
         viewController.showSearchDinamica();
     }
+    ResultSetEntity resultSet = bean.getResultSet();
 }

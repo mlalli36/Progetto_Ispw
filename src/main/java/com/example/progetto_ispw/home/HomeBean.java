@@ -4,9 +4,14 @@ package com.example.progetto_ispw.home;
 import javafx.scene.control.Button;
 
 public class HomeBean {
+    private ResultSetEntity resultSet;
     protected String nameWork= null;
     protected String jobWork=null;
     protected String locationWork = null;
+
+    public  ResultSetEntity getResultSet() {
+        return resultSet;
+    }
 
     public void setNameWork(String nameWork) {
         this.nameWork= nameWork;
@@ -30,5 +35,9 @@ public class HomeBean {
 
     public String getLocationWork() {
         return locationWork;
+    }
+
+    public void setResultSet(ResultSetEntity resultSet) {
+        this.resultSet= resultSet;
     }
 }

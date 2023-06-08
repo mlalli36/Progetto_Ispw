@@ -9,8 +9,6 @@ n
 >src/main/java/com/example/progetto_ispw/signup/SignUpView.java,2\b\2b6efe551a938dd5b2ec467e444badbc167b55e2
 n
 >src/main/java/com/example/progetto_ispw/signup/SignUpBean.java,c\a\cada8ba157ac582f44dcbbcf93caced5ec6ff1c2
-†
-Vsrc/main/java/com/example/progetto_ispw/profileSignUp/ProfileSignUpViewController.java,e\e\eeedb44a0b680bd7f7a7532fb7e55cf1358ad073
 r
 Bsrc/main/java/com/example/progetto_ispw/login/LoginController.java,5\0\5003bf1b1ff7abbff84d41413db43c45a6e935ce
 l
@@ -23,3 +21,5 @@ N
 src/main/java/module-info.java,1\c\1c89a5491fbfda3fb050196d6a239f20200296e7
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
+l
+<src/main/java/com/example/progetto_ispw/login/LoginView.java,b\4\b45fbdcb11c621f884809975bf7c71d4fefe56bc
