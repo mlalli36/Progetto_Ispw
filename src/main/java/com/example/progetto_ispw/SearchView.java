@@ -26,7 +26,7 @@ public class SearchView {
 
 
     public void profileMethod(ActionEvent actionEvent) {
-        try{
+      /*  try{
             //crea pagina nuova
             FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("interfacciaprofilodinamica.fxml"));
             Parent root=fxmlLoader.load();
@@ -44,7 +44,7 @@ public class SearchView {
 
         } catch(IOException e){
             e.printStackTrace();
-        }
+        }*/ // commentato sennò mi diceva che c'era un pezzo di codice duplicato, in HomeView modifica 03/06/23
     }
 
     public void favoritesMethod(ActionEvent actionEvent) {//da implementare

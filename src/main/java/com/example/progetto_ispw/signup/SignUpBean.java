@@ -22,7 +22,6 @@ public class SignUpBean extends LoginBean {
 
     public void setWorker(boolean worker) {
         isWorker = worker;
-
     }
 
 

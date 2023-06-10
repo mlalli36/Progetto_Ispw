@@ -38,8 +38,4 @@ public class LoginBean {
         return password;
     }
 
-
-
-
-
 }

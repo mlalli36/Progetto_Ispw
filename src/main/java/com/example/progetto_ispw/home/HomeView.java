@@ -1,6 +1,8 @@
 package com.example.progetto_ispw.home;
 
 import com.example.progetto_ispw.UIController;
+import com.example.progetto_ispw.searchDinamica.SearchDinamicaController;
+import com.example.progetto_ispw.searchDinamica.SearchDinamicaView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -32,7 +34,9 @@ public class HomeView {
     public TextField locationWorkerTextField;
     @FXML
     public Button searchButton;
-    private HomeBean bean =new HomeBean();
+
+
+    private SearchDinamicaController SearchController;
 
     public void profileMethod(ActionEvent actionEvent) throws IOException {
         UIController viewController = UIController.getUIControllerInstance();//è singletone
@@ -47,21 +51,15 @@ public class HomeView {
     }
 
 
-    public void searchMethod(ActionEvent actionEvent) throws IOException {
-
-        try{
+    public void searchMethod() {
+            HomeBean bean= new HomeBean();
             bean.setNameWork(nameWorkerTextField.getText());
             bean.setJobWork(jobWorkerTextField.getText());
             bean.setLocationWork(locationWorkerTextField.getText());
-            HomeController controller = new HomeController();
-            controller.workInfo(bean);
+
+            this.SearchController.workInfo(bean);
 
 
-        }catch(IllegalArgumentException e){
-
-        }
-        UIController viewController = UIController.getUIControllerInstance();//è singletone
-        viewController.showSearchDinamica();
     }
 
 }

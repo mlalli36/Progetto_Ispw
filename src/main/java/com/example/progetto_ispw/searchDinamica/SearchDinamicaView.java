@@ -1,7 +1,10 @@
 package com.example.progetto_ispw.searchDinamica;
 
 
+import com.example.progetto_ispw.UIController;
+import com.example.progetto_ispw.home.ResultElement;
 import com.example.progetto_ispw.home.ResultSetEntity; //vedere se è giusto
+import com.example.progetto_ispw.utile.CustomTilePane;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.event.ActionEvent;
@@ -11,6 +14,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+
+import java.io.IOException;
+import java.util.List;
 
 
 public class SearchDinamicaView {
@@ -30,30 +36,6 @@ public class SearchDinamicaView {
     @FXML
     public ScrollPane scrollPane;
 
-    private SearchDinamicaBean bean= new SearchDinamicaBean();
-
-
-    //da riga 27 a riga 42 serve per mostrare o non mostrare il box del "fillOutForm"
-    //private final BooleanProperty showBox = new SimpleBooleanProperty(false);
-    public void initialize() {
-        ResultSetEntity resultSet = bean.getResultSet();
-        scrollPane.setVisible(true);
-    }
-
-
-    /*public BooleanProperty showBoxProperty() {
-        return showBox;
-    }
-    public boolean isShowBox() {
-        return showBox.get();
-    }
-    public void setShowBox(boolean value) {
-        showBox.set(value);
-    }
-    public void initialize() {
-        myVBox.visibleProperty().bind(showBox);
-        setShowBox(true); //se è true mostra il box, se è false non lo mostra
-    }*/
 
     public void profileMethod(ActionEvent actionEvent) { //da fare
     }
@@ -65,6 +47,45 @@ public class SearchDinamicaView {
     }
 
 
+    public void showResult(SearchDinamicaBean bean) {
+
+        ResultSetEntity resultSet= bean.getResultSet();
+        scrollPane.setVisible(true);
+
+        CustomTilePane customTilePane = new CustomTilePane();
+        customTilePane.createCustomTilePane();
+
+        for(ResultElement r: resultSet.getElements()){
+             Button newButton= new Button("Fill out form.");
+             String workerName= r.getWorkerName();
+             String workerSurname= r.getWorkerSurname();
+             String workerAddress= r.getWorkerAddress();
+             String workerDescription= r.getWorkerDescription();
+             newButton.setOnAction(event -> {
+                 try {
+                     showFORM();
+                 } catch (IOException e) {
+                     throw new RuntimeException(e);
+                 }
+             });
+
+        }
+
+
+
+
+
+
+
+
+
+ }
+
+    private void showFORM() throws IOException {
+        UIController viewController = UIController.getUIControllerInstance();//è singletone
+
+        viewController.showForm();
+    }
 }
 
 

@@ -13,6 +13,9 @@ public class HomeBean {
         return resultSet;
     }
 
+
+
+
     public void setNameWork(String nameWork) {
         this.nameWork= nameWork;
     }
@@ -37,7 +40,5 @@ public class HomeBean {
         return locationWork;
     }
 
-    public void setResultSet(ResultSetEntity resultSet) {
-        this.resultSet= resultSet;
-    }
+
 }

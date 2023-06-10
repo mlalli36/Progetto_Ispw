@@ -14,6 +14,7 @@ import java.util.Objects;
 
 public class UIController {
 
+    String p= "profileMyDetails.css";
 
     private static UIController singleUIControllerInstance = null;
 
@@ -31,7 +32,7 @@ public class UIController {
         return UIController.singleUIControllerInstance;
     }
 
-    public void showHome() throws IOException{//mostra a schermo la home
+    public void showHome() throws IOException{//mostra a schermo la com.example.progetto_ispw.home
         this.loadStage("interfacciaHome.fxml","home.css" );
     }
 
@@ -56,7 +57,7 @@ public class UIController {
     }
 
     public void showProfileRecensione() throws IOException{//mostra il profilo sulla sezione recensione
-        this.loadStage("interfaccia profilerecensione.fxml","profileMyDetails.css");
+        this.loadStage("interfaccia profilerecensione.fxml","p");
     }
 
     public void showForm() throws IOException{//mostra il form
@@ -64,11 +65,11 @@ public class UIController {
     }
 
     public void showProfileMyDetails() throws IOException{//mostra i dettagli del proprio profilo
-        this.loadStage("interfacciaprofileMyDetails.fxml","profileMyDetails.css");
+        this.loadStage("interfacciaprofileMyDetails.fxml","p");
     }
 
     public void showProfiloDinamica() throws  IOException{//mostra il profilo
-        this.loadStage("interfacciaprofilodinamica.fxml", "profileMyDetails.css");
+        this.loadStage("interfacciaprofilodinamica.fxml", "p");
     }
 
     public void showSearchDinamica() throws IOException{//mostra la schermata di search
@@ -138,7 +139,7 @@ public class UIController {
     }
 
     public void showProfileSignUp()throws IOException {
-        this.loadStage("interfaccia profileSignUp.fxml","profileMyDetails.css");
+        this.loadStage("interfaccia profileSignUp.fxml","p");
     }
 
 
