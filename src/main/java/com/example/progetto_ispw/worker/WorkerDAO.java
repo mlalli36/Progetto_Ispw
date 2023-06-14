@@ -56,37 +56,36 @@ public class WorkerDAO {
 
 
     }
-    public WorkerEntity getWorker(String nameWork, String jobWork, String locationWork)  {
+
+    public WorkerEntity getWorker(String nameWorker, String jobWorker, String locationWorker)  {
+        WorkerEntity worker = null;
         try {
             Connection con = getConnector();
             if (con == null)
                 throw new SQLException();
-            String query = "SELECT Email, Description, Work, Name, Surname, Address, Location FROM tabella informazioni WHERE Name Work Location = ?,?,?;";
+            String query = "SELECT * FROM `tabella informazioni` WHERE Name = ? AND Work = ? AND Location = ?;";
             try (PreparedStatement preparedStatement = con.prepareStatement(query)) {
-                preparedStatement.setString(1, nameWork);
-                preparedStatement.setString(2, jobWork);
-                preparedStatement.setString(3, locationWork);
+                preparedStatement.setString(1, nameWorker);
+                preparedStatement.setString(2, jobWorker);
+                preparedStatement.setString(3, locationWorker);
                 ResultSet rs = preparedStatement.executeQuery();
-                if (!rs.next()) {
-                    throw new NullPointerException("Worker Not Found");
+                if (rs.next()) {
+                    //capire se bisogna cambiare UserEntity
+                    worker = WorkerEntity.getInstance();
+                    worker.setEmail(rs.getString("Email"));
+                    worker.setDescription(rs.getString("Description"));
+                    worker.setWork(rs.getString("Work"));
+                    worker.setName(rs.getString("Name"));
+                    worker.setSurname(rs.getString("Surname"));
+                    worker.setAddress(rs.getString("Address"));
+                    worker.setLocation(rs.getString("Location"));
                 }
-                //capire se bisogna cambiare UserEntity
-                UserEntity user = UserEntity.getInstance();
-                user.setEmail(rs.getString("Email"));
-                user.setDescription(rs.getString("Description"));
-                user.setWork(rs.getString("Work"));
-                user.setName(rs.getString("Name"));
-                user.setSurname(rs.getString("Surname"));
-                user.setAddress(rs.getString("Address"));
-                user.setLocation(rs.getString("Location"));
                 rs.close();
-
             }
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return null;
+        return worker;
     }
-
 }

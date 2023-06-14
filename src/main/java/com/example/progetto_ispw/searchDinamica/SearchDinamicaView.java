@@ -5,18 +5,21 @@ import com.example.progetto_ispw.UIController;
 import com.example.progetto_ispw.home.ResultElement;
 import com.example.progetto_ispw.home.ResultSetEntity; //vedere se è giusto
 import com.example.progetto_ispw.utile.CustomTilePane;
+import com.sun.javafx.stage.EmbeddedWindow;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
-import java.util.List;
 
 
 public class SearchDinamicaView {
@@ -26,7 +29,6 @@ public class SearchDinamicaView {
     public Button favorites;
     @FXML
     public Button home;
-
     @FXML
     public Button fillOutForm;
     @FXML
@@ -35,6 +37,10 @@ public class SearchDinamicaView {
     public Pane paneDinamico;
     @FXML
     public ScrollPane scrollPane;
+    @FXML
+    public AnchorPane anchorPaneSearchDinamica;
+    @FXML
+    private EmbeddedWindow primaryStage;
 
 
     public void profileMethod(ActionEvent actionEvent) { //da fare
@@ -48,42 +54,34 @@ public class SearchDinamicaView {
 
 
     public void showResult(SearchDinamicaBean bean) {
-
         ResultSetEntity resultSet= bean.getResultSet();
-        scrollPane.setVisible(true);
 
         CustomTilePane customTilePane = new CustomTilePane();
         customTilePane.createCustomTilePane();
 
+        scrollPane.setContent(customTilePane.getCustomTP());
         for(ResultElement r: resultSet.getElements()){
-             Button newButton= new Button("Fill out form.");
-             String workerName= r.getWorkerName();
-             String workerSurname= r.getWorkerSurname();
-             String workerAddress= r.getWorkerAddress();
-             String workerDescription= r.getWorkerDescription();
-             newButton.setOnAction(event -> {
+            Button newButton= new Button("Fill out form.");
+            String workerName= r.getWorkerName();
+            String workerSurname= r.getWorkerSurname();
+            String workerAddress= r.getWorkerAddress();
+            String workerDescription= r.getWorkerDescription();
+            customTilePane.addElements(newButton,workerName,workerSurname,workerAddress,workerDescription);
+            newButton.setOnAction(event -> {
                  try {
-                     showFORM();
-                 } catch (IOException e) {
-                     throw new RuntimeException(e);
-                 }
+                    showFORM();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
              });
 
         }
-
-
-
-
-
-
-
 
 
  }
 
     private void showFORM() throws IOException {
         UIController viewController = UIController.getUIControllerInstance();//è singletone
-
         viewController.showForm();
     }
 }

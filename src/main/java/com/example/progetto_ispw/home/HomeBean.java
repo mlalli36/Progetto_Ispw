@@ -28,6 +28,9 @@ public class HomeBean {
         this.locationWork= locationWork;
     }
 
+
+
+
     public String getNameWork() {
         return nameWork;
     }
