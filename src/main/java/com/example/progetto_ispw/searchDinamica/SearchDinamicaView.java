@@ -1,6 +1,7 @@
 package com.example.progetto_ispw.searchDinamica;
 
 
+import com.example.progetto_ispw.UIController;
 import com.example.progetto_ispw.home.ResultElement;
 import com.example.progetto_ispw.home.ResultSetEntity; //vedere se è giusto
 import com.example.progetto_ispw.utile.CustomTilePane;
@@ -21,11 +22,11 @@ public class SearchDinamicaView{
     private SearchDinamicaBean bean2;
 
     @FXML
-    public Button profile;
+    public Button profileButton;
     @FXML
-    public Button favorites;
+    public Button favoritesButton;
     @FXML
-    public Button home;
+    public Button homeButton;
 
     @FXML
     public Button fillOutForm;
@@ -36,13 +37,19 @@ public class SearchDinamicaView{
     @FXML
     public ScrollPane scrollPane;
 
-    public void profileMethod(ActionEvent actionEvent) { //da fare
+    public void profileMethod(ActionEvent actionEvent)throws IOException {
+        UIController viewController = UIController.getUIControllerInstance();//è singletone
+
+        viewController.showProfileSignUp();
     }
 
     public void favoritesMethod(ActionEvent actionEvent) { //da fare
     }
 
-    public void homeMethod(ActionEvent actionEvent) { //da fare
+    public void homeMethod(ActionEvent actionEvent) throws IOException { //da fare
+        UIController viewController = UIController.getUIControllerInstance();//è singletone
+
+        viewController.showHome();
     }
 
  /*   @FXML
@@ -64,7 +71,8 @@ public class SearchDinamicaView{
             String name = r.getWorkerName();
             String jobWorker= r.getJobWorker();
             String locationWorker = r.getLocationWorker();
-            customTilePane.addElements(newButton,name,jobWorker,locationWorker);
+            String descriptionWorker= r.getWorkerDescription();
+            customTilePane.addElements(name,jobWorker,locationWorker,descriptionWorker,newButton);
 
         }
         this.scrollPane.setContent(customTilePane.getCustomTP());

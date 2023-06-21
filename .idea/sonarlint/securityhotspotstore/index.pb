@@ -36,12 +36,10 @@ Vsrc/main/java/com/example/progetto_ispw/profileSignUp/ProfileSignUpViewControll
 |
 Lsrc/main/java/com/example/progetto_ispw/profileSignUp/ProfileSignUpView.java,3\8\38c9d8b65a2ce9f37d7d4174f6603597c58216c9
 p
-@src/main/java/com/example/progetto_ispw/worker/WorkerEntity.java,4\6\46ae5e03d3b6d9eadd6395466f0b28e41ecd0aed
-p
 @src/main/java/com/example/progetto_ispw/home/HomeController.java,e\f\ef31b41b81f226d79bfedfebf58f0dd1da671f2f
 q
-Asrc/main/java/com/example/progetto_ispw/utile/CustomTilePane.java,8\3\83bdf3e707ee50231a84c19e0b81bd7a92cf94d6
-o
-?src/main/java/com/example/progetto_ispw/home/ResultElement.java,a\6\a64c6b2c2924a8b3da25bc6470813cb1be369cb0
-q
 Asrc/main/java/com/example/progetto_ispw/home/ResultSetEntity.java,4\0\4008ae14294f4bc9578eea57ed6821d7e6b3eaf7
+m
+=src/main/java/com/example/progetto_ispw/worker/WorkerDAO.java,5\f\5f223cf36f1b3b5f021d54382dff28a7c245c6e6
+~
+Nsrc/main/java/com/example/progetto_ispw/searchDinamica/SearchDinamicaBean.java,1\f\1f2d12d1b758fc9a5a3e6e63d0f34c3ea9bc6b3e

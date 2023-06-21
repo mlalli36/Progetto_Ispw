@@ -32,7 +32,9 @@ public class WorkerEntity {
     public String getLocation() {
         return location;
     }
-
+    public String getDescription() {
+        return description;
+    }
     public void setDescription(String description) {this.description = description;}
 
     public void setWork(String work) { this.work = work;}
@@ -47,6 +49,7 @@ public class WorkerEntity {
     public void setAddress(String indirizzo) {this.address=indirizzo;}
 
     public void setLocation(String località) {this.location= località;}
+
 
 
 }

@@ -18,6 +18,10 @@ public class ResultElement {
         this.locationWorker= location;
     }
 
+    public void setDescriptionWorker(String descriptionWorker) {
+        this.descriptionWorker = descriptionWorker;
+    }
+
     public String getWorkerName() {
     return nameWorker;    }
 

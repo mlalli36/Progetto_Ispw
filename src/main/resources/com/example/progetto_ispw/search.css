@@ -10,3 +10,16 @@
     -fx-rotate: 2;
 
 }
+
+#homeButton:hover{
+
+    -fx-background-color: #40916c;
+}
+#favoritesButton:hover{
+
+    -fx-background-color: #40916c;
+}
+#profileButton:hover{
+
+    -fx-background-color: #40916c;
+}
