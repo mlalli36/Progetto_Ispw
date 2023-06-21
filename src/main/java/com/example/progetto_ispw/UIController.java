@@ -75,6 +75,7 @@ public class UIController {
     public void showSearchDinamica() throws IOException{//mostra la schermata di search
 
         this.loadStage("interfacciaSearch Dinamica.fxml","search.css");
+
     }
 
     public String getPreviousFxml(){
@@ -139,7 +140,7 @@ public class UIController {
     }
 
     public void showProfileSignUp()throws IOException {
-        this.loadStage("interfaccia profileSignUp.fxml","p");
+        this.loadStage("interfaccia profileSignUp.fxml","signup.css");
     }
 
 

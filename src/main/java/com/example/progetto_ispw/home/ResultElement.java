@@ -29,4 +29,12 @@ public class ResultElement {
 
     public String getWorkerDescription() {
     return descriptionWorker;}
+
+    public String getJobWorker() {
+        return jobWork;
+    }
+
+    public String getLocationWorker() {
+        return locationWorker;
+    }
 }

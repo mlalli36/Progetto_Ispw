@@ -11,16 +11,16 @@ public class WorkerEntity {
     private String surname;
     private  String work;
 
-    private static WorkerEntity singleInstance = null;
+/*    private  WorkerEntity singleInstance = null;
 
 
-    private WorkerEntity(){}
+    public WorkerEntity(){}
 
-    public static WorkerEntity getInstance(){
-        if (singleInstance == null)
-            singleInstance = new WorkerEntity();
+    public WorkerEntity getInstance(){
+        *//*if (singleInstance == null)
+            singleInstance = new WorkerEntity();*//*
         return singleInstance;
-    }
+    }*/
 
     public  String getName() {
         return name;

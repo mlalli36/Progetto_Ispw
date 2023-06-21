@@ -1,9 +1,10 @@
 package com.example.progetto_ispw.worker;
 
 import com.example.progetto_ispw.signup.exception.UserAlreadyExistsException;
-import com.example.progetto_ispw.user.UserEntity;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 import static com.example.progetto_ispw.utile.DBConnector.getConnector;
 
@@ -37,7 +38,7 @@ public class WorkerDAO {
                 preparedStatement.setString(7, location);
 
                 preparedStatement.executeUpdate();
-               WorkerEntity worker = WorkerEntity.getInstance();
+               WorkerEntity worker = new WorkerEntity();
                 worker.setEmail(email);
                 worker.setDescription(description);
                 worker.setWork(work);
@@ -57,28 +58,33 @@ public class WorkerDAO {
 
     }
 
-    public WorkerEntity getWorker(String nameWorker, String jobWorker, String locationWorker)  {
-        WorkerEntity worker = null;
+    //forse questa deve rutornare una List<WorkEntuty> e WorkEntity potrebbe non dover essere Singleton
+
+    public List<WorkerEntity> getWorker(String jobWorker, String locationWorker)  {
+        List<WorkerEntity> workerList = new ArrayList<>();
+
         try {
             Connection con = getConnector();
             if (con == null)
                 throw new SQLException();
-            String query = "SELECT * FROM `tabella informazioni` WHERE Name = ? AND Work = ? AND Location = ?;";
+            String query = "SELECT * FROM `tabella informazioni` WHERE Work = ? AND Location = ?;";
             try (PreparedStatement preparedStatement = con.prepareStatement(query)) {
-                preparedStatement.setString(1, nameWorker);
-                preparedStatement.setString(2, jobWorker);
-                preparedStatement.setString(3, locationWorker);
+                //preparedStatement.setString(1, nameWorker);
+                preparedStatement.setString(1, jobWorker);
+                preparedStatement.setString(2, locationWorker);
                 ResultSet rs = preparedStatement.executeQuery();
-                if (rs.next()) {
-                    //capire se bisogna cambiare UserEntity
-                    worker = WorkerEntity.getInstance();
-                    worker.setEmail(rs.getString("Email"));
-                    worker.setDescription(rs.getString("Description"));
-                    worker.setWork(rs.getString("Work"));
-                    worker.setName(rs.getString("Name"));
-                    worker.setSurname(rs.getString("Surname"));
-                    worker.setAddress(rs.getString("Address"));
-                    worker.setLocation(rs.getString("Location"));
+                while (rs.next()) {
+
+                    //WorkerEntity workerEntity= new WorkerEntity();
+                    WorkerEntity workerEntity = new WorkerEntity();
+                    workerEntity.setEmail(rs.getString("Email"));
+                    workerEntity.setDescription(rs.getString("Description"));
+                    workerEntity.setWork(rs.getString("Work"));
+                    workerEntity.setName(rs.getString("Name"));
+                    workerEntity.setSurname(rs.getString("Surname"));
+                    workerEntity.setAddress(rs.getString("Address"));
+                    workerEntity.setLocation(rs.getString("Location"));
+                    workerList.add(workerEntity);
                 }
                 rs.close();
             }
@@ -86,6 +92,6 @@ public class WorkerDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return worker;
+        return workerList;
     }
 }

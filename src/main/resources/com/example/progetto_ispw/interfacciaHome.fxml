@@ -6,6 +6,7 @@
 <?import javafx.scene.text.*?>
 
 <AnchorPane fx:id="anchorPaneHome" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="1219.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.progetto_ispw.home.HomeView">
+
    <children>
       <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="1219.0" style="-fx-background-color: #fffffff;">
          <children>
@@ -59,6 +60,7 @@
                   <Font name="Bookman Old Style" size="22.0" />
                </font>
             </Button>
+
          </children>
       </Pane>
    </children>

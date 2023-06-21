@@ -30,7 +30,7 @@ public class HomeView {
     public Button searchButton;
 
 
-    private SearchDinamicaController searchController= new SearchDinamicaController();
+
 
     public void profileMethod(ActionEvent actionEvent) throws IOException {
         UIController viewController = UIController.getUIControllerInstance();//è singletone
@@ -51,7 +51,8 @@ public class HomeView {
             bean.setJobWork(jobWorkerTextField.getText());
             bean.setLocationWork(locationWorkerTextField.getText());
 
-            this.searchController.workInfo(bean);
+            SearchDinamicaController searchController= new SearchDinamicaController();
+            searchController.workInfo(bean);
 
 
     }
