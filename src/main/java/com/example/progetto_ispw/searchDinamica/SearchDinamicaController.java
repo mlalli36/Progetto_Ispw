@@ -28,7 +28,7 @@ public class SearchDinamicaController {
 
 
             for (WorkerEntity worker : workerList) {
-                //WorkerEntity currentWorker = dao.getWorker(bean.getNameWork(), entry.getKey(), bean.getLocationWork()); //carichiamo workerEntity dal DB
+
                 //Si costruisce il ResultElement
                 ResultElement resultElement = new ResultElement();
                 //resultElement.setNameWorker(worker.getName());
@@ -43,15 +43,14 @@ public class SearchDinamicaController {
 
             SearchDinamicaBean bean2 = new SearchDinamicaBean();
             bean2.setResultSet(this.resultSet);
-//            SearchDinamicaView searchDinamicaView = new SearchDinamicaView();
-//            searchDinamicaView.showResult(bean2);
-            SearchDinamicaView.setBean2(bean2);
+            //trovare un modo per non farlo static
+//            SearchDinamicaView.setBean2(bean2); -> questo lo usavamo per la classe statica;
+        //il problema che abbiamo qui si può risolvere in vari modi : facendo la bean singleton (da evitare perchè la bean poi non può essere usata in paralello da qualcun altro e perchè poi dobbiamo usare qualcuno che ogni volta si assicura che è stata pulita)
+        //usando il metodo static, ma non è mai consigliato (sentire audio fili su metodo static)
+        //fare come "abbiamo" fatto : far gestire tutto al controller grafico (UIcontroller)-> è lui che dice al controller e alla view a quale bean si devono riferire -> in sostanza colleghiamo controller-bean2 e view-bean2 dicendo quale controller è presente sul file fxml per collegare il tutto.
             UIController viewController = UIController.getUIControllerInstance();//è singletone
-            viewController.showSearchDinamica();
+            viewController.showSearchDinamica(bean2);
 
-        /*} else {
-            System.out.println("resultset è null!");
-        }*/
     }
 
 }

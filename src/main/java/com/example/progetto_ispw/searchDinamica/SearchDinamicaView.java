@@ -18,7 +18,7 @@ import java.io.IOException;
 
 public class SearchDinamicaView{
 
-    private static SearchDinamicaBean bean2;
+    private SearchDinamicaBean bean2;
 
     @FXML
     public Button profile;
@@ -45,9 +45,12 @@ public class SearchDinamicaView{
     public void homeMethod(ActionEvent actionEvent) { //da fare
     }
 
-
+ /*   @FXML
+    public void initialize() throws IOException {
+        this.showResult(bean2);
+    }*/
     public void showResult(SearchDinamicaBean bean2) throws IOException {
-        //ScrollPane scrollPane=new ScrollPane();
+
 
         ResultSetEntity resultSet = bean2.getResultSet();
 
@@ -68,18 +71,12 @@ public class SearchDinamicaView{
 
     }
 
-    public static SearchDinamicaBean getBean2() {
-        return bean2;
+
+    public void setBean2(SearchDinamicaBean bean2) {
+        this.bean2 = bean2;
     }
 
-    public static void setBean2(SearchDinamicaBean bean2) {
-        SearchDinamicaView.bean2 = bean2;
-    }
 
-    @FXML
-    public void initialize() throws IOException {
-        this.showResult(bean2);
-    }
 
 
 }

@@ -1,6 +1,8 @@
 package com.example.progetto_ispw;
 
 import com.example.progetto_ispw.profileSignUp.ProfileSignUpView;
+import com.example.progetto_ispw.searchDinamica.SearchDinamicaBean;
+import com.example.progetto_ispw.searchDinamica.SearchDinamicaView;
 import com.example.progetto_ispw.signup.SignUpView;
 import javafx.animation.FadeTransition;
 import javafx.fxml.FXMLLoader;
@@ -50,6 +52,7 @@ public class UIController {
         this.fadeAnimation(root1, this.stage.getScene().getRoot());
 
         this.stage.setScene(new Scene(root1));
+
     }
 
    public void showNotificheDaCliente() throws IOException{//mostra le notifiche da cliente
@@ -72,9 +75,18 @@ public class UIController {
         this.loadStage("interfacciaprofilodinamica.fxml", "p");
     }
 
-    public void showSearchDinamica() throws IOException{//mostra la schermata di search
+    public void showSearchDinamica(SearchDinamicaBean bean) throws IOException{//mostra la schermata di search
+    //facciamo così perchè ci serve sapere il file fxml a quale controller è associato, per far riferire tuuti allo stesso controller (controller scritto nella prima riga del file fxml)
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("interfacciaSearch Dinamica.fxml"));
+        Parent root1 = fxmlLoader.load();
+        root1.getStylesheets().add(Objects.requireNonNull(getClass().getResource("search.css")).toExternalForm());
 
-        this.loadStage("interfacciaSearch Dinamica.fxml","search.css");
+        this.fadeAnimation(root1, this.stage.getScene().getRoot());
+        this.stage.setScene(new Scene(root1));
+
+        SearchDinamicaView sdv = fxmlLoader.getController();
+        sdv.showResult(bean);
+
 
     }
 
