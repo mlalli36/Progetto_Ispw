@@ -75,7 +75,6 @@ public class WorkerDAO {
                 ResultSet rs = preparedStatement.executeQuery();
                 while (rs.next()) {
 
-                    //WorkerEntity workerEntity= new WorkerEntity();
                     WorkerEntity workerEntity = new WorkerEntity();
                     workerEntity.setEmail(rs.getString("Email"));
                     workerEntity.setDescription(rs.getString("Description"));

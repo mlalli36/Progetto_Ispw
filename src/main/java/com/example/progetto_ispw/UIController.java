@@ -74,6 +74,9 @@ public class UIController {
     public void showProfiloDinamica() throws  IOException{//mostra il profilo
         this.loadStage("interfacciaprofilodinamica.fxml", "p");
     }
+    public void showProfilo() throws  IOException{//mostra il profilo
+        this.loadStage("interfacciaProfile.fxml", "profileMyDetails.css");
+    }
 
     public void showSearchDinamica(SearchDinamicaBean bean) throws IOException{//mostra la schermata di search
     //facciamo così perchè ci serve sapere il file fxml a quale controller è associato, per far riferire tuuti allo stesso controller (controller scritto nella prima riga del file fxml)

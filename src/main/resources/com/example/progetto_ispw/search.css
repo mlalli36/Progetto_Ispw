@@ -3,12 +3,26 @@
     -fx-scale-x: 1.2;
     -fx-scale-y: 1.2;
     -fx-scale-z: 1.2;
+
 }
 
 .button:pressed{
 
     -fx-rotate: 2;
 
+
+}
+
+.button{
+    -fx-background-radius:10;
+    -fx-background-color: #74c69d;
+    -fx-font-family:"Bookman Old Style";
+    -fx-font-size: 20;
+}
+
+.label{
+    -fx-font-family:"Bookman Old Style";
+    -fx-font-size: 16.5;
 }
 
 #homeButton:hover{

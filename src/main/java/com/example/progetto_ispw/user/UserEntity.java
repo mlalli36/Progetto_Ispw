@@ -35,6 +35,7 @@ public class UserEntity {
         this.tipoaccesso = tipoaccesso;
     }
 
+    public String getTipoaccesso(){return tipoaccesso;}
     public String getPassword() {
         return password;
     }

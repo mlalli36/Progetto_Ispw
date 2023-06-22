@@ -11,16 +11,7 @@ public class WorkerEntity {
     private String surname;
     private  String work;
 
-/*    private  WorkerEntity singleInstance = null;
 
-
-    public WorkerEntity(){}
-
-    public WorkerEntity getInstance(){
-        *//*if (singleInstance == null)
-            singleInstance = new WorkerEntity();*//*
-        return singleInstance;
-    }*/
 
     public  String getName() {
         return name;
