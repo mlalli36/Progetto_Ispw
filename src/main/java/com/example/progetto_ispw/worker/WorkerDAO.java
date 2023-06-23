@@ -58,6 +58,7 @@ public class WorkerDAO {
 
     }
 
+
     //forse questa deve rutornare una List<WorkEntuty> e WorkEntity potrebbe non dover essere Singleton
 
     public List<WorkerEntity> getWorker(String jobWorker, String locationWorker)  {
@@ -92,5 +93,9 @@ public class WorkerDAO {
             e.printStackTrace();
         }
         return workerList;
+    }
+
+
+    public void addSlots(String slot1, String slot2, String slot3, String slot4, String slot5) {//da implementare
     }
 }

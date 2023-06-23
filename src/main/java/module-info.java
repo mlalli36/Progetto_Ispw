@@ -24,4 +24,8 @@ module com.example.progetto_ispw {
     opens com.example.progetto_ispw.home to javafx.fxml;
     exports com.example.progetto_ispw.searchDinamica;
     opens com.example.progetto_ispw.searchDinamica to javafx.fxml;
+    exports com.example.progetto_ispw.saveHoursSlots;
+    opens com.example.progetto_ispw.saveHoursSlots to javafx.fxml;
+    exports com.example.progetto_ispw.saveHoursSlots.exception;
+    opens com.example.progetto_ispw.saveHoursSlots.exception to javafx.fxml;
 }

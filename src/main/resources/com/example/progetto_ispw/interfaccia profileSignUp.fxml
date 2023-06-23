@@ -127,7 +127,7 @@
             <Font name="Bookman Old Style" size="20.0" />
          </font>
       </Button>
-      <Button fx:id="needHelp" layoutX="63.0" layoutY="465.0" mnemonicParsing="false" onAction="#needHelpMethod" prefHeight="28.0" prefWidth="322.0" style="-fx-background-radius: 10; -fx-background-color: #74c69d;" text="Need help?">
+      <Button fx:id="changeHours" layoutX="65.0" layoutY="465.0" mnemonicParsing="false" onAction="#changeHoursMethod" prefHeight="28.0" prefWidth="322.0" style="-fx-background-radius: 10; -fx-background-color: #74c69d;" text="Change of working hours">
          <font>
             <Font name="Bookman Old Style" size="20.0" />
          </font>
@@ -145,11 +145,6 @@
       <ImageView fitHeight="42.0" fitWidth="37.0" layoutX="75.0" layoutY="294.0">
          <image>
             <Image url="@icon/personal card.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="75.0" layoutY="466.0">
-         <image>
-            <Image url="@icon/question mark.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="37.0" fitWidth="48.0" layoutX="63.0" layoutY="354.0">

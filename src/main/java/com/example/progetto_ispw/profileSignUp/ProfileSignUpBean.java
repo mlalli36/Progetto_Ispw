@@ -5,7 +5,7 @@ import com.example.progetto_ispw.login.exception.LoginFailedException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class ProfileSignUpViewBean {
+public class ProfileSignUpBean {
 
     protected String  email = null;
     protected String  name = null;

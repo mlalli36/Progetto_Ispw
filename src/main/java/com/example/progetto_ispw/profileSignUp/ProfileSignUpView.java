@@ -1,10 +1,7 @@
 package com.example.progetto_ispw.profileSignUp;
 
 import com.example.progetto_ispw.UIController;
-import com.example.progetto_ispw.login.LoginBean;
-import com.example.progetto_ispw.login.LoginController;
 import com.example.progetto_ispw.login.exception.LoginFailedException;
-import com.example.progetto_ispw.login.exception.UserNotFoundException;
 import com.example.progetto_ispw.signup.exception.UserAlreadyExistsException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -39,7 +36,7 @@ public class ProfileSignUpView {
     @FXML
     public Button addresses;
     @FXML
-    public Button needHelp;
+    public Button changeHours;
     @FXML
     public Label infoLabel;
     @FXML
@@ -65,7 +62,7 @@ public class ProfileSignUpView {
     }
 
     public void saveEditsMethod()throws IOException {
-        ProfileSignUpViewBean bean = new ProfileSignUpViewBean();
+        ProfileSignUpBean bean = new ProfileSignUpBean();
 
         try {
 
@@ -76,7 +73,7 @@ public class ProfileSignUpView {
             bean.setLocation(locationTextField.getText());
             bean.setAddress(addressTextField.getText());
             bean.setWork(professionTextField.getText());
-            ProfileSignUpViewController controller  = new ProfileSignUpViewController();
+            ProfileSignUpController controller  = new ProfileSignUpController();
             controller.signUpWorker(bean);
             UIController viewController = UIController.getUIControllerInstance();//è singletone
 
@@ -100,7 +97,7 @@ public class ProfileSignUpView {
     public void addressesMethod(ActionEvent actionEvent) {//da implementare
     }
 
-    public void needHelpMethod(ActionEvent actionEvent) {//da implementare
+    public void changeHoursMethod(ActionEvent actionEvent) { //da implementare
     }
 
 
@@ -108,4 +105,6 @@ public class ProfileSignUpView {
         UIController viewController = UIController.getUIControllerInstance();//è singletone
         viewController.showLogin();
     }
+
+
 }
