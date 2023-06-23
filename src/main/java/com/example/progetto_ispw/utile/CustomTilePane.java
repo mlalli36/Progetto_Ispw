@@ -40,7 +40,7 @@ public class CustomTilePane {
 
             Label textLabel4 =new Label("Descrizione: "+ description);
             AnchorPane.setLeftAnchor(textLabel4, 50.0);
-            AnchorPane.setRightAnchor(textLabel4, 300.0);
+            //AnchorPane.setRightAnchor(textLabel4, 300.0);
             AnchorPane.setTopAnchor(textLabel4, 115.0);
 
             entryPane.getChildren().addAll(selectButton, textLabel1, textLabel2, textLabel3, textLabel4);
