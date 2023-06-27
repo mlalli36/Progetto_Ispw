@@ -1,6 +1,10 @@
 package com.example.progetto_ispw.worker;
 
+import com.example.progetto_ispw.saveHoursSlots.SlotHoursEntity;
+import com.example.progetto_ispw.saveHoursSlots.exception.TimeSlotAlreadyExistsException;
 import com.example.progetto_ispw.signup.exception.UserAlreadyExistsException;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.TextField;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -96,6 +100,37 @@ public class WorkerDAO {
     }
 
 
-    public void addSlots(String slot1, String slot2, String slot3, String slot4, String slot5) {//da implementare
+    public void addSlots(String email, String slot1, String slot2, String slot3, String slot4, String slot5, DatePicker dateCalendar) throws TimeSlotAlreadyExistsException {
+        try (Connection con = getConnector()) {
+            if (con == null)
+                throw new SQLException();
+            String query = "INSERT INTO `databaseispw`.`appointment avaible` (`email`,`slot1`, `slot2`,`slot3`,`slot4`,`slot5`,`date`) VALUES (?, ?, ?, ?, ?, ?, ?);";
+            try (PreparedStatement preparedStatement = con.prepareStatement(query)) {
+                preparedStatement.setString(1, email);
+                preparedStatement.setString(2, slot1);
+                preparedStatement.setString(3, slot2);
+                preparedStatement.setString(4, slot3);
+                preparedStatement.setString(5, slot4);
+                preparedStatement.setString(6, slot5);
+                preparedStatement.setString(7, String.valueOf(dateCalendar));
+
+                preparedStatement.executeUpdate();
+                SlotHoursEntity slot = new SlotHoursEntity();
+                slot.setEmail(email);
+                slot.setSlot1(slot1);
+                slot.setSlot2(slot2);
+                slot.setSlot3(slot3);
+                slot.setSlot4(slot4);
+                slot.setSlot5(slot5);
+                slot.setDateCalendar(dateCalendar.getEditor());
+
+            }
+
+        } catch (SQLIntegrityConstraintViolationException e) {
+            throw new TimeSlotAlreadyExistsException();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
     }
 }

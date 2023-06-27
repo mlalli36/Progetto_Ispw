@@ -71,11 +71,11 @@ public class UIController {
         this.loadStage("interfacciaprofileMyDetails.fxml","p");
     }
 
-    public void showProfiloDinamica() throws  IOException{//mostra il profilo
-        this.loadStage("interfacciaprofilodinamica.fxml", "p");
+    public void showProfiloDinamica() throws  IOException{//mostra il profilo dell'user
+        this.loadStage("interfacciaUserProfile.fxml", "profileMyDetails.css");
     }
-    public void showProfilo() throws  IOException{//mostra il profilo
-        this.loadStage("interfacciaProfile.fxml", "profileMyDetails.css");
+    public void showProfilo() throws  IOException{//mostra il profilo del worker
+        this.loadStage("interfacciaWorkerProfile.fxml", "profileMyDetails.css");
     }
 
     public void showSearchDinamica(SearchDinamicaBean bean) throws IOException{//mostra la schermata di search
@@ -159,6 +159,9 @@ public class UIController {
     }
 
 
+    public void showSlotHours() throws IOException{
+        this.loadStage("interfaccia SlotHours.fxml", "profileMyDetails.css");
+    }
 }
 
 

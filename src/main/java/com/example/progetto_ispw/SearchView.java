@@ -28,7 +28,7 @@ public class SearchView {
     public void profileMethod(ActionEvent actionEvent) {
       /*  try{
             //crea pagina nuova
-            FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("interfacciaprofilodinamica.fxml"));
+            FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("interfacciaUserProfile.fxml"));
             Parent root=fxmlLoader.load();
 
             //crea uno stage per la nuova pagina

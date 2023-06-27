@@ -16,6 +16,9 @@ public class WorkerEntity {
     public  String getName() {
         return name;
     }
+    public String getEmail() {
+        return email;
+    }
 
     public String getWork() {
         return work;

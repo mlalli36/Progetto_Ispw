@@ -8,7 +8,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
-public class ProfileView {
+import java.io.IOException;
+
+public class WorkerProfileView {
     @FXML
     public AnchorPane anchorPaneProfile;
     @FXML
@@ -19,8 +21,7 @@ public class ProfileView {
     public Button changePassword;
     @FXML
     public Button addresses;
-    @FXML
-    public Button needHelp;
+
     @FXML
     public Button exit;
     @FXML
@@ -33,6 +34,8 @@ public class ProfileView {
     public Button favorites;
     @FXML
     public TextField emailTextFild;
+    @FXML
+    public Button changeOfWorkingHoursButton;
 
 
     public void homeMethod(MouseEvent mouseEvent) {//da implementare
@@ -56,12 +59,14 @@ public class ProfileView {
     public void addressesMethod(ActionEvent actionEvent) {//da implementare
     }
 
-    public void needHelpMethod(ActionEvent actionEvent) {//da implementare
-    }
-
     public void exitMethod(ActionEvent actionEvent) {//da implementare
     }
 
     public void profileMethod(MouseEvent mouseEvent) {//da implementare
+    }
+
+    public void changeOfWorkingHoursMethod(ActionEvent actionEvent) throws IOException {
+        UIController viewController = UIController.getUIControllerInstance();//è singletone
+        viewController.showSlotHours();
     }
 }

@@ -63,11 +63,6 @@
                   <Font name="Bookman Old Style" size="20.0" />
                </font>
             </Button>
-            <Button fx:id="needHelp" layoutX="63.0" layoutY="465.0" mnemonicParsing="false" onAction="#needHelpMethod" prefHeight="28.0" prefWidth="322.0" style="-fx-background-radius: 10; -fx-background-color: #74c69d;" text="Need help?">
-               <font>
-                  <Font name="Bookman Old Style" size="20.0" />
-               </font>
-            </Button>
             <Button fx:id="exit" layoutX="63.0" layoutY="655.0" mnemonicParsing="false" onAction="#exitMethod" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="Exit">
                <font>
                   <Font name="Bookman Old Style" size="22.0" />
@@ -81,11 +76,6 @@
             <ImageView fitHeight="42.0" fitWidth="37.0" layoutX="75.0" layoutY="297.0">
                <image>
                   <Image url="@icon/personal card.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="75.0" layoutY="466.0">
-               <image>
-                  <Image url="@icon/question mark.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="37.0" fitWidth="48.0" layoutX="63.0" layoutY="354.0">

@@ -2,6 +2,7 @@ package com.example.progetto_ispw.home;
 
 import com.example.progetto_ispw.UIController;
 import com.example.progetto_ispw.searchDinamica.SearchDinamicaController;
+import com.example.progetto_ispw.user.UserEntity;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -33,9 +34,18 @@ public class HomeView {
 
 
     public void profileMethod(ActionEvent actionEvent) throws IOException {
+        UserEntity user = UserEntity.getInstance();
+        String type = user.getTipoaccesso();
+        System.out.println(type);
         UIController viewController = UIController.getUIControllerInstance();//è singletone
 
-        viewController.showProfiloDinamica();
+
+        if(!"Worker".equals(type)) {
+            viewController.showProfiloDinamica();
+        } else{
+            viewController.showProfilo();
+        }
+
     }
 
     public void favoritesMethod(ActionEvent actionEvent) {//da implementare

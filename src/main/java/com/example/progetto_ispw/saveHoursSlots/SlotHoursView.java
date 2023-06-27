@@ -31,6 +31,7 @@ public class SlotHoursView {
         bean.setSlot3(slot3Text.getText());
         bean.setSlot4(slot4Text.getText());
         bean.setSlot5(slot5Text.getText());
+        bean.setDateCalendar(dateCalendar.getEditor());
 
         SaveHoursController controller = new SaveHoursController();
         controller.saveHoursSlots(bean);
