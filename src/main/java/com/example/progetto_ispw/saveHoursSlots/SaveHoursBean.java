@@ -2,8 +2,8 @@ package com.example.progetto_ispw.saveHoursSlots;
 
 import com.example.progetto_ispw.saveHoursSlots.exception.InvalidTimeException;
 import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextField;
 
+import java.time.LocalDate;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -13,8 +13,9 @@ public class SaveHoursBean {
     private String text3;
     private String text4;
     private String text5;
-    private DatePicker dateCalendar;
+    private String dateCalendar;
     private static final Pattern VALID_SLOT_HOURS_REGEX = Pattern.compile("^([01]?\\d|2[0-3]):([0-5]?\\d)$", Pattern.CASE_INSENSITIVE);
+    private String email;
 
 
     public void setSlot1(String text1) throws InvalidTimeException {
@@ -54,15 +55,19 @@ public class SaveHoursBean {
         this.text5 = text5;
     }
     //controllare se va bene
-    public void setDateCalendar(TextField dateCalendar) {
+    public void setDateCalendar(String dateCalendar) {
         this.dateCalendar = dateCalendar;
+
     }
+
     //fino a qui
+    public void setemail(String email) {
+        this.email= email;
+    }
 
     public String getSlot1() {
         return text1;
     }
-
     public String getSlot2() {
         return text2;
     }
@@ -72,12 +77,15 @@ public class SaveHoursBean {
     public String getSlot4() {
         return text4;
     }
+
     public String getSlot5() {
         return text5;
     }
 
-
-    public DatePicker getDateCalendar() {
+    public String getDateCalendar() {
         return dateCalendar;
     }
+
+    public String getemail() {
+    return email;}
 }

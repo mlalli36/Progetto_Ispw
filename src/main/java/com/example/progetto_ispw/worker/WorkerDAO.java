@@ -3,8 +3,6 @@ package com.example.progetto_ispw.worker;
 import com.example.progetto_ispw.saveHoursSlots.SlotHoursEntity;
 import com.example.progetto_ispw.saveHoursSlots.exception.TimeSlotAlreadyExistsException;
 import com.example.progetto_ispw.signup.exception.UserAlreadyExistsException;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextField;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -42,7 +40,7 @@ public class WorkerDAO {
                 preparedStatement.setString(7, location);
 
                 preparedStatement.executeUpdate();
-               WorkerEntity worker = new WorkerEntity();
+                WorkerEntity worker = new WorkerEntity();
                 worker.setEmail(email);
                 worker.setDescription(description);
                 worker.setWork(work);
@@ -100,7 +98,7 @@ public class WorkerDAO {
     }
 
 
-    public void addSlots(String email, String slot1, String slot2, String slot3, String slot4, String slot5, DatePicker dateCalendar) throws TimeSlotAlreadyExistsException {
+    public void addSlots(String email, String slot1, String slot2, String slot3, String slot4, String slot5, String dateCalendar) throws TimeSlotAlreadyExistsException {
         try (Connection con = getConnector()) {
             if (con == null)
                 throw new SQLException();
@@ -122,13 +120,14 @@ public class WorkerDAO {
                 slot.setSlot3(slot3);
                 slot.setSlot4(slot4);
                 slot.setSlot5(slot5);
-                slot.setDateCalendar(dateCalendar.getEditor());
+                slot.setDateCalendar(dateCalendar);
 
             }
 
-        } catch (SQLIntegrityConstraintViolationException e) {
-            throw new TimeSlotAlreadyExistsException();
-        } catch (SQLException e) {
+        }  catch (SQLIntegrityConstraintViolationException e) {
+           throw new TimeSlotAlreadyExistsException();
+       }
+        catch (SQLException e) {
             e.printStackTrace();
         }
 

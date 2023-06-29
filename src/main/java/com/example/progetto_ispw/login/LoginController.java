@@ -20,13 +20,8 @@ public class LoginController {
 
          UserDAO dao = UserDAO.getInstance();
 
-         // set->.....-> get
-         //view->bean->controller->DAO
-
-         //DAO->controller->bean->view
-         //     set->............->get
-
          dao.getUser(bean.getEmail());
+
          UserEntity user = UserEntity.getInstance();
 
          String decryptPassword = this.decryptPassword(user.getPassword());

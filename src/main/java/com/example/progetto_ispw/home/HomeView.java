@@ -2,6 +2,7 @@ package com.example.progetto_ispw.home;
 
 import com.example.progetto_ispw.UIController;
 import com.example.progetto_ispw.searchDinamica.SearchDinamicaController;
+import com.example.progetto_ispw.user.UserDAO;
 import com.example.progetto_ispw.user.UserEntity;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

@@ -7,6 +7,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -35,6 +36,12 @@ public class ProfileDinamicaView {
     public Button needHelp;
     @FXML
     public Button exit;
+    @FXML
+    public Label nomeLabelUserProfile;
+    @FXML
+    public Label cognomeLabelUserProfile;
+    @FXML
+    public Label emailLabelUserProfile;
 
     public void profileMethod(ActionEvent actionEvent) {//da implementare
     }
@@ -104,4 +111,9 @@ public class ProfileDinamicaView {
     }
 
 
+    public void preCompile(String email, String nome, String cognome) {
+        this.nomeLabelUserProfile.setText(nome);
+        this.cognomeLabelUserProfile.setText(cognome);
+        this.emailLabelUserProfile.setText(email);
+    }
 }

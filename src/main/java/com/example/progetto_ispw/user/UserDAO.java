@@ -21,7 +21,7 @@ public class UserDAO {
         }
     }
 
-    private UserDAO() {
+    public UserDAO() {
     }
 
     public void getUser(String email) throws UserNotFoundException {
@@ -83,6 +83,31 @@ public class UserDAO {
     }
 
 
+    public void getUserInfo(String email) throws UserNotFoundException {
+
+        try {
+            Connection con = getConnector();
+            if (con == null)
+                throw new SQLException();
+            String query = "SELECT Email, Nome, Cognome FROM usersCredenziali WHERE Email = ?;";
+            try (PreparedStatement preparedStatement = con.prepareStatement(query)) {
+                preparedStatement.setString(1, email);
+                ResultSet rs = preparedStatement.executeQuery();
+                if (!rs.next()) {
+                    throw new UserNotFoundException();
+                }
+                UserEntity user = UserEntity.getInstance();
+                user.setEmail(rs.getString("Email"));
+                user.setName(rs.getString("Nome"));
+                user.setSurname(rs.getString("Cognome"));
+                rs.close();
+
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
 
 

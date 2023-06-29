@@ -104,7 +104,15 @@ public class LoginView {
         UIController controller = UIController.getUIControllerInstance();
         controller.showLogin();
     }
+
+    public void preCompileInfo() {
+        UIController viewController = UIController.getUIControllerInstance();
+        viewController.preCompileInfo(emailTextField.getText());
+    }
 }
 
+//------------------------------------------ATTENZIONE------------------------------------------------------------------
 
-
+//aggiungere alla schermata profilo, l'azione sul change slots con ricordo delle credenziali
+//aggiungere al tasto in alto a dx che invoca il profilo il precompile dei dati uguale a sopra
+//mandare e vedere se funzia
