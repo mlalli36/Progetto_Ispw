@@ -105,10 +105,7 @@ public class LoginView {
         controller.showLogin();
     }
 
-    public void preCompileInfo() {
-        UIController viewController = UIController.getUIControllerInstance();
-        viewController.preCompileInfo(emailTextField.getText());
-    }
+
 }
 
 //------------------------------------------ATTENZIONE------------------------------------------------------------------

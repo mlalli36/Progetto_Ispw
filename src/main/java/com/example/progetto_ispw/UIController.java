@@ -164,19 +164,7 @@ public class UIController {
         this.loadStage("interfaccia SlotHours.fxml", "profileMyDetails.css");
     }
 // prova per passaggio di email nome e cognome
-    public void preCompileInfo(String email) {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("interfacciaUserProfile.fxml"));
-        Parent root1 = fxmlLoader.load();
-        root1.getStylesheets().add(Objects.requireNonNull(getClass().getResource("profileMyDetails.css")).toExternalForm());
-        ProfileDinamicaView profileDinamicaView = fxmlLoader.getController();
-        UserDAO userDAO=new UserDAO();
 
-        profileDinamicaView.preCompile(email,nome,cognome);
-
-        this.fadeAnimation(root1, this.stage.getScene().getRoot());
-
-        this.stage.setScene(new Scene(root1));
-    }
 }
 
 
