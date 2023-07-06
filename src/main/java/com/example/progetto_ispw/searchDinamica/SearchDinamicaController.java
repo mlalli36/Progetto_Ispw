@@ -4,6 +4,8 @@ import com.example.progetto_ispw.UIController;
 import com.example.progetto_ispw.home.HomeBean;
 import com.example.progetto_ispw.home.ResultElement;
 import com.example.progetto_ispw.home.ResultSetEntity;
+import com.example.progetto_ispw.login.exception.UserNotFoundException;
+import com.example.progetto_ispw.user.UserDAO;
 import com.example.progetto_ispw.worker.WorkerDAO;
 import com.example.progetto_ispw.worker.WorkerEntity;
 
@@ -54,4 +56,9 @@ public class SearchDinamicaController {
 
     }
 
+    public void searchInfo(SearchDinamicaBean searchDBean) throws UserNotFoundException {
+
+        UserDAO userDAO= UserDAO.getInstance();
+        userDAO.getUserInfo(searchDBean.getemailsearch());
+    }
 }

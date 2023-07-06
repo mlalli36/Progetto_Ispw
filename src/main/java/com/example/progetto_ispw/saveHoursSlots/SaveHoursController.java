@@ -5,31 +5,104 @@ import com.example.progetto_ispw.worker.WorkerDAO;
 import com.example.progetto_ispw.worker.WorkerEntity;
 
 public class SaveHoursController {
-    public void saveHoursSlots(SaveHoursBean bean) {
-        try {
-            WorkerDAO dao = WorkerDAO.getInstance();
-            WorkerEntity workerEmail = new WorkerEntity();
-         //   System.out.println(bean.getemail());
-            System.out.println(bean.getSlot1());
-            System.out.println(bean.getSlot2());
-            System.out.println(bean.getSlot3());
-            System.out.println(bean.getSlot4());
-            System.out.println(bean.getSlot5());
-            System.out.println(bean.getDateCalendar());
-            System.out.println(workerEmail.getEmail());
+    public void saveHoursSlots(SaveHoursBean bean) throws TimeSlotAlreadyExistsException {
+        WorkerDAO dao = WorkerDAO.getInstance();
 
-            dao.addSlots(/*bean.getemail(),*/workerEmail.getEmail(), bean.getSlot1(), bean.getSlot2(), bean.getSlot3(), bean.getSlot4(), bean.getSlot5(), bean.getDateCalendar());
+        // Eseguire la query per ottenere lo slot dal database
+        SlotHoursEntity slot = dao.getSlots(bean.getemail(), bean.getDateCalendar());
+
+        //controllo sull'email da controllare per vedere se utenti diversi prendono appuntamenti nello stesso giorno
 
 
-            //dobbiamo scrivere la query nel workerDAO
-        } catch (TimeSlotAlreadyExistsException e) {
-            System.out.println("Lo slot selezionato è già impostato!!");
-            // Gestisci l'eccezione qui, ad esempio, mostrando un messaggio di errore all'utente.
-            e.printStackTrace(); // o qualsiasi altra azione di gestione dell'errore desiderata
+        // Verificare se la mail e lo slot esistono nel database e confrontare le date
+        if (slot != null && slot.getemail().equals(bean.getemail()) && slot.getdate().equals(bean.getDateCalendar())) {
+            if (slot.getSlot1().equals(bean.getSlot1()) ||
+            slot.getSlot2().equals(bean.getSlot2())     ||
+            slot.getSlot3().equals(bean.getSlot3())     ||
+            slot.getSlot4().equals(bean.getSlot4())     ||
+            slot.getSlot5().equals(bean.getSlot5())) {
+                throw new TimeSlotAlreadyExistsException("Lo slot selezionato è già esistente");
+            }
         }
+
+        // Se lo slot non esiste o le date non corrispondono, aggiungere lo slot al database
+        dao.addSlots(bean.getemail(), bean.getSlot1(), bean.getSlot2(), bean.getSlot3(), bean.getSlot4(), bean.getSlot5(), bean.getDateCalendar());
+    }
+}
+
+
+
+
+/*
+public class SaveHoursController {
+    public void saveHoursSlots(SaveHoursBean bean) throws TimeSlotAlreadyExistsException {
+
+            WorkerDAO dao = WorkerDAO.getInstance();
+
+            dao.addSlots(bean.getemail(),bean.getSlot1(), bean.getSlot2(), bean.getSlot3(), bean.getSlot4(), bean.getSlot5(), bean.getDateCalendar());
+            dao.getSlots(bean.getemail(), bean.getDateCalendar());
+
+
+/*
+        SlotHoursEntity shEntity= new SlotHoursEntity();
+        String slot1= shEntity.getSlot1();
+        String slot2= shEntity.getSlot2();
+        String slot3= shEntity.getSlot3();
+        String slot4= shEntity.getSlot4();
+        String slot5= shEntity.getSlot5();
+        String date= shEntity.getdate() ;
+
+        System.out.println(date);
+        System.out.println("1 "+slot1);
+        System.out.println("2 "+slot2);
+        System.out.println("3 "+slot3);
+        System.out.println("4 "+slot4);
+        System.out.println("5 "+slot5);
+
+
+        if (date.equals(bean.getDateCalendar()) &&
+                (slot1.equals(bean.getSlot1())|
+                slot1.equals(bean.getSlot2())|
+                slot1.equals(bean.getSlot3())|
+                slot1.equals(bean.getSlot4())|
+                slot1.equals(bean.getSlot5())|
+
+                    slot2.equals(bean.getSlot1())|
+                    slot2.equals(bean.getSlot2())|
+                    slot2.equals(bean.getSlot3())|
+                    slot2.equals(bean.getSlot4())|
+                    slot2.equals(bean.getSlot5())|
+
+                    slot3.equals(bean.getSlot1())|
+                    slot3.equals(bean.getSlot2())|
+                    slot3.equals(bean.getSlot3())|
+                    slot3.equals(bean.getSlot4())|
+                    slot3.equals(bean.getSlot5())|
+
+                    slot4.equals(bean.getSlot1())|
+                    slot4.equals(bean.getSlot2())|
+                    slot4.equals(bean.getSlot3())|
+                    slot4.equals(bean.getSlot4())|
+                    slot4.equals(bean.getSlot5())|
+
+                    slot5.equals(bean.getSlot1())|
+                    slot5.equals(bean.getSlot2())|
+                    slot5.equals(bean.getSlot3())|
+                    slot5.equals(bean.getSlot4())|
+                    slot5.equals(bean.getSlot5())
+            )
+            )
+
+        {throw new TimeSlotAlreadyExistsException("Lo slot selezione è già esistente");
+
+        }
+        dao.addSlots(bean.getemail(),bean.getSlot1(), bean.getSlot2(), bean.getSlot3(), bean.getSlot4(), bean.getSlot5(), bean.getDateCalendar());
+
+*/
+/*
     }
 
 
 
 
-}
+}*/

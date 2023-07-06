@@ -10,6 +10,7 @@
    <children>
       <Pane layoutY="-1.0" prefHeight="53.0" prefWidth="1219.0" style="-fx-background-color: #74c69d;">
          <children>
+
             <Button layoutX="1144.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #74c69d;" />
             <Button layoutX="1069.0" layoutY="-1.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #74c69d;" />
             <Button layoutX="994.0" layoutY="-1.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #74c69d;" />
@@ -61,7 +62,7 @@
          </children>
       </Pane>
       <Circle fill="#74c69d" layoutX="95.0" layoutY="128.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
-      <Label layoutX="142.0" layoutY="102.0" prefHeight="53.0" prefWidth="128.0">
+      <Label fx:id="nameLabel" layoutX="142.0" layoutY="102.0" prefHeight="53.0" prefWidth="128.0">
          <font>
             <Font name="Bookman Old Style" size="30.0" />
          </font>
@@ -121,9 +122,9 @@
             <Image url="@icon/position.png" />
          </image>
       </ImageView>
-      <Label fx:id="nomePrecompile" layoutX="142.0" layoutY="102.0" prefHeight="53.0" prefWidth="128.0">
+      <Label fx:id="nameLabel" layoutX="142.0" layoutY="102.0" prefHeight="53.0" prefWidth="128.0">
          <font>
-            <Font name="Bookman Old Style" size="30.0" />
+            <Font name="Bookman Old Style" size="26.0" />
          </font>
       </Label>
       <Label fx:id="cognomePrecompile" layoutX="309.0" layoutY="102.0" prefHeight="53.0" prefWidth="128.0">
@@ -134,6 +135,21 @@
       <Label fx:id="emailPrecompile" layoutX="142.0" layoutY="169.0" prefHeight="16.0" prefWidth="295.0">
          <font>
             <Font name="Bookman Old Style" size="30.0" />
+         </font>
+      </Label>
+      <Label fx:id="surnameLabel" layoutX="280.0" layoutY="102.0" prefHeight="53.0" prefWidth="128.0">
+         <font>
+            <Font name="Bookman Old Style" size="26.0" />
+         </font>
+      </Label>
+      <Label fx:id="emailLabel" layoutX="134.0" layoutY="161.0" prefHeight="53.0" prefWidth="284.0">
+         <font>
+            <Font name="Bookman Old Style" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="errorLabel" layoutX="875.0" layoutY="567.0" prefHeight="53.0" prefWidth="284.0" textFill="RED">
+         <font>
+            <Font name="Bookman Old Style" size="16.0" />
          </font>
       </Label>
    </children>

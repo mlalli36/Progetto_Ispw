@@ -8,6 +8,7 @@ public class HomeBean {
     protected String nameWork= null;
     protected String jobWork=null;
     protected String locationWork = null;
+    private String emailsearch;
 
     public  ResultSetEntity getResultSet() {
         return resultSet;
@@ -44,4 +45,9 @@ public class HomeBean {
     }
 
 
+    public void setEmail(String emailsearch) {
+        this.emailsearch= emailsearch;
+    }
+
+    public String getemailsearch() {return emailsearch;}
 }

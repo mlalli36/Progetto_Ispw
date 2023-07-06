@@ -7,6 +7,7 @@ import java.util.List;
 public class SearchDinamicaBean {
 
     private ResultSetEntity resultSet;
+    private String emailsearch;
 
 
     public void setResultSet(ResultSetEntity resultSet) {
@@ -16,4 +17,8 @@ public class SearchDinamicaBean {
     public ResultSetEntity getResultSet(){
         return resultSet;
     }
+
+    public void setEmail(String emailsearch) {this.emailsearch= emailsearch;}
+
+    public String getemailsearch() {return emailsearch;}
 }

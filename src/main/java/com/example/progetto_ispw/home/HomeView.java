@@ -1,8 +1,10 @@
 package com.example.progetto_ispw.home;
 
 import com.example.progetto_ispw.UIController;
-import com.example.progetto_ispw.searchDinamica.SearchDinamicaController;
+import com.example.progetto_ispw.login.exception.UserNotFoundException;
 import com.example.progetto_ispw.user.UserDAO;
+import com.example.progetto_ispw.userProfile.UserProfileBean;
+import com.example.progetto_ispw.searchDinamica.SearchDinamicaController;
 import com.example.progetto_ispw.user.UserEntity;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -34,17 +36,27 @@ public class HomeView {
 
 
 
-    public void profileMethod(ActionEvent actionEvent) throws IOException {
+    public void profileMethod(ActionEvent actionEvent) throws IOException, UserNotFoundException {
         UserEntity user = UserEntity.getInstance();
         String type = user.getTipoaccesso();
         System.out.println(type);
         UIController viewController = UIController.getUIControllerInstance();//è singletone
 
+        String emailsearch= user.getEmail();
+        HomeBean homeBean=new HomeBean();
+        homeBean.setEmail(emailsearch);
+        HomeController homeController=new HomeController();
+        homeController.searchInfo(homeBean);
+        String namesearch= user.getName();
+        String surnamesearch= user.getSurname();
 
         if(!"Worker".equals(type)) {
-            viewController.showProfiloDinamica();
+
+            viewController.insertInfoUser(namesearch,surnamesearch,emailsearch);
         } else{
-            viewController.showProfilo();
+
+
+            viewController.insertInfoWorker(namesearch,surnamesearch,emailsearch);
         }
 
     }

@@ -1,5 +1,6 @@
-package com.example.progetto_ispw;
+package com.example.progetto_ispw.userProfile;
 
+import com.example.progetto_ispw.user.UserEntity;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,7 +16,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class ProfileDinamicaView {
+public class UserProfileView {
     @FXML
     public AnchorPane anchorPaneProfile;
     @FXML
@@ -37,9 +38,9 @@ public class ProfileDinamicaView {
     @FXML
     public Button exit;
     @FXML
-    public Label nomeLabelUserProfile;
+    public Label nameLabelUserProfile;
     @FXML
-    public Label cognomeLabelUserProfile;
+    public Label surnameLabelUserProfile;
     @FXML
     public Label emailLabelUserProfile;
 
@@ -111,9 +112,13 @@ public class ProfileDinamicaView {
     }
 
 
-    public void preCompile(String email, String nome, String cognome) {
-        this.nomeLabelUserProfile.setText(nome);
-        this.cognomeLabelUserProfile.setText(cognome);
-        this.emailLabelUserProfile.setText(email);
+    public void preCompileUser( String namesearch, String surnamesearch, String emailsearch) {
+        this.nameLabelUserProfile.setText(namesearch);
+        this.surnameLabelUserProfile.setText(surnamesearch);
+        this.emailLabelUserProfile.setText(emailsearch);
+
     }
+    // prova come dice pamela per scrivere da qui
+
+
 }

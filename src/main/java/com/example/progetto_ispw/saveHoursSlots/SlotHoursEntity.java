@@ -44,7 +44,7 @@ public class SlotHoursEntity {
     public String  getSlot4(){return  slot4;}
     public String  getSlot5(){return  slot5;}
     public String  getemail(){return  email;}
-    public String date(){return  dateCalendar;}
+    public String getdate(){return  dateCalendar;}
 
 
 

@@ -25,7 +25,8 @@ public class WorkerDAO {
 
     private WorkerDAO() {
     }
-    public void addWorker (String email, String description, String work,String nome , String cognome, String indirizzo, String location ) throws UserAlreadyExistsException {
+
+    public void addWorker(String email, String description, String work, String nome, String cognome, String indirizzo, String location) throws UserAlreadyExistsException {
         try (Connection con = getConnector()) {
             if (con == null)
                 throw new SQLException();
@@ -63,7 +64,7 @@ public class WorkerDAO {
 
     //forse questa deve rutornare una List<WorkEntuty> e WorkEntity potrebbe non dover essere Singleton
 
-    public List<WorkerEntity> getWorker(String jobWorker, String locationWorker)  {
+    public List<WorkerEntity> getWorker(String jobWorker, String locationWorker) {
         List<WorkerEntity> workerList = new ArrayList<>();
 
         try {
@@ -124,12 +125,78 @@ public class WorkerDAO {
 
             }
 
-        }  catch (SQLIntegrityConstraintViolationException e) {
-           throw new TimeSlotAlreadyExistsException();
-       }
-        catch (SQLException e) {
+        } catch (SQLIntegrityConstraintViolationException e) {
+            throw new TimeSlotAlreadyExistsException("Lo slot selezione è già esistente");
+        } catch (SQLException e) {
             e.printStackTrace();
         }
 
+    }
+/*
+query originale
+    public void getSlots(String email, String dateCalendar) throws TimeSlotAlreadyExistsException {
+        try (Connection con = getConnector()) {
+            if (con == null)
+                throw new SQLException();
+            String query = "SELECT * FROM `databaseispw`.`appointment avaible` WHERE email= ? AND date= ? ;";
+            try (PreparedStatement preparedStatement = con.prepareStatement(query)) {
+                preparedStatement.setString(1, email);
+               // preparedStatement.setString(2, String.valueOf(dateCalendar));
+                ResultSet rs = preparedStatement.executeQuery();
+                if (!rs.next()) {
+                    throw new TimeSlotAlreadyExistsException("Lo slot selezione è già esistente");
+                }
+
+
+                SlotHoursEntity slot = new SlotHoursEntity();
+                slot.setEmail(rs.getString("email"));
+                slot.setSlot1(rs.getString("slot1"));
+                slot.setSlot2(rs.getString("slot2"));
+                slot.setSlot3(rs.getString("slot3"));
+                slot.setSlot4(rs.getString("slot4"));
+                slot.setSlot5(rs.getString("slot5"));
+                slot.setDateCalendar(rs.getString("dateCalendar"));
+
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+    }*/
+
+
+    // query di prova
+    public SlotHoursEntity getSlots(String email, String dateCalendar) throws TimeSlotAlreadyExistsException {
+        SlotHoursEntity slot = null;
+        try (Connection con = getConnector()) {
+            if (con == null)
+                throw new SQLException();
+
+            String query = "SELECT * FROM `databaseispw`.`appointment avaible` WHERE email = ? AND date = ?";
+            try (PreparedStatement preparedStatement = con.prepareStatement(query)) {
+                preparedStatement.setString(1, email);
+                preparedStatement.setString(2, dateCalendar);
+
+                try (ResultSet rs = preparedStatement.executeQuery()) {
+                    if (rs.next()) {
+                        slot = new SlotHoursEntity();
+                        slot.setEmail(rs.getString("email"));
+                        slot.setSlot1(rs.getString("slot1"));
+                        slot.setSlot2(rs.getString("slot2"));
+                        slot.setSlot3(rs.getString("slot3"));
+                        slot.setSlot4(rs.getString("slot4"));
+                        slot.setSlot5(rs.getString("slot5"));
+                        slot.setDateCalendar(rs.getString("date"));
+                    } else {
+                        throw new TimeSlotAlreadyExistsException("Lo slot selezionato non esiste");
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return slot;
     }
 }

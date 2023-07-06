@@ -26,7 +26,7 @@ public class UserEntity {
     public void setEmail(String email) {
         this.email = email;
     }
-
+    public String getEmail(){return email;}
     public void setPassword(String password) {
         this.password = password;
     }
@@ -40,8 +40,11 @@ public class UserEntity {
         return password;
     }
 
-    public void setDescription(String description) {this.description = description;}
+    public String getName() {return name;}
 
+    public String getSurname() {return surname;}
+
+    public void setDescription(String description) {this.description = description;}
     public void setWork(String work) { this.work = work;}
 
     public void setName(String nome) {this.name =nome;}

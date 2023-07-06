@@ -1,8 +1,7 @@
 package com.example.progetto_ispw.saveHoursSlots.exception;
 
-import java.time.LocalDate;
 
-public class TimeSlotAlreadyExistsException extends Exception {
+public class TimeSlotAlreadyExistsException extends RuntimeException {
 
-    public TimeSlotAlreadyExistsException(){super("*** Time Slot already used ***");}
+    public TimeSlotAlreadyExistsException(String s){super(s);}
 }

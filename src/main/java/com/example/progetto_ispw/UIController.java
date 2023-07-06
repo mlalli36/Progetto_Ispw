@@ -1,10 +1,12 @@
 package com.example.progetto_ispw;
 
 import com.example.progetto_ispw.profileSignUp.ProfileSignUpView;
+import com.example.progetto_ispw.saveHoursSlots.SlotHoursView;
 import com.example.progetto_ispw.searchDinamica.SearchDinamicaBean;
 import com.example.progetto_ispw.searchDinamica.SearchDinamicaView;
 import com.example.progetto_ispw.signup.SignUpView;
-import com.example.progetto_ispw.user.UserDAO;
+import com.example.progetto_ispw.userProfile.UserProfileView;
+import com.example.progetto_ispw.workerProfile.WorkerProfileView;
 import javafx.animation.FadeTransition;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -72,12 +74,65 @@ public class UIController {
         this.loadStage("interfacciaprofileMyDetails.fxml","p");
     }
 
-    public void showProfiloDinamica() throws  IOException{//mostra il profilo dell'user
+/* commento perché showUserProfile non dovrebbe più servire ma lo lasciamo un attimo per vedere se servirà
+    public void showUserProfile() throws  IOException{//mostra il profilo dell'user
         this.loadStage("interfacciaUserProfile.fxml", "profileMyDetails.css");
-    }
-    public void showProfilo() throws  IOException{//mostra il profilo del worker
+    }*/
+    //prova da homeview
+public void insertInfoUser(String namesearch, String surnamesearch,String emailsearch) throws IOException {
+    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("interfacciaUserProfile.fxml"));
+    Parent root1 = fxmlLoader.load();
+    root1.getStylesheets().add(Objects.requireNonNull(getClass().getResource("profileMyDetails.css")).toExternalForm());
+    UserProfileView userProfileView = fxmlLoader.getController();
+    userProfileView.preCompileUser(namesearch, surnamesearch,emailsearch);
+
+    this.fadeAnimation(root1, this.stage.getScene().getRoot());
+
+    this.stage.setScene(new Scene(root1));
+}
+    //fine prova, funziona!
+
+
+
+
+
+
+
+
+
+
+    /*public void showProfilo() throws  IOException{//mostra il profilo del worker
         this.loadStage("interfacciaWorkerProfile.fxml", "profileMyDetails.css");
+    }*/
+
+    // stessa prova del showUserP.
+    public void insertInfoWorker(String namesearch, String surnamesearch,String emailsearch) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("interfacciaWorkerProfile.fxml"));
+        Parent root1 = fxmlLoader.load();
+        root1.getStylesheets().add(Objects.requireNonNull(getClass().getResource("profileMyDetails.css")).toExternalForm());
+        WorkerProfileView workerProfileView = fxmlLoader.getController();
+        workerProfileView.preCompileWorker(namesearch, surnamesearch,emailsearch);
+
+        this.fadeAnimation(root1, this.stage.getScene().getRoot());
+
+        this.stage.setScene(new Scene(root1));
     }
+    //fine seconda prova
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public void showSearchDinamica(SearchDinamicaBean bean) throws IOException{//mostra la schermata di search
     //facciamo così perchè ci serve sapere il file fxml a quale controller è associato, per far riferire tuuti allo stesso controller (controller scritto nella prima riga del file fxml)
@@ -162,6 +217,18 @@ public class UIController {
 
     public void showSlotHours() throws IOException{
         this.loadStage("interfaccia SlotHours.fxml", "profileMyDetails.css");
+    }
+
+    public void insertInfo(String namesearch, String surnamesearch,String emailsearch) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("interfaccia SlotHours.fxml"));
+        Parent root1 = fxmlLoader.load();
+        root1.getStylesheets().add(Objects.requireNonNull(getClass().getResource("profileMyDetails.css")).toExternalForm());
+        SlotHoursView slotHoursView = fxmlLoader.getController();
+        slotHoursView.preCompile(namesearch, surnamesearch,emailsearch);
+
+        this.fadeAnimation(root1, this.stage.getScene().getRoot());
+
+        this.stage.setScene(new Scene(root1));
     }
 // prova per passaggio di email nome e cognome
 

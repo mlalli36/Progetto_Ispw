@@ -6,7 +6,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="anchorPaneProfile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="1219.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.progetto_ispw.ProfileDinamicaView">
+<AnchorPane fx:id="anchorPaneProfile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="1219.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.progetto_ispw.userProfile.UserProfileView">
    <children>
       <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="1219.0" style="-fx-background-image: #0000;">
          <children>
@@ -88,9 +88,18 @@
                   <Image url="@icon/position.png" />
                </image>
             </ImageView>
-            <Label fx:id="nomeLabelUserProfile" layoutX="148.0" layoutY="108.0" prefHeight="37.0" prefWidth="82.0" text="Label" />
-            <Label fx:id="cognomeLabelUserProfile" layoutX="286.0" layoutY="107.0" prefHeight="37.0" prefWidth="82.0" text="Label" />
-            <Label fx:id="emailLabelUserProfile" layoutX="146.0" layoutY="152.0" prefHeight="37.0" prefWidth="232.0" text="Label" />
+            <Label fx:id="nameLabelUserProfile" layoutX="148.0" layoutY="108.0" prefHeight="37.0" prefWidth="82.0">
+               <font>
+                  <Font name="Bookman Old Style" size="22.0" />
+               </font></Label>
+            <Label fx:id="surnameLabelUserProfile" layoutX="286.0" layoutY="107.0" prefHeight="37.0" prefWidth="82.0">
+               <font>
+                  <Font name="Bookman Old Style" size="22.0" />
+               </font></Label>
+            <Label fx:id="emailLabelUserProfile" layoutX="146.0" layoutY="152.0" prefHeight="37.0" prefWidth="232.0">
+               <font>
+                  <Font name="Bookman Old Style" size="20.0" />
+               </font></Label>
          </children>
       </Pane>
    </children>

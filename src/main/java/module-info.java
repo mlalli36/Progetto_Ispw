@@ -28,4 +28,8 @@ module com.example.progetto_ispw {
     opens com.example.progetto_ispw.saveHoursSlots to javafx.fxml;
     exports com.example.progetto_ispw.saveHoursSlots.exception;
     opens com.example.progetto_ispw.saveHoursSlots.exception to javafx.fxml;
+    exports com.example.progetto_ispw.userProfile;
+    opens com.example.progetto_ispw.userProfile to javafx.fxml;
+    exports com.example.progetto_ispw.workerProfile;
+    opens com.example.progetto_ispw.workerProfile to javafx.fxml;
 }
