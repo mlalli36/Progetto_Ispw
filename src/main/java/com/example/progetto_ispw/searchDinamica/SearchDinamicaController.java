@@ -37,6 +37,7 @@ public class SearchDinamicaController {
                 resultElement.setJobWork(worker.getWork());
                 resultElement.setLocationWork(worker.getLocation());
                 resultElement.setDescriptionWorker(worker.getDescription());
+                resultElement.setEmailWorker(worker.getEmail());
                 //Si aggiunge il ResultElement al ResultSet
                 this.resultSet.addElement(resultElement);
             }

@@ -16,13 +16,16 @@ public class SaveHoursController {
 
         // Verificare se la mail e lo slot esistono nel database e confrontare le date
         if (slot != null && slot.getemail().equals(bean.getemail()) && slot.getdate().equals(bean.getDateCalendar())) {
-            if (slot.getSlot1().equals(bean.getSlot1()) ||
-            slot.getSlot2().equals(bean.getSlot2())     ||
-            slot.getSlot3().equals(bean.getSlot3())     ||
-            slot.getSlot4().equals(bean.getSlot4())     ||
-            slot.getSlot5().equals(bean.getSlot5())) {
-                throw new TimeSlotAlreadyExistsException("Lo slot selezionato è già esistente");
-            }
+            // print di controllo
+            System.out.println("slot "+slot);
+            System.out.println("slot email "+slot.getemail());
+            System.out.println("bean email "+bean.getemail());
+            System.out.println("slot date "+slot.getdate());
+            System.out.println("bean date "+bean.getDateCalendar());
+            System.out.println("bean date "+bean.getDateCalendar());
+
+                throw new TimeSlotAlreadyExistsException("Lo data selezionato è già esistente");
+
         }
 
         // Se lo slot non esiste o le date non corrispondono, aggiungere lo slot al database

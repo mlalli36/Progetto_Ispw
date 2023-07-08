@@ -41,6 +41,7 @@ public class SlotHoursView {
     @FXML
     public Label emailLabel;
     public Label errorLabel;
+    public Button homeButton;
 
     public void preCompile(String namesearch, String surnamesearch, String emailsearch) {
         this.nameLabel.setText(namesearch);
@@ -67,7 +68,7 @@ public class SlotHoursView {
             LocalDate selectedDate = dateCalendar.getValue();
             String dateStringCalendar = selectedDate.toString();
 
-            bean.setDateCalendar(dateStringCalendar,slot1Text.getText(),slot2Text.getText(),slot3Text.getText(),slot4Text.getText(),slot5Text.getText());
+            bean.setDateCalendar(dateStringCalendar);
 
 
             SaveHoursController controller = new SaveHoursController();
@@ -83,5 +84,11 @@ public class SlotHoursView {
             errorLabel.setText("Slot già selezionato!!!!!");
             errorLabel.setOpacity(1);
         }
+    }
+
+    public void homeMethod(ActionEvent actionEvent) throws IOException {
+        UIController viewController=UIController.getUIControllerInstance();
+        viewController.showHome();
+
     }
 }

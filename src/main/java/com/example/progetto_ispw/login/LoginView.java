@@ -100,6 +100,7 @@ public class LoginView {
         viewController.precompileSignUp(emailTextField.getText(), passwordTextField.getText());
     }
 
+
     public void backMethod() throws IOException {
         UIController controller = UIController.getUIControllerInstance();
         controller.showLogin();
@@ -108,8 +109,3 @@ public class LoginView {
 
 }
 
-//------------------------------------------ATTENZIONE------------------------------------------------------------------
-
-//aggiungere alla schermata profilo, l'azione sul change slots con ricordo delle credenziali
-//aggiungere al tasto in alto a dx che invoca il profilo il precompile dei dati uguale a sopra
-//mandare e vedere se funzia

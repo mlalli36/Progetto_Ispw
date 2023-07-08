@@ -168,7 +168,7 @@ query originale
 
 
     // query di prova
-    public SlotHoursEntity getSlots(String email, String dateCalendar) throws TimeSlotAlreadyExistsException {
+    public SlotHoursEntity getSlots(String email, String dateCalendar)   {
         SlotHoursEntity slot = null;
         try (Connection con = getConnector()) {
             if (con == null)
@@ -189,8 +189,6 @@ query originale
                         slot.setSlot4(rs.getString("slot4"));
                         slot.setSlot5(rs.getString("slot5"));
                         slot.setDateCalendar(rs.getString("date"));
-                    } else {
-                        throw new TimeSlotAlreadyExistsException("Lo slot selezionato non esiste");
                     }
                 }
             }

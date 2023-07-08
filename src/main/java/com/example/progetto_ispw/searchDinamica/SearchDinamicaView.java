@@ -43,6 +43,7 @@ public class SearchDinamicaView{
     public Pane paneDinamico;
     @FXML
     public ScrollPane scrollPane;
+    public String emailWorker;
 
     public void profileMethod(ActionEvent actionEvent) throws IOException, UserNotFoundException {
      /*   UIController viewController = UIController.getUIControllerInstance();//è singletone
@@ -109,6 +110,8 @@ public class SearchDinamicaView{
             String jobWorker= r.getJobWorker();
             String locationWorker = r.getLocationWorker();
             String descriptionWorker= r.getWorkerDescription();
+            emailWorker= r.getWorkerEmail();
+
 
             customTilePane.addElements(name,jobWorker,locationWorker,descriptionWorker,newButton);
             newButton.setOnAction(event -> {
@@ -124,19 +127,12 @@ public class SearchDinamicaView{
 
     }
 
-    public void showIntForm() throws IOException{
+    public void showIntForm() throws IOException {
         UIController viewController = UIController.getUIControllerInstance();
-        viewController.showForm();
+        viewController.showForm(emailWorker);
+        //fare una prova per vedere se questa sia null o se la prende effettivamente dalla riga 113!
 
     }
-
-    //public void setBean2(SearchDinamicaBean bean2) {
-        //this.bean2 = bean2;
-   // }
-
-
-
-
 }
 
 

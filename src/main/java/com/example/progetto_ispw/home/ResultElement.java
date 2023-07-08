@@ -6,6 +6,9 @@ public class ResultElement {
     private String jobWork;
     private String locationWorker;
     private String descriptionWorker;
+
+    private String emailWorker;
+
     public void setNameWorker(String nameWorker) {
         this.nameWorker= nameWorker;
     }
@@ -20,6 +23,9 @@ public class ResultElement {
 
     public void setDescriptionWorker(String descriptionWorker) {
         this.descriptionWorker = descriptionWorker;
+    }
+    public void setEmailWorker(String emailWorker) {
+        this.emailWorker= emailWorker;
     }
 
     public String getWorkerName() {
@@ -41,4 +47,5 @@ public class ResultElement {
     public String getLocationWorker() {
         return locationWorker;
     }
+    public String getWorkerEmail(){return emailWorker;}
 }

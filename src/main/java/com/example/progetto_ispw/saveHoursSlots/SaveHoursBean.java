@@ -54,64 +54,8 @@ public class SaveHoursBean {
         this.text5 = text5;
     }
     //controllare se va bene
-    public void setDateCalendar(String dateCalendar, String sslot1, String sslot2, String sslot3, String sslot4, String sslot5) throws TimeSlotAlreadyExistsException {
-        //prova per vedere se due slot uguali nella stessa data siano un problema
-       /* SlotHoursEntity shEntity= new SlotHoursEntity();
-        String slot1= shEntity.getSlot1();
-        String slot2= shEntity.getSlot2();
-        String slot3= shEntity.getSlot3();
-        String slot4= shEntity.getSlot4();
-        String slot5= shEntity.getSlot5();
-        String date=  shEntity.getdate() ;
-
-        System.out.println(date);
-        System.out.println("1 "+slot1);
-        System.out.println("2 "+slot2);
-        System.out.println("3 "+slot3);
-        System.out.println("4 "+slot4);
-        System.out.println("5 "+slot5);
-
-        if (date.equals(dateCalendar) &&
-                (slot1.equals(sslot1)|
-                        slot1.equals(sslot2)|
-                        slot1.equals(sslot3)|
-                        slot1.equals(sslot4)|
-                        slot1.equals(sslot5)|
-
-                        slot2.equals(sslot1)|
-                        slot2.equals(sslot2)|
-                        slot2.equals(sslot3)|
-                        slot2.equals(sslot4)|
-                        slot2.equals(sslot5)|
-
-                        slot3.equals(sslot1)|
-                        slot3.equals(sslot2)|
-                        slot3.equals(sslot3)|
-                        slot3.equals(sslot4)|
-                        slot3.equals(sslot5)|
-
-                        slot4.equals(sslot1)|
-                        slot4.equals(sslot2)|
-                        slot4.equals(sslot3)|
-                        slot4.equals(sslot4)|
-                        slot4.equals(sslot5)|
-
-                        slot5.equals(sslot1)|
-                        slot5.equals(sslot2)|
-                        slot5.equals(sslot3)|
-                        slot5.equals(sslot4)|
-                        slot5.equals(sslot5)
-                )
-        ){throw new TimeSlotAlreadyExistsException("Lo slot selezione è già esistente");
-
-        }
-
-        //fine prova
-
-
-*/
+    public void setDateCalendar(String dateCalendar) throws TimeSlotAlreadyExistsException {
         this.dateCalendar = dateCalendar;
-
     }
 
     //fino a qui

@@ -70,7 +70,6 @@ public class HomeView {
 
     public void searchMethod() throws IOException {
             HomeBean bean= new HomeBean();
-            bean.setNameWork(nameWorkerTextField.getText());
             bean.setJobWork(jobWorkerTextField.getText());
             bean.setLocationWork(locationWorkerTextField.getText());
 

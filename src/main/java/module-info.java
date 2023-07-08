@@ -32,4 +32,6 @@ module com.example.progetto_ispw {
     opens com.example.progetto_ispw.userProfile to javafx.fxml;
     exports com.example.progetto_ispw.workerProfile;
     opens com.example.progetto_ispw.workerProfile to javafx.fxml;
+    exports com.example.progetto_ispw.fillForm;
+    opens com.example.progetto_ispw.fillForm to javafx.fxml;
 }
