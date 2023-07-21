@@ -33,6 +33,8 @@ public class FillFormBean {
 
     public void setPhone(String phone){
         this.phone=phone;
+        //aggiungere un controllo per vedere se sono solo numeri!
+
     }
     public void setDate(String date)  {
         this.date = date;

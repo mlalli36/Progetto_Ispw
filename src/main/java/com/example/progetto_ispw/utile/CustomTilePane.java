@@ -13,7 +13,7 @@ import javafx.scene.text.Font;
 import java.security.cert.PolicyNode;
 
 public class CustomTilePane {
-    AnchorPane entryPane;
+        AnchorPane entryPane;
         TilePane customTP;
         VBox resultsBox;
         public void addElements( String name, String job, String location, String description,Button selectButton){
@@ -40,7 +40,6 @@ public class CustomTilePane {
 
             Label textLabel4 =new Label("Descrizione: "+ description);
             AnchorPane.setLeftAnchor(textLabel4, 50.0);
-            //AnchorPane.setRightAnchor(textLabel4, 300.0);
             AnchorPane.setTopAnchor(textLabel4, 115.0);
 
             entryPane.getChildren().addAll(selectButton, textLabel1, textLabel2, textLabel3, textLabel4);

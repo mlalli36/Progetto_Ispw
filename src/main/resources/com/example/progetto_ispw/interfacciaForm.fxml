@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="anchorPaneFillOutForm" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="1219.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.progetto_ispw.fillForm.FillOutFormView">
+<AnchorPane fx:id="anchorPaneFillOutForm" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="1219.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.progetto_ispw.fillForm.FillFormView">
    <children>
       <Pane fx:id="paneFillOutForm" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="1219.0">
          <children>
@@ -106,6 +106,7 @@
                         <Font name="Bookman Old Style" size="20.0" />
                      </font>
                   </Text>
+                  <Pane fx:id="paneSlot" layoutX="99.0" layoutY="407.0" prefHeight="121.0" prefWidth="1049.0" />
                </children>
             </Pane>
          </children>

@@ -1,5 +1,6 @@
 package com.example.progetto_ispw;
 
+import com.example.progetto_ispw.fillForm.FillFormView;
 import com.example.progetto_ispw.profileSignUp.ProfileSignUpView;
 import com.example.progetto_ispw.saveHoursSlots.SlotHoursView;
 import com.example.progetto_ispw.searchDinamica.SearchDinamicaBean;
@@ -66,8 +67,16 @@ public class UIController {
         this.loadStage("interfaccia profilerecensione.fxml","p");
     }
 
-    public void showForm() throws IOException{//mostra il form
-        this.loadStage("interfacciaForm.fxml","form.css");
+    public void showForm(String emailWorker) throws IOException{//mostra il form
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("interfacciaForm.fxml"));
+        Parent root1 = fxmlLoader.load();
+        root1.getStylesheets().add(Objects.requireNonNull(getClass().getResource("form.css")).toExternalForm());
+        FillFormView ffV = fxmlLoader.getController();
+        ffV.preCompileInfo(emailWorker);
+
+        this.fadeAnimation(root1, this.stage.getScene().getRoot());
+
+        this.stage.setScene(new Scene(root1));
     }
 
     public void showProfileMyDetails() throws IOException{//mostra i dettagli del proprio profilo
@@ -178,6 +187,7 @@ public void insertInfoUser(String namesearch, String surnamesearch,String emails
     public void setStage(Stage stage){
         this.stage = stage;
     }
+
     public void precompileSignUp(String email, String password) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("interfaccia SignUp.fxml"));
         Parent root1 = fxmlLoader.load();
@@ -190,6 +200,7 @@ public void insertInfoUser(String namesearch, String surnamesearch,String emails
         this.stage.setScene(new Scene(root1));
 
     }
+
     public void signUpMethod(String email, String nome, String cognome) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("interfaccia profileSignUp.fxml"));
         Parent root1 = fxmlLoader.load();
