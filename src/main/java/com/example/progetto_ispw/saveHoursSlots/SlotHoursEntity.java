@@ -1,6 +1,13 @@
 package com.example.progetto_ispw.saveHoursSlots;
 
+import com.example.progetto_ispw.user.UserEntity;
+
 public class SlotHoursEntity {
+    public static SlotHoursEntity getInstance() {
+        if (singleInstance == null)
+            singleInstance = new SlotHoursEntity();
+        return singleInstance;
+    }
     private String email;
     private String slot1;
     private String slot2;
@@ -8,7 +15,12 @@ public class SlotHoursEntity {
     private String slot4;
     private String slot5;
     private String dateCalendar;
+    //prova appuntamento
+    private String appointment;
 
+    private static SlotHoursEntity singleInstance = null;
+
+    public void setAppointment(String appointment){this.appointment=appointment;}
     public void setEmail(String email) {
         this.email= email;
     }
@@ -37,15 +49,15 @@ public class SlotHoursEntity {
         this.dateCalendar=dateCalendar;
     }
 
-
+    public String getAppointment(){return appointment;}
     public String  getSlot1(){return slot1;}
     public String  getSlot2(){return  slot2;}
     public String  getSlot3(){return  slot3;}
     public String  getSlot4(){return  slot4;}
     public String  getSlot5(){return  slot5;}
     public String  getemail(){return  email;}
+
     public String getdate(){return  dateCalendar;}
 
-
-
 }
+

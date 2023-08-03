@@ -181,7 +181,7 @@ query originale
 
                 try (ResultSet rs = preparedStatement.executeQuery()) {
                     if (rs.next()) {
-                        slot = new SlotHoursEntity();
+                        slot =  SlotHoursEntity.getInstance();
                         slot.setEmail(rs.getString("email"));
                         slot.setSlot1(rs.getString("slot1"));
                         slot.setSlot2(rs.getString("slot2"));

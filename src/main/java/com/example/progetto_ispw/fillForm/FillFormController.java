@@ -8,9 +8,13 @@ public class FillFormController {
     public void TakeSlot(FillFormBean bean) {
         String emailWorker = bean.getEmailWorker();
         String date = bean.getDate();
-        WorkerDAO dao = WorkerDAO.getInstance();
-        SlotHoursEntity result = new SlotHoursEntity();
-        result = dao.getSlots(emailWorker, date);
+        System.out.println("FFC date: "+date);
+        System.out.println("FFC email: "+emailWorker);
 
+
+        WorkerDAO dao = WorkerDAO.getInstance();
+        SlotHoursEntity result =  SlotHoursEntity.getInstance();
+        result = dao.getSlots(emailWorker, date);
+        System.out.println("result: "+result);
     }
 }

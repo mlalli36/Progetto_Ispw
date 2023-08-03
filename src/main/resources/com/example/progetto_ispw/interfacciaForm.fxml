@@ -107,6 +107,7 @@
                      </font>
                   </Text>
                   <Pane fx:id="paneSlot" layoutX="99.0" layoutY="407.0" prefHeight="121.0" prefWidth="1049.0" />
+                  <CheckBox fx:id="check1" layoutX="443.0" layoutY="277.0" mnemonicParsing="false" opacity="0.0" text="CheckBox" />
                </children>
             </Pane>
          </children>

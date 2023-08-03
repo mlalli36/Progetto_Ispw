@@ -90,10 +90,6 @@ public class SearchDinamicaView{
         viewController.showHome();
     }
 
- /*   @FXML
-    public void initialize() throws IOException {
-        this.showResult(bean2);
-    }*/
     public void showResult(SearchDinamicaBean bean2) throws IOException {
 
 

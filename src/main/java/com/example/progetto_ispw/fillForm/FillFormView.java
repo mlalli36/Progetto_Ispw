@@ -4,10 +4,7 @@ import com.example.progetto_ispw.saveHoursSlots.SlotHoursEntity;
 import com.example.progetto_ispw.utile.CustomTilePane;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
@@ -51,6 +48,9 @@ public class FillFormView {
     @FXML
     public Pane paneSlot;
 
+    @FXML
+    public CheckBox check1;
+
 
     public void profileMethod(ActionEvent actionEvent) {
         //da implementare
@@ -67,30 +67,35 @@ public class FillFormView {
     FillFormController controller= new FillFormController();
 
     public void sendFormMethod(ActionEvent actionEvent) {
-        //prende i dati dall'interfaccia, tutte le caselle textfield
-        // prende i dati e lo slot selezionato dopo la ricerca, quindi fare un controllo se è selezionato un bottone(checkbox?) o no,
-        // e poi invia il form al proprietario della mail.
-
         bean.setEmailUser(emailUserTextField.getText());
        bean.setName(nameTextField.getText());
        bean.setSurname(surnameTextField.getText());
        bean.setDescription(descriptionUserTextField.getText());
        bean.setPhone(phoneUserTextField.getText());
+       //data da riprendere sotto
 
-
-        LocalDate selectedDate = date.getValue();
-        String dateStringCalendar = selectedDate.toString();
-
-        bean.setDate(dateStringCalendar);// funzionerà?? da verificare!
+        SlotHoursEntity sh=SlotHoursEntity.getInstance();
+        String appuntamento=sh.getAppointment();
+        System.out.println("appuntamento alle ore: "+appuntamento);
 
 
     }
+
+
 
     public void backMethod(ActionEvent actionEvent) {
         //da implementare
     }
 
     public void searchDataFormMethod(ActionEvent actionEvent) {
+
+
+        LocalDate selectedDate = date.getValue();
+
+        String dateStringCalendar = selectedDate.toString();
+        bean.setDate(dateStringCalendar);// funzionerà?? da verificare!
+        System.out.println("prova data "+dateStringCalendar);
+
         //data selezionata dall'utente e dobbiamo prendere la mail da un precompile che dobbiamo fare
         //poi usiamo la query getslots
         SlotTilePane slPane= new SlotTilePane();
@@ -98,20 +103,24 @@ public class FillFormView {
         paneSlot.setVisible(true);
         //mostriamo quei dati in una riga che si compila in automatico con dei bottoni
         controller.TakeSlot(bean);
-        SlotHoursEntity sl=new SlotHoursEntity();
+        SlotHoursEntity sl=SlotHoursEntity.getInstance();
         String slot1=sl.getSlot1();
         String slot2=sl.getSlot2();
         String slot3=sl.getSlot3();
         String slot4=sl.getSlot4();
         String slot5=sl.getSlot5();
-        // SlotTilePane slPane= new SlotTilePane();
-        slPane.addElements(slot1,slot2,slot3,slot4,slot5);
+        System.out.println("slot1: "+slot1);
 
-        //SlotTilePane slotTP = new SlotTilePane();
-      //  slPane.createSlotTilePane();
+        slPane.addElements(check1,slot1,slot2,slot3,slot4,slot5);
+
+
         this.paneSlot.getChildren().add(slPane.getSlotTP());
+
+
         }
 
 
-    public void preCompileInfo(String emailWorker) {this.emailWorkerTextField.setText(emailWorker);}
+    public void preCompileInfo(String emailWorker) {
+        this.emailWorkerTextField.setText(emailWorker);
+        bean.setEmailWorker(emailWorker);}
 }
