@@ -15,55 +15,36 @@ public class SlotTilePane {
     VBox resultsBox;
 
 
-    public void addElements(CheckBox check1, String slot1, String slot2, String slot3, String slot4, String slot5) {
+    public void addElements(CheckBox check1,CheckBox check2,CheckBox check3,CheckBox check4,CheckBox check5, String slot1, String slot2, String slot3, String slot4, String slot5) {
         AnchorPane entryPane = new AnchorPane();
 
-
-        CheckBox checkBoxS1 = new CheckBox();
-        CheckBox checkBoxS2 = new CheckBox();
-        CheckBox checkBoxS3 = new CheckBox();
-        CheckBox checkBoxS4 = new CheckBox();
-        CheckBox checkBoxS5 = new CheckBox();
-
-
-        Label textLabel1 = new Label("Slot1: " + slot1);
+        Label textLabel1 = new Label("      " + slot1);
         AnchorPane.setLeftAnchor(textLabel1, 50.0);
         AnchorPane.setTopAnchor(textLabel1, 25.0);
 
-        Label textLabel2 = new Label("Slot2: " + slot2);
+        Label textLabel2 = new Label("      " + slot2);
         AnchorPane.setLeftAnchor(textLabel2, 200.0);
         AnchorPane.setTopAnchor(textLabel2, 25.0);
 
-        Label textLabel3 = new Label("Slot3: " + slot3);
+        Label textLabel3 = new Label("      " + slot3);
         AnchorPane.setLeftAnchor(textLabel3, 350.0);
         AnchorPane.setTopAnchor(textLabel3, 25.0);
 
-        Label textLabel4 = new Label("Slot4: " + slot4);
+        Label textLabel4 = new Label("      " + slot4);
         AnchorPane.setLeftAnchor(textLabel4, 500.0);
         AnchorPane.setTopAnchor(textLabel4, 25.0);
 
-        Label textLabel5 = new Label("Slot5: " + slot5);
+        Label textLabel5 = new Label("      " + slot5);
         AnchorPane.setLeftAnchor(textLabel5, 650.0);
         AnchorPane.setTopAnchor(textLabel5, 25.0);
 
         check1.setOpacity(1);
-        //checkbox per lo slot1
-        AnchorPane.setRightAnchor(checkBoxS1, 900.0);
-        AnchorPane.setTopAnchor(checkBoxS1, 25.0); // Puoi regolare la posizione in base alle tue esigenze.
-        //checkbox per lo slot2
-        AnchorPane.setRightAnchor(checkBoxS2, 750.0);
-        AnchorPane.setTopAnchor(checkBoxS2, 25.0);
-        //checkbox per lo slot3
-        AnchorPane.setRightAnchor(checkBoxS3, 590.0);
-        AnchorPane.setTopAnchor(checkBoxS3, 25.0);
-        //checkbox per lo slot4
-        AnchorPane.setRightAnchor(checkBoxS4, 440.0);
-        AnchorPane.setTopAnchor(checkBoxS4, 25.0);
-        //checkbox per lo slot5
-        AnchorPane.setRightAnchor(checkBoxS5, 300.0);
-        AnchorPane.setTopAnchor(checkBoxS5, 25.0);
+        check2.setOpacity(1);
+        check3.setOpacity(1);
+        check4.setOpacity(1);
+        check5.setOpacity(1);
 
-        entryPane.getChildren().addAll(checkBoxS1, checkBoxS2, checkBoxS3, checkBoxS4, checkBoxS5, textLabel1, textLabel2, textLabel3, textLabel4, textLabel5);
+        entryPane.getChildren().addAll(textLabel1, textLabel2, textLabel3, textLabel4, textLabel5);
 
 
         resultsBox = new VBox(); // Creazione del VBox per contenere i risultati
@@ -75,11 +56,6 @@ public class SlotTilePane {
 
         slotTP.getChildren().add(resultsBox); // Aggiunta del VBox dei risultati al TilePane
         resultsBox.getChildren().add(entryPane);
-
-        if(check1.isSelected()){
-            SlotHoursEntity sh= SlotHoursEntity.getInstance();
-            sh.setAppointment(slot1);
-        }
 
 
     }

@@ -1,7 +1,6 @@
 package com.example.progetto_ispw.fillForm;
 
 import com.example.progetto_ispw.saveHoursSlots.SlotHoursEntity;
-import com.example.progetto_ispw.utile.CustomTilePane;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -50,6 +49,14 @@ public class FillFormView {
 
     @FXML
     public CheckBox check1;
+    @FXML
+    public CheckBox check2;
+    @FXML
+    public CheckBox check3;
+    @FXML
+    public CheckBox check4;
+    @FXML
+    public CheckBox check5;
 
 
     public void profileMethod(ActionEvent actionEvent) {
@@ -64,21 +71,62 @@ public class FillFormView {
         //da implementare
     }
     FillFormBean bean= new FillFormBean();
-    FillFormController controller= new FillFormController();
+    FillFormController controller= new FillFormController(bean);
 
-    public void sendFormMethod(ActionEvent actionEvent) {
+    public void sendFormMethod(ActionEvent actionEvent){
         bean.setEmailUser(emailUserTextField.getText());
        bean.setName(nameTextField.getText());
        bean.setSurname(surnameTextField.getText());
        bean.setDescription(descriptionUserTextField.getText());
        bean.setPhone(phoneUserTextField.getText());
-       //data da riprendere sotto
+        //prendo la data
+        LocalDate selectedDate = date.getValue();
+        String dateStringCalendar = selectedDate.toString();
+        bean.setDate(dateStringCalendar);
 
-        SlotHoursEntity sh=SlotHoursEntity.getInstance();
-        String appuntamento=sh.getAppointment();
-        System.out.println("appuntamento alle ore: "+appuntamento);
 
+        SlotHoursEntity sl=SlotHoursEntity.getInstance();
+        String slot1=sl.getSlot1();
+        String slot2=sl.getSlot2();
+        String slot3=sl.getSlot3();
+        String slot4=sl.getSlot4();
+        String slot5=sl.getSlot5();
 
+        if(check1.isSelected()){
+            sl.setAppointment(slot1);
+            String appuntamento= sl.getAppointment();
+            bean.setTime(appuntamento);
+
+        }
+
+        if(check2.isSelected()){
+            sl.setAppointment(slot2);
+            String appuntamento= sl.getAppointment();
+            bean.setTime(appuntamento);
+
+        }
+
+        if(check3.isSelected()){
+            sl.setAppointment(slot3);
+            String appuntamento= sl.getAppointment();
+            bean.setTime(appuntamento);
+
+        }
+
+        if(check4.isSelected()){
+            sl.setAppointment(slot4);
+            String appuntamento= sl.getAppointment();
+            bean.setTime(appuntamento);
+
+        }
+
+        if(check5.isSelected()){
+            sl.setAppointment(slot5);
+            String appuntamento= sl.getAppointment();
+            bean.setTime(appuntamento);
+
+        }
+        //aggiungere un controllo per far si che solo un check possa essere spuntato!
     }
 
 
@@ -94,7 +142,6 @@ public class FillFormView {
 
         String dateStringCalendar = selectedDate.toString();
         bean.setDate(dateStringCalendar);// funzionerà?? da verificare!
-        System.out.println("prova data "+dateStringCalendar);
 
         //data selezionata dall'utente e dobbiamo prendere la mail da un precompile che dobbiamo fare
         //poi usiamo la query getslots
@@ -109,12 +156,13 @@ public class FillFormView {
         String slot3=sl.getSlot3();
         String slot4=sl.getSlot4();
         String slot5=sl.getSlot5();
-        System.out.println("slot1: "+slot1);
 
-        slPane.addElements(check1,slot1,slot2,slot3,slot4,slot5);
+
+        slPane.addElements(check1,check2,check3,check4,check5,slot1,slot2,slot3,slot4,slot5);
 
 
         this.paneSlot.getChildren().add(slPane.getSlotTP());
+
 
 
         }

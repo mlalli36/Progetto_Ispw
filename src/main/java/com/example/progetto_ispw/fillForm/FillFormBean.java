@@ -10,7 +10,7 @@ public class FillFormBean {
     protected String description;
     protected String phone;
     protected String date;
-
+    private String time;
 
 
     //tutti i set per ogni campo
@@ -36,18 +36,22 @@ public class FillFormBean {
         //aggiungere un controllo per vedere se sono solo numeri!
 
     }
+
+
     public void setDate(String date)  {
         this.date = date;
     }
 
+    public void setTime(String appuntamento) {this.time=time;}
     //tutti i get per ogni campo
     public String getEmailUser()     {return emailUser;}
     public String getName()          {return name;}
     public String getSurname()       {return surname;}
     public String getDescription()   {return description;}
     public String getPhone()         {return phone;}
+
     public String getDate()          {return date;}
 
     public String getEmailWorker()   {return emailWorker;}
-
+    public String getTime(){return time;}
 }

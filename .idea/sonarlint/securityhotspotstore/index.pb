@@ -7,8 +7,6 @@ Zsrc/main/java/com/example/progetto_ispw/saveHoursSlots/exception/InvalidTimeExc
 Rsrc/main/java/com/example/progetto_ispw/login/exception/UserNotFoundException.java,f\a\fa0b8255dde0a7f861340886c007806da19aaf34
 t
 Dsrc/main/java/com/example/progetto_ispw/signup/SignUpController.java,5\f\5f8003c51d21d34171fe08ab3beaced645849233
-i
-9src/main/java/com/example/progetto_ispw/user/UserDAO.java,2\c\2cb788990c2e97ed808b0828dd093896ad8d23f2
 j
 :src/main/java/com/example/progetto_ispw/home/HomeBean.java,1\f\1fba1b4bc4b2861eaa7256acbfdc42b5e3b72b41
 x
@@ -17,8 +15,6 @@ x
 Hsrc/main/java/com/example/progetto_ispw/userProfile/UserProfileBean.java,8\b\8b27135cf875fd59f912ab2d40124eab725840de
 ~
 Nsrc/main/java/com/example/progetto_ispw/userProfile/UserProfileController.java,5\7\5792a69b192b7772f39e7d5b9559de799cd3a12f
-p
-@src/main/java/com/example/progetto_ispw/worker/WorkerEntity.java,4\6\46ae5e03d3b6d9eadd6395466f0b28e41ecd0aed
 ”
 dsrc/main/java/com/example/progetto_ispw/saveHoursSlots/exception/TimeSlotAlreadyExistsException.java,c\0\c0ffc185199d06399d1e0525da549f23e353720e
 l
@@ -51,8 +47,6 @@ Rsrc/main/java/com/example/progetto_ispw/workerProfile/WorkerProfileController.j
 Lsrc/main/java/com/example/progetto_ispw/workerProfile/WorkerProfileBean.java,9\8\9841c9b908380c02d4c66006fbb6f2d8d83aac79
 |
 Lsrc/main/java/com/example/progetto_ispw/profileSignUp/ProfileSignUpView.java,3\8\38c9d8b65a2ce9f37d7d4174f6603597c58216c9
-i
-9src/main/java/com/example/progetto_ispw/UIController.java,8\4\842b801d61f704170ddfeb7e912ad03afb118c22
 „
 Tsrc/main/java/com/example/progetto_ispw/searchDinamica/SearchDinamicaController.java,5\7\5715c3b7d641fb168b9f46f7e16285250276cedf
 y

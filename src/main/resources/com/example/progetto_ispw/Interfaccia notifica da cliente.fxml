@@ -58,7 +58,7 @@
                                     <Font name="Bookman Old Style" size="21.0" />
                                  </font>
                               </TextField>
-                              <Button fx:id="readForm" layoutX="354.0" layoutY="84.0" mnemonicParsing="false" onAction="#readFormMethod" prefHeight="44.0" prefWidth="225.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="Read Form">
+                              <Button fx:id="readForm" layoutX="76.0" layoutY="150.0" mnemonicParsing="false" onAction="#readFormMethod" prefHeight="44.0" prefWidth="225.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="Read Form">
                                  <font>
                                     <Font name="Bookman Old Style" size="20.0" />
                                  </font>

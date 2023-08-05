@@ -73,7 +73,6 @@ public class WorkerDAO {
                 throw new SQLException();
             String query = "SELECT * FROM `tabella informazioni` WHERE Work = ? AND Location = ?;";
             try (PreparedStatement preparedStatement = con.prepareStatement(query)) {
-                //preparedStatement.setString(1, nameWorker);
                 preparedStatement.setString(1, jobWorker);
                 preparedStatement.setString(2, locationWorker);
                 ResultSet rs = preparedStatement.executeQuery();
@@ -132,42 +131,72 @@ public class WorkerDAO {
         }
 
     }
-/*
-query originale
-    public void getSlots(String email, String dateCalendar) throws TimeSlotAlreadyExistsException {
+
+    public void addAppointment(String workerEmail,String clientName,String clientSurname,String clientEmail,String dateAppoint, String clientNumber, String workDescr, String timeDate){
         try (Connection con = getConnector()) {
             if (con == null)
                 throw new SQLException();
-            String query = "SELECT * FROM `databaseispw`.`appointment avaible` WHERE email= ? AND date= ? ;";
+            String query = "INSERT INTO `databaseispw`.`appointment request` (`Worker email`,`Client name`, `Client surname`,`Client email`,`Date appointment`,`Client number`,`Work description`,`Time date`) VALUES (?, ?, ?, ?, ?, ?,?, ?);";
             try (PreparedStatement preparedStatement = con.prepareStatement(query)) {
-                preparedStatement.setString(1, email);
-               // preparedStatement.setString(2, String.valueOf(dateCalendar));
-                ResultSet rs = preparedStatement.executeQuery();
-                if (!rs.next()) {
-                    throw new TimeSlotAlreadyExistsException("Lo slot selezione è già esistente");
-                }
+                preparedStatement.setString(1, workerEmail);
+                preparedStatement.setString(2, clientName);
+                preparedStatement.setString(3, clientSurname);
+                preparedStatement.setString(4, clientEmail);
+                preparedStatement.setString(5, dateAppoint);
+                preparedStatement.setString(6, clientNumber);
+                preparedStatement.setString(7, workDescr);
+                preparedStatement.setString(8, timeDate);
 
+                preparedStatement.executeUpdate();
 
-                SlotHoursEntity slot = new SlotHoursEntity();
-                slot.setEmail(rs.getString("email"));
-                slot.setSlot1(rs.getString("slot1"));
-                slot.setSlot2(rs.getString("slot2"));
-                slot.setSlot3(rs.getString("slot3"));
-                slot.setSlot4(rs.getString("slot4"));
-                slot.setSlot5(rs.getString("slot5"));
-                slot.setDateCalendar(rs.getString("dateCalendar"));
-
-            }
-
+                InfoAppoinEntity IAE = new InfoAppoinEntity();
+                IAE.setWEmail(workerEmail);
+                IAE.setCname(clientName);
+                IAE.setCsurname(clientSurname);
+                IAE.setCEmail(clientEmail);
+                IAE.setDAppo(dateAppoint);
+                IAE.setCNumber(clientNumber);
+                IAE.setDescription(workDescr);
+                IAE.setTime(timeDate);
+    }
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
+    }
+
+    public void getAppointment(String workerEmail){
+        try (Connection con = getConnector()) {
+            if (con == null)
+                throw new SQLException();
+
+            String query = "SELECT * FROM `databaseispw`.`appointment request` WHERE email = ? ";
+            try (PreparedStatement preparedStatement = con.prepareStatement(query)) {
+                preparedStatement.setString(1, workerEmail);
+
+                ResultSet rs = preparedStatement.executeQuery();
+                    if (rs.next()) {
+                       InfoAppoinEntity app = new InfoAppoinEntity();
+                        app.setWEmail(rs.getString("workerEmail"));
+                        app.setCname(rs.getString("clientName"));
+                        app.setCsurname(rs.getString("clientSurname"));
+                        app.setCEmail(rs.getString("clientEmail"));
+                        app.setDAppo(rs.getString("dateAppoint"));
+                        app.setCNumber(rs.getString("clientNumber"));
+                        app.setDescription(rs.getString("workDescr"));
+                        app.setTime(rs.getString("timeDate"));
+                    }
+                } catch (SQLException ex) {
+                throw new RuntimeException(ex);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
 
-    }*/
 
 
-    // query di prova
+
     public SlotHoursEntity getSlots(String email, String dateCalendar)   {
         SlotHoursEntity slot = null;
         try (Connection con = getConnector()) {

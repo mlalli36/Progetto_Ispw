@@ -5,6 +5,11 @@ import com.example.progetto_ispw.worker.WorkerDAO;
 
 
 public class FillFormController {
+    public FillFormController(FillFormBean bean) {
+        WorkerDAO dao = WorkerDAO.getInstance();
+        dao.addAppointment(bean.getEmailWorker(), bean.getName(),bean.getSurname(),bean.getEmailUser(),bean.getDate(),bean.getPhone(),bean.getDescription(),bean.getTime());
+    }
+
     public void TakeSlot(FillFormBean bean) {
         String emailWorker = bean.getEmailWorker();
         String date = bean.getDate();
