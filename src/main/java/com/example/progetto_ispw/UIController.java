@@ -1,6 +1,6 @@
 package com.example.progetto_ispw;
 
-import com.example.progetto_ispw.fillForm.FillFormView;
+import com.example.progetto_ispw.fillform.FillFormView;
 import com.example.progetto_ispw.profileSignUp.ProfileSignUpView;
 import com.example.progetto_ispw.saveHoursSlots.SlotHoursView;
 import com.example.progetto_ispw.searchDinamica.SearchDinamicaBean;

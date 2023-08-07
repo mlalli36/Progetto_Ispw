@@ -1,6 +1,4 @@
-package com.example.progetto_ispw.fillForm;
-
-import com.example.progetto_ispw.saveHoursSlots.exception.TimeSlotAlreadyExistsException;
+package com.example.progetto_ispw.fillform;
 
 public class FillFormBean {
     protected String name;
@@ -42,7 +40,7 @@ public class FillFormBean {
         this.date = date;
     }
 
-    public void setTime(String appuntamento) {this.time=time;}
+    public void setTime(String time) {this.time=time;}
     //tutti i get per ogni campo
     public String getEmailUser()     {return emailUser;}
     public String getName()          {return name;}

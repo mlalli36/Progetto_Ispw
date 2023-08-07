@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="anchorPaneFillOutForm" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="1219.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.progetto_ispw.fillForm.FillFormView">
+<AnchorPane fx:id="anchorPaneFillOutForm" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="1219.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.progetto_ispw.fillform.FillFormView">
    <children>
       <Pane fx:id="paneFillOutForm" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="1219.0">
          <children>
@@ -106,7 +106,10 @@
                         <Font name="Bookman Old Style" size="20.0" />
                      </font>
                   </Text>
-                  <Pane fx:id="paneSlot" layoutX="99.0" layoutY="407.0" prefHeight="121.0" prefWidth="1049.0" />
+                  <Pane fx:id="paneSlot" layoutX="99.0" layoutY="407.0" prefHeight="121.0" prefWidth="1049.0">
+                     <children>
+                        <Label fx:id="errorTimeNotValid" layoutX="8.0" layoutY="6.0" opacity="0.0" prefHeight="17.0" prefWidth="313.0" text="the selected time is no longer valid" textFill="RED" />
+                     </children></Pane>
                   <CheckBox fx:id="check2" layoutX="310.0" layoutY="442.0" mnemonicParsing="false" opacity="0.0" />
                   <CheckBox fx:id="check3" layoutX="462.0" layoutY="442.0" mnemonicParsing="false" opacity="0.04" />
                   <CheckBox fx:id="check4" layoutX="608.0" layoutY="442.0" mnemonicParsing="false" opacity="0.0" />

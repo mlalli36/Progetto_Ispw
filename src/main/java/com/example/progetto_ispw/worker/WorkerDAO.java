@@ -136,7 +136,7 @@ public class WorkerDAO {
         try (Connection con = getConnector()) {
             if (con == null)
                 throw new SQLException();
-            String query = "INSERT INTO `databaseispw`.`appointment request` (`Worker email`,`Client name`, `Client surname`,`Client email`,`Date appointment`,`Client number`,`Work description`,`Time date`) VALUES (?, ?, ?, ?, ?, ?,?, ?);";
+            String query = "INSERT INTO `databaseispw`.`appointment request` (`Worker_email`,`Client_name`, `Client_surname`,`Client_email`,`Date_appointment`,`Client_number`,`Work_description`,`Time_date`) VALUES (?, ?, ?, ?, ?, ?,?, ?);";
             try (PreparedStatement preparedStatement = con.prepareStatement(query)) {
                 preparedStatement.setString(1, workerEmail);
                 preparedStatement.setString(2, clientName);
@@ -169,21 +169,21 @@ public class WorkerDAO {
             if (con == null)
                 throw new SQLException();
 
-            String query = "SELECT * FROM `databaseispw`.`appointment request` WHERE email = ? ";
+            String query = "SELECT * FROM `databaseispw`.`appointment request` WHERE Worker_email = ? ";
             try (PreparedStatement preparedStatement = con.prepareStatement(query)) {
                 preparedStatement.setString(1, workerEmail);
 
                 ResultSet rs = preparedStatement.executeQuery();
                     if (rs.next()) {
                        InfoAppoinEntity app = new InfoAppoinEntity();
-                        app.setWEmail(rs.getString("workerEmail"));
-                        app.setCname(rs.getString("clientName"));
-                        app.setCsurname(rs.getString("clientSurname"));
-                        app.setCEmail(rs.getString("clientEmail"));
-                        app.setDAppo(rs.getString("dateAppoint"));
-                        app.setCNumber(rs.getString("clientNumber"));
-                        app.setDescription(rs.getString("workDescr"));
-                        app.setTime(rs.getString("timeDate"));
+                        app.setWEmail(rs.getString("Worker_email"));
+                        app.setCname(rs.getString("Client_name"));
+                        app.setCsurname(rs.getString("Client_surname"));
+                        app.setCEmail(rs.getString("Client_email"));
+                        app.setDAppo(rs.getString("Date_appointment"));
+                        app.setCNumber(rs.getString("Client_number"));
+                        app.setDescription(rs.getString("Work_description"));
+                        app.setTime(rs.getString("Time_date"));
                     }
                 } catch (SQLException ex) {
                 throw new RuntimeException(ex);

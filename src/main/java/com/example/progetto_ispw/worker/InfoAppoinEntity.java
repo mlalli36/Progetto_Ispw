@@ -27,14 +27,9 @@ public class InfoAppoinEntity {
     public void setTime(String timeDate) {this.timeDate=timeDate;}
 
 
+    public String getWEmail() { return workerEmail;}
 
+    public String getDAppo() { return dateAppoint;}
 
-
-
-
-
-
-
-
-
+    public String getTime() {return timeDate;}
 }

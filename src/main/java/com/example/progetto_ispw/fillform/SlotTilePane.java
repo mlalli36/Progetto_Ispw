@@ -1,6 +1,5 @@
-package com.example.progetto_ispw.fillForm;
+package com.example.progetto_ispw.fillform;
 
-import com.example.progetto_ispw.saveHoursSlots.SlotHoursEntity;
 import javafx.geometry.Insets;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
