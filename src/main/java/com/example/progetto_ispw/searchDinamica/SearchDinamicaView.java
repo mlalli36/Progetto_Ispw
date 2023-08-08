@@ -2,14 +2,10 @@ package com.example.progetto_ispw.searchDinamica;
 
 
 import com.example.progetto_ispw.UIController;
-import com.example.progetto_ispw.home.HomeBean;
-import com.example.progetto_ispw.home.HomeController;
 import com.example.progetto_ispw.home.ResultElement;
 import com.example.progetto_ispw.home.ResultSetEntity; //vedere se è giusto
 import com.example.progetto_ispw.login.exception.UserNotFoundException;
-import com.example.progetto_ispw.user.UserDAO;
 import com.example.progetto_ispw.user.UserEntity;
-import com.example.progetto_ispw.userProfile.UserProfileView;
 import com.example.progetto_ispw.utile.CustomTilePane;
 
 import javafx.event.ActionEvent;
@@ -17,7 +13,6 @@ import javafx.fxml.FXML;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
@@ -108,11 +103,13 @@ public class SearchDinamicaView{
             String descriptionWorker= r.getWorkerDescription();
             emailWorker= r.getWorkerEmail();
 
-
-            customTilePane.addElements(name,jobWorker,locationWorker,descriptionWorker,newButton);
+            //faccio una prova: inserisco la mail del worker nell'interfaccia
+            customTilePane.addElements(name,jobWorker,locationWorker,descriptionWorker,newButton, emailWorker);
             newButton.setOnAction(event -> {
                 try {
+                    //ho aggiunto una r
                     showIntForm();
+
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -122,7 +119,7 @@ public class SearchDinamicaView{
         this.scrollPane.setContent(customTilePane.getCustomTP());
 
     }
-
+    //ho aggiunto resultElement
     public void showIntForm() throws IOException {
         UIController viewController = UIController.getUIControllerInstance();
         viewController.showForm(emailWorker);

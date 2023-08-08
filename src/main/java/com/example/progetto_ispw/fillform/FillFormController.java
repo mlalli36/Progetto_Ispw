@@ -12,9 +12,11 @@ public class FillFormController {
 
     public void fill(FillFormBean bean) {
         WorkerDAO dao = WorkerDAO.getInstance();
-        dao.getAppointment(bean.getEmailWorker());
 
-        InfoAppoinEntity iae= new InfoAppoinEntity();
+        //parte vecchia
+       // dao.getAppointment(bean.getEmailWorker());
+
+       /* InfoAppoinEntity iae= new InfoAppoinEntity();
 
         String emailWorkerCheck= iae.getWEmail();
         String dayDate= iae.getDAppo();  //giorno
@@ -22,6 +24,14 @@ public class FillFormController {
         if("emailWorkerCheck".equals(bean.getEmailWorker()) && "dayDate".equals(bean.getDate()) && "timeDate".equals(bean.getTime()) ){
             throw new TimeAlreadySelectedException("The selected time is no longer valid.");
         }
+        */
+        //fino a qui
+        InfoAppoinEntity info =  dao.getAppointment(bean.getEmailWorker(), bean.getDate(), bean.getTime());
+
+        if(info.getWEmail().equals(bean.getEmailWorker()) && info.getDAppo().equals(bean.getDate()) && info.getTime().equals(bean.getTime())){
+            throw new TimeAlreadySelectedException("The selected time is no longer valid.");
+        }
+
         dao.addAppointment(bean.getEmailWorker(), bean.getName(),bean.getSurname(),bean.getEmailUser(),bean.getDate(),bean.getPhone(),bean.getDescription(),bean.getTime());
 
     }

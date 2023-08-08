@@ -16,7 +16,7 @@ public class CustomTilePane {
         AnchorPane entryPane;
         TilePane customTP;
         VBox resultsBox;
-        public void addElements( String name, String job, String location, String description,Button selectButton){
+        public void addElements( String name, String job, String location, String description,Button selectButton, String emailWorker){
             AnchorPane entryPane = new AnchorPane();
             selectButton.setPrefWidth(190);
             selectButton.setPrefHeight(56);
@@ -42,7 +42,11 @@ public class CustomTilePane {
             AnchorPane.setLeftAnchor(textLabel4, 50.0);
             AnchorPane.setTopAnchor(textLabel4, 115.0);
 
-            entryPane.getChildren().addAll(selectButton, textLabel1, textLabel2, textLabel3, textLabel4);
+            Label textLabel5 =new Label("emailWorker: "+ emailWorker);
+            AnchorPane.setLeftAnchor(textLabel5, 50.0);
+            AnchorPane.setTopAnchor(textLabel5, 145.0);
+
+            entryPane.getChildren().addAll(selectButton, textLabel1, textLabel2, textLabel3, textLabel4, textLabel5);
 
             resultsBox = new VBox(); // Creazione del VBox per contenere i risultati
             resultsBox.setPrefWidth(1180); // Imposta la larghezza desiderata per il VBox dei risultati

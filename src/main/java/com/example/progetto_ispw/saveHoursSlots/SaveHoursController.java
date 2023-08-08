@@ -10,12 +10,12 @@ public class SaveHoursController {
 
         // Eseguire la query per ottenere lo slot dal database
         SlotHoursEntity slot = dao.getSlots(bean.getemail(), bean.getDateCalendar());
-
+//secondo me è sbagliato qui, bisogna creare una lista; se la lista è vuola, aggiungi//////////////////////////////////////////////////////////////////////
         //controllo sull'email da controllare per vedere se utenti diversi prendono appuntamenti nello stesso giorno
-
+       // dao.addSlots(bean.getemail(), bean.getSlot1(), bean.getSlot2(), bean.getSlot3(), bean.getSlot4(), bean.getSlot5(), bean.getDateCalendar());
 
         // Verificare se la mail e lo slot esistono nel database e confrontare le date
-        if (slot != null && slot.getemail().equals(bean.getemail()) && slot.getdate().equals(bean.getDateCalendar())) {
+        if (slot != null && slot.getdate().equals(bean.getDateCalendar()) && slot.getemail().equals(bean.getemail())) {
             // print di controllo
             System.out.println("slot "+slot);
             System.out.println("slot email "+slot.getemail());

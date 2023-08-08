@@ -191,5 +191,6 @@ public class FillFormView {
 
     public void preCompileInfo(String emailWorker) {
         this.emailWorkerTextField.setText(emailWorker);
+        System.out.println("la mail è:" + emailWorkerTextField);
         bean.setEmailWorker(emailWorker);}
 }

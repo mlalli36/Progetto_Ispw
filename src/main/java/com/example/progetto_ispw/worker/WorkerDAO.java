@@ -164,18 +164,21 @@ public class WorkerDAO {
         }
     }
 
-    public void getAppointment(String workerEmail){
+    public InfoAppoinEntity getAppointment(String workerEmail,String date, String time){
+        InfoAppoinEntity app = null;
         try (Connection con = getConnector()) {
             if (con == null)
                 throw new SQLException();
 
-            String query = "SELECT * FROM `databaseispw`.`appointment request` WHERE Worker_email = ? ";
+            String query = "SELECT * FROM `databaseispw`.`appointment request` WHERE Worker_email = ? AND Date_appointment=? AND Time_date=? ";
             try (PreparedStatement preparedStatement = con.prepareStatement(query)) {
                 preparedStatement.setString(1, workerEmail);
+                preparedStatement.setString(2, date);
+                preparedStatement.setString(3, time);
 
                 ResultSet rs = preparedStatement.executeQuery();
                     if (rs.next()) {
-                       InfoAppoinEntity app = new InfoAppoinEntity();
+                        app = new InfoAppoinEntity();
                         app.setWEmail(rs.getString("Worker_email"));
                         app.setCname(rs.getString("Client_name"));
                         app.setCsurname(rs.getString("Client_surname"));
@@ -185,12 +188,12 @@ public class WorkerDAO {
                         app.setDescription(rs.getString("Work_description"));
                         app.setTime(rs.getString("Time_date"));
                     }
-                } catch (SQLException ex) {
-                throw new RuntimeException(ex);
+                }
             }
-        } catch (SQLException e) {
+            catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        return app;
     }
 
 
