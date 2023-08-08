@@ -1,7 +1,7 @@
 package com.example.progetto_ispw.worker;
 
-import com.example.progetto_ispw.saveHoursSlots.SlotHoursEntity;
-import com.example.progetto_ispw.saveHoursSlots.exception.TimeSlotAlreadyExistsException;
+import com.example.progetto_ispw.savehoursslots.SlotHoursEntity;
+import com.example.progetto_ispw.savehoursslots.exception.TimeSlotAlreadyExistsException;
 import com.example.progetto_ispw.signup.exception.UserAlreadyExistsException;
 
 import java.sql.*;

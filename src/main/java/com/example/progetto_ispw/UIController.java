@@ -1,13 +1,13 @@
 package com.example.progetto_ispw;
 
 import com.example.progetto_ispw.fillform.FillFormView;
-import com.example.progetto_ispw.profileSignUp.ProfileSignUpView;
-import com.example.progetto_ispw.saveHoursSlots.SlotHoursView;
-import com.example.progetto_ispw.searchDinamica.SearchDinamicaBean;
-import com.example.progetto_ispw.searchDinamica.SearchDinamicaView;
+import com.example.progetto_ispw.profilesignup.ProfileSignUpView;
+import com.example.progetto_ispw.savehoursslots.SlotHoursView;
+import com.example.progetto_ispw.searchdinamica.SearchDinamicaBean;
+import com.example.progetto_ispw.searchdinamica.SearchDinamicaView;
 import com.example.progetto_ispw.signup.SignUpView;
-import com.example.progetto_ispw.userProfile.UserProfileView;
-import com.example.progetto_ispw.workerProfile.WorkerProfileView;
+import com.example.progetto_ispw.userprofile.UserProfileView;
+import com.example.progetto_ispw.workerprofile.WorkerProfileView;
 import javafx.animation.FadeTransition;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -67,9 +67,14 @@ public class UIController {
         this.loadStage("interfaccia profilerecensione.fxml","p");
     }
 
-    public void showForm(String emailWorker) throws IOException{//mostra il form
+    public void showForm(String emailWorker) {//mostra il form
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("interfacciaForm.fxml"));
-        Parent root1 = fxmlLoader.load();
+        Parent root1 = null;
+        try {
+            root1 = fxmlLoader.load();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         root1.getStylesheets().add(Objects.requireNonNull(getClass().getResource("form.css")).toExternalForm());
         FillFormView ffV = fxmlLoader.getController();
         ffV.preCompileInfo(emailWorker);

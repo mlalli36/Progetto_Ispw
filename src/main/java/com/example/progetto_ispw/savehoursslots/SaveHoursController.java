@@ -1,8 +1,7 @@
-package com.example.progetto_ispw.saveHoursSlots;
+package com.example.progetto_ispw.savehoursslots;
 
-import com.example.progetto_ispw.saveHoursSlots.exception.TimeSlotAlreadyExistsException;
+import com.example.progetto_ispw.savehoursslots.exception.TimeSlotAlreadyExistsException;
 import com.example.progetto_ispw.worker.WorkerDAO;
-import com.example.progetto_ispw.worker.WorkerEntity;
 
 public class SaveHoursController {
     public void saveHoursSlots(SaveHoursBean bean) throws TimeSlotAlreadyExistsException {

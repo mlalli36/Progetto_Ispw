@@ -1,4 +1,4 @@
-package com.example.progetto_ispw.userProfile;
+package com.example.progetto_ispw.userprofile;
 
 import com.example.progetto_ispw.login.LoginBean;
 import com.example.progetto_ispw.login.exception.UserNotFoundException;

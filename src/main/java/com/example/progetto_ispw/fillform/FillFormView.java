@@ -1,8 +1,8 @@
 package com.example.progetto_ispw.fillform;
 
 import com.example.progetto_ispw.UIController;
-import com.example.progetto_ispw.fillform.exception.TimeAlreadySelectedException;
-import com.example.progetto_ispw.saveHoursSlots.SlotHoursEntity;
+import com.example.progetto_ispw.fillform.exception.*;
+import com.example.progetto_ispw.savehoursslots.SlotHoursEntity;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -77,8 +77,15 @@ public class FillFormView {
 
         viewController.showHome();    }
     FillFormBean bean= new FillFormBean();
+    // eccezioni
+    // nome vuoto
+    // cognome vuoto
+    // email cliente vuota/errata
+    // data calendario vuota
+    // orario appuntamento vuoto
+    // descrizione vuota
 
-    public void sendFormMethod(ActionEvent actionEvent) throws IOException {
+    public void sendFormMethod(ActionEvent actionEvent) throws IOException  {
         FillFormController controller= new FillFormController();
 
        try {
@@ -90,6 +97,8 @@ public class FillFormView {
             bean.setPhone(phoneUserTextField.getText());
             //prendo la data
             LocalDate selectedDate = date.getValue();
+           if(selectedDate==null){
+               throw new EmptyDateFieldException("");}
             String dateStringCalendar = selectedDate.toString();
             bean.setDate(dateStringCalendar);
 
@@ -146,7 +155,29 @@ public class FillFormView {
         } catch (TimeAlreadySelectedException e) {
            errorTimeNotValid.setText("The selected time is no longer valid.");
            errorTimeNotValid.setOpacity(1);
+       }catch (EmptyNameFieldException e ){
+           errorTimeNotValid.setText("WARNING: NAME FIELD IS EMPTY!");
+           errorTimeNotValid.setOpacity(1);
+       }catch (EmptySurameFieldException e){
+           errorTimeNotValid.setText("WARNING: SURNAME FIELD IS EMPTY!");
+           errorTimeNotValid.setOpacity(1);
+       }catch (EmptyDescriptionFieldException e){
+           errorTimeNotValid.setText("WARNING: DESCRIPTION FIELD IS EMPTY!");
+           errorTimeNotValid.setOpacity(1);
+       }catch(NotValidNumberPhoneException e){
+           errorTimeNotValid.setText("WARNING: PHONE FIELD ISN'T VALID!");
+           errorTimeNotValid.setOpacity(1);
+       }catch(InvalidEmailFormatException e){
+           errorTimeNotValid.setText("WARNING: INVALID EMAIL FORMAT!");
+           errorTimeNotValid.setOpacity(1);
+       }catch(EmptyDateFieldException e){
+           errorTimeNotValid.setText("WARNING: DATE FIELD IS EMPTY!");
+           errorTimeNotValid.setOpacity(1);
+       }catch(NotValidTimeException e){
+           errorTimeNotValid.setText("WARNING: TIME CHECK IS EMPTY!");
+           errorTimeNotValid.setOpacity(1);
        }
+
     }
 
 
@@ -191,6 +222,5 @@ public class FillFormView {
 
     public void preCompileInfo(String emailWorker) {
         this.emailWorkerTextField.setText(emailWorker);
-        System.out.println("la mail è:" + emailWorkerTextField);
         bean.setEmailWorker(emailWorker);}
 }

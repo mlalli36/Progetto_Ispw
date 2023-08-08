@@ -1,4 +1,4 @@
-package com.example.progetto_ispw.userProfile;
+package com.example.progetto_ispw.userprofile;
 
 public class UserProfileBean  {
     private String email;

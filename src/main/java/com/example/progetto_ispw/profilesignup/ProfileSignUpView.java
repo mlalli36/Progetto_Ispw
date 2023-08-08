@@ -1,4 +1,4 @@
-package com.example.progetto_ispw.profileSignUp;
+package com.example.progetto_ispw.profilesignup;
 
 import com.example.progetto_ispw.UIController;
 import com.example.progetto_ispw.login.exception.LoginFailedException;

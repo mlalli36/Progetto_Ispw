@@ -1,8 +1,6 @@
-package com.example.progetto_ispw.searchDinamica;
+package com.example.progetto_ispw.searchdinamica;
 
 import com.example.progetto_ispw.home.ResultSetEntity;
-
-import java.util.List;
 
 public class SearchDinamicaBean {
 

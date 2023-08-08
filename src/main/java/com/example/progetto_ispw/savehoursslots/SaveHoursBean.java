@@ -1,7 +1,7 @@
-package com.example.progetto_ispw.saveHoursSlots;
+package com.example.progetto_ispw.savehoursslots;
 
-import com.example.progetto_ispw.saveHoursSlots.exception.InvalidTimeException;
-import com.example.progetto_ispw.saveHoursSlots.exception.TimeSlotAlreadyExistsException;
+import com.example.progetto_ispw.savehoursslots.exception.InvalidTimeException;
+import com.example.progetto_ispw.savehoursslots.exception.TimeSlotAlreadyExistsException;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

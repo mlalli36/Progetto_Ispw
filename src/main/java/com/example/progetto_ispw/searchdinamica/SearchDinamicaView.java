@@ -1,4 +1,4 @@
-package com.example.progetto_ispw.searchDinamica;
+package com.example.progetto_ispw.searchdinamica;
 
 
 import com.example.progetto_ispw.UIController;
@@ -40,16 +40,9 @@ public class SearchDinamicaView{
     public ScrollPane scrollPane;
     public String emailWorker;
 
+
     public void profileMethod(ActionEvent actionEvent) throws IOException, UserNotFoundException {
-     /*   UIController viewController = UIController.getUIControllerInstance();//è singletone
-        UserEntity user=UserEntity.getInstance();
 
-        String namesearch= user.getName();
-        String surnamesearch= user.getSurname();
-
-        viewController.inser();
-        CONTROLLO SE FUNZIONA E CANCELLARE POI
-     */
         UserEntity user = UserEntity.getInstance();
         String type = user.getTipoaccesso();
         System.out.println(type);
@@ -95,6 +88,7 @@ public class SearchDinamicaView{
         scrollPane.setVisible(true);
 
 
+
         for(ResultElement r: resultSet.getElements()){
             Button newButton = new Button("Fill out form");
             String name = r.getWorkerName();
@@ -102,28 +96,37 @@ public class SearchDinamicaView{
             String locationWorker = r.getLocationWorker();
             String descriptionWorker= r.getWorkerDescription();
             emailWorker= r.getWorkerEmail();
+            //associamo ad ogni bottone la sua mail
+            newButton.setUserData(emailWorker);
+
+
+
 
             //faccio una prova: inserisco la mail del worker nell'interfaccia
             customTilePane.addElements(name,jobWorker,locationWorker,descriptionWorker,newButton, emailWorker);
-            newButton.setOnAction(event -> {
+          /*  newButton.setOnAction(event -> {
                 try {
-                    //ho aggiunto una r
                     showIntForm();
 
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-            });
+            });*/
+            newButton.setOnAction(this::showIntForm);
 
         }
         this.scrollPane.setContent(customTilePane.getCustomTP());
 
     }
-    //ho aggiunto resultElement
-    public void showIntForm() throws IOException {
+
+    public void showIntForm(ActionEvent event)  {
+        // tieniamo traccia del bottone che abbiamo premuto
+        Button clickedButton =(Button) event.getSource();
+        // tieniamo traccia dell'email associata a quel bottone
+        String email = (String) clickedButton.getUserData() ;
+
         UIController viewController = UIController.getUIControllerInstance();
-        viewController.showForm(emailWorker);
-        //fare una prova per vedere se questa sia null o se la prende effettivamente dalla riga 113!
+        viewController.showForm(email);
 
     }
 }

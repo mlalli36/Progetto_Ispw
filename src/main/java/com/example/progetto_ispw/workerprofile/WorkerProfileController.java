@@ -1,6 +1,5 @@
-package com.example.progetto_ispw.workerProfile;
+package com.example.progetto_ispw.workerprofile;
 
-import com.example.progetto_ispw.home.HomeBean;
 import com.example.progetto_ispw.login.exception.UserNotFoundException;
 import com.example.progetto_ispw.user.UserDAO;
 

@@ -1,4 +1,4 @@
-package com.example.progetto_ispw.saveHoursSlots.exception;
+package com.example.progetto_ispw.savehoursslots.exception;
 
 
 public class TimeSlotAlreadyExistsException extends RuntimeException {

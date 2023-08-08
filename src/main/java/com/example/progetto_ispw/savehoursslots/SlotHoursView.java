@@ -1,11 +1,8 @@
-package com.example.progetto_ispw.saveHoursSlots;
+package com.example.progetto_ispw.savehoursslots;
 
 import com.example.progetto_ispw.UIController;
-import com.example.progetto_ispw.login.exception.LoginFailedException;
-import com.example.progetto_ispw.saveHoursSlots.exception.InvalidTimeException;
-import com.example.progetto_ispw.saveHoursSlots.exception.TimeSlotAlreadyExistsException;
-import com.example.progetto_ispw.user.UserEntity;
-import com.example.progetto_ispw.worker.WorkerEntity;
+import com.example.progetto_ispw.savehoursslots.exception.InvalidTimeException;
+import com.example.progetto_ispw.savehoursslots.exception.TimeSlotAlreadyExistsException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;

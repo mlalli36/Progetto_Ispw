@@ -1,11 +1,8 @@
-package com.example.progetto_ispw.workerProfile;
+package com.example.progetto_ispw.workerprofile;
 
 import com.example.progetto_ispw.UIController;
-import com.example.progetto_ispw.home.HomeBean;
-import com.example.progetto_ispw.home.HomeController;
 import com.example.progetto_ispw.login.exception.UserNotFoundException;
 import com.example.progetto_ispw.user.UserEntity;
-import com.example.progetto_ispw.workerProfile.WorkerProfileBean;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;

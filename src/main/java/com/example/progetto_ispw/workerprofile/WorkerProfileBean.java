@@ -1,4 +1,4 @@
-package com.example.progetto_ispw.workerProfile;
+package com.example.progetto_ispw.workerprofile;
 
 public class WorkerProfileBean {
     private String emailsearch;

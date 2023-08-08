@@ -1,4 +1,4 @@
-package com.example.progetto_ispw.searchDinamica;
+package com.example.progetto_ispw.searchdinamica;
 
 import com.example.progetto_ispw.UIController;
 import com.example.progetto_ispw.home.HomeBean;
@@ -11,10 +11,7 @@ import com.example.progetto_ispw.worker.WorkerEntity;
 
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class SearchDinamicaController {
 

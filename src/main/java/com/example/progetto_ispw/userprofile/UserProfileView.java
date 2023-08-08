@@ -1,6 +1,5 @@
-package com.example.progetto_ispw.userProfile;
+package com.example.progetto_ispw.userprofile;
 
-import com.example.progetto_ispw.user.UserEntity;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

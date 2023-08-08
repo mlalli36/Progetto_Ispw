@@ -1,6 +1,4 @@
-package com.example.progetto_ispw.saveHoursSlots;
-
-import com.example.progetto_ispw.user.UserEntity;
+package com.example.progetto_ispw.savehoursslots;
 
 public class SlotHoursEntity {
     public static SlotHoursEntity getInstance() {
