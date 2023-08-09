@@ -62,7 +62,9 @@ public class HomeView {
     public void favoritesMethod(ActionEvent actionEvent) {//da implementare
     }
 
-    public void homeMethod(ActionEvent actionEvent) {  //da implementare
+    public void homeMethod(ActionEvent actionEvent) throws IOException {
+        UIController controller= UIController.getUIControllerInstance();
+        controller.showHome();
     }
 
 

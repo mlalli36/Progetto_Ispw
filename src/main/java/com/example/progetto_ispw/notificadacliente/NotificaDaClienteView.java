@@ -1,5 +1,6 @@
-package com.example.progetto_ispw;
+package com.example.progetto_ispw.notificadacliente;
 
+import com.example.progetto_ispw.UIController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -47,14 +48,9 @@ public class NotificaDaClienteView {
     public void favoritesMethod(ActionEvent actionEvent) {//da implementare
     }
 
-    public void homeMethod(ActionEvent actionEvent) {//da implementare
-    }
+    public void homeMethod(ActionEvent actionEvent) throws IOException {UIController controller=UIController.getUIControllerInstance(); controller.showHome();  }
 
-    public void readFormMethod(ActionEvent actionEvent) {//da implementare
-    }
-
-    public void deleteMethod(ActionEvent actionEvent) {//da implementare
-    }
+   
 
     public void bookedServicesMethod(ActionEvent actionEvent) {//da implementare
     }
@@ -68,25 +64,16 @@ public class NotificaDaClienteView {
     public void addressesMethod(ActionEvent actionEvent) {//da implementare
     }
 
-    public void needHelpMethod(ActionEvent actionEvent) {//da implementare
-    }
+   
 
-    public void exitMethod(ActionEvent actionEvent) {
-        try{
-            FXMLLoader fxmlLoader = new FXMLLoader((getClass().getResource("interfacciaHome.fxml")));
-            Parent root= fxmlLoader.load();
-
-            //crea uno stage per la nuova pagina
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-
-            //chiudi pagina del com.example.progetto_ispw.login
-            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
-        }catch (IOException e ){
-            e.printStackTrace();
-        }
+    public void exitMethod(ActionEvent actionEvent) throws IOException {
+        UIController controller= UIController.getUIControllerInstance();
+        controller.showExit();
     }
 
     public void notificationMethod(ActionEvent actionEvent) {//da implementare
+    }
+
+    public void changeWorkHoursMethod(ActionEvent actionEvent) {
     }
 }

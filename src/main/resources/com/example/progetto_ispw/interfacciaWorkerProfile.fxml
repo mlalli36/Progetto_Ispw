@@ -10,9 +10,9 @@
    <children>
       <Pane prefHeight="53.0" prefWidth="1219.0" style="-fx-background-color: #74c69d;">
          <children>
-            <Button layoutX="1144.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #74c69d;" />
+            <Button fx:id="profileButton" layoutX="1144.0" mnemonicParsing="false" onAction="#profileMethod" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #74c69d;" />
             <Button layoutX="1069.0" layoutY="-1.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #74c69d;" />
-            <Button layoutX="994.0" layoutY="-1.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #74c69d;" />
+            <Button fx:id="homeButton" layoutX="994.0" layoutY="-1.0" mnemonicParsing="false" onAction="#homeMethod" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #74c69d;" />
             <ImageView fitHeight="53.0" fitWidth="66.0" layoutX="1002.0" layoutY="-1.0">
                <image>
                   <Image url="@icon/home 2.png" />
@@ -28,6 +28,10 @@
                   <Image url="@icon/star.png" />
                </image>
             </ImageView>
+            <Text fill="#2d6a4f" layoutX="21.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WorkerLink" wrappingWidth="224.13671875">
+               <font>
+                  <Font name="Bookman Old Style" size="30.0" />
+               </font></Text>
          </children></Pane>
       <Circle fill="#74c69d" layoutX="95.0" layoutY="128.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
       <Label fx:id="nameLabelWorkerProfile" layoutX="135.0" layoutY="106.0" prefHeight="38.0" prefWidth="138.0">
@@ -55,7 +59,7 @@
             <Font name="Bookman Old Style" size="20.0" />
          </font>
       </Button>
-      <Button layoutX="63.0" layoutY="655.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="Exit">
+      <Button fx:id="exitButton" layoutX="63.0" layoutY="655.0" mnemonicParsing="false" onAction="#exitMethod" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="Exit">
          <font>
             <Font size="20.0" />
          </font>
@@ -94,10 +98,15 @@
             <Font name="Bookman Old Style" size="22.0" />
          </font>
       </Label>
-      <Label fx:id="emailLabelWorkerProfile" layoutX="136.0" layoutY="160.0" prefHeight="45.0" prefWidth="296.0">
+      <Label fx:id="emailLabelWorkerProfile" layoutX="136.0" layoutY="140.0" prefHeight="45.0" prefWidth="296.0">
          <font>
             <Font name="Bookman Old Style" size="20.0" />
          </font>
       </Label>
+      <Button fx:id="notifichemetodo" layoutX="62.0" layoutY="189.0" mnemonicParsing="false" onAction="#notifichemetodo" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="notifiche">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
    </children>
 </Pane>

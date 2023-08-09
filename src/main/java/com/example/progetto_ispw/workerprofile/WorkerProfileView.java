@@ -9,7 +9,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
@@ -47,12 +46,21 @@ public class WorkerProfileView {
     public Label surnameLabelWorkerProfile;
     @FXML
     public Label emailLabelWorkerProfile;
+    @FXML
+    public Button notifichemetodo;
+    @FXML
+    public Button profileButton;
+    @FXML
+    public Button homeButton;
+    @FXML
+    public Button exitButton;
 
 
-    public void homeMethod(MouseEvent mouseEvent) {//da implementare
-    }
+    public void homeMethod(ActionEvent actionEvent) throws IOException {
+        UIController controller= UIController.getUIControllerInstance();
+        controller.showHome();}
 
-    public void favoritesMethod(MouseEvent mouseEvent) {//da implementare
+    public void favoritesMethod(ActionEvent actionEvent) {//da implementare
     }
 
     public void saveEditsMethod(ActionEvent actionEvent) {//da implementare
@@ -70,10 +78,12 @@ public class WorkerProfileView {
     public void addressesMethod(ActionEvent actionEvent) {//da implementare
     }
 
-    public void exitMethod(ActionEvent actionEvent) {//da implementare
+    public void exitMethod(ActionEvent actionEvent) throws IOException {
+        UIController controller= UIController.getUIControllerInstance();
+        controller.showExit();
     }
 
-    public void profileMethod(MouseEvent mouseEvent) {//da implementare
+    public void profileMethod(ActionEvent actionEvent) {//da implementare
     }
 
     public void changeOfWorkingHoursMethod(ActionEvent actionEvent) throws IOException, UserNotFoundException {
@@ -99,5 +109,11 @@ public class WorkerProfileView {
         this.surnameLabelWorkerProfile.setText(surnamesearch);
         this.emailLabelWorkerProfile.setText(emailsearch);
 
+    }
+
+
+    public void notifichemetodo(ActionEvent actionEvent) throws IOException {
+        UIController controller =  UIController.getUIControllerInstance();
+        controller.showNotificheDaCliente();
     }
 }

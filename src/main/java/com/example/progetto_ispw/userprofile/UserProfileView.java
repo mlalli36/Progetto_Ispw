@@ -1,5 +1,6 @@
 package com.example.progetto_ispw.userprofile;
 
+import com.example.progetto_ispw.UIController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -104,10 +105,11 @@ public class UserProfileView {
     public void addressesMethod(ActionEvent actionEvent) {//da implementare
     }
 
-    public void needHelpMethod(ActionEvent actionEvent) {//da implementare
-    }
 
-    public void exitMethod(ActionEvent actionEvent) {//da implementare
+
+    public void exitMethod(ActionEvent actionEvent) throws IOException {
+        UIController controller= UIController.getUIControllerInstance();
+        controller.showExit();
     }
 
 

@@ -58,9 +58,11 @@ public class UIController {
         this.stage.setScene(new Scene(root1));
 
     }
-
+    public void showExit() throws IOException{
+        this.loadStage("login.fxml","login.css");
+    }
    public void showNotificheDaCliente() throws IOException{//mostra le notifiche da cliente
-        this.loadStage("interfaccia notifica da cliente.fxml","notificheDaCliente.css");
+        this.loadStage("interfaccianotificadacliente.fxml","profileMyDetails.css");
     }
 
     public void showProfileRecensione() throws IOException{//mostra il profilo sulla sezione recensione

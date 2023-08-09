@@ -64,7 +64,7 @@ public class FillFormView {
     @FXML
     public CheckBox check5;
     @FXML
-    public Label errorTimeNotValid;
+    public Label errorLabel;
 
 
     public void profileMethod(ActionEvent actionEvent) {
@@ -157,29 +157,31 @@ public class FillFormView {
             viewController.showHome();
 
         } catch (TimeAlreadySelectedException e) {
-           errorTimeNotValid.setText("The selected time is no longer valid.");
-           errorTimeNotValid.setOpacity(1);
+           errorLabel.setText("The selected time is no longer valid.");
+          // errorTimeNotValid.setOpacity(1);
        }catch (EmptyNameFieldException e ){
-           errorTimeNotValid.setText("WARNING: NAME FIELD IS EMPTY!");
-           errorTimeNotValid.setOpacity(1);
+           errorLabel.setText("WARNING: NAME FIELD IS EMPTY!");
+          // errorTimeNotValid.setOpacity(1);
        }catch (EmptySurameFieldException e){
-           errorTimeNotValid.setText("WARNING: SURNAME FIELD IS EMPTY!");
-           errorTimeNotValid.setOpacity(1);
+           errorLabel.setText("WARNING: SURNAME FIELD IS EMPTY!");
+        //   errorTimeNotValid.setOpacity(1);
        }catch (EmptyDescriptionFieldException e){
-           errorTimeNotValid.setText("WARNING: DESCRIPTION FIELD IS EMPTY!");
-           errorTimeNotValid.setOpacity(1);
+           errorLabel.setText("WARNING: DESCRIPTION FIELD IS EMPTY!");
+        //   errorTimeNotValid.setOpacity(1);
        }catch(NotValidNumberPhoneException e){
-           errorTimeNotValid.setText("WARNING: PHONE FIELD ISN'T VALID!");
-           errorTimeNotValid.setOpacity(1);
+           errorLabel.setText("WARNING: PHONE FIELD ISN'T VALID!");
+          // errorTimeNotValid.setOpacity(1);
        }catch(InvalidEmailFormatException e){
-           errorTimeNotValid.setText("WARNING: INVALID EMAIL FORMAT!");
-           errorTimeNotValid.setOpacity(1);
+           errorLabel.setText("WARNING: INVALID EMAIL FORMAT!");
+          // errorTimeNotValid.setOpacity(1);
        }catch(EmptyDateFieldException e){
-           errorTimeNotValid.setText("WARNING: DATE FIELD IS EMPTY!");
-           errorTimeNotValid.setOpacity(1);
+           errorLabel.setText("WARNING: DATE FIELD IS EMPTY!");
+          // errorTimeNotValid.setOpacity(1);
        }catch(NotValidTimeException e){
-           errorTimeNotValid.setText("WARNING: TIME CHECK IS EMPTY!");
-           errorTimeNotValid.setOpacity(1);
+           errorLabel.setText("WARNING: TIME CHECK IS EMPTY!");
+          // errorTimeNotValid.setOpacity(1);
+       }finally{
+           errorLabel.setOpacity(1);
        }
 
     }
@@ -205,7 +207,7 @@ public class FillFormView {
         slPane.createSlotTilePane();
         paneSlot.setVisible(true);
         //mostriamo quei dati in una riga che si compila in automatico con dei bottoni
-        controller.TakeSlot(bean);
+        controller.takeSlot(bean);
         SlotHoursEntity sl=SlotHoursEntity.getInstance();
         String slot1=sl.getSlot1();
         String slot2=sl.getSlot2();

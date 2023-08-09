@@ -8,15 +8,6 @@ import com.example.progetto_ispw.worker.WorkerDAO;
 
 public class FillFormController {
 
-
-
-
-    // PRIMA COSA DA FARE è LA CORREZIONE DELL'ERRORE SE RIEMPI POI BENE I CAMPI (PROVA UN'ECCEZIONE E CAPIRAI)
-
-
-
-
-
     public void fill(FillFormBean bean) {
         WorkerDAO dao = WorkerDAO.getInstance();
 
@@ -34,7 +25,7 @@ public class FillFormController {
     }
 
 
-    public void TakeSlot(FillFormBean bean) {
+    public void takeSlot(FillFormBean bean) {
         String emailWorker = bean.getEmailWorker();
         String date = bean.getDate();
         System.out.println("FFC date: "+date);

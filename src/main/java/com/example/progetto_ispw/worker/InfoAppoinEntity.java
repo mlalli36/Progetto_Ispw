@@ -1,6 +1,16 @@
 package com.example.progetto_ispw.worker;
 
+import com.example.progetto_ispw.savehoursslots.SlotHoursEntity;
+
+
 public class InfoAppoinEntity {
+    /*public static InfoAppoinEntity getInstance() {
+        if (singleInstance == null)
+            singleInstance = new InfoAppoinEntity();
+        return singleInstance;
+    }
+    private static InfoAppoinEntity singleInstance = null;*/
+
     private String workerEmail;
     private String clientName;
     private String clientSurname;

@@ -37,14 +37,22 @@ public class SlotHoursView {
     public Label surnameLabel;
     @FXML
     public Label emailLabel;
+    @FXML
     public Label errorLabel;
+    @FXML
     public Button homeButton;
+    @FXML
+    public Button exitButton;
 
     public void preCompile(String namesearch, String surnamesearch, String emailsearch) {
         this.nameLabel.setText(namesearch);
         this.surnameLabel.setText(surnamesearch);
         this.emailLabel.setText(emailsearch);
 
+    }
+    public void exitMethod(ActionEvent actionEvent) throws IOException {
+        UIController controller= UIController.getUIControllerInstance();
+        controller.showExit();
     }
 
     public void saveEditsMethod(ActionEvent actionEvent) throws IOException {
@@ -87,5 +95,9 @@ public class SlotHoursView {
         UIController viewController=UIController.getUIControllerInstance();
         viewController.showHome();
 
+    }
+
+    public void profileMethod(ActionEvent actionEvent) {
+    //implentare
     }
 }

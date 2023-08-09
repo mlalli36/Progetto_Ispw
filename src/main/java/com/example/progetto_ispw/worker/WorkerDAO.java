@@ -149,6 +149,7 @@ public class WorkerDAO {
 
                 preparedStatement.executeUpdate();
 
+//                InfoAppoinEntity IAE = InfoAppoinEntity.getInstance();
                 InfoAppoinEntity IAE = new InfoAppoinEntity();
                 IAE.setWEmail(workerEmail);
                 IAE.setCname(clientName);
