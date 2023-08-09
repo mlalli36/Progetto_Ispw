@@ -10,6 +10,9 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 
+
+import com.example.progetto_ispw.home.ResultElement;
+
 import java.io.IOException;
 import java.time.LocalDate;
 
@@ -148,10 +151,11 @@ public class FillFormView {
             //aggiungere un controllo per far si che solo un check possa essere spuntato!
 
 
-            controller.fill(bean);
-            UIController viewController = UIController.getUIControllerInstance();//è singletone
+           controller.fill(bean);
 
+            UIController viewController = UIController.getUIControllerInstance();//è singletone
             viewController.showHome();
+
         } catch (TimeAlreadySelectedException e) {
            errorTimeNotValid.setText("The selected time is no longer valid.");
            errorTimeNotValid.setOpacity(1);

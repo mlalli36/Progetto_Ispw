@@ -1,8 +1,6 @@
 package com.example.progetto_ispw.fillform;
 
-import com.example.progetto_ispw.fillform.exception.EmptyNameFieldException;
-import com.example.progetto_ispw.fillform.exception.NotValidTimeException;
-import com.example.progetto_ispw.fillform.exception.TimeAlreadySelectedException;
+import com.example.progetto_ispw.fillform.exception.*;
 import com.example.progetto_ispw.savehoursslots.SlotHoursEntity;
 import com.example.progetto_ispw.worker.InfoAppoinEntity;
 import com.example.progetto_ispw.worker.WorkerDAO;
@@ -27,7 +25,7 @@ public class FillFormController {
         }
         InfoAppoinEntity info =  dao.getAppointment(bean.getEmailWorker(), bean.getDate(), bean.getTime());
 
-        if(info.getWEmail().equals(bean.getEmailWorker()) && info.getDAppo().equals(bean.getDate()) && info.getTime().equals(bean.getTime())){
+        if(info !=null && info.getWEmail().equals(bean.getEmailWorker()) && info.getDAppo().equals(bean.getDate()) && info.getTime().equals(bean.getTime())){
             throw new TimeAlreadySelectedException("The selected time is no longer valid.");
         }
 
