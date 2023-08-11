@@ -4,6 +4,7 @@ import com.example.progetto_ispw.UIController;
 import com.example.progetto_ispw.login.exception.UserNotFoundException;
 import com.example.progetto_ispw.searchdinamica.SearchDinamicaController;
 import com.example.progetto_ispw.user.UserEntity;
+import com.example.progetto_ispw.worker.WorkerEntity;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -53,7 +54,8 @@ public class HomeView {
             viewController.insertInfoUser(namesearch,surnamesearch,emailsearch);
         } else{
 
-
+            WorkerEntity wkE= WorkerEntity.getInstance();
+            wkE.setEmail(emailsearch);
             viewController.insertInfoWorker(namesearch,surnamesearch,emailsearch);
         }
 
@@ -70,8 +72,10 @@ public class HomeView {
 
     public void searchMethod() throws IOException {
             HomeBean bean= new HomeBean();
-            bean.setJobWork(jobWorkerTextField.getText());
-            bean.setLocationWork(locationWorkerTextField.getText());
+            String normalizedjobWorker= jobWorkerTextField.getText().toLowerCase();
+            String normalizedlocationbWorker= locationWorkerTextField.getText().toLowerCase();
+            bean.setJobWork(normalizedjobWorker);
+            bean.setLocationWork(normalizedlocationbWorker);
 
             SearchDinamicaController searchController= new SearchDinamicaController();
             searchController.workInfo(bean);

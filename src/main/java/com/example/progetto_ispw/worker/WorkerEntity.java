@@ -11,6 +11,12 @@ public class WorkerEntity {
     private String surname;
     private  String work;
 
+    private static WorkerEntity singleInstance = null;
+    public static WorkerEntity getInstance(){
+        if (singleInstance == null)
+            singleInstance = new WorkerEntity();
+        return singleInstance;
+    }
 
 
     public  String getName() {

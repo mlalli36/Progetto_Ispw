@@ -1,15 +1,12 @@
 package com.example.progetto_ispw.worker;
 
-import com.example.progetto_ispw.savehoursslots.SlotHoursEntity;
-
-
-public class InfoAppoinEntity {
-    /*public static InfoAppoinEntity getInstance() {
+public class InfoAppoinEntity2 {
+public static InfoAppoinEntity2 getInstance() {
         if (singleInstance == null)
-            singleInstance = new InfoAppoinEntity();
+            singleInstance = new InfoAppoinEntity2();
         return singleInstance;
     }
-    private static InfoAppoinEntity singleInstance = null;*/
+    private static InfoAppoinEntity2 singleInstance = null;
 
     private String workerEmail;
     private String clientName;
@@ -42,13 +39,9 @@ public class InfoAppoinEntity {
     public String getDAppo() { return dateAppoint;}
 
     public String getTime() {return timeDate;}
-    //prova da cancellare in caso non vada bene
     public String getCName(){return clientName;}
     public String getCSurname(){return clientSurname;}
     public String getCEmail(){return clientEmail;}
     public String getCNumber(){return clientNumber;}
     public String getdescriptionWork(){return workDescr;}
-    // finisce qui la parte da cancellare
-
-
 }

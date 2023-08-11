@@ -78,7 +78,7 @@ public class WorkerDAO {
                 ResultSet rs = preparedStatement.executeQuery();
                 while (rs.next()) {
 
-                    WorkerEntity workerEntity = new WorkerEntity();
+                    WorkerEntity workerEntity = WorkerEntity.getInstance();
                     workerEntity.setEmail(rs.getString("Email"));
                     workerEntity.setDescription(rs.getString("Description"));
                     workerEntity.setWork(rs.getString("Work"));
@@ -197,7 +197,38 @@ public class WorkerDAO {
         return app;
     }
 
+    public List<InfoAppoinEntity> getAppointmentforWoker(String email){
+        //List<InfoAppoinEntity2> appontments =new ArrayList<>();
+        List<InfoAppoinEntity> appontments =new ArrayList<>();
+        try (Connection con = getConnector()) {
+            if (con == null)
+                throw new SQLException();
 
+            String query = "SELECT * FROM `databaseispw`.`appointment request` WHERE Worker_email = ?  ";
+            try (PreparedStatement preparedStatement = con.prepareStatement(query)) {
+                preparedStatement.setString(1, email);
+
+                ResultSet rs = preparedStatement.executeQuery();
+                while (rs.next()) {
+//                    InfoAppoinEntity2 app =  InfoAppoinEntity2.getInstance();
+                    InfoAppoinEntity app =  new InfoAppoinEntity();
+                    app.setWEmail(rs.getString("Worker_email"));
+                    app.setCname(rs.getString("Client_name"));
+                    app.setCsurname(rs.getString("Client_surname"));
+                    app.setCEmail(rs.getString("Client_email"));
+                    app.setDAppo(rs.getString("Date_appointment"));
+                    app.setCNumber(rs.getString("Client_number"));
+                    app.setDescription(rs.getString("Work_description"));
+                    app.setTime(rs.getString("Time_date"));
+                    appontments.add(app);
+                }
+            }
+        }
+        catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return appontments;
+    }
 
 
 

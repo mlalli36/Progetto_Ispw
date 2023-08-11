@@ -103,10 +103,27 @@
             <Font name="Bookman Old Style" size="20.0" />
          </font>
       </Label>
-      <Button fx:id="notifichemetodo" layoutX="62.0" layoutY="189.0" mnemonicParsing="false" onAction="#notifichemetodo" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="notifiche">
+      <Button fx:id="notificationButton" layoutX="62.0" layoutY="189.0" mnemonicParsing="false" onAction="#notificationMethod" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="notifiche">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
+    <AnchorPane layoutX="404.0" layoutY="57.0" minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
+      <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" layoutX="397.0" layoutY="66.0" prefHeight="676.0" prefWidth="815.0" vbarPolicy="ALWAYS">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Pane fx:id="paneInsideScrollpane" prefHeight="673.0" prefWidth="812.0">
+                     <children>
+                        <Text fx:id="noAppointmentText" fill="RED" layoutX="25.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0">
+                           <font>
+                              <Font name="Bookman Old Style" size="36.0" />
+                           </font>
+                        </Text>
+                        <VBox fx:id="vboxInsideScrollPane" layoutX="-3.0" layoutY="-1.0" prefHeight="676.0" prefWidth="815.0" />
+                     </children></Pane>
+               </children></AnchorPane>
+        </content>
+      </ScrollPane>
    </children>
 </Pane>

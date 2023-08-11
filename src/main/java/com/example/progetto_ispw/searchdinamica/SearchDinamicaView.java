@@ -96,22 +96,10 @@ public class SearchDinamicaView{
             String locationWorker = r.getLocationWorker();
             String descriptionWorker= r.getWorkerDescription();
             emailWorker= r.getWorkerEmail();
-            //associamo ad ogni bottone la sua mail
             newButton.setUserData(emailWorker);
 
-
-
-
-            //faccio una prova: inserisco la mail del worker nell'interfaccia
             customTilePane.addElements(name,jobWorker,locationWorker,descriptionWorker,newButton, emailWorker);
-          /*  newButton.setOnAction(event -> {
-                try {
-                    showIntForm();
 
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            });*/
             newButton.setOnAction(this::showIntForm);
 
         }

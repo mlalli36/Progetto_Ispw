@@ -13,6 +13,7 @@ import javafx.scene.text.Font;
 import java.security.cert.PolicyNode;
 
 public class CustomTilePane {
+
         AnchorPane entryPane;
         TilePane customTP;
         VBox resultsBox;
