@@ -40,10 +40,10 @@ public class SearchDinamicaView{
     public ScrollPane scrollPane;
     public String emailWorker;
 
+    UserEntity user = UserEntity.getInstance();
 
     public void profileMethod(ActionEvent actionEvent) throws IOException, UserNotFoundException {
 
-        UserEntity user = UserEntity.getInstance();
         String type = user.getTipoaccesso();
         System.out.println(type);
         UIController viewController = UIController.getUIControllerInstance();//è singletone
@@ -57,8 +57,10 @@ public class SearchDinamicaView{
 
         String namesearch= user.getName();
         String surnamesearch= user.getSurname();
-        System.out.println(namesearch);
-        System.out.println(surnamesearch);
+        System.out.println("namesearch "+namesearch);
+        System.out.println("surnamesearch "+surnamesearch);
+
+
         if(!"Worker".equals(type)) {
 
             viewController.insertInfoUser(namesearch,surnamesearch,emailsearch);
@@ -113,8 +115,12 @@ public class SearchDinamicaView{
         // tieniamo traccia dell'email associata a quel bottone
         String email = (String) clickedButton.getUserData() ;
 
+      //  UserEntity user= UserEntity.getInstance();
+        System.out.println("nome utente: "+user.getName());
+        System.out.println("cognnome utente: "+user.getSurname());
+
         UIController viewController = UIController.getUIControllerInstance();
-        viewController.showForm(email);
+        viewController.showForm(email,user.getEmail(),user.getName(),user.getSurname());
 
     }
 }

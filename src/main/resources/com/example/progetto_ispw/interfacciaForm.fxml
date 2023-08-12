@@ -77,11 +77,11 @@
                      <font>
                         <Font name="Bookman Old Style" size="15.0" />
                      </font></Text>
-                  <Text layoutX="604.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Number :">
+                  <Text layoutX="604.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Number* :">
                      <font>
                         <Font name="Bookman Old Style" size="15.0" />
                      </font></Text>
-                  <Text layoutX="604.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description :">
+                  <Text layoutX="604.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description* :">
                      <font>
                         <Font name="Bookman Old Style" size="15.0" />
                      </font></Text>
@@ -115,6 +115,11 @@
                   <CheckBox fx:id="check4" layoutX="608.0" layoutY="442.0" mnemonicParsing="false" opacity="0.0" />
                   <CheckBox fx:id="check5" layoutX="755.0" layoutY="442.0" mnemonicParsing="false" opacity="0.0" />
                   <CheckBox fx:id="check1" layoutX="163.0" layoutY="442.0" mnemonicParsing="false" opacity="0.0" />
+                  <Text layoutX="601.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* : Required fields.">
+                     <font>
+                        <Font name="Bookman Old Style" size="15.0" />
+                     </font>
+                  </Text>
                </children>
             </Pane>
          </children>

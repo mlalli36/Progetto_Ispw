@@ -18,4 +18,9 @@ public class WorkerProfileController {
         if(dao.getAppointmentforWoker(e)==null){return false;}else{
         return true;}
     }
+
+    public void deleteAppo(String date, String time, String email){
+        WorkerDAO dao=WorkerDAO.getInstance();
+        dao.deleteAppointment(email,date,time);
+    }
 }

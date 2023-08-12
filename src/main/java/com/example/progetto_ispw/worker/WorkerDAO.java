@@ -78,7 +78,8 @@ public class WorkerDAO {
                 ResultSet rs = preparedStatement.executeQuery();
                 while (rs.next()) {
 
-                    WorkerEntity workerEntity = WorkerEntity.getInstance();
+                    WorkerEntity workerEntity = new WorkerEntity();
+                    //WorkerEntity workerEntity = WorkerEntity.getInstance();
                     workerEntity.setEmail(rs.getString("Email"));
                     workerEntity.setDescription(rs.getString("Description"));
                     workerEntity.setWork(rs.getString("Work"));
@@ -261,4 +262,29 @@ public class WorkerDAO {
         }
         return slot;
     }
+
+
+
+    public void deleteAppointment(String email, String date, String time) {
+        try (Connection con = getConnector()) {
+            if (con == null)
+                throw new SQLException();
+
+            String query = "DELETE FROM `databaseispw`.`appointment request` WHERE Worker_email=? AND Date_appointment=? AND Time_date=?; ";
+            try (PreparedStatement preparedStatement = con.prepareStatement(query)) {
+                preparedStatement.setString(1, email);
+                preparedStatement.setString(2, date);
+                preparedStatement.setString(3, time);
+
+                int del= preparedStatement.executeUpdate();
+                if(del>0){System.out.println("Appuntamento eliminato");}else{System.out.println("Non c'erano appuntamenti da eliminare");}
+
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
+
 }

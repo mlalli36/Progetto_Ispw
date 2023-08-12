@@ -11,8 +11,6 @@ import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 
 
-import com.example.progetto_ispw.home.ResultElement;
-
 import java.io.IOException;
 import java.time.LocalDate;
 
@@ -87,6 +85,8 @@ public class FillFormView {
     // data calendario vuota
     // orario appuntamento vuoto
     // descrizione vuota
+
+
 
     public void sendFormMethod(ActionEvent actionEvent) throws IOException  {
         FillFormController controller= new FillFormController();
@@ -226,7 +226,10 @@ public class FillFormView {
         }
 
 
-    public void preCompileInfo(String emailWorker) {
+    public void preCompileInfo(String emailWorker, String emailC, String nameC, String surnameC) {
         this.emailWorkerTextField.setText(emailWorker);
+        this.emailUserTextField.setText(emailC);
+        this.nameTextField.setText(nameC);
+        this.surnameTextField.setText(surnameC);
         bean.setEmailWorker(emailWorker);}
 }

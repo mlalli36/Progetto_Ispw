@@ -4,6 +4,7 @@ import com.example.progetto_ispw.UIController;
 import com.example.progetto_ispw.login.exception.UserNotFoundException;
 import com.example.progetto_ispw.searchdinamica.SearchDinamicaController;
 import com.example.progetto_ispw.user.UserEntity;
+import com.example.progetto_ispw.worker.WorkerEmailEntity;
 import com.example.progetto_ispw.worker.WorkerEntity;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -48,14 +49,18 @@ public class HomeView {
         homeController.searchInfo(homeBean);
         String namesearch= user.getName();
         String surnamesearch= user.getSurname();
+        System.out.println("home view nome utente: "+user.getName());
+        System.out.println("home view cognnome utente: "+user.getSurname());
+
 
         if(!"Worker".equals(type)) {
 
             viewController.insertInfoUser(namesearch,surnamesearch,emailsearch);
         } else{
 
-            WorkerEntity wkE= WorkerEntity.getInstance();
-            wkE.setEmail(emailsearch);
+            WorkerEmailEntity wkE= WorkerEmailEntity.getInstance();
+            //WorkerEntity wkE= new WorkerEntity();
+            wkE.setEmailWEE(emailsearch);
             viewController.insertInfoWorker(namesearch,surnamesearch,emailsearch);
         }
 
@@ -73,6 +78,7 @@ public class HomeView {
     public void searchMethod() throws IOException {
             HomeBean bean= new HomeBean();
             String normalizedjobWorker= jobWorkerTextField.getText().toLowerCase();
+
             String normalizedlocationbWorker= locationWorkerTextField.getText().toLowerCase();
             bean.setJobWork(normalizedjobWorker);
             bean.setLocationWork(normalizedlocationbWorker);

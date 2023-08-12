@@ -47,27 +47,10 @@ public class UserProfileView {
     public void profileMethod(ActionEvent actionEvent) {//da implementare
     }
 
-    public void homeMethod(ActionEvent actionEvent) {
-        try{
-            //crea pagina nuova
-            FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("interfacciaHome.fxml"));
-            Parent root=fxmlLoader.load();
+    public void homeMethod(ActionEvent actionEvent) throws IOException {
+        UIController viewController = UIController.getUIControllerInstance();//è singletone
 
-            //crea uno stage per la nuova pagina
-            Stage stage= new Stage();
-            stage.setScene((new Scene(root)));
-
-            //mostra la pagina caricata nellos stage
-            stage.show();
-
-            //chiudi la vista di com.example.progetto_ispw.login
-            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
-
-
-        } catch(IOException e){
-            e.printStackTrace();
-        }
-
+        viewController.showHome();
     }
 
     public void favoritesMethod(MouseEvent mouseEvent) {//da implementare

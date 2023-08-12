@@ -69,7 +69,7 @@ public class UIController {
         this.loadStage("interfaccia profilerecensione.fxml","p");
     }
 
-    public void showForm(String emailWorker) {//mostra il form
+    public void showForm(String emailWorker, String emailC, String nameC, String surnameC) {//mostra il form
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("interfacciaForm.fxml"));
         Parent root1 = null;
         try {
@@ -79,7 +79,7 @@ public class UIController {
         }
         root1.getStylesheets().add(Objects.requireNonNull(getClass().getResource("form.css")).toExternalForm());
         FillFormView ffV = fxmlLoader.getController();
-        ffV.preCompileInfo(emailWorker);
+        ffV.preCompileInfo(emailWorker,emailC,nameC,surnameC);
 
         this.fadeAnimation(root1, this.stage.getScene().getRoot());
 

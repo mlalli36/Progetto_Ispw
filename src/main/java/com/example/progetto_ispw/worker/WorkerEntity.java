@@ -12,11 +12,11 @@ public class WorkerEntity {
     private  String work;
 
     private static WorkerEntity singleInstance = null;
-    public static WorkerEntity getInstance(){
+    /*public static WorkerEntity getInstance(){
         if (singleInstance == null)
             singleInstance = new WorkerEntity();
         return singleInstance;
-    }
+    }*/
 
 
     public  String getName() {

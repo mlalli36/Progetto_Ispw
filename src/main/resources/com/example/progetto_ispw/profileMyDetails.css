@@ -18,6 +18,7 @@
 }
 .button{
     -fx-background-radius: 10;
+    -fx-background-color: #74c69d;
     -fx-font-family: "Bookman Old Style";
     -fx-font-size: 20;
 

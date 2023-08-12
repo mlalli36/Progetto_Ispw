@@ -140,15 +140,16 @@ public class WorkerProfileView {
      //   String email=
 
         // per tenere traccia della mail del worker dopo il login
-        WorkerEntity wkE= WorkerEntity.getInstance();
-        String email= wkE.getEmail();
+        WorkerEmailEntity wkE= WorkerEmailEntity.getInstance();
+        //WorkerEntity wkE= new WorkerEntity();
+        String email= wkE.getEmailWEE();
         WorkerProfileBean bean = new WorkerProfileBean();
         bean.setEmail(email);
         WorkerProfileController ctrl= new WorkerProfileController();
        if( ctrl.verfica(bean)){// creazione dei riquadri dinamici con i tasti
            //List<InfoAppoinEntity2> appointments = WorkerDAO.getInstance().getAppointmentforWoker(email);
            List<InfoAppoinEntity> appointments = WorkerDAO.getInstance().getAppointmentforWoker(email);
-           if (!appointments.isEmpty()) {
+           if (!appointments.isEmpty() && appointments!=null) {
                scrollPane.setVisible(true);
               // paneInsideScrollpane.getChildren().clear(); // Rimuovi eventuali contenuti precedenti
                vboxInsideScrollPane.getChildren().clear();
@@ -157,6 +158,9 @@ public class WorkerProfileView {
                for (InfoAppoinEntity infoE : appointments) {
                    WorkerTilePane workerTilePane = new WorkerTilePane();
                    workerTilePane.createWorkerTilePane();
+                   Button accepttButton= new Button("Accept");
+                   Button rejectButton= new Button("Reject");
+
 
                    String email_client = infoE.getCEmail();
                    String name_client = infoE.getCName();
@@ -165,7 +169,23 @@ public class WorkerProfileView {
                    String description_work = infoE.getdescriptionWork();
                    String time = infoE.getTime();
                    String date = infoE.getDAppo();
-
+                   rejectButton.setOnAction(event -> {
+                       // Qui puoi utilizzare le variabili email_client, date_work e time_work
+                       // per eseguire le azioni necessarie quando il bottone rejectButton viene premuto
+                       InfoAppoinEntity2 in=InfoAppoinEntity2.getInstance();
+                       System.out.println();
+                       System.out.println("Reject button clicked for email: " + email_client);
+                       System.out.println("Date: " + date);
+                       System.out.println("Time: " + time);
+                       in.setDAppo(date);
+                       in.setTime(time);
+                       in.setWEmail(email);
+                       System.out.println();
+                       System.out.println("infoappent for email: " + in.getTime());
+                       WorkerProfileController controller= new WorkerProfileController();
+                       controller.deleteAppo(date,time,email);
+                   });
+                   /* si lasciano forse serviranno per l'interfaccia da riga di comando
                    System.out.println();
                    System.out.println("email client: "+email_client);
                    System.out.println("name_client: "+name_client);
@@ -174,17 +194,18 @@ public class WorkerProfileView {
                    System.out.println("description work: "+description_work);
                    System.out.println("time: "+time);
                    System.out.println("date: "+date);
+                    */
 
-                   workerTilePane.addElements(name_client, surname_client, email_client, description_work, phone_client, date, time);
+                   workerTilePane.addElements(accepttButton,rejectButton,name_client, surname_client, email_client, description_work, phone_client, date, time);
                   // paneInsideScrollpane.getChildren().add(workerTilePane.getWorkerTP());
                    vboxInsideScrollPane.getChildren().add(workerTilePane.getWorkerTP());
                                                             }
-                                          }
+                                        //  }
                                  } else {
                noAppointmentText.setText("You have no appointments in your schedule..");
            }
       //  this.scrollPane.setContent(WorkerTilePane.getWorkerTP());
-    }
+    }}
 
         /*   WorkerTilePane workerTilePane = new WorkerTilePane();
            workerTilePane.createWorkerTilePane();
