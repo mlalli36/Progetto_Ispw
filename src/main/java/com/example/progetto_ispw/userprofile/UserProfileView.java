@@ -43,13 +43,14 @@ public class UserProfileView {
     public Label surnameLabelUserProfile;
     @FXML
     public Label emailLabelUserProfile;
+    @FXML
+    public Button homeButton;
 
     public void profileMethod(ActionEvent actionEvent) {//da implementare
     }
 
     public void homeMethod(ActionEvent actionEvent) throws IOException {
         UIController viewController = UIController.getUIControllerInstance();//è singletone
-
         viewController.showHome();
     }
 
@@ -60,25 +61,7 @@ public class UserProfileView {
     }
 
     public void myDetailsMethod(ActionEvent actionEvent) {
-        try{
-            //crea pagina nuova
-            FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("interfacciaprofileMyDetails.fxml"));
-            Parent root=fxmlLoader.load();
 
-            //crea uno stage per la nuova pagina
-            Stage stage= new Stage();
-            stage.setScene((new Scene(root)));
-
-            //mostra la pagina caricata nellos stage
-            stage.show();
-
-            //chiudi la vista di com.example.progetto_ispw.login
-            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
-
-
-        } catch(IOException e){
-            e.printStackTrace();
-        }
 
     }
 

@@ -103,7 +103,7 @@ public class WorkerDAO {
         try (Connection con = getConnector()) {
             if (con == null)
                 throw new SQLException();
-            String query = "INSERT INTO `databaseispw`.`appointment avaible` (`email`,`slot1`, `slot2`,`slot3`,`slot4`,`slot5`,`date`) VALUES (?, ?, ?, ?, ?, ?, ?);";
+            String query = "INSERT INTO `databaseispw`.`appointmentavaible` (`email`,`slot1`, `slot2`,`slot3`,`slot4`,`slot5`,`date`) VALUES (?, ?, ?, ?, ?, ?, ?);";
             try (PreparedStatement preparedStatement = con.prepareStatement(query)) {
                 preparedStatement.setString(1, email);
                 preparedStatement.setString(2, slot1);
@@ -137,7 +137,7 @@ public class WorkerDAO {
         try (Connection con = getConnector()) {
             if (con == null)
                 throw new SQLException();
-            String query = "INSERT INTO `databaseispw`.`appointment request` (`Worker_email`,`Client_name`, `Client_surname`,`Client_email`,`Date_appointment`,`Client_number`,`Work_description`,`Time_date`) VALUES (?, ?, ?, ?, ?, ?,?, ?);";
+            String query = "INSERT INTO `databaseispw`.`appointment_request` (`Worker_email`,`Client_name`, `Client_surname`,`Client_email`,`Date_appointment`,`Client_number`,`Work_description`,`Time_date`) VALUES (?, ?, ?, ?, ?, ?,?, ?);";
             try (PreparedStatement preparedStatement = con.prepareStatement(query)) {
                 preparedStatement.setString(1, workerEmail);
                 preparedStatement.setString(2, clientName);
@@ -172,7 +172,7 @@ public class WorkerDAO {
             if (con == null)
                 throw new SQLException();
 
-            String query = "SELECT * FROM `databaseispw`.`appointment request` WHERE Worker_email = ? AND Date_appointment=? AND Time_date=? ";
+            String query = "SELECT * FROM `databaseispw`.`appointment_request` WHERE Worker_email = ? AND Date_appointment=? AND Time_date=? ";
             try (PreparedStatement preparedStatement = con.prepareStatement(query)) {
                 preparedStatement.setString(1, workerEmail);
                 preparedStatement.setString(2, date);
@@ -205,7 +205,7 @@ public class WorkerDAO {
             if (con == null)
                 throw new SQLException();
 
-            String query = "SELECT * FROM `databaseispw`.`appointment request` WHERE Worker_email = ?  ";
+            String query = "SELECT * FROM `databaseispw`.`appointment_request` WHERE Worker_email = ?  ";
             try (PreparedStatement preparedStatement = con.prepareStatement(query)) {
                 preparedStatement.setString(1, email);
 
@@ -239,7 +239,7 @@ public class WorkerDAO {
             if (con == null)
                 throw new SQLException();
 
-            String query = "SELECT * FROM `databaseispw`.`appointment avaible` WHERE email = ? AND date = ?";
+            String query = "SELECT * FROM `databaseispw`.`appointmentavaible` WHERE email = ? AND date = ?";
             try (PreparedStatement preparedStatement = con.prepareStatement(query)) {
                 preparedStatement.setString(1, email);
                 preparedStatement.setString(2, dateCalendar);
@@ -270,7 +270,7 @@ public class WorkerDAO {
             if (con == null)
                 throw new SQLException();
 
-            String query = "DELETE FROM `databaseispw`.`appointment request` WHERE Worker_email=? AND Date_appointment=? AND Time_date=?; ";
+            String query = "DELETE FROM `databaseispw`.`appointment_request` WHERE Worker_email=? AND Date_appointment=? AND Time_date=?; ";
             try (PreparedStatement preparedStatement = con.prepareStatement(query)) {
                 preparedStatement.setString(1, email);
                 preparedStatement.setString(2, date);

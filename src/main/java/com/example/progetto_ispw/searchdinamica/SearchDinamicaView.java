@@ -41,22 +41,22 @@ public class SearchDinamicaView{
     public String emailWorker;
 
     UserEntity user = UserEntity.getInstance();
+    String emailsearch= user.getEmail();
+
 
     public void profileMethod(ActionEvent actionEvent) throws IOException, UserNotFoundException {
 
         String type = user.getTipoaccesso();
         System.out.println(type);
         UIController viewController = UIController.getUIControllerInstance();//è singletone
-        String emailsearch= user.getEmail();
-
+        String namesearch= user.getName();
+        String surnamesearch= user.getSurname();
         SearchDinamicaBean searchDBean=new SearchDinamicaBean();
         searchDBean.setEmail(emailsearch);
         SearchDinamicaController searchDController =new SearchDinamicaController();
         searchDController.searchInfo(searchDBean);
 
 
-        String namesearch= user.getName();
-        String surnamesearch= user.getSurname();
         System.out.println("namesearch "+namesearch);
         System.out.println("surnamesearch "+surnamesearch);
 
@@ -102,25 +102,41 @@ public class SearchDinamicaView{
 
             customTilePane.addElements(name,jobWorker,locationWorker,descriptionWorker,newButton, emailWorker);
 
-            newButton.setOnAction(this::showIntForm);
+            newButton.setOnAction(event -> {
+                try {
+                    showIntForm(event);
+                } catch (UserNotFoundException e) {
+                    throw new RuntimeException(e);
+                }
+            });
 
         }
         this.scrollPane.setContent(customTilePane.getCustomTP());
 
     }
 
-    public void showIntForm(ActionEvent event)  {
+    public void showIntForm(ActionEvent event) throws UserNotFoundException {
         // tieniamo traccia del bottone che abbiamo premuto
         Button clickedButton =(Button) event.getSource();
         // tieniamo traccia dell'email associata a quel bottone
         String email = (String) clickedButton.getUserData() ;
 
       //  UserEntity user= UserEntity.getInstance();
-        System.out.println("nome utente: "+user.getName());
-        System.out.println("cognnome utente: "+user.getSurname());
+        SearchDinamicaBean searchDBean=new SearchDinamicaBean();
+        searchDBean.setEmail(emailsearch);
+        SearchDinamicaController ctrl= new SearchDinamicaController();
+        ctrl.searchInfo(searchDBean);
+        System.out.println("search dinamica nome utente: "+user.getName());
+        System.out.println("search dinamica cognnome utente: "+user.getSurname());
+        System.out.println("search dinamica email utente: "+user.getEmail());
+
+
+        String emailCl= user.getEmail();
+        String nameCl= user.getName();
+        String surnameCl= user.getSurname();
 
         UIController viewController = UIController.getUIControllerInstance();
-        viewController.showForm(email,user.getEmail(),user.getName(),user.getSurname());
+        viewController.showForm(email,emailCl,nameCl,surnameCl);
 
     }
 }
