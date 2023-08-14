@@ -16,8 +16,7 @@ public class WorkerTilePane {
     public void addElements(Button  accepttButton,Button rejectButton, String name_client, String surname_client, String email_client, String description_work,String phone_client,String date_work, String time_work){
 
         AnchorPane entryPane = new AnchorPane();
-        //  Button accepttButton= new Button("Accept");
-        // Button rejectButton= new Button("Reject");
+
         // dimensioni e coordinate per il bottone "accetta"
         accepttButton.setPrefWidth(150);
         accepttButton.setPrefHeight(50);

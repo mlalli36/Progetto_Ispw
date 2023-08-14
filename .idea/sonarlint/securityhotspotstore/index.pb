@@ -29,8 +29,6 @@ Bsrc/main/java/com/example/progetto_ispw/fillform/SlotTilePane.java,6\1\613f1ae
 Rsrc/main/java/com/example/progetto_ispw/workerprofile/WorkerProfileController.java,9\7\975d17cde861a39c96b086d33267c2a838e90648
 p
 @src/main/java/com/example/progetto_ispw/worker/WorkerEntity.java,4\6\46ae5e03d3b6d9eadd6395466f0b28e41ecd0aed
-q
-Asrc/main/java/com/example/progetto_ispw/utile/CustomTilePane.java,8\3\83bdf3e707ee50231a84c19e0b81bd7a92cf94d6
 t
 Dsrc/main/java/com/example/progetto_ispw/worker/InfoAppoinEntity.java,6\e\6e4734b586c58070ecff9c0d7ef93428c3539f50
 u

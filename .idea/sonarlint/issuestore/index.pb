@@ -35,5 +35,3 @@ u
 Esrc/main/java/com/example/progetto_ispw/worker/WorkerEmailEntity.java,6\1\61f050dc79618af3db1712fb13676be525763672
 p
 @src/main/java/com/example/progetto_ispw/worker/WorkerEntity.java,4\6\46ae5e03d3b6d9eadd6395466f0b28e41ecd0aed
-q
-Asrc/main/java/com/example/progetto_ispw/utile/CustomTilePane.java,8\3\83bdf3e707ee50231a84c19e0b81bd7a92cf94d6

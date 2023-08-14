@@ -10,17 +10,12 @@
    <children>
       <Pane prefHeight="53.0" prefWidth="1219.0" style="-fx-background-color: #74c69d;">
          <children>
-            <Button fx:id="profileButton" layoutX="1144.0" mnemonicParsing="false" onAction="#profileMethod" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #74c69d;" />
+            <Button fx:id="profileButton" layoutX="1144.0" mnemonicParsing="false" onAction="#profileMethod" prefHeight="51.0" prefWidth="75.0" style="-fx-background-color: #74c69d;" />
             <Button layoutX="1069.0" layoutY="-1.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #74c69d;" />
             <Button fx:id="homeButton" layoutX="994.0" layoutY="-1.0" mnemonicParsing="false" onAction="#homeMethod" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #74c69d;" />
             <ImageView fitHeight="53.0" fitWidth="66.0" layoutX="1002.0" layoutY="-1.0">
                <image>
                   <Image url="@icon/home 2.png" />
-               </image>
-            </ImageView>
-            <ImageView layoutX="1158.0" layoutY="4.0">
-               <image>
-                  <Image url="@icon/profile 2.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="53.0" fitWidth="58.0" layoutX="1084.0" layoutY="1.0">
@@ -32,6 +27,11 @@
                <font>
                   <Font name="Bookman Old Style" size="30.0" />
                </font></Text>
+            <ImageView layoutX="1162.0" layoutY="5.0">
+               <image>
+                  <Image url="@icon/profile 2.png" />
+               </image>
+            </ImageView>
          </children></Pane>
       <Circle fill="#74c69d" layoutX="95.0" layoutY="128.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
       <Label fx:id="nameLabelWorkerProfile" layoutX="135.0" layoutY="106.0" prefHeight="38.0" prefWidth="138.0">
@@ -108,14 +108,13 @@
             <Font size="20.0" />
          </font>
       </Button>
-    <AnchorPane layoutX="404.0" layoutY="57.0" minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
-      <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" layoutX="397.0" layoutY="66.0" prefHeight="676.0" prefWidth="815.0" vbarPolicy="ALWAYS">
+      <ScrollPane fx:id="scrollPane" fitToHeight="true" fitToWidth="true" layoutX="397.0" layoutY="66.0" prefHeight="636.0" prefWidth="815.0" style="visibility: 0;" vbarPolicy="ALWAYS">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <Pane fx:id="paneInsideScrollpane" prefHeight="673.0" prefWidth="812.0">
+                  <Pane fx:id="paneInsideScrollpane" prefHeight="700.0" prefWidth="815.0">
                      <children>
-                        <VBox fx:id="vboxInsideScrollPane" layoutX="-3.0" layoutY="-1.0" prefHeight="676.0" prefWidth="815.0">
+                        <VBox fx:id="vboxInsideScrollPane" layoutX="-3.0" layoutY="-1.0" prefHeight="600.0" prefWidth="815.0">
                            <children>
                               <Text fx:id="noAppointmentText" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="763.0">
                                  <font>
@@ -123,8 +122,10 @@
                                  </font>
                               </Text>
                            </children></VBox>
-                     </children></Pane>
-               </children></AnchorPane>
+                     </children>
+                  </Pane>
+               </children>
+          </AnchorPane>
         </content>
       </ScrollPane>
    </children>

@@ -30,7 +30,7 @@ public class WorkerDAO {
         try (Connection con = getConnector()) {
             if (con == null)
                 throw new SQLException();
-            String query = "INSERT INTO `databaseispw`.`tabella informazioni` (`Email`,`Description`,`Work`, `Name`,`Surname`,`Address`,`Location`) VALUES (?, ?, ?, ?, ?, ?, ?);";
+            String query = "INSERT INTO `databaseispw`.`tabellainformazioni` (`Email`,`Description`,`Work`, `Name`,`Surname`,`Address`,`Location`) VALUES (?, ?, ?, ?, ?, ?, ?);";
             try (PreparedStatement preparedStatement = con.prepareStatement(query)) {
                 preparedStatement.setString(1, email);
                 preparedStatement.setString(2, description);
@@ -71,7 +71,7 @@ public class WorkerDAO {
             Connection con = getConnector();
             if (con == null)
                 throw new SQLException();
-            String query = "SELECT * FROM `tabella informazioni` WHERE Work = ? AND Location = ?;";
+            String query = "SELECT * FROM `tabellainformazioni` WHERE Work = ? AND Location = ?;";
             try (PreparedStatement preparedStatement = con.prepareStatement(query)) {
                 preparedStatement.setString(1, jobWorker);
                 preparedStatement.setString(2, locationWorker);
