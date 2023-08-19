@@ -1,15 +1,20 @@
 package com.example.progetto_ispw;
 
 import com.example.progetto_ispw.fillform.FillFormView;
+import com.example.progetto_ispw.login.exception.UserNotFoundException;
 import com.example.progetto_ispw.profilesignup.ProfileSignUpView;
 import com.example.progetto_ispw.savehoursslots.SlotHoursView;
 import com.example.progetto_ispw.searchdinamica.SearchDinamicaBean;
+import com.example.progetto_ispw.searchdinamica.SearchDinamicaController;
 import com.example.progetto_ispw.searchdinamica.SearchDinamicaView;
 import com.example.progetto_ispw.signup.SignUpView;
+import com.example.progetto_ispw.user.UserEntity;
 import com.example.progetto_ispw.userprofile.UserProfileView;
 import com.example.progetto_ispw.workerprofile.WorkerProfileView;
 import javafx.animation.FadeTransition;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.AccessibleAction;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -249,6 +254,40 @@ public void insertInfoUser(String namesearch, String surnamesearch,String emails
         this.stage.setScene(new Scene(root1));
     }
 // prova per passaggio di email nome e cognome
+
+    //prova per non duplicare le righe di quando bisogna aprire il profilo
+    public void showProfile() throws UserNotFoundException, IOException {
+        UserEntity user = UserEntity.getInstance();
+        String emailsearch= user.getEmail();
+        String type = user.getTipoaccesso();
+        System.out.println(type);
+        UIController viewController = UIController.getUIControllerInstance();//è singletone
+        String namesearch= user.getName();
+        String surnamesearch= user.getSurname();
+        SearchDinamicaBean searchDBean=new SearchDinamicaBean();
+        searchDBean.setEmail(emailsearch);
+        SearchDinamicaController searchDController =new SearchDinamicaController();
+        searchDController.searchInfo(searchDBean);
+
+
+        System.out.println("namesearch "+namesearch);
+        System.out.println("surnamesearch "+surnamesearch);
+
+
+        if(!"Worker".equals(type)) {
+
+            viewController.insertInfoUser(namesearch,surnamesearch,emailsearch);
+        } else{
+
+
+            viewController.insertInfoWorker(namesearch,surnamesearch,emailsearch);
+        }
+    }
+
+
+
+
+
 
 }
 

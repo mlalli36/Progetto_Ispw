@@ -84,7 +84,7 @@
             <Image url="@icon/book services.png" />
          </image>
       </ImageView>
-      <ImageView layoutX="64.0" layoutY="396.0">
+      <ImageView fitHeight="53.0" fitWidth="64.0" layoutX="64.0" layoutY="400.0">
          <image>
             <Image url="@icon/position.png" />
          </image>
@@ -128,5 +128,10 @@
           </AnchorPane>
         </content>
       </ScrollPane>
+      <ImageView layoutX="73.0" layoutY="187.0">
+         <image>
+            <Image url="@../../../../../../../../Universita/0/ISPW/Progetto/Interfaccia%20fxml/bell%20senza%20notifica.png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>

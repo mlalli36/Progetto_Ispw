@@ -2,6 +2,7 @@ package com.example.progetto_ispw.fillform;
 
 import com.example.progetto_ispw.UIController;
 import com.example.progetto_ispw.fillform.exception.*;
+import com.example.progetto_ispw.login.exception.UserNotFoundException;
 import com.example.progetto_ispw.savehoursslots.SlotHoursEntity;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -154,7 +155,7 @@ public class FillFormView {
            controller.fill(bean);
 
             UIController viewController = UIController.getUIControllerInstance();//è singletone
-            viewController.showHome();
+            viewController.showProfile();
 
         } catch (TimeAlreadySelectedException e) {
            errorLabel.setText("The selected time is no longer valid.");
@@ -180,7 +181,9 @@ public class FillFormView {
        }catch(NotValidTimeException e){
            errorLabel.setText("WARNING: TIME CHECK IS EMPTY!");
           // errorTimeNotValid.setOpacity(1);
-       }finally{
+       } catch (UserNotFoundException e) {
+           throw new RuntimeException(e);
+       } finally{
            errorLabel.setOpacity(1);
        }
 

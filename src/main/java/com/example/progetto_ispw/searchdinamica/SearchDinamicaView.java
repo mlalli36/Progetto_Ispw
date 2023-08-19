@@ -49,25 +49,26 @@ public class SearchDinamicaView{
         String type = user.getTipoaccesso();
         System.out.println(type);
         UIController viewController = UIController.getUIControllerInstance();//è singletone
-        String namesearch= user.getName();
-        String surnamesearch= user.getSurname();
-        SearchDinamicaBean searchDBean=new SearchDinamicaBean();
+        String namesearch = user.getName();
+        String surnamesearch = user.getSurname();
+        SearchDinamicaBean searchDBean = new SearchDinamicaBean();
         searchDBean.setEmail(emailsearch);
-        SearchDinamicaController searchDController =new SearchDinamicaController();
+        SearchDinamicaController searchDController = new SearchDinamicaController();
         searchDController.searchInfo(searchDBean);
 
 
-        System.out.println("namesearch "+namesearch);
-        System.out.println("surnamesearch "+surnamesearch);
+        System.out.println("namesearch " + namesearch);
+        System.out.println("surnamesearch " + surnamesearch);
 
 
-        if(!"Worker".equals(type)) {
+        if (!"Worker".equals(type)) {
 
-            viewController.insertInfoUser(namesearch,surnamesearch,emailsearch);
-        } else{
+            viewController.insertInfoUser(namesearch, surnamesearch, emailsearch);
+        } else {
 
 
-            viewController.insertInfoWorker(namesearch,surnamesearch,emailsearch);
+            viewController.insertInfoWorker(namesearch, surnamesearch, emailsearch);
+
         }
     }
 

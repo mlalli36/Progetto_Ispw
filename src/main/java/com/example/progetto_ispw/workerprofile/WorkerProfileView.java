@@ -131,9 +131,7 @@ public class WorkerProfileView {
 
     public void notificationMethod(ActionEvent actionEvent) throws IOException {
 
-        // per tenere traccia della mail del worker dopo il login
         WorkerEmailEntity wkE= WorkerEmailEntity.getInstance();
-        //WorkerEntity wkE= new WorkerEntity();
         String email= wkE.getEmailWEE();
         WorkerProfileBean bean = new WorkerProfileBean();
         bean.setEmail(email);
