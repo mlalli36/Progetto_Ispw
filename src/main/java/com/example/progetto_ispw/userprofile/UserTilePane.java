@@ -77,7 +77,7 @@ public class UserTilePane {
 
     public  void createUserTilePane(){
         userTP= new TilePane();
-        userTP.setPrefColumns(7);
+        userTP.setPrefColumns(8);
         userTP.setPrefWidth(700); // Imposta la larghezza desiderata per il TilePane
         userTP.setPrefHeight(600); // Imposta l'altezza desiderata per il TilePane
         userTP.setVgap(15); // Imposta uno spazio di 10 pixel tra le righe

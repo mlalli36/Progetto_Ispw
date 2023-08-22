@@ -19,6 +19,7 @@ public class InfoAppoinEntity {
     private String clientNumber;
     private String workDescr;
     private String timeDate;
+    private Integer accept;
 
     public void setWEmail(String workerEmail) {this.workerEmail=workerEmail;}
 
@@ -35,7 +36,9 @@ public class InfoAppoinEntity {
     public void setDescription(String workDescr) {this.workDescr=workDescr;}
 
     public void setTime(String timeDate) {this.timeDate=timeDate;}
-
+    public void setAccept(int accept) { this.accept= accept;
+        System.out.println("Setaccept:"+ accept);
+    }
 
     public String getWEmail() { return workerEmail;}
 
@@ -48,6 +51,14 @@ public class InfoAppoinEntity {
     public String getCEmail(){return clientEmail;}
     public String getCNumber(){return clientNumber;}
     public String getdescriptionWork(){return workDescr;}
+
+    public Integer getAccept() {
+        System.out.println("accept:"+ accept);
+        return accept;
+
+    }
+
+
     // finisce qui la parte da cancellare
 
 

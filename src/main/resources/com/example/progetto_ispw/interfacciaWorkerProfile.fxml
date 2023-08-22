@@ -109,28 +109,16 @@
          </font>
       </Button>
       <ScrollPane fx:id="scrollPane" fitToHeight="true" fitToWidth="true" layoutX="397.0" layoutY="66.0" prefHeight="636.0" prefWidth="815.0" style="visibility: 0;" vbarPolicy="ALWAYS">
-        <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
-               <children>
-                  <Pane fx:id="paneInsideScrollpane" prefHeight="700.0" prefWidth="815.0">
-                     <children>
-                        <VBox fx:id="vboxInsideScrollPane" layoutX="-3.0" layoutY="-1.0" prefHeight="600.0" prefWidth="815.0">
-                           <children>
-                              <Text fx:id="noAppointmentText" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="763.0">
-                                 <font>
-                                    <Font name="Bookman Old Style" size="36.0" />
-                                 </font>
-                              </Text>
-                           </children></VBox>
-                     </children>
-                  </Pane>
-               </children>
-          </AnchorPane>
-        </content>
-      </ScrollPane>
+         <content>
+            <Text fx:id="noAppointmentText" fill="#2d6a4f" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You have no appointments in your schedule.." wrappingWidth="653.1366996765137">
+               <font>
+                  <Font name="Bookman Old Style" size="20.0" />
+               </font>
+            </Text>
+         </content></ScrollPane>
       <ImageView layoutX="73.0" layoutY="187.0">
          <image>
-            <Image url="@../../../../../../../../Universita/0/ISPW/Progetto/Interfaccia%20fxml/bell%20senza%20notifica.png" />
+            <Image url="@icon/bell senza notifica.png" />
          </image>
       </ImageView>
    </children>

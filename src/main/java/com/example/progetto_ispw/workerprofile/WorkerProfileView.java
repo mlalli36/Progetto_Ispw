@@ -65,14 +65,12 @@ public class WorkerProfileView {
     public Button exitButton;
    @FXML
    public ScrollPane scrollPane;
-   @FXML
-   public Pane paneInsideScrollpane;
+
    @FXML
    public Text noAppointmentText;
-   @FXML
-   public VBox vboxInsideScrollPane;
 
 
+    WorkerProfileController controller= new WorkerProfileController();
     public void homeMethod(ActionEvent actionEvent) throws IOException {
         UIController controller= UIController.getUIControllerInstance();
         controller.showHome();}
@@ -135,9 +133,86 @@ public class WorkerProfileView {
         String email= wkE.getEmailWEE();
         WorkerProfileBean bean = new WorkerProfileBean();
         bean.setEmail(email);
-        WorkerProfileController ctrl= new WorkerProfileController();
+        if(controller.verifica(bean)) {
+            AppointmentResultEntity appointmentResultEntity = bean.getAppointmentResultSet();
+            //  WorkerProfileController ctrl= new WorkerProfileController();
+            WorkerTilePane workerTilePane = new WorkerTilePane();
+            workerTilePane.createWorkerTilePane();
+            scrollPane.setVisible(true);
+            for (AppointmentResultElement a : appointmentResultEntity.getElements()) {
+                Button accepttButton = new Button("Accept");
+                Button rejectButton = new Button("Reject");
+                Label acceptLabel = new Label("E' stata mandata una mail al client");
+                acceptLabel.setOpacity(0);
 
-        if( ctrl.verfica(bean)){// creazione dei riquadri dinamici con i tasti
+                String email_client = a.getCEmail();
+                String name_client = a.getCName();
+                String surname_client = a.getCSurname();
+                String phone_client = a.getCNumber();
+                String description_work = a.getdescriptionWork();
+                String time = a.getTime();
+                String date = a.getDAppo();
+
+                workerTilePane.addElements(accepttButton, rejectButton, name_client, surname_client, email_client, description_work, phone_client, date, time, acceptLabel);
+
+                rejectButton.setOnAction(event -> {
+                    // Qui puoi utilizzare le variabili email_client, date_work e time_work
+                    // per eseguire le azioni necessarie quando il bottone rejectButton viene premuto
+                    InfoAppoinEntity2 in = InfoAppoinEntity2.getInstance();
+                    System.out.println();
+                    System.out.println("Reject button clicked for email: " + email_client);
+                    System.out.println("Date: " + date);
+                    System.out.println("Time: " + time);
+                    in.setDAppo(date);
+                    in.setTime(time);
+                    in.setWEmail(email);
+                    System.out.println();
+                    System.out.println("infoappent for email: " + in.getTime());
+                    //  WorkerProfileController controller= new WorkerProfileController();
+                    controller.deleteAppo(date, time, email);
+                });
+                accepttButton.setOnAction(event -> {
+                    controller.acceptMethod(date, time, email);
+                    //se l'utente accetta allora nella tabella la colonna accetta viene impostato a 1 e quindi non vine piu mostrato nella lista
+                    acceptLabel.setOpacity(1);
+                    UIController controller= UIController.getUIControllerInstance();
+                    try {
+                        controller.showProfile();
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    } catch (UserNotFoundException e) {
+                        throw new RuntimeException(e);
+                    }
+
+                });
+                //devo fare il controllo che se il campo della colonna "accept" è =1 allora non lo deve mostrare
+                //controller.
+                // workerTilePane.addElements(accepttButton,rejectButton,name_client, surname_client, email_client, description_work, phone_client, date, time,acceptLabel);
+
+                //workerTilesContainer.getChildren().add(workerTilePane.getWorkerTP()); // Aggiungi la casella al contenitore
+
+            }
+            this.scrollPane.setContent(workerTilePane.getWorkerTP());
+        }else {
+            noAppointmentText.setOpacity(1);
+           //noAppointmentText.setText("You have no appointments in your schedule..");
+    }
+}
+
+    public void needHelpMethod(ActionEvent actionEvent) {//da implementare
+    }
+
+
+
+
+
+
+
+
+
+
+
+        /*if( controller.verifica(bean)){// creazione dei riquadri dinamici con i tasti
            List<InfoAppoinEntity> appointments = WorkerDAO.getInstance().getAppointmentforWoker(email);
            if (!appointments.isEmpty() && appointments!=null) {
                scrollPane.setVisible(true);
@@ -150,7 +225,8 @@ public class WorkerProfileView {
                    workerTilePane.createWorkerTilePane();
                    Button accepttButton= new Button("Accept");
                    Button rejectButton= new Button("Reject");
-
+                   Label acceptLabel= new Label("E' stata mandata una mail al client");
+                   acceptLabel.setOpacity(0);
 
                    String email_client = infoE.getCEmail();
                    String name_client = infoE.getCName();
@@ -172,22 +248,29 @@ public class WorkerProfileView {
                        in.setWEmail(email);
                        System.out.println();
                        System.out.println("infoappent for email: " + in.getTime());
-                       WorkerProfileController controller= new WorkerProfileController();
+                     //  WorkerProfileController controller= new WorkerProfileController();
                        controller.deleteAppo(date,time,email);
                    });
+                   accepttButton.setOnAction(event->{
+                       controller.acceptMethod(date,time,email);
+                       //se l'utente accetta allora nella tabella la colonna accetta viene impostato a 1 e quindi non vine piu mostrato nella lista
+                       acceptLabel.setOpacity(1);
 
-                   workerTilePane.addElements(accepttButton,rejectButton,name_client, surname_client, email_client, description_work, phone_client, date, time);
-                 //  vboxInsideScrollPane.getChildren().add(workerTilePane.getWorkerTP());
+                   });
+                    //devo fare il controllo che se il campo della colonna "accept" è =1 allora non lo deve mostrare
+                   //controller.
+                   workerTilePane.addElements(accepttButton,rejectButton,name_client, surname_client, email_client, description_work, phone_client, date, time,acceptLabel);
+
                    workerTilesContainer.getChildren().add(workerTilePane.getWorkerTP()); // Aggiungi la casella al contenitore
 
                }scrollPane.setContent(workerTilesContainer);
-               //  }
+
            } else {
                noAppointmentText.setText("You have no appointments in your schedule..");
            }
        }
         //this.scrollPane.setContent(workerTilePane.getWorkerTP());
+*/
+    }
 
-    }
-    }
 

@@ -25,7 +25,7 @@ import java.util.Objects;
 
 public class UIController {
 
-    String p= "profileMyDetails.css";
+
 
     private static UIController singleUIControllerInstance = null;
 
@@ -92,7 +92,7 @@ public class UIController {
     }
 
     public void showProfileMyDetails() throws IOException{//mostra i dettagli del proprio profilo
-        this.loadStage("interfacciaprofileMyDetails.fxml","p");
+        this.loadStage("interfacciaprofileMyDetails.fxml","profileMyDetails.css");
     }
 
 /* commento perché showUserProfile non dovrebbe più servire ma lo lasciamo un attimo per vedere se servirà

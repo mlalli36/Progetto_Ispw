@@ -133,11 +133,11 @@ public class WorkerDAO {
 
     }
 
-    public void addAppointment(String workerEmail,String clientName,String clientSurname,String clientEmail,String dateAppoint, String clientNumber, String workDescr, String timeDate){
+    public void addAppointment(String workerEmail,String clientName,String clientSurname,String clientEmail,String dateAppoint, String clientNumber, String workDescr, String timeDate, Integer accept){
         try (Connection con = getConnector()) {
             if (con == null)
                 throw new SQLException();
-            String query = "INSERT INTO `databaseispw`.`appointment_request` (`Worker_email`,`Client_name`, `Client_surname`,`Client_email`,`Date_appointment`,`Client_number`,`Work_description`,`Time_date`) VALUES (?, ?, ?, ?, ?, ?,?, ?);";
+            String query = "INSERT INTO `databaseispw`.`appointment_request` (`Worker_email`,`Client_name`, `Client_surname`,`Client_email`,`Date_appointment`,`Client_number`,`Work_description`,`Time_date`, `Accept`) VALUES (?, ?, ?, ?, ?, ?,?, ?, ?);";
             try (PreparedStatement preparedStatement = con.prepareStatement(query)) {
                 preparedStatement.setString(1, workerEmail);
                 preparedStatement.setString(2, clientName);
@@ -147,7 +147,7 @@ public class WorkerDAO {
                 preparedStatement.setString(6, clientNumber);
                 preparedStatement.setString(7, workDescr);
                 preparedStatement.setString(8, timeDate);
-
+                preparedStatement.setInt(9, accept);
                 preparedStatement.executeUpdate();
 
 //                InfoAppoinEntity IAE = InfoAppoinEntity.getInstance();
@@ -160,6 +160,7 @@ public class WorkerDAO {
                 IAE.setCNumber(clientNumber);
                 IAE.setDescription(workDescr);
                 IAE.setTime(timeDate);
+                IAE.setAccept(accept);
     }
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -199,7 +200,7 @@ public class WorkerDAO {
     }
 
     public List<InfoAppoinEntity> getAppointmentforWoker(String email){
-        //List<InfoAppoinEntity2> appontments =new ArrayList<>();
+
         List<InfoAppoinEntity> appontments =new ArrayList<>();
         try (Connection con = getConnector()) {
             if (con == null)
@@ -211,7 +212,7 @@ public class WorkerDAO {
 
                 ResultSet rs = preparedStatement.executeQuery();
                 while (rs.next()) {
-//                    InfoAppoinEntity2 app =  InfoAppoinEntity2.getInstance();
+
                     InfoAppoinEntity app =  new InfoAppoinEntity();
                     app.setWEmail(rs.getString("Worker_email"));
                     app.setCname(rs.getString("Client_name"));
@@ -221,6 +222,7 @@ public class WorkerDAO {
                     app.setCNumber(rs.getString("Client_number"));
                     app.setDescription(rs.getString("Work_description"));
                     app.setTime(rs.getString("Time_date"));
+                    app.setAccept(rs.getInt("Accept"));
                     appontments.add(app);
                 }
             }
@@ -285,6 +287,24 @@ public class WorkerDAO {
         }
     }
 
+ //serve per impostare il valore della colonna "Accept" a 1 nel caso in cui il worker accetta il lavoro
+    public void updateAppointmentStatus(String email, String date, String time) {
+            try (Connection con = getConnector()) {
+                if (con == null)
+                    throw new SQLException();
+
+                String query = "UPDATE `databaseispw`.`appointment_request` SET `Accept` = 1 WHERE Worker_email=? AND Date_appointment=? AND Time_date=?;";
+                try (PreparedStatement preparedStatement = con.prepareStatement(query)) {
+                    preparedStatement.setString(1, email);
+                    preparedStatement.setString(2, date);
+                    preparedStatement.setString(3, time);
+
+                    preparedStatement.executeUpdate();
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }
 
 
 }
