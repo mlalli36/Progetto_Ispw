@@ -12,7 +12,7 @@
          <children>
             <Pane prefHeight="53.0" prefWidth="1219.0" style="-fx-background-color: #74c69d;">
                <children>
-                  <Button fx:id="profile" layoutX="1144.0" layoutY="-1.0" mnemonicParsing="false" onAction="#profileMethod" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #74c69d;" />
+                  <Button fx:id="profile" layoutX="1144.0" mnemonicParsing="false" onAction="#profileMethod" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #40916c;" />
                   <Button layoutX="1069.0" layoutY="-1.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #74c69d;" />
                   <Button fx:id="homeButton" layoutX="994.0" layoutY="-1.0" mnemonicParsing="false" onAction="#homeMethod" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #74c69d;" />
                   <ImageView fx:id="home" fitHeight="44.0" fitWidth="56.0" layoutX="1004.0" layoutY="5.0">
@@ -30,6 +30,10 @@
                         <Image url="@icon/profile 2.png" />
                      </image>
                   </ImageView>
+                  <Text fill="#2d6a4f" layoutX="21.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WorkerLink">
+                     <font>
+                        <Font name="Bookman Old Style" size="30.0" />
+                     </font></Text>
                </children>
             </Pane>
             <Circle fill="#74c69d" layoutX="92.0" layoutY="125.0" radius="29.0" stroke="BLACK" strokeType="INSIDE" />
@@ -38,52 +42,52 @@
                   <Font name="Bookman Old Style" size="30.0" />
                </font>
             </Label>
-            <Button fx:id="bookedServices" layoutX="63.0" layoutY="240.0" mnemonicParsing="false" onAction="#bookedServicesMethod" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="Booked services">
+            <Button fx:id="bookedServices" layoutX="63.0" layoutY="269.0" mnemonicParsing="false" onAction="#bookedServicesMethod" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="Booked services">
                <font>
                   <Font name="Bookman Old Style" size="20.0" />
                </font>
             </Button>
-            <Button fx:id="myDetails" layoutX="63.0" layoutY="297.0" mnemonicParsing="false" onAction="#myDetailsMethod" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="My details">
+            <Button fx:id="myDetails" layoutX="63.0" layoutY="319.0" mnemonicParsing="false" onAction="#myDetailsMethod" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="My details">
                <font>
                   <Font name="Bookman Old Style" size="20.0" />
                </font>
             </Button>
-            <Button fx:id="changePassword" layoutX="63.0" layoutY="353.0" mnemonicParsing="false" onAction="#changePasswordMethod" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="Change password">
+            <Button fx:id="changePassword" layoutX="63.0" layoutY="369.0" mnemonicParsing="false" onAction="#changePasswordMethod" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="Change password">
                <font>
                   <Font name="Bookman Old Style" size="20.0" />
                </font>
             </Button>
-            <Button fx:id="addresses" layoutX="63.0" layoutY="408.0" mnemonicParsing="false" onAction="#addressesMethod" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="Addresses">
+            <Button fx:id="addresses" layoutX="63.0" layoutY="419.0" mnemonicParsing="false" onAction="#addressesMethod" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="Addresses">
                <font>
                   <Font name="Bookman Old Style" size="20.0" />
                </font>
             </Button>
             <Button fx:id="exit" layoutX="63.0" layoutY="655.0" mnemonicParsing="false" onAction="#exitMethod" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="Exit">
                <font>
-                  <Font name="Bookman Old Style" size="22.0" />
+                  <Font name="Bookman Old Style" size="20.0" />
                </font>
             </Button>
-            <ImageView fitHeight="42.0" fitWidth="44.0" layoutX="73.0" layoutY="653.0">
+            <ImageView fitHeight="44.0" fitWidth="44.0" layoutX="73.0" layoutY="653.0">
                <image>
                   <Image url="@icon/back door 4.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="42.0" fitWidth="37.0" layoutX="75.0" layoutY="297.0">
+            <ImageView fitHeight="38.0" fitWidth="44.0" layoutX="74.0" layoutY="319.0">
                <image>
                   <Image url="@icon/personal card.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="37.0" fitWidth="48.0" layoutX="63.0" layoutY="354.0">
+            <ImageView fitHeight="38.0" fitWidth="48.0" layoutX="64.0" layoutY="369.0">
                <image>
                   <Image url="@icon/lock.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="42.0" fitWidth="37.0" layoutX="75.0" layoutY="238.0">
+            <ImageView fitHeight="44.0" fitWidth="44.0" layoutX="75.0" layoutY="266.0">
                <image>
                   <Image url="@icon/book services.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="53.0" fitWidth="58.0" layoutX="64.0" layoutY="400.0">
+            <ImageView fitHeight="53.0" fitWidth="64.0" layoutX="64.0" layoutY="411.0">
                <image>
                   <Image url="@icon/position.png" />
                </image>

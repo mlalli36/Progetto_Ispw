@@ -3,6 +3,8 @@ package com.example.progetto_ispw.savehoursslots;
 import com.example.progetto_ispw.UIController;
 import com.example.progetto_ispw.savehoursslots.exception.InvalidTimeException;
 import com.example.progetto_ispw.savehoursslots.exception.TimeSlotAlreadyExistsException;
+import com.example.progetto_ispw.user.UserEntity;
+import com.example.progetto_ispw.workerprofile.WorkerProfileView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -13,7 +15,7 @@ import javafx.scene.control.TextField;
 import java.io.IOException;
 import java.time.LocalDate;
 
-public class SlotHoursView {
+public class SlotHoursView{
     @FXML
     public TextField slot1Text;
     @FXML
@@ -43,6 +45,8 @@ public class SlotHoursView {
     public Button homeButton;
     @FXML
     public Button exitButton;
+    @FXML
+    public Button notificationButton;
 
     public void preCompile(String namesearch, String surnamesearch, String emailsearch) {
         this.nameLabel.setText(namesearch);
@@ -55,7 +59,7 @@ public class SlotHoursView {
         controller.showExit();
     }
 
-    public void saveEditsMethod(ActionEvent actionEvent) throws IOException {
+    public void saveEditsMethod(ActionEvent actionEvent) {
         try {
             SaveHoursBean bean = new SaveHoursBean();
             String string = this.emailLabel.getText();
@@ -88,6 +92,8 @@ public class SlotHoursView {
         catch ( TimeSlotAlreadyExistsException exception){
             errorLabel.setText("Slot già selezionato!!!!!");
             errorLabel.setOpacity(1);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -99,5 +105,19 @@ public class SlotHoursView {
 
     public void profileMethod(ActionEvent actionEvent) {
     //implentare
+    }
+
+
+   public void notificationMethod(ActionEvent actionEvent) throws IOException { //da implementare
+        UserEntity user=UserEntity.getInstance();
+        UIController viewController= UIController.getUIControllerInstance();
+        String emailsearch= user.getEmail();
+        SaveHoursBean bean = new SaveHoursBean();
+        bean.setEmail(user.getEmail());
+       // SaveHoursController controller =new SaveHoursController();
+
+        String namesearch= user.getName();
+        String surnamesearch= user.getSurname();
+        viewController.showNorifications(namesearch,surnamesearch,emailsearch);
     }
 }

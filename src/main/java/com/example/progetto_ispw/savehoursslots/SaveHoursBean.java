@@ -15,6 +15,7 @@ public class SaveHoursBean {
     private String dateCalendar;
     private static final Pattern VALID_SLOT_HOURS_REGEX = Pattern.compile("^([01]?\\d|2[0-3]):([0-5]?\\d)$", Pattern.CASE_INSENSITIVE);
     private String email;
+    private String emailSearch;
 
 
     public void setSlot1(String text1) throws InvalidTimeException {
@@ -86,4 +87,6 @@ public class SaveHoursBean {
 
     public String getemail() {
     return email;}
+
+    public void setEmail(String email) { this.emailSearch=email;}
 }

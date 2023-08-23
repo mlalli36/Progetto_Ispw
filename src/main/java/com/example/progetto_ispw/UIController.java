@@ -12,6 +12,7 @@ import com.example.progetto_ispw.user.UserEntity;
 import com.example.progetto_ispw.userprofile.UserProfileView;
 import com.example.progetto_ispw.workerprofile.WorkerProfileView;
 import javafx.animation.FadeTransition;
+import javafx.concurrent.Worker;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.AccessibleAction;
@@ -253,6 +254,24 @@ public void insertInfoUser(String namesearch, String surnamesearch,String emails
 
         this.stage.setScene(new Scene(root1));
     }
+
+    //per implementare il bottone notification dall'interfaccia SlotHours
+
+    public void showNorifications (String namesearch, String surnamesearch,String emailsearch) throws IOException{
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("interfacciaWorkerProfile.fxml"));
+        Parent root1 = fxmlLoader.load();
+        root1.getStylesheets().add(Objects.requireNonNull(getClass().getResource("profileMyDetails.css")).toExternalForm());
+        WorkerProfileView workerProfileView = fxmlLoader.getController();
+        workerProfileView.preCompileWorker(namesearch, surnamesearch,emailsearch);
+
+        this.fadeAnimation(root1, this.stage.getScene().getRoot());
+
+        this.stage.setScene(new Scene(root1));
+    }
+
+
+
+    //da continuare
 // prova per passaggio di email nome e cognome
 
     //prova per non duplicare le righe di quando bisogna aprire il profilo
