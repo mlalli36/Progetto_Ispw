@@ -15,6 +15,7 @@ public class FillFormBean {
     protected String phone;
     protected String date;
     private String time;
+    private String emailSearch;
 
 
     private static final Pattern VALID_EMAIL_ADDRESS_REGEX = Pattern.compile("^[A-Z0-9.%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
@@ -76,4 +77,8 @@ public class FillFormBean {
 
     public String getEmailWorker()   {return emailWorker;}
     public String getTime(){return time;}
+
+    public void setEmail(String emailsearch) { this.emailSearch= emailsearch;}
+
+    public String getemailsearch() { return emailSearch;}
 }

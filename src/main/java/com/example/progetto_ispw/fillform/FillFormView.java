@@ -2,8 +2,12 @@ package com.example.progetto_ispw.fillform;
 
 import com.example.progetto_ispw.UIController;
 import com.example.progetto_ispw.fillform.exception.*;
+import com.example.progetto_ispw.home.HomeBean;
+import com.example.progetto_ispw.home.HomeController;
 import com.example.progetto_ispw.login.exception.UserNotFoundException;
 import com.example.progetto_ispw.savehoursslots.SlotHoursEntity;
+import com.example.progetto_ispw.user.UserEntity;
+import com.example.progetto_ispw.worker.WorkerEmailEntity;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -66,8 +70,33 @@ public class FillFormView {
     public Label errorLabel;
 
 
-    public void profileMethod(ActionEvent actionEvent) {
-        //da implementare
+    public void profileMethod(ActionEvent actionEvent) throws UserNotFoundException, IOException {
+        UserEntity user = UserEntity.getInstance();
+        String type = user.getTipoaccesso();
+        System.out.println(type);
+        UIController viewController = UIController.getUIControllerInstance();//è singletone
+
+        String emailsearch= user.getEmail();
+        FillFormBean fillForm=new FillFormBean();
+        fillForm.setEmail(emailsearch);
+        FillFormController fillFormController=new FillFormController();
+        fillFormController.searchInfo(fillForm);
+        String namesearch= user.getName();
+        String surnamesearch= user.getSurname();
+        System.out.println("home view nome utente: "+user.getName());
+        System.out.println("home view cognnome utente: "+user.getSurname());
+
+
+        if(!"Worker".equals(type)) {
+
+            viewController.insertInfoUser(namesearch,surnamesearch,emailsearch);
+        } else{
+
+            WorkerEmailEntity wkE= WorkerEmailEntity.getInstance();
+            //WorkerEntity wkE= new WorkerEntity();
+            wkE.setEmailWEE(emailsearch);
+            viewController.insertInfoWorker(namesearch,surnamesearch,emailsearch);
+        }
     }
 
     public void favoritesMethod(ActionEvent actionEvent) {
@@ -191,8 +220,9 @@ public class FillFormView {
 
 
 
-    public void backMethod(ActionEvent actionEvent) {
-        //da implementare
+    public void backMethod(ActionEvent actionEvent) throws IOException {
+        UIController viewController = UIController.getUIControllerInstance();//è singletone
+        viewController.showHome();
     }
 
     public void searchDataFormMethod(ActionEvent actionEvent) {

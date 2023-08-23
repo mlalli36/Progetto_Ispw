@@ -1,6 +1,7 @@
 package com.example.progetto_ispw.savehoursslots;
 
 import com.example.progetto_ispw.UIController;
+import com.example.progetto_ispw.login.exception.UserNotFoundException;
 import com.example.progetto_ispw.savehoursslots.exception.InvalidTimeException;
 import com.example.progetto_ispw.savehoursslots.exception.TimeSlotAlreadyExistsException;
 import com.example.progetto_ispw.user.UserEntity;
@@ -47,6 +48,8 @@ public class SlotHoursView{
     public Button exitButton;
     @FXML
     public Button notificationButton;
+    @FXML
+    public Button bookedServiceButton;
 
     public void preCompile(String namesearch, String surnamesearch, String emailsearch) {
         this.nameLabel.setText(namesearch);
@@ -103,14 +106,24 @@ public class SlotHoursView{
 
     }
 
-    public void profileMethod(ActionEvent actionEvent) {
-    //implentare
+    public void profileMethod(ActionEvent actionEvent) throws IOException {
+        UserEntity user=UserEntity.getInstance();
+        UIController viewController= UIController.getUIControllerInstance();
+        String emailsearch= user.getEmail();
+        SaveHoursBean bean = new SaveHoursBean();
+        bean.setEmail(user.getEmail());
+        // SaveHoursController controller =new SaveHoursController();
+
+        String namesearch= user.getName();
+        String surnamesearch= user.getSurname();
+        viewController.insertInfoWorker(namesearch,surnamesearch,emailsearch);
     }
 
 
-   public void notificationMethod(ActionEvent actionEvent) throws IOException { //da implementare
+   public void notificationMethod(ActionEvent actionEvent) throws IOException, UserNotFoundException { //da implementare
         UserEntity user=UserEntity.getInstance();
         UIController viewController= UIController.getUIControllerInstance();
+
         String emailsearch= user.getEmail();
         SaveHoursBean bean = new SaveHoursBean();
         bean.setEmail(user.getEmail());
@@ -118,6 +131,11 @@ public class SlotHoursView{
 
         String namesearch= user.getName();
         String surnamesearch= user.getSurname();
+
         viewController.showNorifications(namesearch,surnamesearch,emailsearch);
+    }
+
+    public void bookedServiceMethod(ActionEvent actionEvent) {
+
     }
 }

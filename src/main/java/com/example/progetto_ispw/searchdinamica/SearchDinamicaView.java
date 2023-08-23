@@ -49,12 +49,13 @@ public class SearchDinamicaView{
         String type = user.getTipoaccesso();
         System.out.println(type);
         UIController viewController = UIController.getUIControllerInstance();//è singletone
-        String namesearch = user.getName();
-        String surnamesearch = user.getSurname();
+
         SearchDinamicaBean searchDBean = new SearchDinamicaBean();
         searchDBean.setEmail(emailsearch);
         SearchDinamicaController searchDController = new SearchDinamicaController();
         searchDController.searchInfo(searchDBean);
+        String namesearch = user.getName();
+        String surnamesearch = user.getSurname();
 
 
         System.out.println("namesearch " + namesearch);

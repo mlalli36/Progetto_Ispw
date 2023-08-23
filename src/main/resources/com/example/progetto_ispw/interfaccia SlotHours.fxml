@@ -71,7 +71,7 @@
             <Font name="Bookman Old Style" size="30.0" />
          </font>
       </Label>
-      <Button layoutX="63.0" layoutY="269.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="Booked services">
+      <Button fx:id="bookedServiceButton" layoutX="63.0" layoutY="269.0" mnemonicParsing="false" onAction="#bookedServiceMethod" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="Booked services">
          <font>
             <Font name="Bookman Old Style" size="20.0" />
          </font>
