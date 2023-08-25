@@ -5,7 +5,12 @@ import com.example.progetto_ispw.user.UserDAO;
 import com.example.progetto_ispw.worker.InfoAppoinEntity;
 import com.example.progetto_ispw.worker.WorkerDAO;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.List;
+
+import static com.example.progetto_ispw.utile.DBConnector.getConnector;
 
 public class WorkerProfileController {
     public void searchInfo(WorkerProfileBean wPB) throws UserNotFoundException {
@@ -14,68 +19,32 @@ public class WorkerProfileController {
         userDAO.getUserInfo(wPB.getemailsearch());
     }
 
-    /*public boolean verifica(WorkerProfileBean bean) {
-        WorkerDAO dao= WorkerDAO.getInstance();
-        String e= bean.getemailsearch();
-        System.out.println("query nel ctrl:"+dao.getAppointmentforWoker(e));
-        if(dao.getAppointmentforWoker(e)==null){return false;}else{
-        return true;}
-    }*/
+
     private AppointmentResultEntity appointmentResultSet = new AppointmentResultEntity();
-    public boolean verifica(WorkerProfileBean bean) {
-        InfoAppoinEntity infoAppoinEntity = new InfoAppoinEntity();
-        WorkerDAO dao = WorkerDAO.getInstance();
-        String e = bean.getemailsearch();
-        List<InfoAppoinEntity> appointmentList = dao.getAppointmentforWoker(e);
-        if (appointmentList.isEmpty() ) {
-            System.out.println("query nel ctrl:"+dao.getAppointmentforWoker(e));
-           //System.out.println("query nel ctrl:"+infoAppoinEntity.getAccept());
-            return false;
-        } else {
-            //if(infoAppoinEntity.getAccept() != null && infoAppoinEntity.getAccept() == 0) {
-                //System.out.println("query nel ctrl:"+dao.getAppointmentforWoker(e));
-                //List<InfoAppoinEntity> appointmentList = dao.getAppointmentforWoker(e);
 
-                for (InfoAppoinEntity appointment : appointmentList) {
-                    //costruiamo AppointmentResultElement
-                    if (appointment.getAccept() == 0) {
-                        AppointmentResultElement appointmentResultElement = new AppointmentResultElement();
-                        appointmentResultElement.setWorkerEmail(appointment.getWEmail());
-                        appointmentResultElement.setClientName(appointment.getCName());
-                        appointmentResultElement.setClientSurname(appointment.getCSurname());
-                        appointmentResultElement.setClientEmail(appointment.getCEmail());
-                        appointmentResultElement.setDateAppointment(appointment.getDAppo());
-                        appointmentResultElement.setClientNumber(appointment.getCNumber());
-                        appointmentResultElement.setDescription(appointment.getdescriptionWork());
-                        appointmentResultElement.setTime(appointment.getTime());
 
-                        this.appointmentResultSet.addElement(appointmentResultElement);
-                    }
-                } if (!this.appointmentResultSet.getElements().isEmpty()) {
-                bean.setAppointmentResultSet(this.appointmentResultSet);
-                return true;
-                 } else {
-                return false;
-                 }
+    public void deleteAppoW(String email, String date, String time) {
+        try (Connection con = getConnector()) {
+            if (con == null)
+                throw new SQLException();
 
-               // assert !this.appointmentResultSet.getElements().isEmpty();
+            String query = "DELETE FROM `databaseispw`.`appointment_request` WHERE Worker_email=? AND Date_appointment=? AND Time_date=?; ";
+            try (PreparedStatement preparedStatement = con.prepareStatement(query)) {
+                preparedStatement.setString(1, email);
+                preparedStatement.setString(2, date);
+                preparedStatement.setString(3, time);
 
-               // bean.setAppointmentResultSet(this.appointmentResultSet);
-              //  return true;
-           // }
+                System.out.println("UPC email :"+email);
+                System.out.println("UPC date :"+date);
+                System.out.println("UPC time :"+time);
 
-            //ho preso la lista degli appuntamenti, vedere cosa deve tornare e capire cosa deve fare se non ci sono risultat
+                int del= preparedStatement.executeUpdate();
+                if(del>0){System.out.println("Appuntamento eliminato!!");}else{System.out.println("Non c'erano appuntamenti da eliminare");}
+
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
-
     }
 
-    public void deleteAppo(String date, String time, String email){
-        WorkerDAO dao=WorkerDAO.getInstance();
-        dao.deleteAppointment(email,date,time);
-    }
-
-    public void acceptMethod(String date, String time, String email) {
-        WorkerDAO dao= WorkerDAO.getInstance();
-        dao.updateAppointmentStatus(email, date, time);
-    }
 }

@@ -38,4 +38,8 @@ module com.example.progetto_ispw {
     opens com.example.progetto_ispw.notificadacliente to javafx.fxml;
     exports com.example.progetto_ispw.notifications;
     opens com.example.progetto_ispw.notifications to javafx.fxml;
+    exports com.example.progetto_ispw.bookedServicesUser;
+    opens com.example.progetto_ispw.bookedServicesUser to javafx.fxml;
+    exports com.example.progetto_ispw.bookedServicesWorker;
+    opens com.example.progetto_ispw.bookedServicesWorker to javafx.fxml;
 }

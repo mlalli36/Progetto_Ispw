@@ -1,6 +1,8 @@
 package com.example.progetto_ispw.savehoursslots;
 
+import com.example.progetto_ispw.login.exception.UserNotFoundException;
 import com.example.progetto_ispw.savehoursslots.exception.TimeSlotAlreadyExistsException;
+import com.example.progetto_ispw.user.UserDAO;
 import com.example.progetto_ispw.worker.WorkerDAO;
 
 public class SaveHoursController {
@@ -29,6 +31,11 @@ public class SaveHoursController {
 
         // Se lo slot non esiste o le date non corrispondono, aggiungere lo slot al database
         dao.addSlots(bean.getemail(), bean.getSlot1(), bean.getSlot2(), bean.getSlot3(), bean.getSlot4(), bean.getSlot5(), bean.getDateCalendar());
+    }
+
+    public void searchInfo(SaveHoursBean bean) throws UserNotFoundException {
+        UserDAO userDAO= UserDAO.getInstance();
+        userDAO.getUserInfo(bean.getemailsearch());
     }
 }
 

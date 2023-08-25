@@ -101,10 +101,10 @@
                </Label>
          </children>
       </Pane>
-      <Circle fill="#74c69d" layoutX="89.0" layoutY="162.0" radius="26.0" stroke="BLACK" strokeType="INSIDE" />
-      <Label fx:id="nameLabel" layoutX="129.0" layoutY="108.0" prefHeight="27.0" prefWidth="284.0">
+      <Circle fill="#74c69d" layoutX="95.0" layoutY="128.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label fx:id="nameLabel" layoutX="135.0" layoutY="106.0" prefHeight="38.0" prefWidth="284.0">
          <font>
-            <Font name="Bookman Old Style" size="30.0" />
+            <Font name="Bookman Old Style" size="20.0" />
          </font>
       </Label>
       <Button fx:id="bookedServices" layoutX="63.0" layoutY="269.0" mnemonicParsing="false" onAction="#bookedServicesMethod" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="Booked services">
@@ -162,9 +162,9 @@
             <Image url="@icon/book services.png" />
          </image>
       </ImageView>
-         <Label fx:id="cognomeLabel" layoutX="129.0" layoutY="145.0" prefHeight="27.0" prefWidth="284.0">
+         <Label fx:id="cognomeLabel" layoutX="129.0" layoutY="150.0" prefHeight="42.0" prefWidth="284.0">
             <font>
-               <Font name="Bookman Old Style" size="30.0" />
+               <Font name="Bookman Old Style" size="20.0" />
             </font>
          </Label>
          <Button fx:id="bookedServices1" layoutX="63.0" layoutY="219.0" mnemonicParsing="false" onAction="#bookedServicesMethod" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="Booked services">

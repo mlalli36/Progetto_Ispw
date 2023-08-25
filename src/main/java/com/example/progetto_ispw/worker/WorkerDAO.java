@@ -232,6 +232,39 @@ public class WorkerDAO {
         }
         return appontments;
     }
+    public List<InfoAppoinEntity> getAppointmentforWokerUser(String email){
+
+        List<InfoAppoinEntity> appontments =new ArrayList<>();
+        try (Connection con = getConnector()) {
+            if (con == null)
+                throw new SQLException();
+
+            String query = "SELECT * FROM `databaseispw`.`appointment_request` WHERE Client_email = ?  ";
+            try (PreparedStatement preparedStatement = con.prepareStatement(query)) {
+                preparedStatement.setString(1, email);
+
+                ResultSet rs = preparedStatement.executeQuery();
+                while (rs.next()) {
+
+                    InfoAppoinEntity app =  new InfoAppoinEntity();
+                    app.setWEmail(rs.getString("Worker_email"));
+                    app.setCname(rs.getString("Client_name"));
+                    app.setCsurname(rs.getString("Client_surname"));
+                    app.setCEmail(rs.getString("Client_email"));
+                    app.setDAppo(rs.getString("Date_appointment"));
+                    app.setCNumber(rs.getString("Client_number"));
+                    app.setDescription(rs.getString("Work_description"));
+                    app.setTime(rs.getString("Time_date"));
+                    app.setAccept(rs.getInt("Accept"));
+                    appontments.add(app);
+                }
+            }
+        }
+        catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return appontments;
+    }
 
 
 
@@ -305,6 +338,7 @@ public class WorkerDAO {
                 throw new RuntimeException(e);
             }
         }
+
 
 
 }

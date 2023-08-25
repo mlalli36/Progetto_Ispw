@@ -127,12 +127,12 @@ public class SlotHoursView{
         String emailsearch= user.getEmail();
         SaveHoursBean bean = new SaveHoursBean();
         bean.setEmail(user.getEmail());
-       // SaveHoursController controller =new SaveHoursController();
-
+        SaveHoursController controller =new SaveHoursController();
+        controller.searchInfo(bean);
         String namesearch= user.getName();
         String surnamesearch= user.getSurname();
 
-        viewController.showNorifications(namesearch,surnamesearch,emailsearch);
+        viewController.showNotifications(namesearch,surnamesearch,emailsearch);
     }
 
     public void bookedServiceMethod(ActionEvent actionEvent) {

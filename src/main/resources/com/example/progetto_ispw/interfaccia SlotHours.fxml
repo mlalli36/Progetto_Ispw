@@ -126,9 +126,9 @@
             <Image url="@icon/position.png" />
          </image>
       </ImageView>
-      <Label fx:id="nameLabel" layoutX="142.0" layoutY="102.0" prefHeight="53.0" prefWidth="128.0">
+      <Label fx:id="nameLabel" layoutX="135.0" layoutY="106.0" prefHeight="38.0" prefWidth="138.0">
          <font>
-            <Font name="Bookman Old Style" size="26.0" />
+            <Font name="Bookman Old Style" size="20.0" />
          </font>
       </Label>
       <Label fx:id="cognomePrecompile" layoutX="309.0" layoutY="102.0" prefHeight="53.0" prefWidth="128.0">
@@ -141,12 +141,12 @@
             <Font name="Bookman Old Style" size="30.0" />
          </font>
       </Label>
-      <Label fx:id="surnameLabel" layoutX="280.0" layoutY="102.0" prefHeight="53.0" prefWidth="128.0">
+      <Label fx:id="surnameLabel" layoutX="286.0" layoutY="106.0" prefHeight="36.0" prefWidth="138.0">
          <font>
-            <Font name="Bookman Old Style" size="26.0" />
+            <Font name="Bookman Old Style" size="20.0" />
          </font>
       </Label>
-      <Label fx:id="emailLabel" layoutX="134.0" layoutY="161.0" prefHeight="53.0" prefWidth="284.0">
+      <Label fx:id="emailLabel" layoutX="136.0" layoutY="150.0" prefHeight="45.0" prefWidth="296.0">
          <font>
             <Font name="Bookman Old Style" size="20.0" />
          </font>

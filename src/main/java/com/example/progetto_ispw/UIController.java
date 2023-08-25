@@ -1,7 +1,10 @@
 package com.example.progetto_ispw;
 
+import com.example.progetto_ispw.bookedServicesUser.BookedServicesUserView;
+import com.example.progetto_ispw.bookedServicesWorker.BookedServicesWorkerView;
 import com.example.progetto_ispw.fillform.FillFormView;
 import com.example.progetto_ispw.login.exception.UserNotFoundException;
+import com.example.progetto_ispw.notifications.NotificationsView;
 import com.example.progetto_ispw.profilesignup.ProfileSignUpView;
 import com.example.progetto_ispw.savehoursslots.SlotHoursView;
 import com.example.progetto_ispw.searchdinamica.SearchDinamicaBean;
@@ -141,7 +144,48 @@ public void insertInfoUser(String namesearch, String surnamesearch,String emails
     }
     //fine seconda prova
 
+    //prova per interfaccia notification
+    public void showNotifications(String namesearch, String surnamesearch,String emailsearch) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("interfacciaNotifications.fxml"));
+        Parent root1 = fxmlLoader.load();
+        root1.getStylesheets().add(Objects.requireNonNull(getClass().getResource("profileMyDetails.css")).toExternalForm());
+        NotificationsView notificationsView = fxmlLoader.getController();
+        notificationsView.preCompileWorker(namesearch, surnamesearch,emailsearch);
+        ActionEvent dummyEvent = new ActionEvent(); // Crea un oggetto ActionEvent
+        notificationsView.notificationMethod(dummyEvent);
+        this.fadeAnimation(root1, this.stage.getScene().getRoot());
 
+        this.stage.setScene(new Scene(root1));
+    }
+
+    public void showBookedServicesUser(String namesearch, String surnamesearch,String emailsearch) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("interfacciaBookedServicesUser.fxml"));
+        Parent root1 = fxmlLoader.load();
+        root1.getStylesheets().add(Objects.requireNonNull(getClass().getResource("profileMyDetails.css")).toExternalForm());
+        BookedServicesUserView bookedServicesUserView = fxmlLoader.getController();
+        bookedServicesUserView.preCompileUser(namesearch, surnamesearch,emailsearch);
+        ActionEvent dummyEvent = new ActionEvent(); // Crea un oggetto ActionEvent
+        bookedServicesUserView.bookedServicesMethod(dummyEvent);
+        this.fadeAnimation(root1, this.stage.getScene().getRoot());
+
+        this.stage.setScene(new Scene(root1));
+    }
+
+    public void showBookedServicesWorker(String namesearch, String surnamesearch,String emailsearch) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("interfacciaBookedServicesWorker.fxml"));
+        Parent root1 = fxmlLoader.load();
+        root1.getStylesheets().add(Objects.requireNonNull(getClass().getResource("profileMyDetails.css")).toExternalForm());
+        BookedServicesWorkerView bookedServicesWorkerView = fxmlLoader.getController();
+        bookedServicesWorkerView.preCompileWorker(namesearch, surnamesearch,emailsearch);
+        ActionEvent dummyEvent = new ActionEvent(); // Crea un oggetto ActionEvent
+        bookedServicesWorkerView.bookedServicesMethod(dummyEvent);
+        this.fadeAnimation(root1, this.stage.getScene().getRoot());
+
+        this.stage.setScene(new Scene(root1));
+    }
+
+
+    //fine prova int notification
 
 
 
@@ -257,17 +301,7 @@ public void insertInfoUser(String namesearch, String surnamesearch,String emails
 
     //per implementare il bottone notification dall'interfaccia SlotHours
 
-    public void showNorifications (String namesearch, String surnamesearch,String emailsearch) throws IOException{
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("interfacciaWorkerProfile.fxml"));
-        Parent root1 = fxmlLoader.load();
-        root1.getStylesheets().add(Objects.requireNonNull(getClass().getResource("profileMyDetails.css")).toExternalForm());
-        WorkerProfileView workerProfileView = fxmlLoader.getController();
-        workerProfileView.preCompileWorker(namesearch, surnamesearch,emailsearch);
 
-        this.fadeAnimation(root1, this.stage.getScene().getRoot());
-
-        this.stage.setScene(new Scene(root1));
-    }
 
 
 

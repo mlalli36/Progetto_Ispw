@@ -10,9 +10,14 @@ public class AppointmentResultElement {
     private String clientNumber;
     private String descriptionWork;
     private String time;
-    public void setWorkerEmail(String wEmail) {this.workerEmail= wEmail;}
+    public void setWorkerEmail(String wEmail) {this.workerEmail= wEmail;
+        System.out.println("email worker" +workerEmail );
+    }
 
-    public void setClientEmail(String cEmail) { this.clientEmail= cEmail;}
+    public void setClientEmail(String cEmail) { this.clientEmail= cEmail;
+        System.out.println("email client" +clientEmail );
+    }
+
 
     public void setClientName(String cName) { this.clientName =cName;}
 
@@ -39,4 +44,8 @@ public class AppointmentResultElement {
     public String getTime() { return time;}
 
     public String getDAppo() { return dateAppointment;}
+
+    public String getWEmail() { return workerEmail;
+
+    }
 }

@@ -89,4 +89,7 @@ public class SaveHoursBean {
     return email;}
 
     public void setEmail(String email) { this.emailSearch=email;}
+
+    public String getemailsearch() { return emailSearch;
+    }
 }
