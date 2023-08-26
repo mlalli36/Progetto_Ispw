@@ -112,7 +112,10 @@
       </Label>
       <ScrollPane fx:id="scrollPane" layoutX="401.0" layoutY="63.0" opacity="0.0" prefHeight="668.0" prefWidth="793.0" vbarPolicy="ALWAYS">
          <content>
-            <Text fx:id="noAppointmentText" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="574.1367301940918" />
+            <Text fx:id="noAppointmentText" fill="#2d6a4f" strokeType="OUTSIDE" strokeWidth="0.0" text="There are no notifications" wrappingWidth="574.1367301940918">
+               <font>
+                  <Font name="Bookman Old Style" size="30.0" />
+               </font></Text>
          </content>
       </ScrollPane>
       <Button fx:id="changeOfWorkingHoursButton" layoutX="63.0" layoutY="469.0" mnemonicParsing="false" onAction="#changeOfWorkingHoursMethod" prefHeight="28.0" prefWidth="322.0" style="-fx-background-radius: 10; -fx-background-color: #74c69d;" text="Change of working hours">

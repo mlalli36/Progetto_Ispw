@@ -22,9 +22,6 @@ public class NotificationsController {
             //System.out.println("query nel ctrl:"+infoAppoinEntity.getAccept());
             return false;
         } else {
-            //if(infoAppoinEntity.getAccept() != null && infoAppoinEntity.getAccept() == 0) {
-            //System.out.println("query nel ctrl:"+dao.getAppointmentforWoker(e));
-            //List<InfoAppoinEntity> appointmentList = dao.getAppointmentforWoker(e);
 
             for (InfoAppoinEntity appointment : appointmentList) {
                 //costruiamo AppointmentResultElement

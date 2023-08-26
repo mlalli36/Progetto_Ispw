@@ -13,12 +13,10 @@ public class WorkerTilePane {
      TilePane workerTP;
     VBox resultsBox;
 
-    public void addElements(Button  accepttButton,Button rejectButton, String name_client, String surname_client, String email_client, String description_work,String phone_client,String date_work, String time_work, Label acceptLabel){
+    public void addElements(Button  accepttButton,Button rejectButton, String name_client, String surname_client, String email_client, String description_work,String phone_client,String date_work, String time_work){
 
         AnchorPane entryPane = new AnchorPane();
-        AnchorPane.setTopAnchor(acceptLabel, 190.0);
-        AnchorPane.setLeftAnchor(acceptLabel, 220.0);
-        acceptLabel.setStyle("  -fx-font-family: \"Bookman Old Style\"; -fx-font-size: 16.5; -fx-text-fill: #2d6a4f;");
+
 
         // dimensioni e coordinate per il bottone "accetta"
         accepttButton.setPrefWidth(150);
@@ -64,7 +62,7 @@ public class WorkerTilePane {
         AnchorPane.setLeftAnchor(textLabel7, 10.0);
         AnchorPane.setTopAnchor(textLabel7, 190.0);
 
-        entryPane.getChildren().addAll(accepttButton,rejectButton, textLabel1, textLabel2, textLabel3, textLabel4, textLabel5,textLabel6,textLabel7,acceptLabel);
+        entryPane.getChildren().addAll(accepttButton,rejectButton, textLabel1, textLabel2, textLabel3, textLabel4, textLabel5,textLabel6,textLabel7);
 
         resultsBox = new VBox(); // Creazione del VBox per contenere i risultati
         resultsBox.setPrefWidth(700); // Imposta la larghezza desiderata per il VBox dei risultati

@@ -2,15 +2,14 @@ package com.example.progetto_ispw.notifications;
 
 import com.example.progetto_ispw.UIController;
 import com.example.progetto_ispw.login.exception.UserNotFoundException;
-import com.example.progetto_ispw.savehoursslots.SaveHoursBean;
+
 import com.example.progetto_ispw.user.UserEntity;
-import com.example.progetto_ispw.worker.InfoAppoinEntity2;
+
 import com.example.progetto_ispw.worker.WorkerEmailEntity;
 import com.example.progetto_ispw.worker.WorkerTilePane;
 import com.example.progetto_ispw.workerprofile.AppointmentResultElement;
 import com.example.progetto_ispw.workerprofile.AppointmentResultEntity;
-import com.example.progetto_ispw.workerprofile.WorkerProfileBean;
-import com.example.progetto_ispw.workerprofile.WorkerProfileController;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -119,8 +118,8 @@ public class NotificationsView {
             for (AppointmentResultElement a : appointmentResultEntity.getElements()) {
                 Button accepttButton = new Button("Accept");
                 Button rejectButton = new Button("Reject");
-                Label acceptLabel = new Label("E' stata mandata una mail al client");
-                acceptLabel.setOpacity(0);
+
+
 
                 String email_client = a.getCEmail();
                 String name_client = a.getCName();
@@ -130,13 +129,13 @@ public class NotificationsView {
                 String time = a.getTime();
                 String date = a.getDAppo();
 
-                workerTilePane.addElements(accepttButton, rejectButton, name_client, surname_client, email_client, description_work, phone_client, date, time, acceptLabel);
+                workerTilePane.addElements(accepttButton, rejectButton, name_client, surname_client, email_client, description_work, phone_client, date, time);
 
                 rejectButton.setOnAction(event -> {
                     // Qui puoi utilizzare le variabili email_client, date_work e time_work
                     // per eseguire le azioni necessarie quando il bottone rejectButton viene premuto
-                    InfoAppoinEntity2 in = InfoAppoinEntity2.getInstance();
-                    System.out.println();
+
+                   /* System.out.println();
                     System.out.println("Reject button clicked for email: " + email_client);
                     System.out.println("Date: " + date);
                     System.out.println("Time: " + time);
@@ -144,14 +143,24 @@ public class NotificationsView {
                     in.setTime(time);
                     in.setWEmail(email);
                     System.out.println();
-                    System.out.println("infoappent for email: " + in.getTime());
-                    //  WorkerProfileController controller= new WorkerProfileController();
+                    System.out.println("infoappent for email: " + in.getTime());*/
+
                     controller.deleteAppo(date, time, email);
+                    UIController controller= UIController.getUIControllerInstance();
+                    try {
+                        controller.showProfile();
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    } catch (UserNotFoundException e) {
+                        throw new RuntimeException(e);
+                    }
+
                 });
                 accepttButton.setOnAction(event -> {
+
                     controller.acceptMethod(date, time, email);
                     //se l'utente accetta allora nella tabella la colonna accetta viene impostato a 1 e quindi non vine piu mostrato nella lista
-                    acceptLabel.setOpacity(1);
+
                     UIController controller= UIController.getUIControllerInstance();
                     try {
                         controller.showProfile();
