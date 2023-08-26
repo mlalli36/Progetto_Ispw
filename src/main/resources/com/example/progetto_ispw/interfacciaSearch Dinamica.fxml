@@ -40,7 +40,7 @@
       </Pane>
 
       <ScrollPane fx:id="scrollPane" layoutY="53.0" prefHeight="700.0" prefWidth="1219.0" vbarPolicy="ALWAYS" visible="true" />
-      <Text fx:id="textError" fill="#2d6a4f" layoutX="248.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nothing was found with this search data, try again by returning to the home." wrappingWidth="627.5537719726562">
+      <Text fx:id="textError" fill="#2d6a4f" layoutX="248.0" layoutY="197.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nothing was found with this search data, try again by returning to the home." wrappingWidth="627.5537719726562">
          <font>
             <Font name="Bookman Old Style" size="30.0" />
          </font>

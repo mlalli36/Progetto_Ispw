@@ -89,7 +89,7 @@
             <Image url="@icon/position.png" />
          </image>
       </ImageView>
-      <Button fx:id="changeOfWorkingHoursButton" layoutX="63.0" layoutY="469.0" mnemonicParsing="false" onAction="#changeOfWorkingHoursMethod" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="Change of working hours">
+      <Button fx:id="changeOfWorkingHoursButton" layoutX="63.0" layoutY="469.0" mnemonicParsing="false" onAction="#changeOfWorkingHoursMethod" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="     Change of working hours">
          <font>
             <Font name="Bookman Old Style" size="20.0" />
          </font></Button>
@@ -119,6 +119,11 @@
       <ImageView fitHeight="35.0" fitWidth="44.0" layoutX="73.0" layoutY="220.0">
          <image>
             <Image url="@icon/bell senza notifica.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="35.0" fitWidth="36.0" layoutX="77.0" layoutY="470.0">
+         <image>
+            <Image url="@icon/change%20hours%20slot.png" />
          </image>
       </ImageView>
    </children>
