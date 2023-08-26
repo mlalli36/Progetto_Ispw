@@ -15,12 +15,15 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 
 import java.io.IOException;
 
 
 public class SearchDinamicaView{
 
+    @FXML
+    public Text textError;
     private SearchDinamicaBean bean2;
 
     @FXML
@@ -86,34 +89,38 @@ public class SearchDinamicaView{
 
 
         ResultSetEntity resultSet = bean2.getResultSet();
+        if (resultSet.getElements().isEmpty()) {
 
-        CustomTilePane customTilePane = new CustomTilePane();
-        customTilePane.createCustomTilePane();
-        scrollPane.setVisible(true);
+            this.textError.setOpacity(1);
+
+        }else {
+            CustomTilePane customTilePane = new CustomTilePane();
+            customTilePane.createCustomTilePane();
+            scrollPane.setVisible(true);
 
 
+            for (ResultElement r : resultSet.getElements()) {
+                Button newButton = new Button("Fill out form");
+                String name = r.getWorkerName();
+                String jobWorker = r.getJobWorker();
+                String locationWorker = r.getLocationWorker();
+                String descriptionWorker = r.getWorkerDescription();
+                emailWorker = r.getWorkerEmail();
+                newButton.setUserData(emailWorker);
 
-        for(ResultElement r: resultSet.getElements()){
-            Button newButton = new Button("Fill out form");
-            String name = r.getWorkerName();
-            String jobWorker= r.getJobWorker();
-            String locationWorker = r.getLocationWorker();
-            String descriptionWorker= r.getWorkerDescription();
-            emailWorker= r.getWorkerEmail();
-            newButton.setUserData(emailWorker);
+                customTilePane.addElements(name, jobWorker, locationWorker, descriptionWorker, newButton, emailWorker);
 
-            customTilePane.addElements(name,jobWorker,locationWorker,descriptionWorker,newButton, emailWorker);
+                newButton.setOnAction(event -> {
+                    try {
+                        showIntForm(event);
+                    } catch (UserNotFoundException e) {
+                        throw new RuntimeException(e);
+                    }
+                });
 
-            newButton.setOnAction(event -> {
-                try {
-                    showIntForm(event);
-                } catch (UserNotFoundException e) {
-                    throw new RuntimeException(e);
-                }
-            });
-
+            }
+            this.scrollPane.setContent(customTilePane.getCustomTP());
         }
-        this.scrollPane.setContent(customTilePane.getCustomTP());
 
     }
 

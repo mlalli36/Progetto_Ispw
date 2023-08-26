@@ -2,6 +2,8 @@ package com.example.progetto_ispw.bookedServicesUser;
 
 import com.example.progetto_ispw.UIController;
 import com.example.progetto_ispw.login.exception.UserNotFoundException;
+import com.example.progetto_ispw.notifications.NotificationsBean;
+import com.example.progetto_ispw.notifications.NotificationsController;
 import com.example.progetto_ispw.user.UserDAO;
 import com.example.progetto_ispw.user.UserEntity;
 import com.example.progetto_ispw.userprofile.UserProfileBean;
@@ -88,8 +90,27 @@ public class BookedServicesUserView {
 
                     deleteButton.setOnAction(event -> {
 
-                        UserProfileController controller = new UserProfileController();
+                        BookedServicesUserController controller = new BookedServicesUserController();
                         controller.deleteAppoU(email_client, date, time);
+                        UserEntity user = UserEntity.getInstance();
+                        UIController viewController = UIController.getUIControllerInstance();//è singletone
+
+                        String emailsearch= user.getEmail();
+
+                        bean.setEmail(emailsearch);
+                        try {
+                            controller.searchInfo(bean);
+                        } catch (UserNotFoundException e) {
+                            throw new RuntimeException(e);
+                        }
+                        String namesearch= user.getName();
+                        String surnamesearch= user.getSurname();
+                        try {
+                            viewController.showBookedServicesUser(namesearch,surnamesearch,emailsearch);
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
+
                     });
 
 

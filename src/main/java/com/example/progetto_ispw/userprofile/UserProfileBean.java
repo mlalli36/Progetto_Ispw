@@ -17,4 +17,7 @@ public class UserProfileBean  {
     public String getSurname() {return surname;}
 
     public String getName() {return name;}
+
+    public String getemailsearch() {return email;
+    }
 }

@@ -86,7 +86,24 @@ public class NotificationsView {
 
         viewController.insertInfo(namesearch,surnamesearch,emailsearch);
     }
+    public void bookedServicesMethod(ActionEvent actionEvent) throws UserNotFoundException, IOException {
+        UserEntity user = UserEntity.getInstance();
+        UIController viewController = UIController.getUIControllerInstance();//è singletone
 
+        String emailsearch= user.getEmail();
+        NotificationsBean bean=new NotificationsBean();
+        bean.setEmail(emailsearch);
+        NotificationsController controller=new NotificationsController();
+        controller.searchInfo(bean);
+        String namesearch= user.getName();
+        String surnamesearch= user.getSurname();
+
+
+
+
+        viewController.showBookedServicesWorker(namesearch,surnamesearch,emailsearch);
+
+    }
     public void notificationMethod(ActionEvent actionEvent) throws IOException {
         scrollPane.setOpacity(1);
         WorkerEmailEntity wkE= WorkerEmailEntity.getInstance();
@@ -165,6 +182,5 @@ public class NotificationsView {
         this.emailLabelWorkerProfile.setText(emailsearch);
     }
 
-    public void bookedServicesMethod(ActionEvent actionEvent) {
-    }
+
 }

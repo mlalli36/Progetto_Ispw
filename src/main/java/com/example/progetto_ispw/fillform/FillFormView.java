@@ -108,13 +108,7 @@ public class FillFormView {
 
         viewController.showHome();    }
     FillFormBean bean= new FillFormBean();
-    // eccezioni
-    // nome vuoto
-    // cognome vuoto
-    // email cliente vuota/errata
-    // data calendario vuota
-    // orario appuntamento vuoto
-    // descrizione vuota
+
 
 
 
@@ -184,7 +178,7 @@ public class FillFormView {
            controller.fill(bean);
 
             UIController viewController = UIController.getUIControllerInstance();//è singletone
-            viewController.showProfile();
+            viewController.showHome();
 
         } catch (TimeAlreadySelectedException e) {
            errorLabel.setText("The selected time is no longer valid.");
@@ -210,8 +204,6 @@ public class FillFormView {
        }catch(NotValidTimeException e){
            errorLabel.setText("WARNING: TIME CHECK IS EMPTY!");
           // errorTimeNotValid.setOpacity(1);
-       } catch (UserNotFoundException e) {
-           throw new RuntimeException(e);
        } finally{
            errorLabel.setOpacity(1);
        }

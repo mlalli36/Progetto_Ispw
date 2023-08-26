@@ -7,6 +7,7 @@ import com.example.progetto_ispw.login.exception.UserNotFoundException;
 import com.example.progetto_ispw.user.UserEntity;
 import com.example.progetto_ispw.userprofile.UserProfileController;
 import com.example.progetto_ispw.userprofile.UserTilePane;
+import com.example.progetto_ispw.worker.WorkerEmailEntity;
 import com.example.progetto_ispw.worker.WorkerEntity;
 import com.example.progetto_ispw.worker.WorkerTilePane;
 import com.example.progetto_ispw.workerprofile.AppointmentResultElement;
@@ -58,12 +59,12 @@ public class BookedServicesWorkerView {
 
     public void bookedServicesMethod(ActionEvent actionEvent) {
         scrollPane.setOpacity(1);
-        WorkerEntity entity = new WorkerEntity();  //MI DA NULLA L'EMAIL PERCHè FACCIO LA NEW, CAMBIAREEE
-        //String email = entity.getEmail();
+        WorkerEmailEntity wkE= WorkerEmailEntity.getInstance();
+        String email= wkE.getEmailWEE();
 
         BookedServicesWorkerBean bean = new BookedServicesWorkerBean();
-        bean.setEmail(String.valueOf(emailLabelWorkerProfile));
-        System.out.println("email in book worker"+ emailLabelWorkerProfile);
+        bean.setEmail(email);
+        System.out.println("email in book worker"+ email);
         BookedServicesWorkerController ctrl = new BookedServicesWorkerController();
         if (ctrl.verifica(bean)) {
             AppointmentResultEntity appointmentResultEntity = bean.getAppointmentResultSet();
@@ -86,10 +87,29 @@ public class BookedServicesWorkerView {
                 String email_worker = a.getWEmail();
 
                 workerTilePane.addElements(deleteButton, name_client, surname_client, email_client, description_work, phone_client, date, time, email_worker);
+
                 deleteButton.setOnAction(event -> {
 
-                    WorkerProfileController controller = new WorkerProfileController();
-                    controller.deleteAppoW(email_worker, date, time);
+                    BookedServicesWorkerController controller = new BookedServicesWorkerController();
+                    controller.deleteAppoW(email_client, date, time);
+                    UserEntity user = UserEntity.getInstance();
+                    UIController viewController = UIController.getUIControllerInstance();//è singletone
+
+                    String emailsearch= user.getEmail();
+
+                    bean.setEmail(emailsearch);
+                    try {
+                        controller.searchInfo(bean);
+                    } catch (UserNotFoundException e) {
+                        throw new RuntimeException(e);
+                    }
+                    String namesearch= user.getName();
+                    String surnamesearch= user.getSurname();
+                    try {
+                        viewController.showBookedServicesWorker(namesearch,surnamesearch,emailsearch);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
                 });
 
 

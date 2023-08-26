@@ -6,7 +6,12 @@ import com.example.progetto_ispw.worker.InfoAppoinEntity;
 import com.example.progetto_ispw.workerprofile.AppointmentResultElement;
 import com.example.progetto_ispw.workerprofile.AppointmentResultEntity;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.List;
+
+import static com.example.progetto_ispw.utile.DBConnector.getConnector;
 
 public class BookedServicesUserController {
     private AppointmentResultEntity appointmentResultSet = new AppointmentResultEntity();
@@ -43,6 +48,10 @@ public class BookedServicesUserController {
 
 
         }
+    }
+    public void deleteAppoU(String email, String date, String time) {
+        UserDAO dao= UserDAO.getInstance();
+        dao.deleteAppointment(email,date,time);
     }
 
     public void searchInfo(BookedServicesUserBean bean) throws UserNotFoundException {

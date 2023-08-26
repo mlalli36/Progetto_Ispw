@@ -135,7 +135,19 @@ public class SlotHoursView{
         viewController.showNotifications(namesearch,surnamesearch,emailsearch);
     }
 
-    public void bookedServiceMethod(ActionEvent actionEvent) {
+    public void bookedServiceMethod(ActionEvent actionEvent) throws UserNotFoundException, IOException {
+        UserEntity user=UserEntity.getInstance();
+        UIController viewController= UIController.getUIControllerInstance();
+
+        String emailsearch= user.getEmail();
+        SaveHoursBean bean = new SaveHoursBean();
+        bean.setEmail(user.getEmail());
+        SaveHoursController controller =new SaveHoursController();
+        controller.searchInfo(bean);
+        String namesearch= user.getName();
+        String surnamesearch= user.getSurname();
+
+        viewController.showBookedServicesWorker(namesearch,surnamesearch,emailsearch);
 
     }
 }

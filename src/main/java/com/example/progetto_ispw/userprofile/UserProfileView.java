@@ -81,9 +81,9 @@ public class UserProfileView {
         UIController viewController= UIController.getUIControllerInstance();
 
         String emailsearch= user.getEmail();
-        BookedServicesUserBean bean = new BookedServicesUserBean();
+        UserProfileBean bean = new UserProfileBean();
         bean.setEmail(user.getEmail());
-        BookedServicesUserController controller =new BookedServicesUserController();
+        UserProfileController controller =new UserProfileController();
         controller.searchInfo(bean);
         String namesearch= user.getName();
         String surnamesearch= user.getSurname();
