@@ -1,0 +1,13 @@
+
+h	java:S112¥"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¤èàÇ1
+h	java:S112Ä"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ºèàÇ1
+h	java:S112å"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8»èàÇ1
+h	java:S112œ"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8»èàÇ1
+s	java:S117š"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­Œ”Æúÿÿÿÿ8ÄèàÇ1
+¶
+java:S6548"˜A Singleton implementation was detected. Make sure the use of the Singleton pattern is required and the implementation is the right one for the context.(ª‡ú‘8ßéàÇ1
+Y	java:S107ˆ"<Method has 8 parameters, which is greater than 7 authorized.(£‹©ì8äéàÇ1
+X	java:S125R"<This block of commented-out lines of code should be removed.(æÚÈÉ8 êàÇ1
+Y	java:S125™"<This block of commented-out lines of code should be removed.(èîœÕ8ÑêàÇ1
+^	java:S125Ê"<This block of commented-out lines of code should be removed.(ôÜŸµıÿÿÿÿ8åêàÇ1
+X	java:S125Ö"<This block of commented-out lines of code should be removed.(ëò‡x8—ëàÇ1

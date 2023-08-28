@@ -1,0 +1,17 @@
+
+k	java:S1173"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Â‡À«şÿÿÿÿ
+q
+java:S1450	"VRemove the "address" field and declare it as a local variable in the relevant methods.(÷§ùÿÿÿÿ
+q
+java:S1450"VRemove the "surname" field and declare it as a local variable in the relevant methods.(—‡¨åûÿÿÿÿ
+¶
+java:S6548"˜A Singleton implementation was detected. Make sure the use of the Singleton pattern is required and the implementation is the right one for the context.(”ËÈÄ8ÿ«Å1
+]	java:S125"<This block of commented-out lines of code should be removed.(Âß¸£øÿÿÿÿ8„‚«Å1
+h
+java:S1128"FRemove this unused import 'com.example.progetto_ispw.user.UserEntity'.(÷áÄ‹ÿÿÿÿÿ8˜Ì¦1
+F
+java:S1068	"+Remove this unused "address" private field.(÷§ùÿÿÿÿ
+F
+java:S1068"+Remove this unused "surname" private field.(—‡¨åûÿÿÿÿ
+T
+java:S1068"2Remove this unused "singleInstance" private field.(÷Ôä¿ıÿÿÿÿ8‘‚«Å1

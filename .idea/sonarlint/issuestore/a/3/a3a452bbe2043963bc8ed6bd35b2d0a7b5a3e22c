@@ -1,0 +1,10 @@
+
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(«ã“8—‚ü…‘1
+O
+java:S1172R"2Remove this unused method parameter "actionEvent".(˜Í“8÷ôĞæ1
+f
+java:S1128"DRemove this unused import 'com.example.progetto_ispw.home.HomeBean'.(­ÊŸ¸úÿÿÿÿ8„Å¼ˆ’1
+g
+java:S1128"JRemove this unused import 'com.example.progetto_ispw.home.HomeController'.(‡ÏÒø8†Å¼ˆ’1
+v
+java:S1128"TRemove this unnecessary import: same package classes are always implicitly imported.(¼«Ï“şÿÿÿÿ8†Å¼ˆ’1

@@ -1,0 +1,26 @@
+
+m	java:S117_"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(èŠ§Ò8ËÁóè 1
+m	java:S117`"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯ìİŠ8ÌÁóè 1
+m	java:S117a"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŒƒĞÃ8ÌÁóè 1
+r	java:S117b"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(º´Ù‹ûÿÿÿÿ8ÌÁóè 1
+m	java:S117c"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ª³›¥8ÌÁóè 1
+l	java:S117f"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ª÷ÿh8ÌÁóè 1
+Y
+java:S2589S"7Remove this expression which always evaluates to "true"(÷Âôøÿÿÿÿ8øÁóè 1
+¤
+java:S1186ˆ"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‘ìæ¯ıÿÿÿÿ8ùÁóè 1
+O
+java:S1172>"2Remove this unused method parameter "actionEvent".(Ê‡ãá8şÁóè 1
+O
+java:S1172C"2Remove this unused method parameter "actionEvent".(ßÉº³8€Âóè 1
+T
+java:S1172K"2Remove this unused method parameter "actionEvent".(ŒÛò¶ùÿÿÿÿ8ŒÂóè 1
+]	java:S125}"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ8‰Âóè 1
+P
+java:S1172•"2Remove this unused method parameter "actionEvent".(÷ÒÂŞ8ğ ªé 1
+u
+java:S1128"XRemove this unused import 'com.example.progetto_ispw.searchdinamica.SearchDinamicaBean'.(”³¥8¿Ôéé 1
+{
+java:S1128"^Remove this unused import 'com.example.progetto_ispw.searchdinamica.SearchDinamicaController'.(í‡’¡8¿Ôéé 1
+n
+java:S1128"LRemove this unused import 'com.example.progetto_ispw.worker.WorkerTilePane'.(²²èùÿÿÿÿ8ıã«é 1
