@@ -43,7 +43,9 @@ public class AcceptView {
     public Text noAppointmentText;
     @FXML
     public Button acceptButton;
-    AcceptController controller= new AcceptController();
+    private AcceptController controller= new AcceptController();
+    private AcceptBean bean=new AcceptBean();
+    private UserEntity user = UserEntity.getInstance();
 
     public void profileMethod(ActionEvent actionEvent) throws UserNotFoundException, IOException {
         UIController controller = UIController.getUIControllerInstance();
@@ -61,13 +63,13 @@ public class AcceptView {
     }
 
     public void changeOfWorkingHoursMethod(ActionEvent actionEvent) throws UserNotFoundException, IOException {
-        UserEntity user = UserEntity.getInstance();
+
         UIController viewController = UIController.getUIControllerInstance();//è singletone
 
         String emailsearch= user.getEmail();
-        BookedServicesWorkerBean bean=new BookedServicesWorkerBean();
+
         bean.setEmail(emailsearch);
-        BookedServicesWorkerController controller=new BookedServicesWorkerController();
+
         controller.searchInfo(bean);
         String namesearch= user.getName();
         String surnamesearch= user.getSurname();
@@ -75,13 +77,13 @@ public class AcceptView {
     }
 
     public void notificationMethod(ActionEvent actionEvent) throws UserNotFoundException, IOException {
-        UserEntity user=UserEntity.getInstance();
+
         UIController viewController= UIController.getUIControllerInstance();
 
         String emailsearch= user.getEmail();
-        AcceptBean bean = new AcceptBean();
+
         bean.setEmail(user.getEmail());
-        AcceptController controller =new AcceptController();
+
         controller.searchInfo(bean);
         String namesearch= user.getName();
         String surnamesearch= user.getSurname();
@@ -90,12 +92,35 @@ public class AcceptView {
     }
 
     public void acceptMethod(ActionEvent actionEvent) {
+        acceptButton.setOnAction(event -> {
+
+            UIController viewController = UIController.getUIControllerInstance();//è singletone
+
+            String emailsearch= user.getEmail();
+
+            bean.setEmail(emailsearch);
+
+            try {
+                controller.searchInfo(bean);
+            } catch (UserNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+
+            String namesearch= user.getName();
+            String surnamesearch= user.getSurname();
+            try {
+                viewController.showAccept(namesearch,surnamesearch,emailsearch);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
+        });
         scrollPane.setOpacity(1);
         WorkerEmailEntity wkE= WorkerEmailEntity.getInstance();
         String email= wkE.getEmailWEE();
-        AcceptBean bean = new AcceptBean();
         bean.setEmail(email);
         if(controller.verifica(bean)) {
+
             AppointmentResultEntity appointmentResultEntity = bean.getAppointmentResultSet();
             //  WorkerProfileController ctrl= new WorkerProfileController();
             AcceptTilePane acceptTilePane = new AcceptTilePane();
@@ -127,5 +152,20 @@ public class AcceptView {
         this.nameLabelWorkerProfile.setText(namesearch);
         this.surnameLabelWorkerProfile.setText(surnamesearch);
         this.emailLabelWorkerProfile.setText(emailsearch);
+    }
+
+    public void bookedServicesMethod(ActionEvent actionEvent) throws UserNotFoundException, IOException {
+
+        UIController viewController = UIController.getUIControllerInstance();//è singletone
+
+        String emailsearch= user.getEmail();
+
+        bean.setEmail(emailsearch);
+        controller.searchInfo(bean);
+        String namesearch= user.getName();
+        String surnamesearch= user.getSurname();
+
+        viewController.showBookedServicesWorker(namesearch,surnamesearch,emailsearch);
+
     }
 }

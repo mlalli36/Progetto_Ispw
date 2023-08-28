@@ -48,6 +48,9 @@ public class BookedServicesWorkerView {
     public Text noAppointmentText;
     @FXML
     public Button acceptButton;
+    private BookedServicesWorkerBean bean = new BookedServicesWorkerBean();
+    private  BookedServicesWorkerController controller = new BookedServicesWorkerController();
+    private UserEntity user = UserEntity.getInstance();
 
     public void profileMethod(ActionEvent actionEvent) throws UserNotFoundException, IOException {
         UIController controller = UIController.getUIControllerInstance();
@@ -60,11 +63,34 @@ public class BookedServicesWorkerView {
     }
 
     public void bookedServicesMethod(ActionEvent actionEvent) {
+        bookedServicesButton.setOnAction(event -> {
+
+            UIController viewController = UIController.getUIControllerInstance();//è singletone
+
+            String emailsearch= user.getEmail();
+
+            bean.setEmail(emailsearch);
+
+            try {
+                controller.searchInfo(bean);
+            } catch (UserNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+
+            String namesearch= user.getName();
+            String surnamesearch= user.getSurname();
+            try {
+                viewController.showBookedServicesWorker(namesearch,surnamesearch,emailsearch);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
+        });
         scrollPane.setOpacity(1);
         WorkerEmailEntity wkE= WorkerEmailEntity.getInstance();
         String email= wkE.getEmailWEE();
 
-        BookedServicesWorkerBean bean = new BookedServicesWorkerBean();
+
         bean.setEmail(email);
         System.out.println("email in book worker"+ email);
         BookedServicesWorkerController ctrl = new BookedServicesWorkerController();
@@ -92,9 +118,9 @@ public class BookedServicesWorkerView {
 
                 deleteButton.setOnAction(event -> {
 
-                    BookedServicesWorkerController controller = new BookedServicesWorkerController();
+
                     controller.deleteAppoW(email_client, date, time);
-                    UserEntity user = UserEntity.getInstance();
+
                     UIController viewController = UIController.getUIControllerInstance();//è singletone
 
                     String emailsearch= user.getEmail();
@@ -131,13 +157,13 @@ public class BookedServicesWorkerView {
     }
 
     public void changeOfWorkingHoursMethod(ActionEvent actionEvent) throws UserNotFoundException, IOException {
-        UserEntity user = UserEntity.getInstance();
+
         UIController viewController = UIController.getUIControllerInstance();//è singletone
 
         String emailsearch= user.getEmail();
-        BookedServicesWorkerBean bean=new BookedServicesWorkerBean();
+
         bean.setEmail(emailsearch);
-        BookedServicesWorkerController controller=new BookedServicesWorkerController();
+
         controller.searchInfo(bean);
         String namesearch= user.getName();
         String surnamesearch= user.getSurname();
@@ -145,13 +171,13 @@ public class BookedServicesWorkerView {
     }
 
     public void notificationMethod(ActionEvent actionEvent) throws UserNotFoundException, IOException {
-        UserEntity user=UserEntity.getInstance();
+
         UIController viewController= UIController.getUIControllerInstance();
 
         String emailsearch= user.getEmail();
-        BookedServicesWorkerBean bean = new BookedServicesWorkerBean();
+
         bean.setEmail(user.getEmail());
-        BookedServicesWorkerController controller =new BookedServicesWorkerController();
+
         controller.searchInfo(bean);
         String namesearch= user.getName();
         String surnamesearch= user.getSurname();
@@ -166,13 +192,13 @@ public class BookedServicesWorkerView {
     }
 
     public void acceptMethod(ActionEvent actionEvent) throws UserNotFoundException, IOException {
-        UserEntity user=UserEntity.getInstance();
+
         UIController viewController= UIController.getUIControllerInstance();
 
         String emailsearch= user.getEmail();
-        WorkerProfileBean bean = new WorkerProfileBean();
+
         bean.setEmail(user.getEmail());
-        WorkerProfileController controller =new WorkerProfileController();
+
         controller.searchInfo(bean);
         String namesearch= user.getName();
         String surnamesearch= user.getSurname();
