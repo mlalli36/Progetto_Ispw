@@ -71,6 +71,8 @@ public class WorkerProfileView {
 
    @FXML
    public Text noAppointmentText;
+    @FXML
+    public Button acceptButton;
 
 
     WorkerProfileController controller= new WorkerProfileController();
@@ -173,6 +175,22 @@ public class WorkerProfileView {
     public void needHelpMethod(ActionEvent actionEvent) {//da implementare
     }
 
+    public void acceptMethod(ActionEvent actionEvent) throws UserNotFoundException, IOException {
+        UserEntity user=UserEntity.getInstance();
+        UIController viewController= UIController.getUIControllerInstance();
+
+        String emailsearch= user.getEmail();
+        WorkerProfileBean bean = new WorkerProfileBean();
+        bean.setEmail(user.getEmail());
+        WorkerProfileController controller =new WorkerProfileController();
+        controller.searchInfo(bean);
+        String namesearch= user.getName();
+        String surnamesearch= user.getSurname();
+
+        viewController.showAccept(namesearch,surnamesearch,emailsearch);
+
+
+    }
 }
 
 

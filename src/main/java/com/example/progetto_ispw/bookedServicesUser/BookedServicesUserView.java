@@ -92,19 +92,19 @@ public class BookedServicesUserView {
 
                         BookedServicesUserController controller = new BookedServicesUserController();
                         controller.deleteAppoU(email_client, date, time);
-                        UserEntity user = UserEntity.getInstance();
+
                         UIController viewController = UIController.getUIControllerInstance();//è singletone
 
-                        String emailsearch= user.getEmail();
+                        String emailsearch= uE.getEmail();
 
-                        bean.setEmail(emailsearch);
+
                         try {
                             controller.searchInfo(bean);
                         } catch (UserNotFoundException e) {
                             throw new RuntimeException(e);
                         }
-                        String namesearch= user.getName();
-                        String surnamesearch= user.getSurname();
+                        String namesearch= uE.getName();
+                        String surnamesearch= uE.getSurname();
                         try {
                             viewController.showBookedServicesUser(namesearch,surnamesearch,emailsearch);
                         } catch (IOException e) {
@@ -120,7 +120,7 @@ public class BookedServicesUserView {
                 this.scrollPane.setContent(userTilePane.getUserTP());
 
             } else {
-                noAppointmentText.setText("You have no appointments in your schedule..");
+                noAppointmentText.setOpacity(1);
             }
 
         }

@@ -110,22 +110,32 @@
             <Font name="Bookman Old Style" size="20.0" />
          </font>
       </Label>
-      <ScrollPane fx:id="scrollPane" layoutX="401.0" layoutY="63.0" opacity="0.0" prefHeight="668.0" prefWidth="793.0" vbarPolicy="ALWAYS">
+      <ScrollPane fx:id="scrollPane" layoutX="401.0" layoutY="53.0" opacity="0.0" prefHeight="697.0" prefWidth="819.0" vbarPolicy="ALWAYS">
          <content>
-            <Text fx:id="noAppointmentText" fill="#2d6a4f" strokeType="OUTSIDE" strokeWidth="0.0" text="There are no notifications" wrappingWidth="574.1367301940918">
+            <Text fx:id="noAppointmentText" fill="#2d6a4f" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="There are no notifications!" wrappingWidth="574.1367301940918">
                <font>
                   <Font name="Bookman Old Style" size="30.0" />
                </font></Text>
          </content>
       </ScrollPane>
-      <Button fx:id="changeOfWorkingHoursButton" layoutX="63.0" layoutY="469.0" mnemonicParsing="false" onAction="#changeOfWorkingHoursMethod" prefHeight="28.0" prefWidth="322.0" style="-fx-background-radius: 10; -fx-background-color: #74c69d;" text="     Change of working hours">
+      <Button fx:id="changeOfWorkingHoursButton" layoutX="63.0" layoutY="469.0" mnemonicParsing="false" onAction="#changeOfWorkingHoursMethod" prefHeight="28.0" prefWidth="322.0" style="-fx-background-radius: 10; -fx-background-color: #74c69d;" text="       Change of working hours">
          <font>
             <Font name="Bookman Old Style" size="20.0" />
          </font>
       </Button>
-      <ImageView fitHeight="35.0" fitWidth="36.0" layoutX="77.0" layoutY="470.0">
+      <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="76.0" layoutY="469.0">
          <image>
-            <Image url="@icon/change%20hours%20slot.png" />
+            <Image url="@icon/change hours slot.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="acceptButton" layoutX="63.0" layoutY="519.0" mnemonicParsing="false" onAction="#acceptMethod" prefHeight="28.0" prefWidth="322.0" style="-fx-background-radius: 10; -fx-background-color: #74c69d;" text="    Accept Appointment">
+         <font>
+            <Font name="Bookman Old Style" size="20.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="34.0" fitWidth="35.0" layoutX="78.0" layoutY="521.0">
+         <image>
+            <Image url="@icon/accept.png" />
          </image>
       </ImageView>
    </children>

@@ -46,6 +46,8 @@ public class BookedServicesWorkerView {
     public ScrollPane scrollPane;
     @FXML
     public Text noAppointmentText;
+    @FXML
+    public Button acceptButton;
 
     public void profileMethod(ActionEvent actionEvent) throws UserNotFoundException, IOException {
         UIController controller = UIController.getUIControllerInstance();
@@ -119,7 +121,7 @@ public class BookedServicesWorkerView {
             this.scrollPane.setContent(workerTilePane.getUserTP());
 
         } else {
-            noAppointmentText.setText("You have no appointments in your schedule..");
+            noAppointmentText.setOpacity(1);
         }
     }
 
@@ -161,5 +163,20 @@ public class BookedServicesWorkerView {
         this.nameLabelWorkerProfile.setText(namesearch);
         this.surnameLabelWorkerProfile.setText(surnamesearch);
         this.emailLabelWorkerProfile.setText(emailsearch);
+    }
+
+    public void acceptMethod(ActionEvent actionEvent) throws UserNotFoundException, IOException {
+        UserEntity user=UserEntity.getInstance();
+        UIController viewController= UIController.getUIControllerInstance();
+
+        String emailsearch= user.getEmail();
+        WorkerProfileBean bean = new WorkerProfileBean();
+        bean.setEmail(user.getEmail());
+        WorkerProfileController controller =new WorkerProfileController();
+        controller.searchInfo(bean);
+        String namesearch= user.getName();
+        String surnamesearch= user.getSurname();
+
+        viewController.showAccept(namesearch,surnamesearch,emailsearch);
     }
 }

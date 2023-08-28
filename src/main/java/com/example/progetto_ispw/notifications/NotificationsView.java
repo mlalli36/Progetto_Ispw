@@ -10,6 +10,8 @@ import com.example.progetto_ispw.worker.WorkerTilePane;
 import com.example.progetto_ispw.workerprofile.AppointmentResultElement;
 import com.example.progetto_ispw.workerprofile.AppointmentResultEntity;
 
+import com.example.progetto_ispw.workerprofile.WorkerProfileBean;
+import com.example.progetto_ispw.workerprofile.WorkerProfileController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -42,6 +44,8 @@ public class NotificationsView {
     public Text noAppointmentText;
     @FXML
     public Button bookedServicesButton;
+    @FXML
+    public Button acceptButton;
 
     NotificationsController controller= new NotificationsController();
 
@@ -111,7 +115,6 @@ public class NotificationsView {
         bean.setEmail(email);
         if(controller.verifica(bean)) {
             AppointmentResultEntity appointmentResultEntity = bean.getAppointmentResultSet();
-            //  WorkerProfileController ctrl= new WorkerProfileController();
             WorkerTilePane workerTilePane = new WorkerTilePane();
             workerTilePane.createWorkerTilePane();
             scrollPane.setVisible(true);
@@ -135,23 +138,15 @@ public class NotificationsView {
                     // Qui puoi utilizzare le variabili email_client, date_work e time_work
                     // per eseguire le azioni necessarie quando il bottone rejectButton viene premuto
 
-                   /* System.out.println();
-                    System.out.println("Reject button clicked for email: " + email_client);
-                    System.out.println("Date: " + date);
-                    System.out.println("Time: " + time);
-                    in.setDAppo(date);
-                    in.setTime(time);
-                    in.setWEmail(email);
-                    System.out.println();
-                    System.out.println("infoappent for email: " + in.getTime());*/
-
                     controller.deleteAppo(date, time, email);
+                    UserEntity user = UserEntity.getInstance();
                     UIController controller= UIController.getUIControllerInstance();
+                    String emailsearch= user.getEmail();
+                    String namesearch= user.getName();
+                    String surnamesearch= user.getSurname();
                     try {
-                        controller.showProfile();
+                        controller.showNotifications(emailsearch,namesearch,surnamesearch);
                     } catch (IOException e) {
-                        throw new RuntimeException(e);
-                    } catch (UserNotFoundException e) {
                         throw new RuntimeException(e);
                     }
 
@@ -160,28 +155,26 @@ public class NotificationsView {
 
                     controller.acceptMethod(date, time, email);
                     //se l'utente accetta allora nella tabella la colonna accetta viene impostato a 1 e quindi non vine piu mostrato nella lista
-
+                    UserEntity user = UserEntity.getInstance();
                     UIController controller= UIController.getUIControllerInstance();
+                    String emailsearch= user.getEmail();
+                    String namesearch= user.getName();
+                    String surnamesearch= user.getSurname();
                     try {
-                        controller.showProfile();
+                        controller.showNotifications(emailsearch,namesearch,surnamesearch);
                     } catch (IOException e) {
-                        throw new RuntimeException(e);
-                    } catch (UserNotFoundException e) {
                         throw new RuntimeException(e);
                     }
 
                 });
                 //devo fare il controllo che se il campo della colonna "accept" è =1 allora non lo deve mostrare
                 //controller.
-                // workerTilePane.addElements(accepttButton,rejectButton,name_client, surname_client, email_client, description_work, phone_client, date, time,acceptLabel);
-
-                //workerTilesContainer.getChildren().add(workerTilePane.getWorkerTP()); // Aggiungi la casella al contenitore
 
             }
             this.scrollPane.setContent(workerTilePane.getWorkerTP());
         }else {
             noAppointmentText.setOpacity(1);
-            //noAppointmentText.setText("You have no appointments in your schedule..");
+
         }
     }
 
@@ -192,4 +185,18 @@ public class NotificationsView {
     }
 
 
+    public void acceptMethod(ActionEvent actionEvent) throws UserNotFoundException, IOException {
+        UserEntity user=UserEntity.getInstance();
+        UIController viewController= UIController.getUIControllerInstance();
+
+        String emailsearch= user.getEmail();
+        WorkerProfileBean bean = new WorkerProfileBean();
+        bean.setEmail(user.getEmail());
+        WorkerProfileController controller =new WorkerProfileController();
+        controller.searchInfo(bean);
+        String namesearch= user.getName();
+        String surnamesearch= user.getSurname();
+
+        viewController.showAccept(namesearch,surnamesearch,emailsearch);
+    }
 }

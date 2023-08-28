@@ -1,5 +1,6 @@
 package com.example.progetto_ispw;
 
+import com.example.progetto_ispw.acceptAppointment.AcceptView;
 import com.example.progetto_ispw.bookedServicesUser.BookedServicesUserView;
 import com.example.progetto_ispw.bookedServicesWorker.BookedServicesWorkerView;
 import com.example.progetto_ispw.fillform.FillFormView;
@@ -153,6 +154,18 @@ public void insertInfoUser(String namesearch, String surnamesearch,String emails
         notificationsView.preCompileWorker(namesearch, surnamesearch,emailsearch);
         ActionEvent dummyEvent = new ActionEvent(); // Crea un oggetto ActionEvent
         notificationsView.notificationMethod(dummyEvent);
+        this.fadeAnimation(root1, this.stage.getScene().getRoot());
+
+        this.stage.setScene(new Scene(root1));
+    }
+    public void showAccept(String namesearch, String surnamesearch,String emailsearch) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("interfacciaAcceptAppointment.fxml"));
+        Parent root1 = fxmlLoader.load();
+        root1.getStylesheets().add(Objects.requireNonNull(getClass().getResource("profileMyDetails.css")).toExternalForm());
+        AcceptView acceptView = fxmlLoader.getController();
+        acceptView.preCompileWorker(namesearch, surnamesearch,emailsearch);
+        ActionEvent dummyEvent = new ActionEvent(); // Crea un oggetto ActionEvent
+        acceptView.acceptMethod(dummyEvent);
         this.fadeAnimation(root1, this.stage.getScene().getRoot());
 
         this.stage.setScene(new Scene(root1));

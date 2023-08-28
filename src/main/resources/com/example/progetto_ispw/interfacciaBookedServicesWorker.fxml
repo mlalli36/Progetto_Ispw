@@ -83,11 +83,11 @@
             <Font name="Bookman Old Style" size="20.0" />
          </font>
       </Button>
-      <ScrollPane fx:id="scrollPane" fitToHeight="true" fitToWidth="true" layoutX="397.0" layoutY="66.0" opacity="0.0" prefHeight="636.0" prefWidth="815.0" style="visibility: 0;" vbarPolicy="ALWAYS">
+      <ScrollPane fx:id="scrollPane" fitToHeight="true" fitToWidth="true" layoutX="397.0" layoutY="53.0" opacity="0.0" prefHeight="698.0" prefWidth="824.0" style="visibility: 0;" vbarPolicy="ALWAYS">
          <content>
             <Text fx:id="noAppointmentText" fill="#2d6a4f" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You have no appointments in your schedule.." wrappingWidth="653.1366996765137">
                <font>
-                  <Font name="Bookman Old Style" size="20.0" />
+                  <Font name="Bookman Old Style" size="30.0" />
                </font>
             </Text>
          </content></ScrollPane>
@@ -121,9 +121,19 @@
             <Image url="@icon/book services.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="35.0" fitWidth="36.0" layoutX="77.0" layoutY="470.0">
+      <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="76.0" layoutY="469.0">
          <image>
-            <Image url="@icon/change%20hours%20slot.png" />
+            <Image url="@icon/change hours slot.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="acceptButton" layoutX="63.0" layoutY="519.0" mnemonicParsing="false" onAction="#acceptMethod" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="    Accept Appointment">
+         <font>
+            <Font name="Bookman Old Style" size="20.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="34.0" fitWidth="35.0" layoutX="78.0" layoutY="521.0">
+         <image>
+            <Image url="@icon/accept.png" />
          </image>
       </ImageView>
    </children>

@@ -5,6 +5,8 @@ import com.example.progetto_ispw.login.exception.UserNotFoundException;
 import com.example.progetto_ispw.savehoursslots.exception.InvalidTimeException;
 import com.example.progetto_ispw.savehoursslots.exception.TimeSlotAlreadyExistsException;
 import com.example.progetto_ispw.user.UserEntity;
+import com.example.progetto_ispw.workerprofile.WorkerProfileBean;
+import com.example.progetto_ispw.workerprofile.WorkerProfileController;
 import com.example.progetto_ispw.workerprofile.WorkerProfileView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -50,6 +52,9 @@ public class SlotHoursView{
     public Button notificationButton;
     @FXML
     public Button bookedServiceButton;
+    @FXML
+    public Button acceptButton;
+
 
     public void preCompile(String namesearch, String surnamesearch, String emailsearch) {
         this.nameLabel.setText(namesearch);
@@ -149,5 +154,20 @@ public class SlotHoursView{
 
         viewController.showBookedServicesWorker(namesearch,surnamesearch,emailsearch);
 
+    }
+
+    public void acceptMethod(ActionEvent actionEvent) throws UserNotFoundException, IOException {
+        UserEntity user=UserEntity.getInstance();
+        UIController viewController= UIController.getUIControllerInstance();
+
+        String emailsearch= user.getEmail();
+        WorkerProfileBean bean = new WorkerProfileBean();
+        bean.setEmail(user.getEmail());
+        WorkerProfileController controller =new WorkerProfileController();
+        controller.searchInfo(bean);
+        String namesearch= user.getName();
+        String surnamesearch= user.getSurname();
+
+        viewController.showAccept(namesearch,surnamesearch,emailsearch);
     }
 }

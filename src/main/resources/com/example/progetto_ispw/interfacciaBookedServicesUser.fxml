@@ -74,7 +74,7 @@
             <Font name="Bookman Old Style" size="20.0" />
          </font>
       </Label>
-      <ScrollPane fx:id="scrollPane" fitToHeight="true" fitToWidth="true" layoutX="397.0" layoutY="66.0" opacity="0.0" prefHeight="636.0" prefWidth="815.0" style="visibility: 0;" vbarPolicy="ALWAYS">
+      <ScrollPane fx:id="scrollPane" fitToHeight="true" fitToWidth="true" layoutX="397.0" layoutY="53.0" opacity="0.0" prefHeight="698.0" prefWidth="824.0" style="visibility: 0;" vbarPolicy="ALWAYS">
          <content>
             <Text fx:id="noAppointmentText" fill="#2d6a4f" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You have no appointments in your schedule.." wrappingWidth="653.1366996765137">
                <font>
