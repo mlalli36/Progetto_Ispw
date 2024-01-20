@@ -4,7 +4,6 @@ import com.example.progetto_ispw.login.exception.UserNotFoundException;
 import com.example.progetto_ispw.signup.exception.UserAlreadyExistsException;
 import com.example.progetto_ispw.worker.InfoAppoinEntity;
 
-import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -54,9 +53,7 @@ public class UserDAO {
     }
 
 
-
-
-   public void addUser(String name, String surname, String email, String password,String tipoaccesso) throws UserAlreadyExistsException {
+    public void addUser(String name, String surname, String email, String password, String tipoaccesso) throws UserAlreadyExistsException  {
         try (Connection con = getConnector()) {
             if (con == null)
                 throw new SQLException();
@@ -77,13 +74,13 @@ public class UserDAO {
             }
 
         } catch (SQLIntegrityConstraintViolationException e) {
-            throw new UserAlreadyExistsException();
-        } catch (SQLException e) {
-            e.printStackTrace();
+            throw new UserAlreadyExistsException();}
+        catch (SQLException ex) {
+            throw new RuntimeException(ex);
         }
-
-
     }
+
+
 
 
     public void getUserInfo(String email) throws UserNotFoundException {
@@ -169,6 +166,31 @@ public class UserDAO {
             throw new RuntimeException(e);
         }
 
+    }
+
+    public String checkEmail (String email) throws UserNotFoundException{
+        try(Connection con = getConnector()){
+            if (con == null)
+                throw new SQLException();
+            String query = "SELECT Email FROM usersCredenziali WHERE Email = ?;";
+            try (PreparedStatement preparedStatement = con.prepareStatement(query)) {
+                preparedStatement.setString(1, email);
+                ResultSet rs = preparedStatement.executeQuery();
+                if (!rs.next()) {
+                   return null;
+                }
+          /* prova per far tornare l'email presa da db e non quella che passo in input (stesso nome all'inizio)
+                UserEntity user = UserEntity.getInstance();
+                user.setEmail(rs.getString("Email"));
+                rs.close();*/
+                return rs.getString("Email");
+
+            }
+        }
+        catch (SQLException ex) {
+            throw new RuntimeException(ex);
+        }
+      //  return email;
     }
 
 

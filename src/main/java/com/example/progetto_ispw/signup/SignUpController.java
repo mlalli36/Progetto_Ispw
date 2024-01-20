@@ -1,6 +1,9 @@
 package com.example.progetto_ispw.signup;
 
 
+import com.example.progetto_ispw.acceptAppointment.AcceptBean;
+import com.example.progetto_ispw.login.LoginBean;
+import com.example.progetto_ispw.login.exception.UserNotFoundException;
 import com.example.progetto_ispw.signup.exception.DifferentPasswordException;
 import com.example.progetto_ispw.signup.exception.UserAlreadyExistsException;
 import com.example.progetto_ispw.user.UserDAO;
@@ -35,6 +38,10 @@ public class SignUpController {
         //la stessa parola
 
         return encryptor.encrypt(psw);
+    }
+    public void searchInfo(LoginBean bean) throws UserNotFoundException {
+        UserDAO userDAO= UserDAO.getInstance();
+        userDAO.getUserInfo(bean.getEmail());
     }
 }
 

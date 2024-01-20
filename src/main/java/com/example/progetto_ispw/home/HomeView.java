@@ -59,7 +59,6 @@ public class HomeView {
         } else{
 
             WorkerEmailEntity wkE= WorkerEmailEntity.getInstance();
-            //WorkerEntity wkE= new WorkerEntity();
             wkE.setEmailWEE(emailsearch);
             viewController.insertInfoWorker(namesearch,surnamesearch,emailsearch);
         }

@@ -1,10 +1,14 @@
 
-g	java:S112W"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¿à£1
-h
-java:S1192:"KDefine a constant instead of duplicating this literal "signup.css" 4 times.(É”ıİ8Èà£1
-r
-java:S1192J"UDefine a constant instead of duplicating this literal "profileMyDetails.css" 9 times.(¾ÿã¥8Éà£1
-»
-java:S6548"˜A Singleton implementation was detected. Make sure the use of the Singleton pattern is required and the implementation is the right one for the context.(ûŠà¿øÿÿÿÿ8‹’à£1
-]	java:S125h"<This block of commented-out lines of code should be removed.(äŞŠÿüÿÿÿÿ8Ş“à£1
-Y	java:S125‚"<This block of commented-out lines of code should be removed.(éŞ¸ş8ş“à£1
+`	java:S112X"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+a
+java:S1192;"KDefine a constant instead of duplicating this literal "signup.css" 4 times.(É”ıİ
+l
+java:S1192K"VDefine a constant instead of duplicating this literal "profileMyDetails.css" 10 times.(¾ÿã¥
+´
+java:S6548"˜A Singleton implementation was detected. Make sure the use of the Singleton pattern is required and the implementation is the right one for the context.(ûŠà¿øÿÿÿÿ
+V	java:S125i"<This block of commented-out lines of code should be removed.(äŞŠÿüÿÿÿÿ
+R	java:S125ƒ"<This block of commented-out lines of code should be removed.(éŞ¸ş
+P
+java:S1128"5Remove this unused import 'javafx.concurrent.Worker'.(ò¤’ùúÿÿÿÿ
+P
+java:S1128":Remove this unused import 'javafx.scene.AccessibleAction'.(ø—¬

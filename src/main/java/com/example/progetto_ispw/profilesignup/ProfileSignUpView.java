@@ -2,6 +2,7 @@ package com.example.progetto_ispw.profilesignup;
 
 import com.example.progetto_ispw.UIController;
 import com.example.progetto_ispw.login.exception.LoginFailedException;
+import com.example.progetto_ispw.login.exception.UserNotFoundException;
 import com.example.progetto_ispw.signup.exception.UserAlreadyExistsException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -82,6 +83,8 @@ public class ProfileSignUpView {
         } catch (IllegalArgumentException | LoginFailedException | UserAlreadyExistsException exception) {
             errorLabel.setText(exception.getMessage());
             errorLabel.setOpacity(1);
+        } catch (UserNotFoundException e) {
+            throw new RuntimeException(e);
         }
     }
 

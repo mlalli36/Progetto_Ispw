@@ -58,8 +58,14 @@ public class AcceptController {
         dao.updateAppointmentStatus(email, date, time);
     }
 
+    public void checkStateAppointment(String date, String time, String email){
+        WorkerDAO dao= WorkerDAO.getInstance();
+        dao.getAppointment(email,date,time);
+    }
     public void searchInfo(AcceptBean bean) throws UserNotFoundException {
         UserDAO userDAO= UserDAO.getInstance();
         userDAO.getUserInfo(bean.getemailsearch());
     }
+
+
 }

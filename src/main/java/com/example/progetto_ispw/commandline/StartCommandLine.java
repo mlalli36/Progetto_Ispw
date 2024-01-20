@@ -8,18 +8,18 @@ import com.example.progetto_ispw.login.exception.UserNotFoundException;
 import java.util.Scanner;
 
 import static java.lang.System.*;
-
+/*
 public class StartCommandLine {
     private static boolean isLogged =false;
     public static void main (String[] args ){
         while(!isLogged){
             //finché non trova un valore negativo, continua ad eseguire il metodo per il login
-            logUser();
+
         }
         CLController cmController = CLController.getInstance();
      //   cmController.loadHomeScreen();
     }
-    private static void logUser(){
+    static void logUser(){
         out.println("Insert your email to loing, write \"signup\" to register, or \"exit\" to exit program.");
         Scanner scanner = new Scanner(in);
         String email = scanner.nextLine();
@@ -56,3 +56,4 @@ public class StartCommandLine {
         }
     }
 }
+*/

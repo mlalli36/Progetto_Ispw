@@ -1,15 +1,12 @@
 package com.example.progetto_ispw.worker;
 
+import com.example.progetto_ispw.login.exception.UserNotFoundException;
+import com.example.progetto_ispw.notifications.NotificationsController;
 import com.example.progetto_ispw.savehoursslots.SlotHoursEntity;
+import com.example.progetto_ispw.state.AppointementState;
 
 
 public class InfoAppoinEntity {
-    /*public static InfoAppoinEntity getInstance() {
-        if (singleInstance == null)
-            singleInstance = new InfoAppoinEntity();
-        return singleInstance;
-    }
-    private static InfoAppoinEntity singleInstance = null;*/
 
     private String workerEmail;
     private String clientName;
@@ -57,7 +54,15 @@ public class InfoAppoinEntity {
         return accept;
 
     }
+    private AppointementState statoAppuntamento;
 
+    public void setStatoAppuntamento(AppointementState stato) {
+        this.statoAppuntamento = stato;
+    }
+
+    public void elaboraAppuntamento(NotificationsController context, String data, String orario, String email) throws UserNotFoundException {
+        statoAppuntamento.elaboraAppuntamento(context, data, orario, email);
+    }
 
     // finisce qui la parte da cancellare
 

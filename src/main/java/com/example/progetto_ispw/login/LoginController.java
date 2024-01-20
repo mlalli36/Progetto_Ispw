@@ -26,6 +26,8 @@ public class LoginController {
 
          String decryptPassword = this.decryptPassword(user.getPassword());
 
+
+
          if (!Objects.equals(decryptPassword, bean.getPassword()))
              throw new LoginFailedException("The password is incorrect");
 

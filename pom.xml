@@ -52,6 +52,19 @@
             <version>0.2</version>
         </dependency>
 
+            <!-- Altre dipendenze -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>8.0.33</version>
+            </dependency>
+
+        <!-- dipendenza per provare il test con junit -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.8.2</version>
+        </dependency>
 
     </dependencies>
 

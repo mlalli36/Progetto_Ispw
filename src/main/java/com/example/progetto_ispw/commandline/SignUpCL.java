@@ -9,7 +9,7 @@ import com.example.progetto_ispw.signup.exception.UserAlreadyExistsException;
 import java.util.Scanner;
 
 import static java.lang.System.*;
-
+/*
 public class SignUpCL {
     public void signUserUp(){
         while(this.setUpSignUpBean() >0){
@@ -67,3 +67,4 @@ public class SignUpCL {
         return 0;
     }
 }
+*/
