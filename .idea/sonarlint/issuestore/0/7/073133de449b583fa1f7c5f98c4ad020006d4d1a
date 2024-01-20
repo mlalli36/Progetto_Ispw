@@ -1,0 +1,40 @@
+
+g	java:S112h"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Äšç‰£1
+g	java:S112o"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8õ„ê‰£1
+r	java:S117P"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ü§¿¥şÿÿÿÿ8è–¦ä¢1
+m	java:S117Q"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³Ô¿8é–¦ä¢1
+l	java:S117R"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±«<8é–¦ä¢1
+r	java:S117S"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’ª½éşÿÿÿÿ8é–¦ä¢1
+r	java:S117T"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(µĞØøÿÿÿÿÿ8é–¦ä¢1
+l	java:S117W"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(š¡«8é–¦ä¢1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÑÀˆşÿÿÿÿ8ï–¦ä¢1
+T
+java:S1172/"2Remove this unused method parameter "actionEvent".(’ğëŸÿÿÿÿÿ8§—¦ä¢1
+O
+java:S11724"2Remove this unused method parameter "actionEvent".(ßÉº³8©—¦ä¢1
+O
+java:S11729"2Remove this unused method parameter "actionEvent".(÷ÒÂŞ8¬—¦ä¢1
+T
+java:S1172>"2Remove this unused method parameter "actionEvent".(æ¥ÙÂÿÿÿÿÿ8«¤ç¢1
+R
+java:S1172"4Remove this unused method parameter "surnamesearch".(êşµ¨8ıİèä¢1
+X	java:S125ƒ"<This block of commented-out lines of code should be removed.(şªôE8ıİèä¢1
+s
+java:S1128"VRemove this unused import 'com.example.progetto_ispw.notifications.NotificationsBean'.(†óùÌ8Ïá²™£1
+~
+java:S1128"\Remove this unused import 'com.example.progetto_ispw.notifications.NotificationsController'.(’ÕûÎÿÿÿÿÿ8Ïá²™£1
+e
+java:S1128"CRemove this unused import 'com.example.progetto_ispw.user.UserDAO'.(ù‘ƒ ùÿÿÿÿ8Ïá²™£1
+n
+java:S1128	"RRemove this unused import 'com.example.progetto_ispw.userprofile.UserProfileBean'.(˜ããA8Ïá²™£1
+z
+java:S1128
+"XRemove this unused import 'com.example.progetto_ispw.userprofile.UserProfileController'.(Å©Í³ùÿÿÿÿ8Ïá²™£1
+p
+java:S1128"NRemove this unused import 'com.example.progetto_ispw.worker.InfoAppoinEntity'.(Éü¹ıÿÿÿÿ8Ïá²™£1
+l
+java:S1128"ORemove this unused import 'com.example.progetto_ispw.worker.InfoAppoinEntity2'.(µ“Î8Ğá²™£1
+W
+java:S1128"5Remove this unused import 'javafx.scene.layout.VBox'.(íÆáÂùÿÿÿÿ8Ğá²™£1
+M
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8Ğá²™£1

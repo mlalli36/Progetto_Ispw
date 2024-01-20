@@ -1,0 +1,41 @@
+
+g	java:S112l"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8£Ä³ã£1
+g	java:S112t"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Íö³ã£1
+s	java:S117…"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ü§¿¥şÿÿÿÿ8¤Ä³ã£1
+n	java:S117†"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³Ô¿8¤Ä³ã£1
+m	java:S117‡"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±«<8¤Ä³ã£1
+s	java:S117ˆ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’ª½éşÿÿÿÿ8¤Ä³ã£1
+s	java:S117‰"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(µĞØøÿÿÿÿÿ8õñéÎÏ1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(±Ì™Ÿûÿÿÿÿ8¥Ä³ã£1
+T
+java:S11724"2Remove this unused method parameter "actionEvent".(’ğëŸÿÿÿÿÿ8ÊÄ³ã£1
+[
+java:S11175">Rename "controller" which hides the field declared at line 48.(¿ÌÒ8ËÄ³ã£1
+O
+java:S11729"2Remove this unused method parameter "actionEvent".(ßÉº³8ÌÄ³ã£1
+O
+java:S1172>"2Remove this unused method parameter "actionEvent".(÷ÒÂŞ8ÍÄ³ã£1
+[
+java:S1117?">Rename "controller" which hides the field declared at line 48.(¿ÌÒ8ÍÄ³ã£1
+T
+java:S1172C"2Remove this unused method parameter "actionEvent".(¢ì”æúÿÿÿÿ8ÎÄ³ã£1
+O
+java:S1172Q"2Remove this unused method parameter "actionEvent".(àÚ¯İ8ÏÄ³ã£1
+O
+java:S1172`"2Remove this unused method parameter "actionEvent".(ş¤…8ÑÄ³ã£1
+X	java:S125"<This block of commented-out lines of code should be removed.(¦¼´8ÖÄ³ã£1
+^	java:S125•"<This block of commented-out lines of code should be removed.(¯ªÿàûÿÿÿÿ8ÚÄ³ã£1
+P
+java:S1172Ÿ"2Remove this unused method parameter "actionEvent".(‡ù¿õ8ÜÄ³ã£1
+P
+java:S1172®"2Remove this unused method parameter "actionEvent".(±¦îò8ø„ìÎÏ1
+
+java:S1128"dRemove this unused import 'com.example.progetto_ispw.bookedServicesWorker.BookedServicesWorkerBean'.(ùµ®‰8ßÄ³ã£1
+‡
+java:S1128"jRemove this unused import 'com.example.progetto_ispw.bookedServicesWorker.BookedServicesWorkerController'.(›ÑŞ8ßÄ³ã£1
+s
+java:S1128"VRemove this unused import 'com.example.progetto_ispw.notifications.NotificationsBean'.(†óùÌ8ßÄ³ã£1
+~
+java:S1128"\Remove this unused import 'com.example.progetto_ispw.notifications.NotificationsController'.(’ÕûÎÿÿÿÿÿ8ßÄ³ã£1
+n
+java:S1128"LRemove this unused import 'com.example.progetto_ispw.worker.WorkerTilePane'.(²²èùÿÿÿÿ8ßÄ³ã£1

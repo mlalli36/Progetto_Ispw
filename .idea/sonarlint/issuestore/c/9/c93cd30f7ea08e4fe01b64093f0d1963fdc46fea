@@ -1,0 +1,20 @@
+
+r	java:S1179"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Â‡À«şÿÿÿÿ8¦ªÊ‘1
+x
+java:S1450
+"VRemove the "address" field and declare it as a local variable in the relevant methods.(÷§ùÿÿÿÿ8³ªÊ‘1
+|
+java:S1450"ZRemove the "description" field and declare it as a local variable in the relevant methods.(ÇÓæâıÿÿÿÿ8´ªÊ‘1
+y
+java:S1450	"WRemove the "location" field and declare it as a local variable in the relevant methods.(Ìöïüÿÿÿÿ8µªÊ‘1
+u
+java:S1450"SRemove the "work" field and declare it as a local variable in the relevant methods.(Óæ¤àùÿÿÿÿ8·ªÊ‘1
+Q
+java:S1068"/Remove this unused "description" private field.(ÇÓæâıÿÿÿÿ8ÁªÊ‘1
+N
+java:S1068	",Remove this unused "location" private field.(Ìöïüÿÿÿÿ8ÂªÊ‘1
+M
+java:S1068
+"+Remove this unused "address" private field.(÷§ùÿÿÿÿ8ÂªÊ‘1
+J
+java:S1068"(Remove this unused "work" private field.(Óæ¤àùÿÿÿÿ8ÂªÊ‘1

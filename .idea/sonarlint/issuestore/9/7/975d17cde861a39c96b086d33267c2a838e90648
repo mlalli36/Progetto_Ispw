@@ -1,0 +1,16 @@
+
+p
+java:S1128"NRemove this unused import 'com.example.progetto_ispw.worker.InfoAppoinEntity'.(Éü¹ıÿÿÿÿ8ãúãŠ£1
+d
+java:S1128"GRemove this unused import 'com.example.progetto_ispw.worker.WorkerDAO'.(û†°ß8äúãŠ£1
+M
+java:S1128"0Remove this unused import 'java.sql.Connection'.(¥ËôÖ8äúãŠ£1
+Y
+java:S1128	"7Remove this unused import 'java.sql.PreparedStatement'.(òÄ™ƒÿÿÿÿÿ8äúãŠ£1
+O
+java:S1128
+"2Remove this unused import 'java.sql.SQLException'.(ÛïÆŸ8äúãŠ£1
+M
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8äúãŠ£1
+w
+java:S1128"URemove this unused import 'com.example.progetto_ispw.utile.DBConnector.getConnector'.(•¡ Šøÿÿÿÿ8äúãŠ£1

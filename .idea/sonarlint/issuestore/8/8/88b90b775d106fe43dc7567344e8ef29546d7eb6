@@ -1,0 +1,8 @@
+
+W
+java:S1854'":Remove this useless assignment to local variable "result".(¿óã€8¼¶•ÂÏ1
+U	java:S106""9Replace this use of System.out or System.err by a logger.(¸ŸÃ‹8Ñú‘®Ï1
+U	java:S106#"9Replace this use of System.out or System.err by a logger.(â¬ºì8Ñú‘®Ï1
+Z	java:S106-"9Replace this use of System.out or System.err by a logger.(Š•éùÿÿÿÿ8¿Ô“®Ï1
+q
+java:S1128	"ORemove this unused import 'com.example.progetto_ispw.worker.WorkerEmailEntity'.(ñ §‘úÿÿÿÿ8È£áĞ1

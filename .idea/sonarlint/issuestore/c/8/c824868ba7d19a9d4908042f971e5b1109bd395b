@@ -1,0 +1,44 @@
+
+g	java:S112t"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8µ±™£1
+g	java:S112|"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¶±™£1
+h	java:S112¦"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ğàµã£1
+h	java:S112¶"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ñàµã£1
+s	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ü§¿¥şÿÿÿÿ8¸±™£1
+n	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³Ô¿8¸±™£1
+m	java:S117‘"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±«<8¸±™£1
+s	java:S117’"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’ª½éşÿÿÿÿ8¸±™£1
+s	java:S117“"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(µĞØøÿÿÿÿÿ8¸±™£1
+O
+java:S11728"2Remove this unused method parameter "actionEvent".(·ö§½8è±™£1
+O
+java:S1172C"2Remove this unused method parameter "actionEvent".(ßÉº³8ì±™£1
+[
+java:S1117D">Rename "controller" which hides the field declared at line 52.(¿ÌÒ8ì±™£1
+O
+java:S1172H"2Remove this unused method parameter "actionEvent".(÷ÒÂŞ8í±™£1
+[
+java:S1117I">Rename "controller" which hides the field declared at line 52.(¿ÌÒ8í±™£1
+T
+java:S1172M"2Remove this unused method parameter "actionEvent".(¢ì”æúÿÿÿÿ8ï±™£1
+O
+java:S1172Z"2Remove this unused method parameter "actionEvent".(‡ù¿õ8ò±™£1
+o
+java:S3776h"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(›„Í³8¼áµã£1
+‰
+java:S1130h"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(›„Í³8õ±™£1
+O
+java:S1172h"2Remove this unused method parameter "actionEvent".(›„Í³8ö±™£1
+\
+java:S1117Ÿ">Rename "controller" which hides the field declared at line 52.(¿ÌÒ8ü±™£1
+[
+java:S1117®"8Rename "user" which hides the field declared at line 54.(†¢–Éùÿÿÿÿ8ÕŒã£1
+\
+java:S1117¯">Rename "controller" which hides the field declared at line 52.(¿ÌÒ8„²™£1
+U
+java:S1172Ì"2Remove this unused method parameter "actionEvent".(‹¼Û¬ùÿÿÿÿ8Œ²™£1
+P
+java:S1172Ù"2Remove this unused method parameter "actionEvent".(¾…ßü8¤³ÒÎÏ1
+s
+java:S1128"VRemove this unused import 'com.example.progetto_ispw.workerprofile.WorkerProfileBean'.(ßèóŒ8¢ŞÖÎÏ1
+~
+java:S1128"\Remove this unused import 'com.example.progetto_ispw.workerprofile.WorkerProfileController'.(¾³ŸÑúÿÿÿÿ8¢ŞÖÎÏ1

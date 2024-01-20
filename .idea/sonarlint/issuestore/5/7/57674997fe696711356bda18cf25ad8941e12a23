@@ -1,0 +1,30 @@
+
+}
+java:S4144p"[Update this method so that its implementation is not identical to "homeMethod" on line 107.(®ÖüĞşÿÿÿÿ8éé¬¹Ñ1
+T
+java:S1172J"2Remove this unused method parameter "actionEvent".(’ğëŸÿÿÿÿÿ8îé¬¹Ñ1
+Z	java:S106M"9Replace this use of System.out or System.err by a logger.(ŒÎ¬Àÿÿÿÿÿ8ğé¬¹Ñ1
+Z	java:S106W"9Replace this use of System.out or System.err by a logger.(åÏŞïøÿÿÿÿ8òé¬¹Ñ1
+Z	java:S106X"9Replace this use of System.out or System.err by a logger.(ø®ò‘ÿÿÿÿÿ8òé¬¹Ñ1
+]	java:S125a"<This block of commented-out lines of code should be removed.(¡«†Œùÿÿÿÿ8óé¬¹Ñ1
+O
+java:S1172k"2Remove this unused method parameter "actionEvent".(ßÉº³8ôé¬¹Ñ1
+T
+java:S1172p"2Remove this unused method parameter "actionEvent".(®ÖüĞşÿÿÿÿ8õé¬¹Ñ1
+Z	java:S106w"9Replace this use of System.out or System.err by a logger.(‚¹¹ÿıÿÿÿÿ8÷é¬¹Ñ1
+Z	java:S106|"9Replace this use of System.out or System.err by a logger.(ŠÊ÷Ïùÿÿÿÿ8Œ”­¹Ñ1
+U
+java:S1172„"2Remove this unused method parameter "actionEvent".(§˜Ë‚üÿÿÿÿ8’”­¹Ñ1
+Y	java:S125Ê"<This block of commented-out lines of code should be removed.(÷å™ó8£”­¹Ñ1
+Y	java:S125Í"<This block of commented-out lines of code should be removed.(÷å™ó8£”­¹Ñ1
+Y	java:S125Ğ"<This block of commented-out lines of code should be removed.(÷å™ó8¤”­¹Ñ1
+Y	java:S125Ó"<This block of commented-out lines of code should be removed.(÷å™ó8¦”­¹Ñ1
+Y	java:S125Ö"<This block of commented-out lines of code should be removed.(÷å™ó8§”­¹Ñ1
+Y	java:S125Ù"<This block of commented-out lines of code should be removed.(÷å™ó8¨”­¹Ñ1
+Y	java:S125Ü"<This block of commented-out lines of code should be removed.(÷å™ó8©”­¹Ñ1
+Y	java:S125ß"<This block of commented-out lines of code should be removed.(÷å™ó8ª”­¹Ñ1
+P
+java:S1172ê"2Remove this unused method parameter "actionEvent".(¬Øï8«”­¹Ñ1
+~
+java:S1128
+"\Remove this unused import 'com.example.progetto_ispw.workerprofile.AppointmentResultEntity'.(ÍöÉ²şÿÿÿÿ8äà´Ò1

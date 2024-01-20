@@ -1,0 +1,7 @@
+
+f
+java:S1854"DRemove this useless assignment to local variable "infoAppoinEntity".(ÇâÍùúÿÿÿÿ8ù¢¸½¢1
+W
+java:S1481"5Remove this unused "infoAppoinEntity" local variable.(ÇâÍùúÿÿÿÿ8ü¢¸½¢1
+U	java:S106"9Replace this use of System.out or System.err by a logger.(¸İí8ÿ¢¸½¢1
+X	java:S125"<This block of commented-out lines of code should be removed.(¶Ìƒ”8ÿ¢¸½¢1

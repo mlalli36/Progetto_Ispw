@@ -1,0 +1,22 @@
+
+g	java:S112{"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8àÌë·Ñ1
+t
+java:S1104*"WMake emailWorker a static final constant or non-public and provide accessors if needed.(è½¢—8ãÌë·Ñ1
+T
+java:S1172."2Remove this unused method parameter "actionEvent".(ú›Ÿêøÿÿÿÿ8Íë·Ñ1
+Z
+java:S1117/"8Rename "user" which hides the field declared at line 43.(†¢–Éùÿÿÿÿ8ŸÍë·Ñ1
+Z	java:S1061"9Replace this use of System.out or System.err by a logger.(ŒÎ¬Àÿÿÿÿÿ8 Íë·Ñ1
+Z	java:S106;"9Replace this use of System.out or System.err by a logger.(åÏŞïøÿÿÿÿ8¢Íë·Ñ1
+Z	java:S106<"9Replace this use of System.out or System.err by a logger.(ø®ò‘ÿÿÿÿÿ8¢Íë·Ñ1
+]	java:S125E"<This block of commented-out lines of code should be removed.(¡«†Œùÿÿÿÿ8£Íë·Ñ1
+O
+java:S1172O"2Remove this unused method parameter "actionEvent".(ßÉº³8¥Íë·Ñ1
+‰
+java:S1130U"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(³şÁĞ8±Œœ²Ò1
+U	java:S106”"9Replace this use of System.out or System.err by a logger.(ƒ©a8¸Íë·Ñ1
+[	java:S106•"9Replace this use of System.out or System.err by a logger.(×ğ˜şÿÿÿÿ8¸Íë·Ñ1
+V	java:S106–"9Replace this use of System.out or System.err by a logger.(öĞœ8¹Íë·Ñ1
+[	java:S106—"9Replace this use of System.out or System.err by a logger.(ùÍ›şÿÿÿÿ8¾Íë·Ñ1
+l
+java:S1128	"JRemove this unused import 'com.example.progetto_ispw.worker.WorkerEntity'.(“œ–Êÿÿÿÿÿ8†œ²Ò1
