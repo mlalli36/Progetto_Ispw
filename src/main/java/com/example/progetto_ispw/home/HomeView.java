@@ -4,13 +4,16 @@ import com.example.progetto_ispw.UIController;
 import com.example.progetto_ispw.login.exception.UserNotFoundException;
 import com.example.progetto_ispw.searchdinamica.SearchDinamicaController;
 import com.example.progetto_ispw.user.UserEntity;
+import com.example.progetto_ispw.utile.CustomTilePane;
 import com.example.progetto_ispw.worker.WorkerEmailEntity;
 import com.example.progetto_ispw.worker.WorkerEntity;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 
 
 import java.io.IOException;
@@ -32,7 +35,12 @@ public class HomeView {
     public TextField locationWorkerTextField;
     @FXML
     public Button searchButton;
-
+    @FXML
+    public ScrollPane scrollPane;
+    @FXML
+    public Text errorLabel;
+    public String emailWorker;
+    private  UserEntity user = UserEntity.getInstance();
 
 
 
@@ -59,7 +67,6 @@ public class HomeView {
         } else{
 
             WorkerEmailEntity wkE= WorkerEmailEntity.getInstance();
-            //WorkerEntity wkE= new WorkerEntity();
             wkE.setEmailWEE(emailsearch);
             viewController.insertInfoWorker(namesearch,surnamesearch,emailsearch);
         }
@@ -83,10 +90,79 @@ public class HomeView {
             bean.setJobWork(normalizedjobWorker);
             bean.setLocationWork(normalizedlocationbWorker);
 
-            SearchDinamicaController searchController= new SearchDinamicaController();
-            searchController.workInfo(bean);
+        HomeController controller= new HomeController();
+        controller.workInfo(bean);
 
+        ResultSetEntity resultSet = bean.getResultSet();
+        if (resultSet.getElements().isEmpty()) {
+
+            this.errorLabel.setOpacity(1);
+
+        }else {
+            CustomTilePane customTilePane = new CustomTilePane();
+            customTilePane.createCustomTilePane();
+            scrollPane.setVisible(true);
+
+
+            for (ResultElement r : resultSet.getElements()) {
+                Button newButton = new Button("Fill out form");
+
+                String name = r.getWorkerName();
+                String jobWorker = r.getJobWorker();
+                String locationWorker = r.getLocationWorker();
+                String descriptionWorker = r.getWorkerDescription();
+                emailWorker = r.getWorkerEmail();
+                newButton.setUserData(emailWorker);
+
+                customTilePane.addElements(name, jobWorker, locationWorker, descriptionWorker, newButton, emailWorker);
+
+                newButton.setOnAction(event -> {
+                    try {
+                        showIntForm(event);
+                    } catch (UserNotFoundException e) {
+                        throw new RuntimeException(e);
+                    }
+                });
+
+
+            }
+            this.scrollPane.setContent(customTilePane.getCustomTP());
+        }
 
     }
 
+
+
+    public void showIntForm(ActionEvent event) throws UserNotFoundException {
+        // tieniamo traccia del bottone che abbiamo premuto
+        Button clickedButton =(Button) event.getSource();
+        // tieniamo traccia dell'email associata a quel bottone
+        String email = (String) clickedButton.getUserData() ;
+
+
+        HomeBean bean=new HomeBean();
+        String emailsearch= user.getEmail();
+        bean.setEmail(emailsearch);
+        HomeController ctrl= new HomeController();
+        ctrl.searchInfo(bean);
+        System.out.println("search dinamica nome utente: "+user.getName());
+        System.out.println("search dinamica cognnome utente: "+user.getSurname());
+        System.out.println("search dinamica email utente: "+user.getEmail());
+        System.out.println("search dinamica email worker in form: "+emailWorker);
+
+
+        String emailCl= user.getEmail();
+        String nameCl= user.getName();
+        String surnameCl= user.getSurname();
+
+        UIController viewController = UIController.getUIControllerInstance();
+        viewController.showForm(email,emailCl,nameCl,surnameCl);
+
+    }
+
+
+
+
 }
+
+

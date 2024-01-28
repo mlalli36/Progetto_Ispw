@@ -2,7 +2,9 @@ package com.example.progetto_ispw.profilesignup;
 
 import com.example.progetto_ispw.UIController;
 import com.example.progetto_ispw.login.exception.LoginFailedException;
+import com.example.progetto_ispw.login.exception.UserNotFoundException;
 import com.example.progetto_ispw.signup.exception.UserAlreadyExistsException;
+import com.example.progetto_ispw.user.UserEntity;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -51,16 +53,33 @@ public class ProfileSignUpView {
     public Label nameLabel;
     @FXML
     public Label cognomeLabel;
+    @FXML
+    public Button profileButton;
+    @FXML
+    public Label emailLabel;
+    @FXML
+    public Button bookedServices1;
+    @FXML
+    public Label surnameLabel;
 
     public void signUpMethodPrecompile(String email, String nome, String cognome)  {
         this.emailTextField.setText(email);
         this.nomeTextField.setText(nome);
         this.surnameTextField.setText(cognome);
         this.nameLabel.setText(nome);
-        this.cognomeLabel.setText(cognome);
+        this.surnameLabel.setText(cognome);
 
     }
-
+    public void profileMethod(ActionEvent actionEvent) throws IOException, UserNotFoundException {
+        UserEntity user = UserEntity.getInstance();
+        UIController viewController= UIController.getUIControllerInstance();
+        String emailsearch= user.getEmail();
+        ProfileSignUpBean bean= new ProfileSignUpBean();
+        bean.setEmail(user.getEmail());
+        String namesearch= user.getName();
+        String surnamesearch= user.getSurname();
+        viewController.insertInfoWorker(namesearch,surnamesearch,emailsearch);
+    }
     public void saveEditsMethod()throws IOException {
         ProfileSignUpBean bean = new ProfileSignUpBean();
 
@@ -82,6 +101,8 @@ public class ProfileSignUpView {
         } catch (IllegalArgumentException | LoginFailedException | UserAlreadyExistsException exception) {
             errorLabel.setText(exception.getMessage());
             errorLabel.setOpacity(1);
+        } catch (UserNotFoundException e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -107,4 +128,9 @@ public class ProfileSignUpView {
     }
 
 
+    public void preCompile(String namesearch, String surnamesearch, String emailsearch) {
+        this.nameLabel.setText(namesearch);
+        this.surnameLabel.setText(surnamesearch);
+        this.emailLabel.setText(emailsearch);
+    }
 }

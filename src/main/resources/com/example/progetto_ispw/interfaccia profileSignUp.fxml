@@ -11,7 +11,7 @@
    <children>
       <Pane prefHeight="53.0" prefWidth="1219.0" style="-fx-background-color: #74c69d;">
          <children>
-            <Button layoutX="1144.0" layoutY="-1.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #40916c;" />
+            <Button fx:id="profileButton" layoutX="1144.0" layoutY="-1.0" mnemonicParsing="false" onAction="#profileMethod" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #74c69d;" />
             <Button layoutX="1069.0" layoutY="-1.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #74c69d;" />
             <Button layoutX="994.0" layoutY="-1.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #74c69d;" />
             <ImageView fitHeight="44.0" fitWidth="56.0" layoutX="1004.0" layoutY="5.0">
@@ -102,7 +102,7 @@
          </children>
       </Pane>
       <Circle fill="#74c69d" layoutX="95.0" layoutY="128.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
-      <Label fx:id="nameLabel" layoutX="135.0" layoutY="106.0" prefHeight="38.0" prefWidth="284.0">
+      <Label fx:id="nameLabel" layoutX="139.0" layoutY="109.0" prefHeight="38.0" prefWidth="113.0">
          <font>
             <Font name="Bookman Old Style" size="20.0" />
          </font>
@@ -162,7 +162,7 @@
             <Image url="@icon/book services.png" />
          </image>
       </ImageView>
-         <Label fx:id="cognomeLabel" layoutX="129.0" layoutY="150.0" prefHeight="42.0" prefWidth="284.0">
+         <Label fx:id="emailLabel" layoutX="129.0" layoutY="150.0" prefHeight="42.0" prefWidth="284.0">
             <font>
                <Font name="Bookman Old Style" size="20.0" />
             </font>
@@ -174,9 +174,14 @@
          </Button>
          <ImageView fitHeight="35.0" fitWidth="44.0" layoutX="73.0" layoutY="220.0">
             <image>
-               <Image url="@icon/bell%20senza%20notifica.png" />
+               <Image url="@icon/bell senza notifica.png" />
             </image>
          </ImageView>
+      <Label fx:id="surnameLabel" layoutX="271.0" layoutY="109.0" prefHeight="38.0" prefWidth="113.0">
+         <font>
+            <Font name="Bookman Old Style" size="20.0" />
+         </font>
+      </Label>
 
    </children>
    </Pane>

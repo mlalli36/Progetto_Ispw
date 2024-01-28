@@ -15,11 +15,11 @@ import java.util.List;
 
 public class SearchDinamicaController {
 
-    private ResultSetEntity resultSet= new ResultSetEntity();
+   private ResultSetEntity resultSet= new ResultSetEntity();
 
 
 
-    public void workInfo(HomeBean bean) throws IOException {
+  /*  public void workInfo(HomeBean bean) throws IOException {
         WorkerDAO dao = WorkerDAO.getInstance();
 
 
@@ -52,7 +52,7 @@ public class SearchDinamicaController {
             UIController viewController = UIController.getUIControllerInstance();//è singletone
             viewController.showSearchDinamica(bean2);
 
-    }
+    }*/
 
     public void searchInfo(SearchDinamicaBean searchDBean) throws UserNotFoundException {
 

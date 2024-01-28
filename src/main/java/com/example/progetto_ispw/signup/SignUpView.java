@@ -2,6 +2,7 @@ package com.example.progetto_ispw.signup;
 
 import com.example.progetto_ispw.UIController;
 import com.example.progetto_ispw.login.exception.LoginFailedException;
+import com.example.progetto_ispw.login.exception.UserNotFoundException;
 import com.example.progetto_ispw.signup.exception.DifferentPasswordException;
 import com.example.progetto_ispw.signup.exception.UserAlreadyExistsException;
 import javafx.fxml.FXML;
@@ -76,8 +77,9 @@ public class SignUpView {
             statusLabel.setText("The email is not valid");
         } catch (UserAlreadyExistsException e) {
             statusLabel.setText("User already registered. Go to Log In!");
-        }
-        finally {
+        } catch (UserNotFoundException e) {
+            throw new RuntimeException(e);
+        } finally {
             statusLabel.setOpacity(1);
         }
     }

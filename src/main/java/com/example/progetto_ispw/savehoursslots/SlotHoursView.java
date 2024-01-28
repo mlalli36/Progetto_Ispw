@@ -4,6 +4,7 @@ import com.example.progetto_ispw.UIController;
 import com.example.progetto_ispw.login.exception.UserNotFoundException;
 import com.example.progetto_ispw.savehoursslots.exception.InvalidTimeException;
 import com.example.progetto_ispw.savehoursslots.exception.TimeSlotAlreadyExistsException;
+import com.example.progetto_ispw.savehoursslots.observer.Observer;
 import com.example.progetto_ispw.user.UserEntity;
 import com.example.progetto_ispw.workerprofile.WorkerProfileBean;
 import com.example.progetto_ispw.workerprofile.WorkerProfileController;
@@ -18,7 +19,7 @@ import javafx.scene.control.TextField;
 import java.io.IOException;
 import java.time.LocalDate;
 
-public class SlotHoursView{
+public class SlotHoursView implements Observer {
     @FXML
     public TextField slot1Text;
     @FXML
@@ -54,7 +55,16 @@ public class SlotHoursView{
     public Button bookedServiceButton;
     @FXML
     public Button acceptButton;
+    @FXML
+    public Button myDetails;
+    @FXML
+    public Label successLabel;
 
+    private SlotHours slotHours;
+
+    public SlotHoursView() {
+        SlotHoursEntity.getInstance().getSlotHours().attach(this);
+    }
 
     public void preCompile(String namesearch, String surnamesearch, String emailsearch) {
         this.nameLabel.setText(namesearch);
@@ -90,18 +100,16 @@ public class SlotHoursView{
 
             SaveHoursController controller = new SaveHoursController();
             controller.saveHoursSlots(bean);
-            UIController viewController = UIController.getUIControllerInstance();//è singletone
-            viewController.showHome();
+
         }
     catch (InvalidTimeException exception) {
             errorLabel.setText(exception.getMessage());
             errorLabel.setOpacity(1);
         }
         catch ( TimeSlotAlreadyExistsException exception){
-            errorLabel.setText("Slot già selezionato!!!!!");
+            errorLabel.setText(exception.getMessage());
             errorLabel.setOpacity(1);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+            exception.printStackTrace(); // o utilizza un logger
         }
     }
 
@@ -169,5 +177,32 @@ public class SlotHoursView{
         String surnamesearch= user.getSurname();
 
         viewController.showAccept(namesearch,surnamesearch,emailsearch);
+    }
+    public void myDetailsMethod(ActionEvent actionEvent) throws UserNotFoundException, IOException {
+        UserEntity user=UserEntity.getInstance();
+        UIController viewController= UIController.getUIControllerInstance();
+
+        String emailsearch= user.getEmail();
+        WorkerProfileBean bean = new WorkerProfileBean();
+        bean.setEmail(user.getEmail());
+        WorkerProfileController controller =new WorkerProfileController();
+        controller.searchInfo(bean);
+        String namesearch= user.getName();
+        String surnamesearch= user.getSurname();
+        viewController.showMyDetailsWorker(namesearch,surnamesearch,emailsearch);
+    }
+
+    @Override
+    public void update() {
+        /* Questo metodo implementa il metodo richiesto dall'interface Observer, per implementare il GoF Pattern
+         * Observer, per fare in modo che una volta che l'utente aggiorna le proprie preferenze dalla GUI, questa venga
+         * poi aggiornata per riflettere i cambiamenti.
+         */
+
+        this.showLabel();
+
+    }
+    private void showLabel(){
+        successLabel.setText("Il salvataggio è andato a buon fine");
     }
 }

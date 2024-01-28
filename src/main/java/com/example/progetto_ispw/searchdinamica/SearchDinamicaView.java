@@ -85,7 +85,7 @@ public class SearchDinamicaView{
         viewController.showHome();
     }
 
-    public void showResult(SearchDinamicaBean bean2) throws IOException {
+    /*public void showResult(SearchDinamicaBean bean2) throws IOException {
 
 
         ResultSetEntity resultSet = bean2.getResultSet();
@@ -122,7 +122,7 @@ public class SearchDinamicaView{
             this.scrollPane.setContent(customTilePane.getCustomTP());
         }
 
-    }
+    }*/
 
     public void showIntForm(ActionEvent event) throws UserNotFoundException {
         // tieniamo traccia del bottone che abbiamo premuto

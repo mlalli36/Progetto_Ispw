@@ -10,10 +10,6 @@ public class HomeBean {
     protected String locationWork = null;
     private String emailsearch;
 
-    public  ResultSetEntity getResultSet() {
-        return resultSet;
-    }
-
 
 
 
@@ -50,4 +46,11 @@ public class HomeBean {
     }
 
     public String getemailsearch() {return emailsearch;}
+    public  ResultSetEntity getResultSet() {
+        return resultSet;
+    }
+
+    public void setResultSet(ResultSetEntity resultSet) {
+        this.resultSet= resultSet;
+    }
 }

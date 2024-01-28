@@ -1,11 +1,0 @@
-
-Z
-java:S1117"=Rename "entryPane" which hides the field declared at line 17.(¾®„’8›Ü¾÷Ğ1
-R
-java:S1128"5Remove this unused import 'javafx.scene.image.Image'.(‰¿½Ç8ïÄ—ÆÑ1
-[
-java:S1128"9Remove this unused import 'javafx.scene.image.ImageView'.(áÿ®Ãüÿÿÿÿ8ïÄ—ÆÑ1
-P
-java:S1128"3Remove this unused import 'javafx.scene.text.Font'.(¾¼¡Ê8ïÄ—ÆÑ1
-\
-java:S1128":Remove this unused import 'java.security.cert.PolicyNode'.(éìÙúÿÿÿÿ8ïÄ—ÆÑ1

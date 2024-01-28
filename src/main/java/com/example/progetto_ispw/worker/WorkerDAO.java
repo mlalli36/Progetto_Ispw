@@ -339,6 +339,32 @@ public class WorkerDAO {
             }
         }
 
+    public int getAppointmentStatus(String email, String date, String time) throws SQLException {
+        try(Connection con = getConnector()){
+            if( con==null)
+                throw new SQLException();
 
+            String query= "SELECT Accept FROM `databaseispw`.`appointment_request` WHERE Worker_email=? AND Date_appointment=? AND Time_date=?; ";
+            try (PreparedStatement preparedStatement= con.prepareStatement(query)){
+                preparedStatement.setString(1,email);
+                preparedStatement.setString(2,date);
+                preparedStatement.setString(3,time);
+
+                try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                    if (resultSet.next()) {
+                        int return_value=resultSet.getInt("Accept");
+
+                        return return_value;
+                    } else {
+                        // Ritorna un valore predefinito (potrebbe essere 0 o un altro valore in base alla tua logica)
+                        return -1;
+                    }
+                }
+
+            }catch (SQLException e){
+                throw  new RuntimeException(e);
+            }
+        }
+    }
 
 }

@@ -152,7 +152,11 @@ public class NotificationsView {
                     // Qui puoi utilizzare le variabili email_client, date_work e time_work
                     // per eseguire le azioni necessarie quando il bottone rejectButton viene premuto
 
-                    controller.deleteAppo(date, time, email);
+                    try {
+                        controller.deleteAppo(date, time, email);
+                    } catch (UserNotFoundException e) {
+                        throw new RuntimeException(e);
+                    }
 
                     UIController controller= UIController.getUIControllerInstance();
                     String emailsearch= user.getEmail();
@@ -167,7 +171,11 @@ public class NotificationsView {
                 });
                 accepttButton.setOnAction(event -> {
 
-                    controller.acceptMethod(date, time, email);
+                    try {
+                        controller.acceptMethod(date, time, email);
+                    } catch (UserNotFoundException e) {
+                        throw new RuntimeException(e);
+                    }
                     //se l'utente accetta allora nella tabella la colonna accetta viene impostato a 1 e quindi non vine piu mostrato nella lista
                     UserEntity user = UserEntity.getInstance();
                     UIController controller= UIController.getUIControllerInstance();
