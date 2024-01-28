@@ -8,7 +8,7 @@ public class WorkerEmailEntity {
             singleInstance = new WorkerEmailEntity();
         return singleInstance;
     }
-    //WEE= WorkerEmailEntity
+
     public String getEmailWEE() {
         return email;
     }

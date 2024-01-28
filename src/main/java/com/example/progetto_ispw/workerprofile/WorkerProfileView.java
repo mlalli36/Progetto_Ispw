@@ -1,16 +1,14 @@
 package com.example.progetto_ispw.workerprofile;
 
 import com.example.progetto_ispw.UIController;
-import com.example.progetto_ispw.home.ResultElement;
+
 import com.example.progetto_ispw.login.exception.UserNotFoundException;
-import com.example.progetto_ispw.notifications.NotificationsBean;
-import com.example.progetto_ispw.savehoursslots.SaveHoursBean;
-import com.example.progetto_ispw.savehoursslots.SaveHoursController;
+
 import com.example.progetto_ispw.savehoursslots.SlotHours;
 import com.example.progetto_ispw.savehoursslots.SlotHoursEntity;
+
 import com.example.progetto_ispw.user.UserEntity;
-import com.example.progetto_ispw.utile.CustomTilePane;
-import com.example.progetto_ispw.worker.*;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -20,13 +18,12 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
+
 import javafx.scene.text.Text;
 
-import java.awt.*;
+
 import java.io.IOException;
-import java.util.List;
+
 
 public class WorkerProfileView {
     @FXML

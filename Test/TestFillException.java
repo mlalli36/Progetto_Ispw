@@ -36,10 +36,7 @@ public class TestFillException {
             } catch (TimeAlreadySelectedException e) {
                 // Il test passa se un'eccezione TimeAlreadySelectedException viene lanciata
                 assertEquals("The selected time is no longer valid.", e.getMessage());
-            } /*catch (Exception e) {
-            // Gestire altre eccezioni in modo che il test fallisca se viene lanciata un'eccezione diversa
-            fail("Unexpected exception thrown: " + e.getMessage());
-        }*/
+            }
 
 
         }

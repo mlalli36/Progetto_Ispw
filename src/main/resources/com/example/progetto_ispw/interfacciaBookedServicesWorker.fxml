@@ -44,7 +44,7 @@
             <Font name="Bookman Old Style" size="20.0" />
          </font>
       </Button>
-      <Button  fx:id="myDetails" layoutX="63.0" layoutY="319.0" mnemonicParsing="false"onAction="#myDetailsMethod" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="My details">
+      <Button  fx:id="myDetails" layoutX="63.0" layoutY="319.0" mnemonicParsing="false" onAction="#myDetailsMethod" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="My details">
          <font>
             <Font name="Bookman Old Style" size="20.0" />
          </font>

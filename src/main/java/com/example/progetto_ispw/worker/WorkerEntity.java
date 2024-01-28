@@ -11,12 +11,6 @@ public class WorkerEntity {
     private String surname;
     private  String work;
 
-    private static WorkerEntity singleInstance = null;
-   /* public static WorkerEntity getInstance(){
-        if (singleInstance == null)
-            singleInstance = new WorkerEntity();
-        return singleInstance;
-    }*/
 
 
     public  String getName() {
@@ -25,13 +19,14 @@ public class WorkerEntity {
     public String getEmail() {
         return email;
     }
-
+    public String getSurname(){return surname;}
     public String getWork() {
         return work;
     }
     public String getLocation() {
         return location;
     }
+
     public String getDescription() {
         return description;
     }

@@ -46,6 +46,8 @@ public class NotificationsView {
     public Button bookedServicesButton;
     @FXML
     public Button acceptButton;
+    @FXML
+    public Button myDetails;
 
     private NotificationsController controller= new NotificationsController();
     private  NotificationsBean bean=new NotificationsBean();
@@ -218,5 +220,19 @@ public class NotificationsView {
         String surnamesearch= user.getSurname();
 
         viewController.showAccept(namesearch,surnamesearch,emailsearch);
+    }
+
+    public void myDetailsMethod(ActionEvent actionEvent) throws IOException, UserNotFoundException {
+        UIController viewController = UIController.getUIControllerInstance();//è singletone
+
+        String emailsearch= user.getEmail();
+
+        bean.setEmail(emailsearch);
+        controller.searchInfo(bean);
+        String namesearch= user.getName();
+        String surnamesearch= user.getSurname();
+
+        viewController.showMyDetailsWorker(namesearch,surnamesearch,emailsearch);
+
     }
 }

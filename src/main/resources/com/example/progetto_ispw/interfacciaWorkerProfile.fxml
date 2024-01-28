@@ -128,6 +128,5 @@
             <Image url="@icon/accept.png" />
          </image>
       </ImageView>
-      <TextArea fx:id="notificationTextArea" layoutX="479.0" layoutY="138.0" prefHeight="528.0" prefWidth="456.0" />
    </children>
 </Pane>

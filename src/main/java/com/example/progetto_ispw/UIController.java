@@ -197,20 +197,6 @@ public void insertInfoUser(String namesearch, String surnamesearch,String emails
         this.stage.setScene(new Scene(root1));
     }
 
-   /* public void showSearchDinamica(SearchDinamicaBean bean) throws IOException{//mostra la schermata di search
-    //facciamo così perchè ci serve sapere il file fxml a quale controller è associato, per far riferire tuuti allo stesso controller (controller scritto nella prima riga del file fxml)
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("interfacciaSearch Dinamica.fxml"));
-        Parent root1 = fxmlLoader.load();
-        root1.getStylesheets().add(Objects.requireNonNull(getClass().getResource("search.css")).toExternalForm());
-
-        this.fadeAnimation(root1, this.stage.getScene().getRoot());
-        this.stage.setScene(new Scene(root1));
-
-        SearchDinamicaView sdv = fxmlLoader.getController();
-        sdv.showResult(bean);
-
-
-    }*/
 
     public String getPreviousFxml(){
         return  previousStageStyles[0];
