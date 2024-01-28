@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.fail;
  * Pamela Longo *
  ********************/
 
-public class TextFillException {
+public class TestFillException {
 
         @Test
         void testFill_SuccessfulAppointment() {
