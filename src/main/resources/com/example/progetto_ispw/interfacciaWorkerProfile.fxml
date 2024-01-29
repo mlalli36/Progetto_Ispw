@@ -44,7 +44,7 @@
             <Font name="Bookman Old Style" size="20.0" />
          </font>
       </Button>
-      <Button layoutX="63.0" layoutY="319.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="My details">
+      <Button fx:id="myDetails" layoutX="63.0" layoutY="319.0" mnemonicParsing="false" onAction="#myDetailsMethod" prefHeight="28.0" prefWidth="322.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="My details">
          <font>
             <Font name="Bookman Old Style" size="20.0" />
          </font>
@@ -66,12 +66,12 @@
       </Button>
       <ImageView fitHeight="44.0" fitWidth="44.0" layoutX="73.0" layoutY="653.0">
          <image>
-            <Image url="@icon/back%20door%204.png" />
+            <Image url="@icon/back door 4.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="38.0" fitWidth="44.0" layoutX="74.0" layoutY="319.0">
          <image>
-            <Image url="@icon/personal%20card.png" />
+            <Image url="@icon/personal card.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="38.0" fitWidth="48.0" layoutX="64.0" layoutY="369.0">

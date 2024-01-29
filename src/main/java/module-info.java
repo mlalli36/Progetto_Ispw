@@ -34,8 +34,6 @@ module com.example.progetto_ispw {
     opens com.example.progetto_ispw.workerprofile to javafx.fxml;
     exports com.example.progetto_ispw.fillform;
     opens com.example.progetto_ispw.fillform to javafx.fxml;
-    exports com.example.progetto_ispw.notificadacliente;
-    opens com.example.progetto_ispw.notificadacliente to javafx.fxml;
     exports com.example.progetto_ispw.notifications;
     opens com.example.progetto_ispw.notifications to javafx.fxml;
     exports com.example.progetto_ispw.bookedServicesUser;
@@ -44,4 +42,5 @@ module com.example.progetto_ispw {
     opens com.example.progetto_ispw.bookedServicesWorker to javafx.fxml;
     exports com.example.progetto_ispw.acceptAppointment;
     opens com.example.progetto_ispw.acceptAppointment to javafx.fxml;
+    exports com.example.progetto_ispw.fillform.exception;
 }

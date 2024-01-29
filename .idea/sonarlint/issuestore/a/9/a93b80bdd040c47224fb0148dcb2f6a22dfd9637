@@ -1,4 +1,4 @@
 
-{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¾æÔ¸þÿÿÿÿ8É˜èƒ‘1
-h
-java:S1128"FRemove this unused import 'com.example.progetto_ispw.user.UserEntity'.(÷áÄ‹ÿÿÿÿÿ8ï•µ…‘1
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¾æÔ¸þÿÿÿÿ
+a
+java:S1128"FRemove this unused import 'com.example.progetto_ispw.user.UserEntity'.(÷áÄ‹ÿÿÿÿÿ

@@ -107,6 +107,7 @@ public class FillFormView {
         UIController viewController = UIController.getUIControllerInstance();//è singletone
 
         viewController.showHome();    }
+
     FillFormBean bean= new FillFormBean();
 
 

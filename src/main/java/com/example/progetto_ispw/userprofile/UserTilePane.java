@@ -35,16 +35,16 @@ public class UserTilePane {
         AnchorPane.setTopAnchor(textLabel2, 40.0);
 
 
-        Label textLabel3= new Label("EMAIL CLIENT: "+ email_client);
+        Label textLabel3= new Label("CLIENT EMAIL: "+ email_client);
         AnchorPane.setLeftAnchor(textLabel3, 10.0);
         AnchorPane.setTopAnchor(textLabel3, 70.0);
 
 
-        Label textLabel4 =new Label("DESCRIPTION CLIENT: "+ description_work);
+        Label textLabel4 =new Label("CLIENT DESCRIPTION: "+ description_work);
         AnchorPane.setLeftAnchor(textLabel4, 10.0);
         AnchorPane.setTopAnchor(textLabel4, 100.0);
 
-        Label textLabel5 =new Label("PHONE CLIENT: "+ phone_client);
+        Label textLabel5 =new Label("CLIENT PHONE: "+ phone_client);
         AnchorPane.setLeftAnchor(textLabel5, 10.0);
         AnchorPane.setTopAnchor(textLabel5, 130.0);
 
@@ -56,7 +56,7 @@ public class UserTilePane {
         AnchorPane.setLeftAnchor(textLabel7, 10.0);
         AnchorPane.setTopAnchor(textLabel7, 190.0);
 
-        Label textLabel8= new Label("EMAIL WORKER: "+ email_worker);
+        Label textLabel8= new Label("WORKER EMAIL: "+ email_worker);
         AnchorPane.setLeftAnchor(textLabel8, 10.0);
         AnchorPane.setTopAnchor(textLabel8, 220.0);
 

@@ -15,9 +15,16 @@ public class SlotHoursEntity {
     private String dateCalendar;
     //prova appuntamento
     private String appointment;
+    private SlotHours slotHours;
 
     private static SlotHoursEntity singleInstance = null;
+    public SlotHours getSlotHours(){
+        return slotHours;
+    }
 
+    public void setSlotHours(SlotHours slotHours) {
+        this.slotHours = slotHours;
+    }
     public void setAppointment(String appointment){this.appointment=appointment;}
     public void setEmail(String email) {
         this.email= email;

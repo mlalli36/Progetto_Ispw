@@ -48,6 +48,8 @@ public class BookedServicesWorkerView {
     public Text noAppointmentText;
     @FXML
     public Button acceptButton;
+    @FXML
+    public Button myDetails;
     private BookedServicesWorkerBean bean = new BookedServicesWorkerBean();
     private  BookedServicesWorkerController controller = new BookedServicesWorkerController();
     private UserEntity user = UserEntity.getInstance();
@@ -204,5 +206,19 @@ public class BookedServicesWorkerView {
         String surnamesearch= user.getSurname();
 
         viewController.showAccept(namesearch,surnamesearch,emailsearch);
+    }
+
+    public void myDetailsMethod(ActionEvent actionEvent) throws IOException, UserNotFoundException {
+        UIController viewController= UIController.getUIControllerInstance();
+
+        String emailsearch= user.getEmail();
+
+        bean.setEmail(user.getEmail());
+
+        controller.searchInfo(bean);
+        String namesearch= user.getName();
+        String surnamesearch= user.getSurname();
+
+        viewController.showMyDetailsWorker(namesearch,surnamesearch,emailsearch);
     }
 }

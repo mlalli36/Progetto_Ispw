@@ -31,6 +31,9 @@ public class SaveHoursController {
 
         // Se lo slot non esiste o le date non corrispondono, aggiungere lo slot al database
         dao.addSlots(bean.getemail(), bean.getSlot1(), bean.getSlot2(), bean.getSlot3(), bean.getSlot4(), bean.getSlot5(), bean.getDateCalendar());
+        SlotHoursEntity slotHoursEntity= SlotHoursEntity.getInstance();
+        SlotHours slotHours=slotHoursEntity.getSlotHours();
+        slotHours.setState(true);
     }
 
     public void searchInfo(SaveHoursBean bean) throws UserNotFoundException {

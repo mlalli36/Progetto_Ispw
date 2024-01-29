@@ -1,20 +1,20 @@
 
 ‚
-java:S1128"`Remove this unused import 'com.example.progetto_ispw.bookedServicesUser.BookedServicesUserBean'.(¸şš°şÿÿÿÿ8•€š¨¥1
+java:S1128"`Remove this unused import 'com.example.progetto_ispw.bookedServicesUser.BookedServicesUserBean'.(¸şš°şÿÿÿÿ8Ù­ì‹£1
 c
-java:S1128"FRemove this unused import 'com.example.progetto_ispw.login.LoginBean'.(‡–›Ï8–€š¨¥1
+java:S1128"FRemove this unused import 'com.example.progetto_ispw.login.LoginBean'.(‡–›Ï8Ù­ì‹£1
 h
-java:S1128"FRemove this unused import 'com.example.progetto_ispw.user.UserEntity'.(÷áÄ‹ÿÿÿÿÿ8—€š¨¥1
+java:S1128"FRemove this unused import 'com.example.progetto_ispw.user.UserEntity'.(÷áÄ‹ÿÿÿÿÿ8Ù­ì‹£1
 d
-java:S1128"GRemove this unused import 'com.example.progetto_ispw.worker.WorkerDAO'.(û†°ß8‚‚´é 1
+java:S1128"GRemove this unused import 'com.example.progetto_ispw.worker.WorkerDAO'.(û†°ß8Ù­ì‹£1
 R
 java:S1128
-"0Remove this unused import 'java.io.IOException'.(ªº»Úıÿÿÿÿ8š€š¨¥1
+"0Remove this unused import 'java.io.IOException'.(ªº»Úıÿÿÿÿ8Ù­ì‹£1
 M
-java:S1128"0Remove this unused import 'java.sql.Connection'.(¥ËôÖ8›€š¨¥1
+java:S1128"0Remove this unused import 'java.sql.Connection'.(¥ËôÖ8Ù­ì‹£1
 Y
-java:S1128"7Remove this unused import 'java.sql.PreparedStatement'.(òÄ™ƒÿÿÿÿÿ8€š¨¥1
+java:S1128"7Remove this unused import 'java.sql.PreparedStatement'.(òÄ™ƒÿÿÿÿÿ8Ù­ì‹£1
 O
-java:S1128"2Remove this unused import 'java.sql.SQLException'.(ÛïÆŸ8Ÿ€š¨¥1
+java:S1128"2Remove this unused import 'java.sql.SQLException'.(ÛïÆŸ8Ù­ì‹£1
 w
-java:S1128"URemove this unused import 'com.example.progetto_ispw.utile.DBConnector.getConnector'.(•¡ Šøÿÿÿÿ8 €š¨¥1
+java:S1128"URemove this unused import 'com.example.progetto_ispw.utile.DBConnector.getConnector'.(•¡ Šøÿÿÿÿ8Ù­ì‹£1

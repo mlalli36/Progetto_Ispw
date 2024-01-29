@@ -24,26 +24,26 @@ public class CustomTilePane {
             AnchorPane.setRightAnchor(selectButton, 50.0);
             AnchorPane.setTopAnchor(selectButton, 150.0);
 
-            Label textLabel1= new Label("Name: "+ name);
+            Label textLabel1= new Label("NAME: "+ name);
             AnchorPane.setLeftAnchor(textLabel1, 50.0);
             AnchorPane.setTopAnchor(textLabel1, 25.0);
 
 
-            Label textLabel2= new Label("Lavoro: "+ job);
+            Label textLabel2= new Label("WORK: "+ job);
             AnchorPane.setLeftAnchor(textLabel2, 50.0);
             AnchorPane.setTopAnchor(textLabel2, 55.0);
 
 
-            Label textLabel3= new Label("Località: "+ location);
+            Label textLabel3= new Label("LOCATION: "+ location);
             AnchorPane.setLeftAnchor(textLabel3, 50.0);
             AnchorPane.setTopAnchor(textLabel3, 85.0);
 
 
-            Label textLabel4 =new Label("Descrizione: "+ description);
+            Label textLabel4 =new Label("DESCRIPTION: "+ description);
             AnchorPane.setLeftAnchor(textLabel4, 50.0);
             AnchorPane.setTopAnchor(textLabel4, 115.0);
 
-            Label textLabel5 =new Label("emailWorker: "+ emailWorker);
+            Label textLabel5 =new Label("WORKER EMAIL: "+ emailWorker);
             AnchorPane.setLeftAnchor(textLabel5, 50.0);
             AnchorPane.setTopAnchor(textLabel5, 145.0);
 

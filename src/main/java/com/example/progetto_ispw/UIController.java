@@ -197,20 +197,6 @@ public void insertInfoUser(String namesearch, String surnamesearch,String emails
         this.stage.setScene(new Scene(root1));
     }
 
-    public void showSearchDinamica(SearchDinamicaBean bean) throws IOException{//mostra la schermata di search
-    //facciamo così perchè ci serve sapere il file fxml a quale controller è associato, per far riferire tuuti allo stesso controller (controller scritto nella prima riga del file fxml)
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("interfacciaSearch Dinamica.fxml"));
-        Parent root1 = fxmlLoader.load();
-        root1.getStylesheets().add(Objects.requireNonNull(getClass().getResource("search.css")).toExternalForm());
-
-        this.fadeAnimation(root1, this.stage.getScene().getRoot());
-        this.stage.setScene(new Scene(root1));
-
-        SearchDinamicaView sdv = fxmlLoader.getController();
-        sdv.showResult(bean);
-
-
-    }
 
     public String getPreviousFxml(){
         return  previousStageStyles[0];
@@ -306,7 +292,7 @@ public void insertInfoUser(String namesearch, String surnamesearch,String emails
 // prova per passaggio di email nome e cognome
 
     //prova per non duplicare le righe di quando bisogna aprire il profilo
-    public void showProfile() throws UserNotFoundException, IOException {
+   public void showProfile() throws UserNotFoundException, IOException {
         UserEntity user = UserEntity.getInstance();
         String emailsearch= user.getEmail();
         String type = user.getTipoaccesso();
@@ -333,7 +319,17 @@ public void insertInfoUser(String namesearch, String surnamesearch,String emails
             viewController.insertInfoWorker(namesearch,surnamesearch,emailsearch);
         }
     }
+    public void showMyDetailsWorker(String namesearch, String surnamesearch, String emailsearch) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("interfaccia profileSignUp.fxml"));
+        Parent root1 = fxmlLoader.load();
+        root1.getStylesheets().add(Objects.requireNonNull(getClass().getResource("profileMyDetails.css")).toExternalForm());
+        ProfileSignUpView profileView = fxmlLoader.getController();
+        profileView.preCompile(namesearch, surnamesearch,emailsearch);
 
+        this.fadeAnimation(root1, this.stage.getScene().getRoot());
+
+        this.stage.setScene(new Scene(root1));
+    }
 
 
 
