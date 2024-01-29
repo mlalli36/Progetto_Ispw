@@ -17,8 +17,15 @@ public class LoginBean {
     //Regex di una email valida, da usare per confrontarla con quella dell'utente
     private static final Pattern VALID_EMAIL_ADDRESS_REGEX = Pattern.compile("^[A-Z0-9.%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
 
+    public void setEmail(String email) throws LoginFailedException, UserNotFoundException{
+        Matcher matcher = VALID_EMAIL_ADDRESS_REGEX.matcher(email);
+        if (!matcher.find())
+            throw new LoginFailedException("Invalid email, try again!");
 
-    public void setEmail(String email) throws LoginFailedException, UserNotFoundException {
+        this.email=email;
+
+    }
+    public void setEmail1(String email) throws LoginFailedException, UserNotFoundException {
         Matcher matcher = VALID_EMAIL_ADDRESS_REGEX.matcher(email);
         if (!matcher.find())
             throw new LoginFailedException("Invalid email, try again!");
