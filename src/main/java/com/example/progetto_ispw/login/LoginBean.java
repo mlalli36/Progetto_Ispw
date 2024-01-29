@@ -42,15 +42,13 @@ public class LoginBean {
     }
     private boolean isEmailAlreadyInDatabase(String email) throws UserNotFoundException {
         UserDAO UD = UserDAO.getInstance();
-        String EMAIL = UD.checkEmail(email);
+        String email1 = UD.checkEmail(email);
 
         // Controlla se l'email è presente nel database, controllo messo per evitare quando torna il null
-        if (EMAIL != null && EMAIL.equals(email)) {
+        if (email1 != null && email1.equals(email)) {
             return true;
         }
-      /*  if (EMAIL.equals(email)){
-            return true;
-        }*/
+
         return false;
     }
 
