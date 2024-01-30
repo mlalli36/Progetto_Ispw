@@ -146,7 +146,7 @@ public class AcceptView {
             this.scrollPane.setContent(acceptTilePane.getAcceptTP());
         }else {
             noAppointmentText.setOpacity(1);
-            //noAppointmentText.setText("You have no appointments in your schedule..");
+
         }
     }
 

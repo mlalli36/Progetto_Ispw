@@ -126,12 +126,14 @@ public class WorkerDAO {
             }
 
         } catch (SQLIntegrityConstraintViolationException e) {
-            throw new TimeSlotAlreadyExistsException("Lo slot selezione è già esistente");
+            throw new TimeSlotAlreadyExistsException("Lo slot selezionato è già esistente");
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
     }
+
+
 
     public void addAppointment(String workerEmail,String clientName,String clientSurname,String clientEmail,String dateAppoint, String clientNumber, String workDescr, String timeDate, Integer accept){
         try (Connection con = getConnector()) {

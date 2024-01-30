@@ -2,7 +2,6 @@ package com.example.progetto_ispw.worker;
 
 import com.example.progetto_ispw.login.exception.UserNotFoundException;
 import com.example.progetto_ispw.notifications.NotificationsController;
-import com.example.progetto_ispw.savehoursslots.SlotHoursEntity;
 import com.example.progetto_ispw.state.AppointementState;
 
 

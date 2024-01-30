@@ -5,10 +5,8 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
-/********************
- * Pamela Longo *
- ********************/
 
+//Author: Pamela Longo
 public class TestFillException {
 
         @Test
