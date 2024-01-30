@@ -6,9 +6,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
-    /********************
-     * Pamela Longo *
-     ********************/
+//Author: Pamela Longo
     public class TestGetWorker {
         @Test
         void testGetWorker(){

@@ -43,4 +43,5 @@ module com.example.progetto_ispw {
     exports com.example.progetto_ispw.acceptAppointment;
     opens com.example.progetto_ispw.acceptAppointment to javafx.fxml;
     exports com.example.progetto_ispw.fillform.exception;
+    exports com.example.progetto_ispw.worker;
 }

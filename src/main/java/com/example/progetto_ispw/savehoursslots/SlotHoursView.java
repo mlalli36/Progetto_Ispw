@@ -8,7 +8,6 @@ import com.example.progetto_ispw.savehoursslots.observer.Observer;
 import com.example.progetto_ispw.user.UserEntity;
 import com.example.progetto_ispw.workerprofile.WorkerProfileBean;
 import com.example.progetto_ispw.workerprofile.WorkerProfileController;
-import com.example.progetto_ispw.workerprofile.WorkerProfileView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -82,8 +81,6 @@ public class SlotHoursView implements Observer {
             SaveHoursBean bean = new SaveHoursBean();
             String string = this.emailLabel.getText();
 
-
-          //  DatePicker datePicker = new DatePicker();
             bean.setemail(string);  // controllare questo che non funziona, ma abbiamo aggiunto il passaggio dei dati quindi la dovrebbe poter prendere più facilmente
 
             bean.setSlot1(slot1Text.getText());
@@ -109,7 +106,8 @@ public class SlotHoursView implements Observer {
         catch ( TimeSlotAlreadyExistsException exception){
             errorLabel.setText(exception.getMessage());
             errorLabel.setOpacity(1);
-            exception.printStackTrace(); // o utilizza un logger
+
+
         }
     }
 

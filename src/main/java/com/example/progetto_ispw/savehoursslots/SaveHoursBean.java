@@ -3,6 +3,7 @@ package com.example.progetto_ispw.savehoursslots;
 import com.example.progetto_ispw.savehoursslots.exception.InvalidTimeException;
 import com.example.progetto_ispw.savehoursslots.exception.TimeSlotAlreadyExistsException;
 
+import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -92,4 +93,6 @@ public class SaveHoursBean {
 
     public String getemailsearch() { return emailSearch;
     }
+
+    public String getEmail() {return emailSearch;}
 }

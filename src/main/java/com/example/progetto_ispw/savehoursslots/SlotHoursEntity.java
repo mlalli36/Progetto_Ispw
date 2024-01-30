@@ -64,5 +64,7 @@ public class SlotHoursEntity {
 
     public String getdate(){return  dateCalendar;}
 
+    public String getEmail() { return email;
+    }
 }
 
