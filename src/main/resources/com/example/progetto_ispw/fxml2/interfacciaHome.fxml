@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+ <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+
+<AnchorPane fx:id="anchorPaneHome" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="1219.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.progetto_ispw.secondinterfaceview.Home2View">
+   <children>
+      <Button fx:id="profileButton" layoutX="10.0" layoutY="659.0" mnemonicParsing="false" onAction="#profileMethod" prefHeight="66.0" prefWidth="66.0" style="-fx-background-radius: 50; -fx-background-color: #fb9b64;" textFill="#fb9b64" />
+      <Button layoutX="10.0" layoutY="582.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="66.0" style="-fx-background-radius: 50; -fx-background-color: #fb9b64;" textFill="#fb9b64" />
+      <Button fx:id="homeButton" layoutX="10.0" layoutY="505.0" mnemonicParsing="false" onAction="#homeMethod" prefHeight="66.0" prefWidth="66.0" style="-fx-background-radius: 50; -fx-background-color: #fb9b64;" textFill="#fb9b64" />
+      <Circle fill="#1f93ff02" layoutX="1153.0" layoutY="404.0" radius="46.0" stroke="#fb9b64" strokeType="INSIDE" strokeWidth="2.0" />
+      <ImageView layoutX="1121.0" layoutY="372.0">
+         <image>
+            <Image url="@icon2/photographer.png" />
+         </image>
+      </ImageView>
+      <Circle fill="#1f93ff02" layoutX="1159.0" layoutY="185.0" radius="46.0" stroke="#fb9b64" strokeType="INSIDE" strokeWidth="2.0" />
+      <ImageView layoutX="1127.0" layoutY="153.0">
+         <image>
+            <Image url="@icon2/craftsman (1).png" />
+         </image>
+      </ImageView>
+      <Circle fill="#1f93ff02" layoutX="1162.0" layoutY="659.0" radius="46.0" stroke="#fb9b64" strokeType="INSIDE" strokeWidth="2.0" />
+      <ImageView layoutX="1130.0" layoutY="624.0">
+         <image>
+            <Image url="@icon2/hair-cutting.png" />
+         </image>
+      </ImageView>
+      <ScrollPane hbarPolicy="NEVER" layoutX="227.0" layoutY="103.0" opacity="0.0" prefHeight="648.0" prefWidth="862.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
+        </content>
+      </ScrollPane>
+      <ImageView fitHeight="36.0" fitWidth="42.0" layoutX="22.0" layoutY="519.0">
+         <image>
+            <Image url="@icon2/home.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="22.0" layoutY="595.0">
+         <image>
+            <Image url="@icon2/feedback.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="22.0" layoutY="670.0">
+         <image>
+            <Image url="@icon2/user.png" />
+         </image>
+      </ImageView>
+      <Text fill="#fb9b64" layoutX="1010.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WorkerLink">
+         <font>
+            <Font name="Gill Sans Nova Cond" size="60.0" />
+         </font>
+      </Text>
+      <TextField fx:id="jobWorkerTextField" layoutX="22.0" layoutY="127.0" prefHeight="55.0" prefWidth="194.0" style="-fx-background-radius: 20;" />
+      <TextField fx:id="locationWorkerTextField" layoutX="22.0" layoutY="277.0" prefHeight="55.0" prefWidth="194.0" style="-fx-background-radius: 20;" />
+      <Text layoutX="24.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Work Need:">
+         <font>
+            <Font name="Gill Sans Nova Cond" size="25.0" />
+         </font>
+      </Text>
+      <Text layoutX="24.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Location:">
+         <font>
+
+            <Font name="Gill Sans Nova Cond" size="25.0" />
+         </font>
+      </Text>
+      <Button fx:id="searchButton" layoutX="35.0" layoutY="379.0" mnemonicParsing="false" onAction="#searchMethod" prefHeight="53.0" prefWidth="137.0" style="-fx-background-radius: 20; -fx-background-color: #fb9b64;" text="Search">
+         <font>
+
+            <Text fx:id="errorLabel" fill="#2d6a4f" layoutX="56.0" layoutY="18.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nothing was found with this search data, try again." wrappingWidth="452.13671875">
+
+            <Font name="Gill Sans Nova Cond" size="30.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

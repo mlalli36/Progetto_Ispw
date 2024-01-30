@@ -6,12 +6,12 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
-//Author: Pamela Longo
+    //Author: Pamela Longo
     public class TestGetWorker {
         @Test
         void testGetWorker(){
             /* Vogliamo testare la correttezza dell'output prodotto dal metodo searchMethod() di HomeView,
-             * che ha la funzionalità di restituire la lista dei worker nel luogo e del tipo inseriti dal cliente per la ricerca
+              che ha la funzionalità di restituire la lista dei worker nel luogo e del tipo inseriti dal cliente per la ricerca
              */
             HomeBean bean= new HomeBean();
             bean.setLocationWork("agnone");

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="anchorPaneLogin" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="1219.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.progetto_ispw.secondinterfaceview.Login2View">
+   <children>
+      <Pane layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="1219.0">
+         <children>
+            <Text fill="#fb9b64" layoutX="460.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome page">
+               <font>
+                  <Font name="Gill Sans Nova Cond" size="55.0" />
+               </font>
+            </Text>
+            <Text fill="#fb9b64" layoutX="37.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login">
+               <font>
+                  <Font name="Gill Sans Nova Cond" size="50.0" />
+               </font>
+            </Text>
+            <TextField fx:id="emailTextField" layoutX="37.0" layoutY="228.0" prefHeight="41.0" prefWidth="434.0" style="-fx-background-radius: 20;" />
+            <Text layoutX="37.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-Mail:">
+               <font>
+                  <Font name="Gill Sans Nova Cond" size="23.0" />
+               </font>
+            </Text>
+            <TextField fx:id="passwordTextField" layoutX="668.0" layoutY="228.0" prefHeight="41.0" prefWidth="434.0" style="-fx-background-radius: 20;" />
+            <Text layoutX="669.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:">
+               <font>
+                  <Font name="Gill Sans Nova Cond" size="23.0" />
+               </font>
+            </Text>
+            <Button fx:id="loginButton" layoutX="481.0" layoutY="357.0" mnemonicParsing="false" onAction="#loginMethod" prefHeight="53.0" prefWidth="137.0" style="-fx-background-color: #fb9b64; -fx-background-radius: 20;" text="Login">
+               <font>
+                  <Font name="Gill Sans Nova Cond" size="30.0" />
+               </font>
+            </Button>
+            <Text layoutX="487.0" layoutY="446.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New User?">
+               <font>
+                  <Font name="Gill Sans Nova Cond" size="20.0" />
+               </font>
+            </Text>
+            <Text fill="#fc1414" layoutX="556.0" layoutY="447.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Account">
+               <font>
+                  <Font name="Gill Sans Nova Cond" size="20.0" />
+               </font>
+            </Text>
+            <Button fx:id="createAccountButton" mnemonicParsing="false" onAction="#showSignUp" opacity="0.0" prefHeight="31.0" prefWidth="125.0" text="Button" />
+            <Text fill="#fb9b64" layoutX="966.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WorkerLink">
+               <font>
+                  <Font name="Gill Sans Nova Cond" size="60.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane layoutY="298.0" opacity="0.0" prefHeight="451.0" prefWidth="1219.0">
+         <children>
+            <Text fill="#fc0101" layoutX="39.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="We couldn't find your email in our system.">
+               <font>
+                  <Font name="Gill Sans Nova Cond" size="35.0" />
+               </font>
+            </Text>
+            <Text layoutX="43.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="It looks like we couldn't find your email in our system.                                            Please check the spell of your email and try again.                                                       If you are not registered, please press the &quot;Go To Sign Up&quot; button below to open the registration page." wrappingWidth="387.66796875">
+               <font>
+                  <Font name="Gill Sans Nova Cond" size="35.0" />
+               </font>
+            </Text>
+            <Button fx:id="back" layoutX="806.0" layoutY="180.0" mnemonicParsing="false" onAction="#backMethod" prefHeight="53.0" prefWidth="163.0" style="-fx-background-color: #fb9b64; -fx-background-radius: 20;" text="Back">
+               <font>
+                  <Font name="Gill Sans Nova Cond" size="30.0" />
+               </font>
+            </Button>
+            <Button fx:id="goToSignUp" layoutX="806.0" layoutY="67.0" mnemonicParsing="false" onAction="#precompiledSignUp" prefHeight="53.0" prefWidth="163.0" style="-fx-background-color: #fb9b64; -fx-background-radius: 20;" text="Go To Sign Up">
+               <font>
+                  <Font name="Gill Sans Nova Cond" size="30.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

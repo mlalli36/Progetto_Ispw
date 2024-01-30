@@ -11,8 +11,8 @@ public class TestFillException {
 
         @Test
         void testFill_SuccessfulAppointment() {
-            /* In questo test case vogliamo verificare che sia corretta la gestione dell'eccezione in cui venga trovato un appuntamento già inserito per la data scelta dall'utente.
-             */
+            // In questo test case vogliamo verificare che sia corretta la gestione dell'eccezione in cui venga trovato un appuntamento già inserito per la data scelta dall'utente.
+
             FillFormController controller = new FillFormController();
             FillFormBean bean = new FillFormBean();
 
