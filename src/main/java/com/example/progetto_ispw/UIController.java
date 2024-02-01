@@ -10,8 +10,6 @@ import com.example.progetto_ispw.profilesignup.ProfileSignUpView;
 import com.example.progetto_ispw.savehoursslots.SlotHoursView;
 import com.example.progetto_ispw.searchdinamica.SearchDinamicaBean;
 import com.example.progetto_ispw.searchdinamica.SearchDinamicaController;
-import com.example.progetto_ispw.secondinterfaceview.FillForm2View;
-import com.example.progetto_ispw.secondinterfaceview.SignUp2View;
 import com.example.progetto_ispw.signup.SignUpView;
 import com.example.progetto_ispw.user.UserEntity;
 import com.example.progetto_ispw.userprofile.UserProfileView;
@@ -84,7 +82,7 @@ public class UIController {
     }
 
     public void showForm(String emailWorker, String emailC, String nameC, String surnameC) {//mostra il form
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("interfacciaForm2.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("interfacciaForm.fxml"));
         Parent root1 = null;
         try {
             root1 = fxmlLoader.load();
@@ -95,9 +93,7 @@ public class UIController {
         FillFormView ffV = fxmlLoader.getController();
         ffV.preCompileInfo(emailWorker,emailC,nameC,surnameC);
 
-        //seconda interfaccia
-        FillForm2View ffv2= fxmlLoader.getController();
-        ffv2.preCompileInfo(emailWorker,emailC,nameC,surnameC);
+
 
 
         this.fadeAnimation(root1, this.stage.getScene().getRoot());
@@ -207,13 +203,6 @@ public void insertInfoUser(String namesearch, String surnamesearch,String emails
     }
 
 
-    public String getPreviousFxml(){
-        return  previousStageStyles[0];
-    }
-
-    public String getPreviousCss(){
-        return  previousStageStyles[1];
-    }
 
     private void fadeAnimation(Parent screenToFadeIn, Parent screenToFadeOut){//Metodo privato perchè deve essere utilizzato
         this.fadeOut(screenToFadeOut);                                        // solo in loadStage
@@ -244,9 +233,6 @@ public void insertInfoUser(String namesearch, String surnamesearch,String emails
         SignUpView signUpView = fxmlLoader.getController();
         signUpView.preCompile(email, password);
 
-        SignUp2View signUpView2 = fxmlLoader.getController();
-        signUpView2.preCompile(email, password);
-
         this.fadeAnimation(root1, this.stage.getScene().getRoot());
 
         this.stage.setScene(new Scene(root1));
@@ -266,13 +252,6 @@ public void insertInfoUser(String namesearch, String surnamesearch,String emails
         this.stage.setScene(new Scene(root1));
     }
 
-    public void setPreviousStageStyles(String[] previousStageStyles) {
-        this.previousStageStyles = previousStageStyles;
-    }
-
-
-    public void showSettings() { // da implementare
-    }
 
     public void showProfileSignUp()throws IOException {
         this.loadStage("interfaccia profileSignUp.fxml","signup.css");

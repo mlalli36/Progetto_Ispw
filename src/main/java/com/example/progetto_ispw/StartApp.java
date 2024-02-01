@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.Objects;
 
 public class StartApp extends Application {
-    private boolean useLoginInterface = false; // Imposta su true per avviare l'interfaccia di login, false per avviare un'altra interfaccia
+    private boolean useLoginInterface = true; // Imposta su true per avviare l'interfaccia di login, false per avviare un'altra interfaccia
 
     @Override
     public void start(Stage stage) throws IOException {

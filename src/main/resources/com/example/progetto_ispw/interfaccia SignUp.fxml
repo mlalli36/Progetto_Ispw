@@ -81,6 +81,11 @@
                         <Font name="Bookman Old Style" size="15.0" />
                      </font>
                   </Text>
+                  <Button fx:id="gotoLoginButton" layoutX="484.0" layoutY="601.0" mnemonicParsing="false" onAction="#goToLogIn" opacity="0.0" prefHeight="18.0" prefWidth="90.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="Login">
+                     <font>
+                        <Font name="Bookman Old Style" size="22.0" />
+                     </font>
+                  </Button>
                </children>
             </Pane>
          </children>

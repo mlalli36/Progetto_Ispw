@@ -38,6 +38,8 @@ public class SignUpView {
     public CheckBox checkWorker;
     @FXML
     public Label statusLabel;
+    @FXML
+    public Button gotoLoginButton;
 
 
     public void goToLogIn() throws IOException {
@@ -77,6 +79,7 @@ public class SignUpView {
             statusLabel.setText("The email is not valid");
         } catch (UserAlreadyExistsException e) {
             statusLabel.setText("User already registered. Go to Log In!");
+            gotoLoginButton.setOpacity(1);
         } catch (UserNotFoundException e) {
             throw new RuntimeException(e);
         } finally {

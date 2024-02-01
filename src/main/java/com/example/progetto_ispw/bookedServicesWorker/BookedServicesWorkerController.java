@@ -19,7 +19,7 @@ public class BookedServicesWorkerController {
     private AppointmentResultEntity appointmentResultSet = new AppointmentResultEntity();
 
     public void searchInfo(BookedServicesWorkerBean bean) throws UserNotFoundException {
-        UserDAO userDAO= UserDAO.getInstance();
+        UserDAO userDAO = UserDAO.getInstance();
         userDAO.getUserInfo(bean.getemailsearch());
     }
 
@@ -57,8 +57,9 @@ public class BookedServicesWorkerController {
             }
 
 
-        }
-    }
+    }}
+
+
 
     public void deleteAppoW(String email, String date, String time) {
         //uso la query nello UserDAO per non riscriverla identica nel workerDAO, visto che questa operazione, il worker la riprende dal client

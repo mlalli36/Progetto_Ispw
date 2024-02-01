@@ -1,11 +1,0 @@
-
-v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(š€¤8ç ÀŠ£1
-M
-java:S1128
-"0Remove this unused import 'java.sql.Connection'.(¥ËôÖ8ó ÀŠ£1
-Y
-java:S1128"7Remove this unused import 'java.sql.PreparedStatement'.(òÄ™ƒÿÿÿÿÿ8ó ÀŠ£1
-O
-java:S1128"2Remove this unused import 'java.sql.SQLException'.(ÛïÆŸ8ó ÀŠ£1
-w
-java:S1128"URemove this unused import 'com.example.progetto_ispw.utile.DBConnector.getConnector'.(•¡ Šøÿÿÿÿ8ó ÀŠ£1
