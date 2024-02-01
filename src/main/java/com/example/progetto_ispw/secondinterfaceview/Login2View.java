@@ -56,7 +56,7 @@ public class Login2View {
             controller.loginUser(bean);
             UIController viewController = UIController.getUIControllerInstance();//è singletone
 
-            viewController.showHome();
+            viewController.showLogin2();
 
         } catch (IllegalArgumentException | LoginFailedException exception) {
             errorLabel.setText(exception.getMessage());
@@ -67,7 +67,7 @@ public class Login2View {
         }
 
     }
-    public void showSignUp() throws IOException {
+   public void showSignUp() throws IOException {
         UIController controller = UIController.getUIControllerInstance();
         controller.showSignUp();
     }
@@ -81,7 +81,7 @@ public class Login2View {
 
     public void backMethod() throws IOException {
         UIController controller = UIController.getUIControllerInstance();
-        controller.showLogin();
+        controller.showLogin2();
     }
 
 

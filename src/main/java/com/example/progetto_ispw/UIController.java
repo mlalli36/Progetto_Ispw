@@ -54,6 +54,11 @@ public class UIController {
     public void showLogin() throws IOException {//mostra la schermata login, la invoco dopo la registrazione
         this.loadStage("login.fxml","login.css");
     }
+    //AGGIUNGO DA QUI
+    public void showLogin2() throws IOException {//mostra la schermata login, la invoco dopo la registrazione
+        this.loadStage("login2.fxml","login.css");
+    }
+    //FINO A QUI
     public void showSignUp() throws IOException {//mostra la schermata login, la invoco dopo la registrazione
         this.loadStage("interfaccia SignUp.fxml","signup.css");
     }
