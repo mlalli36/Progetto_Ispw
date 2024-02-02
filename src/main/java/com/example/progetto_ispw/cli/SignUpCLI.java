@@ -55,7 +55,7 @@ public class SignUpCLI {
             System.out.println("Sign up successful!");
             if (isWorker) {
                 System.out.println("You are registered as a worker.");
-                cliController.showNotifications(firstName,lastName,email);
+                cliController.showMyDetailsWorker(firstName,lastName,email);
 
             } else {
                 System.out.println("You are registered as a client.");

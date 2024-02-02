@@ -18,9 +18,9 @@ public class CLIController {
             istance = new CLIController();
         return istance;
     }
-    public void loadHomeScreen(){
+    public void loadHomeScreen() throws UserNotFoundException, IOException {
         HomeScreenCLI homeScreenCLI = HomeScreenCLI.getInstance();
-        homeScreenCLI.homeMenu();
+        homeScreenCLI.showHome();
 
 
     }
@@ -38,17 +38,17 @@ public class CLIController {
         UserProfileCLI userProfileCLI= new UserProfileCLI();
         userProfileCLI.userProfile();
     }
-    public void insertInfoWorker(String namesearch, String surnamesearch, String emailsearch) {
+    public void insertInfoWorker(String namesearch, String surnamesearch, String emailsearch) throws UserNotFoundException, IOException {
        /* System.out.println("Worker Profile:");
         System.out.println("Name: " + namesearch);
         System.out.println("Surname: " + surnamesearch);
         System.out.println("Email: " + emailsearch);*/
         WorkerProfileCLI workerProfileCLI = new WorkerProfileCLI();
-        workerProfileCLI.workerProfile();
+        workerProfileCLI.showWorkerProfile();
     }
-    public void showForm(String emailWorker, String emailC, String nameC, String surnameC){
+    public void showForm(String emailWorker, String emailC, String nameC, String surnameC) throws UserNotFoundException, IOException {
         FormCLI formCLI= new FormCLI();
-        formCLI.fillForm(emailWorker,emailC,nameC,surnameC);
+        formCLI.showFillForm(emailWorker,emailC,nameC,surnameC);
     }
 
     public void showProfile()throws UserNotFoundException, IOException {
@@ -94,13 +94,18 @@ public class CLIController {
         slotHoursCLI.slotHoursMethod(emailsearch);
     }
 
-    public void showNotifications(String namesearch, String surnamesearch, String emailsearch) {
+    public void showNotifications(String namesearch, String surnamesearch, String emailsearch)  {
         NotificationCLI notificationCLI= new NotificationCLI();
         notificationCLI.notificationMethod();
     }
 
     public void showMyDetailsWorker(String namesearch, String surnamesearch, String emailsearch) throws IOException {
         MyDetailsCLI myDetailsCLI= new MyDetailsCLI();
-        myDetailsCLI.myDetailsMethod();
+        myDetailsCLI.myDetailsMethod(namesearch,surnamesearch,emailsearch);
+    }
+
+    public void showAppointmentAccepted() {
+        AppointmentAcceptedCLI appointmentAccepted= new AppointmentAcceptedCLI();
+        appointmentAccepted.appointmentAcceptedMethod();
     }
 }

@@ -11,35 +11,54 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class MyDetailsCLI {
-    public void myDetailsMethod() throws IOException {
+    public void myDetailsMethod(String namesearch, String surnamesearch, String emailsearch) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         ProfileSignUpBean bean = new ProfileSignUpBean();
 
         try {
-            System.out.print("Enter email: ");
-            String email = reader.readLine();
+            System.out.println("Email: "+emailsearch);
+            System.out.println("Name: "+namesearch);
+            System.out.println("Surname: "+surnamesearch);
 
-            System.out.print("Enter name: ");
-            String name = reader.readLine();
-
-            System.out.print("Enter surname: ");
-            String surname = reader.readLine();
-
-            System.out.print("Enter description: ");
+            System.out.print("Enter description (or type 'q' to quit): ");
             String description = reader.readLine();
 
-            System.out.print("Enter location: ");
+            // Check if user wants to quit
+            if (description.equalsIgnoreCase("q")) {
+                System.out.println("Operation canceled by user.");
+                return; // Exit the method
+            }
+
+            System.out.print("Enter location (or type 'q' to quit): ");
             String location = reader.readLine();
 
-            System.out.print("Enter address: ");
+            // Check if user wants to quit
+            if (location.equalsIgnoreCase("q")) {
+                System.out.println("Operation canceled by user.");
+                return; // Exit the method
+            }
+
+            System.out.print("Enter address (or type 'q' to quit): ");
             String address = reader.readLine();
 
-            System.out.print("Enter profession: ");
+            // Check if user wants to quit
+            if (address.equalsIgnoreCase("q")) {
+                System.out.println("Operation canceled by user.");
+                return; // Exit the method
+            }
+
+            System.out.print("Enter profession (or type 'q' to quit): ");
             String profession = reader.readLine();
 
-            bean.setEmail(email);
-            bean.setName(name);
-            bean.setSurname(surname);
+            // Check if user wants to quit
+            if (profession.equalsIgnoreCase("q")) {
+                System.out.println("Operation canceled by user.");
+                return; // Exit the method
+            }
+
+            bean.setEmail(emailsearch);
+            bean.setName(namesearch);
+            bean.setSurname(surnamesearch);
             bean.setDescription(description);
             bean.setLocation(location);
             bean.setAddress(address);

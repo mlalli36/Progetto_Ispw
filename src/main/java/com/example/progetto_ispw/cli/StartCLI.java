@@ -5,12 +5,13 @@ import com.example.progetto_ispw.login.LoginController;
 import com.example.progetto_ispw.login.exception.LoginFailedException;
 import com.example.progetto_ispw.login.exception.UserNotFoundException;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class StartCLI {
     private static boolean isLogged = false;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws UserNotFoundException, IOException {
         while (!isLogged) {
             logUser();
         }

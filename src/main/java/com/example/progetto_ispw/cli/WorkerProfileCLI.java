@@ -19,16 +19,24 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class WorkerProfileCLI {
+    public void showWorkerProfile() throws UserNotFoundException, IOException {
+        while (this.workerProfile() > 0) {
+            //interagisci con l'utente fino a ottenere un input corretto o fino a tornare alla home
+        }
+        CLIController controller = CLIController.getIstance();
+        controller.showProfile(); //ritorna alla home screen
+    }
     private static final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-    public void workerProfile() {
+    private int workerProfile() {
             System.out.println("Welcome to worker Profile!");
             System.out.println("1. Booked service");
             System.out.println("2. change Of Working Hours");
             System.out.println("3. Notifications");
             System.out.println("4. my Details ");
-            System.out.println("5. Home ");
-            System.out.println("6. Profile ");
-            System.out.println("7. Exit ");
+            System.out.println("5. Appointment accepted ");
+            System.out.println("6. Home ");
+            System.out.println("7. Profile ");
+            System.out.println("8. Exit ");
 
 
             try {
@@ -48,14 +56,18 @@ public class WorkerProfileCLI {
                         myDetailsMethod();
                         break;
                     case 5:
-                        homeMethod();
+                        appointmentAcceptedMethod();
                         break;
                     case 6:
-                        profileMethod();
+                        homeMethod();
                         break;
                     case 7:
+                        profileMethod();
+                        break;
+                    case 8:
                         System.out.println("Exiting...");
                         System.exit(0);
+                        return -1;
                     default:
                         System.out.println("Invalid choice. Please enter a number between 1 and 4.");
                 }
@@ -64,15 +76,20 @@ public class WorkerProfileCLI {
             } catch (UserNotFoundException e) {
                 throw new RuntimeException(e);
             }
-
+            return 0;
         }
+
+    private void appointmentAcceptedMethod() {
+        CLIController CLIcontroller= CLIController.getIstance();
+        CLIcontroller.showAppointmentAccepted();
+    }
 
     private void profileMethod() throws UserNotFoundException, IOException {
         CLIController CLIcontroller= CLIController.getIstance();
         CLIcontroller.showProfile();
     }
 
-    private void homeMethod() {
+    private void homeMethod() throws UserNotFoundException, IOException {
         CLIController viewController = CLIController.getIstance();
         viewController.loadHomeScreen();
     }

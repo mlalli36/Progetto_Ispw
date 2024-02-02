@@ -15,10 +15,17 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class FormCLI {
+    public void showFillForm(String emailWorker, String emailC, String nameC, String surnameC) throws UserNotFoundException, IOException {
+        while (this.fillForm(emailWorker,emailC,nameC,surnameC) > 0) {
+            //interagisci con l'utente fino a ottenere un input corretto o fino a tornare alla home
+        }
+        CLIController controller = CLIController.getIstance();
+        controller.loadHomeScreen(); //ritorna alla home screen
+    }
     private static final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
     private static final UserEntity user = UserEntity.getInstance();
     private static final CLIController controllerCLI = CLIController.getIstance();
-    public void fillForm(String emailWorker, String emailC, String nameC, String surnameC) {
+    private int fillForm(String emailWorker, String emailC, String nameC, String surnameC) {
         System.out.println("Welcome to the fill Form!");
         System.out.println("1. Profile");
         System.out.println("2. Home");
@@ -40,18 +47,21 @@ public class FormCLI {
                 case 4:
                     System.out.println("Exiting...");
                     System.exit(0);
+                    return -1;
                 default:
                     System.out.println("Invalid choice. Please enter a number between 1 and 4.");
             }
         } catch (IOException | NumberFormatException e) {
             System.err.println("Error: " + e.getMessage());
+        } catch (UserNotFoundException e) {
+            throw new RuntimeException(e);
         }
-
+        return 0;
     }
 
 
 
-    private void homeMethod() {
+    private void homeMethod() throws UserNotFoundException, IOException {
         System.out.println("Returning to Home...");
         controllerCLI.loadHomeScreen();
     }
@@ -81,6 +91,8 @@ public class FormCLI {
             }
         } catch (UserNotFoundException e) {
             System.err.println("Error: " + e.getMessage());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
     private void sendForm(String emailWorker, String emailC, String nameC, String surnameC) {
@@ -94,20 +106,39 @@ public class FormCLI {
             System.out.println("Name: " + userName);
             System.out.println("Surname: " + userSurname);
 
-            System.out.println("Enter your description:");
+            System.out.println("Enter your description, or press 'q' to quit:");
             String userDescription = reader.readLine();
 
-            System.out.println("Enter your phone number:");
+            // Verifica se l'utente vuole uscire
+            if (userDescription.equals("q")) {
+                System.out.println("Exiting form submission...");
+                return; // Esci dalla funzione
+            }
+
+            System.out.println("Enter your phone number, or press 'q' to quit:");
             String userPhone = reader.readLine();
 
+            // Verifica se l'utente vuole uscire
+            if (userPhone.equals("q")) {
+                System.out.println("Exiting form submission...");
+                return; // Esci dalla funzione
+            }
+
             // Leggi la data inserita dall'utente
-            System.out.println("Enter the date (YYYY-MM-DD):");
+            System.out.println("Enter the date (YYYY-MM-DD), or press 'q' to quit:");
             String dateString = reader.readLine();
+
+            // Verifica se l'utente vuole uscire
+            if (dateString.equals("q")) {
+                System.out.println("Exiting form submission...");
+                return; // Esci dalla funzione
+            }
 
             // Gestisci il caso in cui la data sia vuota
             if (dateString.isEmpty()) {
                 throw new EmptyDateFieldException("");
             }
+
             // Simula la chiamata al controller per ottenere gli slot
             FillFormController controller = new FillFormController();
             FillFormBean bean = new FillFormBean();
@@ -141,7 +172,15 @@ public class FormCLI {
             int selectedSlotIndex;
             do {
                 System.out.println("Select the available time slot (1-5):");
-                selectedSlotIndex = Integer.parseInt(reader.readLine()) - 1;
+                String input = reader.readLine();
+
+                // Verifica se l'utente vuole uscire
+                if (input.equals("q")) {
+                    System.out.println("Exiting form submission...");
+                    return; // Esci dalla funzione
+                }
+
+                selectedSlotIndex = Integer.parseInt(input) - 1;
             } while (selectedSlotIndex < 0 || selectedSlotIndex > 4);
 
             // Ottieni lo slot selezionato
@@ -169,9 +208,6 @@ public class FormCLI {
             bean.setTime(appuntamento);
             // Simula la creazione del bean e l'invio al controller
 
-
-
-
             controller.fill(bean);
 
             // Simula la visualizzazione della schermata principale dopo l'invio del modulo
@@ -185,20 +221,20 @@ public class FormCLI {
             System.err.println("Invalid slot selection. Please enter a number between 1 and 5.");
         } catch (EmptyDateFieldException e) {
             System.err.println("Date field cannot be empty.");
-        }catch (TimeAlreadySelectedException e) {
+        } catch (TimeAlreadySelectedException e) {
             System.err.println("The selected time is no longer valid.");
-        }catch (EmptyNameFieldException e) {
+        } catch (EmptyNameFieldException e) {
             System.err.println("WARNING: NAME FIELD IS EMPTY!");
-        }catch (EmptySurameFieldException e) {
+        } catch (EmptySurameFieldException e) {
             System.err.println("WARNING: SURNAME FIELD IS EMPTY!");
-        }catch (EmptyDescriptionFieldException e) {
+        } catch (EmptyDescriptionFieldException e) {
             System.err.println("WARNING: DESCRIPTION FIELD IS EMPTY!");
-        }catch (NotValidNumberPhoneException e) {
+        } catch (NotValidNumberPhoneException e) {
             System.err.println("WARNING: PHONE FIELD ISN'T VALID!");
-        }catch (InvalidEmailFormatException e) {
+        } catch (InvalidEmailFormatException e) {
             System.err.println("WARNING: INVALID EMAIL FORMAT!");
+        } catch (UserNotFoundException e) {
+            throw new RuntimeException(e);
         }
 
-    }
-
-}
+}}

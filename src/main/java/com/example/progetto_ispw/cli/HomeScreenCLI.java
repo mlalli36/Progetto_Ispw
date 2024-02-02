@@ -14,6 +14,13 @@ import java.io.InputStreamReader;
 import java.util.List;
 
 public class HomeScreenCLI {
+    public void showHome() throws UserNotFoundException, IOException {
+        while (this.homeMenu() > 0) {
+            //interagisci con l'utente fino a ottenere un input corretto o fino a tornare alla home
+        }
+        CLIController controller = CLIController.getIstance();
+        controller.loadHomeScreen(); //ritorna alla home screen
+    }
     private static HomeScreenCLI instance = null;
 
     private HomeScreenCLI(){}
@@ -27,7 +34,7 @@ public class HomeScreenCLI {
     private static final CLIController controller = CLIController.getIstance();
     private static final UserEntity user = UserEntity.getInstance();
 
-    public static void homeMenu() {
+   private int homeMenu() {
         System.out.println("Welcome to the Home Menu!");
         System.out.println("1. Profile");
         System.out.println("2. Home");
@@ -50,12 +57,16 @@ public class HomeScreenCLI {
                 case 4:
                     System.out.println("Exiting...");
                     System.exit(0);
+                    return -1;
                 default:
                     System.out.println("Invalid choice. Please enter a number between 1 and 4.");
             }
         } catch (IOException | NumberFormatException e) {
             System.err.println("Error: " + e.getMessage());
+        } catch (UserNotFoundException e) {
+            throw new RuntimeException(e);
         }
+       return 0;
     }
 
     private static void profileMethod() {
@@ -81,22 +92,34 @@ public class HomeScreenCLI {
             }
         } catch (UserNotFoundException e) {
             System.err.println("Error: " + e.getMessage());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 
 
 
-    private static void homeMethod() {
+   private static void homeMethod() throws UserNotFoundException, IOException {
         System.out.println("Returning to Home...");
         controller.loadHomeScreen();
     }
 
     public static void searchMethod() {
         try {
-            System.out.println("Enter job title:");
+            System.out.println("Enter job title, or press 'q' to quit:");
             String job = reader.readLine().toLowerCase();
-            System.out.println("Enter location:");
+
+            if (job.equals("q")) {
+                System.out.println("Exiting search...");
+                return; // Esci dalla funzione di ricerca
+            }
+
+            System.out.println("Enter location, or press 'q' to quit:");
             String location = reader.readLine().toLowerCase();
+            if (location.equals("q")) {
+                System.out.println("Exiting search...");
+                return; // Esci dalla funzione di ricerca
+            }
 
             HomeBean bean = new HomeBean();
             bean.setJobWork(job);
@@ -123,18 +146,30 @@ public class HomeScreenCLI {
                     index++;
                 }
                 // Richiedi all'utente di selezionare un numero
-                System.out.println("Enter the number associated with the worker you want to contact:");
-                int selectedNumber = Integer.parseInt(reader.readLine());
+                System.out.println("Enter the number associated with the worker you want to contact, or press 'q' to quit:");
+                String input = reader.readLine();
 
-                // Verifica se il numero selezionato è valido
-                if (selectedNumber >= 1 && selectedNumber <= elements.size()) {
-                    // Ottieni l'elemento selezionato
-                    ResultElement selectedElement = elements.get(selectedNumber - 1);
+                if (input.equals("q")) {
+                    System.out.println("Exiting search...");
+                    return; // Esci dalla funzione di ricerca
+                }
 
-                    // Visualizza i dettagli del lavoratore selezionato
-                    showIntForm(selectedElement.getWorkerEmail());
-                } else {
-                    System.out.println("Invalid number. Please enter a number between 1 and " + elements.size());
+                int selectedNumber;
+                try {
+                    selectedNumber = Integer.parseInt(input);
+
+                    // Verifica se il numero selezionato è valido
+                    if (selectedNumber >= 1 && selectedNumber <= elements.size()) {
+                        // Ottieni l'elemento selezionato
+                        ResultElement selectedElement = elements.get(selectedNumber - 1);
+
+                        // Visualizza i dettagli del lavoratore selezionato
+                        showIntForm(selectedElement.getWorkerEmail());
+                    } else {
+                        System.out.println("Invalid number. Please enter a number between 1 and " + elements.size());
+                    }
+                } catch (NumberFormatException e) {
+                    System.out.println("Invalid input. Please enter a number or 'q' to quit.");
                 }
             }
 
@@ -162,6 +197,8 @@ public class HomeScreenCLI {
             viewController.showForm(workerEmail, user.getEmail(), user.getName(), user.getSurname());
         } catch (UserNotFoundException e) {
             System.err.println("Error: " + e.getMessage());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 }

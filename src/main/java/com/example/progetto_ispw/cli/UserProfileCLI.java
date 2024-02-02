@@ -50,7 +50,7 @@ public class UserProfileCLI {
         CLIcontroller.showProfile();
     }
 
-    private void homeMethod() {
+    private void homeMethod() throws UserNotFoundException, IOException {
         CLIController CLIcontroller= CLIController.getIstance();
         CLIcontroller.loadHomeScreen();
     }

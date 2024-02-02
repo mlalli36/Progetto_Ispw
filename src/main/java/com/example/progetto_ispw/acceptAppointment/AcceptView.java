@@ -124,7 +124,7 @@ public class AcceptView {
         if(controller.verifica(bean)) {
 
             AppointmentResultEntity appointmentResultEntity = bean.getAppointmentResultSet();
-            //  WorkerProfileController ctrl= new WorkerProfileController();
+
             AcceptTilePane acceptTilePane = new AcceptTilePane();
             acceptTilePane.createAcceptTilePane();
             scrollPane.setVisible(true);
