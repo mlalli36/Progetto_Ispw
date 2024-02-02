@@ -23,7 +23,7 @@ public class SlotHoursCLI implements Observer {
         try {
             SaveHoursBean bean = new SaveHoursBean();
 
-            bean.setEmail(emailsearch);
+            bean.setemail(emailsearch);
             System.out.println("email:"+emailsearch);
 
             // Simulate inputting slot hours
@@ -57,9 +57,17 @@ public class SlotHoursCLI implements Observer {
             bean.setDateCalendar(dateStringCalendar);*/
             bean.setDateCalendar(dateString); //selectedDate.toString()
 
+            System.out.println("email:"+emailsearch);
+            System.out.println("slot1:"+slot1);
+            System.out.println("slot2:"+slot2);
+            System.out.println("slot3:"+slot3);
+            System.out.println("slot4:"+slot4);
+            System.out.println("slot5:"+slot5);
+            System.out.println("date:"+dateString);
+
+
             SaveHoursController controller = new SaveHoursController();
             controller.saveHoursSlots(bean);
-
 
         } catch (IOException e) {
             System.err.println("Error reading input: " + e.getMessage());
@@ -71,7 +79,7 @@ public class SlotHoursCLI implements Observer {
     @Override
     public void update() {
         // Aggiorna la visualizzazione dei dati o altre componenti dell'interfaccia utente a riga di comando
-        System.out.println("Aggiornamento dell'interfaccia utente...");
+        System.out.println("The update was successful");
         // Puoi aggiornare l'output della console o altre parti dell'interfaccia utente qui
     }
 }

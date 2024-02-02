@@ -11,6 +11,9 @@ public class SaveHoursController {
 
         // Eseguire la query per ottenere lo slot dal database
         SlotHoursEntity slot = dao.getSlots(bean.getemail(), bean.getDateCalendar());
+        System.out.println("email:"+bean.getemail());
+
+        System.out.println("date:"+bean.getDateCalendar());
 
         // Verificare se la mail e lo slot esistono nel database e confrontare le date
         if (slot != null && slot.getdate().equals(bean.getDateCalendar()) && slot.getemail().equals(bean.getemail())) {
