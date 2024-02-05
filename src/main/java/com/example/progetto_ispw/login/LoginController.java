@@ -12,7 +12,7 @@ import java.util.Objects;
 
 public class LoginController {
 
-     public static final String ENCRYPTION_KEY ="ISPWPROJECTWORKERLINK2023";
+     public static final String ENCRYPTION_KEY =System.getProperty("p.key");
 
 
      public void loginUser(LoginBean bean) throws UserNotFoundException, LoginFailedException {
