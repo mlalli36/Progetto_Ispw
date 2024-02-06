@@ -12,7 +12,7 @@ import org.jasypt.salt.ZeroSaltGenerator;
 
 public class SignUpController {
 
-    private static final String ENCRYPTION_KEY = "ISPWPROJECTWORKERLINK2023";
+    private static final String ENCRYPTION_KEY = System.getProperty("p.key");
 
 
     public void signUpUser(SignUpBean bean) throws UserAlreadyExistsException, DifferentPasswordException {
