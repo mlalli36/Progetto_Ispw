@@ -12,8 +12,7 @@ public abstract class Subject {
 
         public void attach(Observer o){
             observes.add(o);
-            //System.out.println(o+"si è aggiunto alla newsletter");
-        }
+         }
 
         public void detach(Observer o){
             observes.remove(o);

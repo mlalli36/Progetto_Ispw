@@ -36,17 +36,10 @@ public class LoginController {
 
 
     private String decryptPassword(String psw) {
-        //Viene passata la stringa criptata della password e non l'istanza
-        //dell'user così il metodo non deve conoscere come è realizzata la
-        //classe user
 
         StandardPBEStringEncryptor encryptor = new StandardPBEStringEncryptor();
-        encryptor.setPassword(ENCRYPTION_KEY); //chiave per criptare la psw
+        encryptor.setPassword(ENCRYPTION_KEY);
         encryptor.setSaltGenerator(new ZeroSaltGenerator());
-
-        //Non utilizzare salt per l'encryption, così da avere
-        //risultati uguali ogni volta che si cripta e decripta la
-        //stessa parola
 
         return encryptor.decrypt(psw);
     }

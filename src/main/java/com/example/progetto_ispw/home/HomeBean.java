@@ -1,7 +1,6 @@
 package com.example.progetto_ispw.home;
 
 
-import javafx.scene.control.Button;
 
 public class HomeBean {
     private ResultSetEntity resultSet;

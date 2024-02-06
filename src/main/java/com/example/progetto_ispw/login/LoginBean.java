@@ -14,8 +14,7 @@ public class LoginBean {
 
 
 
-    //Regex di una email valida, da usare per confrontarla con quella dell'utente
-    private static final Pattern VALID_EMAIL_ADDRESS_REGEX = Pattern.compile("^[A-Z0-9.%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
+      private static final Pattern VALID_EMAIL_ADDRESS_REGEX = Pattern.compile("^[A-Z0-9.%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
 
     public void setEmail(String email) throws LoginFailedException, UserNotFoundException{
         Matcher matcher = VALID_EMAIL_ADDRESS_REGEX.matcher(email);
@@ -44,8 +43,7 @@ public class LoginBean {
         UserDAO UD = UserDAO.getInstance();
         String email1 = UD.checkEmail(email);
 
-        // Controlla se l'email è presente nel database, controllo messo per evitare quando torna il null
-        if (email1 != null && email1.equals(email)) {
+         if (email1 != null && email1.equals(email)) {
             return true;
         }
 

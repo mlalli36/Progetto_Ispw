@@ -81,7 +81,7 @@ public class SlotHoursView implements Observer {
             SaveHoursBean bean = new SaveHoursBean();
             String string = this.emailLabel.getText();
 
-            bean.setemail(string);  // controllare questo che non funziona, ma abbiamo aggiunto il passaggio dei dati quindi la dovrebbe poter prendere più facilmente
+            bean.setemail(string);
 
             bean.setSlot1(slot1Text.getText());
             bean.setSlot2(slot2Text.getText());
@@ -123,7 +123,6 @@ public class SlotHoursView implements Observer {
         String emailsearch= user.getEmail();
         SaveHoursBean bean = new SaveHoursBean();
         bean.setEmail(user.getEmail());
-        // SaveHoursController controller =new SaveHoursController();
 
         String namesearch= user.getName();
         String surnamesearch= user.getSurname();
@@ -192,10 +191,7 @@ public class SlotHoursView implements Observer {
 
     @Override
     public void update() {
-        /* Questo metodo implementa il metodo richiesto dall'interface Observer, per implementare il GoF Pattern
-         * Observer, per fare in modo che una volta che l'utente aggiorna le proprie preferenze dalla GUI, questa venga
-         * poi aggiornata per riflettere i cambiamenti.
-         */
+
 
         this.showLabel();
 

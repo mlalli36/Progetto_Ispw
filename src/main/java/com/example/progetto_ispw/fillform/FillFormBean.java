@@ -21,8 +21,7 @@ public class FillFormBean {
     private static final Pattern VALID_EMAIL_ADDRESS_REGEX = Pattern.compile("^[A-Z0-9.%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
 
 
-    //tutti i set per ogni campo
-    public void setEmailUser(String emailUser) {
+     public void setEmailUser(String emailUser) {
         Matcher matcher = VALID_EMAIL_ADDRESS_REGEX.matcher(emailUser);
         if (!matcher.find()){throw new InvalidEmailFormatException("");}
         this.emailUser = emailUser;
@@ -66,8 +65,7 @@ public class FillFormBean {
 
     public void setTime(String time) {
         this.time=time;}
-    //tutti i get per ogni campo
-    public String getEmailUser()     {return emailUser;}
+     public String getEmailUser()     {return emailUser;}
     public String getName()          {return name;}
     public String getSurname()       {return surname;}
     public String getDescription()   {return description;}

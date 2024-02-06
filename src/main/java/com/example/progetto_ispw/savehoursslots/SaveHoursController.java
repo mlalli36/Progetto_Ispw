@@ -9,16 +9,13 @@ public class SaveHoursController {
     public void saveHoursSlots(SaveHoursBean bean) throws TimeSlotAlreadyExistsException {
         WorkerDAO dao = WorkerDAO.getInstance();
 
-        // Eseguire la query per ottenere lo slot dal database
-        SlotHoursEntity slot = dao.getSlots(bean.getemail(), bean.getDateCalendar());
+         SlotHoursEntity slot = dao.getSlots(bean.getemail(), bean.getDateCalendar());
         System.out.println("email:"+bean.getemail());
 
         System.out.println("date:"+bean.getDateCalendar());
 
-        // Verificare se la mail e lo slot esistono nel database e confrontare le date
-        if (slot != null && slot.getdate().equals(bean.getDateCalendar()) && slot.getemail().equals(bean.getemail())) {
-            // print di controllo
-            System.out.println("slot "+slot);
+         if (slot != null && slot.getdate().equals(bean.getDateCalendar()) && slot.getemail().equals(bean.getemail())) {
+             System.out.println("slot "+slot);
             System.out.println("slot email "+slot.getemail());
             System.out.println("bean email "+bean.getemail());
             System.out.println("slot date "+slot.getdate());
@@ -29,15 +26,13 @@ public class SaveHoursController {
 
         }
 
-        // Se lo slot non esiste o le date non corrispondono, aggiungere lo slot al database
-        dao.addSlots(bean.getemail(), bean.getSlot1(), bean.getSlot2(), bean.getSlot3(), bean.getSlot4(), bean.getSlot5(), bean.getDateCalendar());
+         dao.addSlots(bean.getemail(), bean.getSlot1(), bean.getSlot2(), bean.getSlot3(), bean.getSlot4(), bean.getSlot5(), bean.getDateCalendar());
         SlotHoursEntity slotHoursEntity= SlotHoursEntity.getInstance();
 
 
         SlotHours slotHours=slotHoursEntity.getSlotHours();
 
-        // Inizializza slotHours se non è stato ancora fatto(utile per il test)
-        if (slotHours == null) {
+         if (slotHours == null) {
             slotHours = new SlotHours();
         }
 

@@ -77,15 +77,15 @@ public class WorkerProfileView {
     public TextArea notificationTextArea;
 
 
-   // WorkerProfileController controller= new WorkerProfileController();
+
     public void homeMethod(ActionEvent actionEvent) throws IOException {
         UIController controller= UIController.getUIControllerInstance();
         controller.showHome();}
 
-    public void favoritesMethod(ActionEvent actionEvent) {//da implementare
+    public void favoritesMethod(ActionEvent actionEvent) {
     }
 
-    public void saveEditsMethod(ActionEvent actionEvent) {//da implementare
+    public void saveEditsMethod(ActionEvent actionEvent) {
     }
 
     public void bookedServicesMethod(ActionEvent actionEvent) throws UserNotFoundException, IOException {
@@ -120,10 +120,10 @@ public class WorkerProfileView {
         viewController.showMyDetailsWorker(namesearch,surnamesearch,emailsearch);
     }
 
-    public void changePasswordMethod(ActionEvent actionEvent) {//da implementare
+    public void changePasswordMethod(ActionEvent actionEvent) {
     }
 
-    public void addressesMethod(ActionEvent actionEvent) {//da implementare
+    public void addressesMethod(ActionEvent actionEvent) {
     }
 
     public void exitMethod(ActionEvent actionEvent) throws IOException {
@@ -137,7 +137,6 @@ public class WorkerProfileView {
         String emailsearch= user.getEmail();
         WorkerProfileBean bean = new WorkerProfileBean();
         bean.setEmail(user.getEmail());
-        // SaveHoursController controller =new SaveHoursController();
 
         String namesearch= user.getName();
         String surnamesearch= user.getSurname();
@@ -146,12 +145,11 @@ public class WorkerProfileView {
 
     public void changeOfWorkingHoursMethod(ActionEvent actionEvent) throws IOException, UserNotFoundException {
         UserEntity user = UserEntity.getInstance();
-        UIController viewController = UIController.getUIControllerInstance();//è singletone
-        //aggiungo da qui
-        SlotHoursEntity slotHoursEntity= SlotHoursEntity.getInstance();
+        UIController viewController = UIController.getUIControllerInstance();
+         SlotHoursEntity slotHoursEntity= SlotHoursEntity.getInstance();
         SlotHours slotHours= new SlotHours();
         slotHoursEntity.setSlotHours(slotHours);
-        //
+
         String emailsearch= user.getEmail();
         WorkerProfileBean wPB=new WorkerProfileBean();
         wPB.setEmail(emailsearch);
@@ -189,7 +187,7 @@ public class WorkerProfileView {
         viewController.showNotifications(namesearch,surnamesearch,emailsearch);
 }
 
-    public void needHelpMethod(ActionEvent actionEvent) {//da implementare
+    public void needHelpMethod(ActionEvent actionEvent) {
     }
 
     public void acceptMethod(ActionEvent actionEvent) throws UserNotFoundException, IOException {

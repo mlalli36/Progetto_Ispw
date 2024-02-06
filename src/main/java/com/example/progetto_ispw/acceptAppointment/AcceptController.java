@@ -17,13 +17,11 @@ public class AcceptController {
         String e = bean.getemailsearch();
         List<InfoAppoinEntity> appointmentList = dao.getAppointmentforWoker(e);
         if (appointmentList.isEmpty() ) {
-            System.out.println("query nel ctrl:"+dao.getAppointmentforWoker(e));
-            //System.out.println("query nel ctrl:"+infoAppoinEntity.getAccept());
-            return false;
+              return false;
         } else {
 
             for (InfoAppoinEntity appointment : appointmentList) {
-                //costruiamo AppointmentResultElement
+
                 if (appointment.getAccept() == 1) {
                     AppointmentResultElement appointmentResultElement = new AppointmentResultElement();
                     appointmentResultElement.setWorkerEmail(appointment.getWEmail());
@@ -44,8 +42,7 @@ public class AcceptController {
                 return false;
             }
 
-            //ho preso la lista degli appuntamenti, vedere cosa deve tornare e capire cosa deve fare se non ci sono risultat
-        }
+         }
     }
 
     public void deleteAppo(String date, String time, String email) {

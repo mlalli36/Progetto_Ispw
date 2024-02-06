@@ -46,14 +46,14 @@ public class SlotTilePane {
         entryPane.getChildren().addAll(textLabel1, textLabel2, textLabel3, textLabel4, textLabel5);
 
 
-        resultsBox = new VBox(); // Creazione del VBox per contenere i risultati
-        resultsBox.setPrefWidth(1049); // Imposta la larghezza desiderata per il VBox dei risultati
-        resultsBox.setPrefHeight(60); // Imposta l'altezza desiderata per il VBox dei risultati
-        resultsBox.setSpacing(10); // Imposta lo spazio tra gli elementi all'interno del VBox dei risultati
+        resultsBox = new VBox();
+        resultsBox.setPrefWidth(1049);
+        resultsBox.setPrefHeight(60);
+        resultsBox.setSpacing(10);
         resultsBox.setStyle("-fx-border-color: #74c69d; -fx-border-radius: 10;");
 
 
-        slotTP.getChildren().add(resultsBox); // Aggiunta del VBox dei risultati al TilePane
+        slotTP.getChildren().add(resultsBox);
         resultsBox.getChildren().add(entryPane);
 
 
@@ -63,10 +63,10 @@ public class SlotTilePane {
     public void createSlotTilePane(){
         slotTP= new TilePane();
         slotTP.setPrefColumns(7);
-        slotTP.setPrefWidth(700/*1049*/); // Imposta la larghezza desiderata per il TilePane
-        slotTP.setPrefHeight(10/*121*/); // Imposta l'altezza desiderata per il TilePane
-        slotTP.setVgap(10);        // Imposta uno spazio di 10 pixel tra le righe
-        slotTP.setPadding(new Insets(10)); // Imposta uno spazio di 10 pixel intorno al TilePane
+        slotTP.setPrefWidth(700 );
+        slotTP.setPrefHeight(10 );
+        slotTP.setVgap(10);
+        slotTP.setPadding(new Insets(10));
 
     }
     public TilePane getSlotTP(){return slotTP;}

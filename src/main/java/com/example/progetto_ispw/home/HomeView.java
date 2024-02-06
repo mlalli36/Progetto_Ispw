@@ -136,10 +136,8 @@ public class HomeView {
 
 
     public void showIntForm(ActionEvent event) throws UserNotFoundException {
-        // tieniamo traccia del bottone che abbiamo premuto
-        Button clickedButton =(Button) event.getSource();
-        // tieniamo traccia dell'email associata a quel bottone
-        String email = (String) clickedButton.getUserData() ;
+         Button clickedButton =(Button) event.getSource();
+         String email = (String) clickedButton.getUserData() ;
 
 
         HomeBean bean=new HomeBean();

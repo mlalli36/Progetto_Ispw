@@ -25,7 +25,6 @@ public class BookedServicesUserController {
 
         }else{
             for (InfoAppoinEntity appointment : appointmentList) {
-                //costruiamo AppointmentResultElement
 
                     AppointmentResultElement appointmentResultElement = new AppointmentResultElement();
                     appointmentResultElement.setWorkerEmail(appointment.getWEmail());

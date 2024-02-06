@@ -27,8 +27,7 @@ public class HomeController {
 
         for (WorkerEntity worker : workerList) {
 
-            //Si costruisce il ResultElement
-            ResultElement resultElement = new ResultElement();
+             ResultElement resultElement = new ResultElement();
             resultElement.setNameWorker(worker.getName());
             resultElement.setJobWork(worker.getWork());
             resultElement.setLocationWork(worker.getLocation());
@@ -37,8 +36,7 @@ public class HomeController {
             //Si aggiunge il ResultElement al ResultSet
             this.resultSet.addElement(resultElement);
         }
-        //Se il result set è vuoto interrompe tutto perchè non dovrebbe succedere con "cris" "programmatrice" "roma"
-        assert !this.resultSet.getElements().isEmpty();
+         assert !this.resultSet.getElements().isEmpty();
 
 
         bean.setResultSet(this.resultSet);

@@ -18,7 +18,6 @@ public class UserTilePane {
         AnchorPane entryPane = new AnchorPane();
 
 
-        // dimensioni e coordinate per il bottone "rifiuta"
 
         deleteButton.setPrefWidth(150);
         deleteButton.setPrefHeight(50);
@@ -63,14 +62,14 @@ public class UserTilePane {
 
         entryPane.getChildren().addAll(deleteButton, textLabel1, textLabel2, textLabel3, textLabel4, textLabel5,textLabel6,textLabel7,textLabel8);
 
-        resultsBox = new VBox(); // Creazione del VBox per contenere i risultati
-        resultsBox.setPrefWidth(700); // Imposta la larghezza desiderata per il VBox dei risultati
-        resultsBox.setPrefHeight(100); // Imposta l'altezza desiderata per il VBox dei risultati
-        resultsBox.setSpacing(50); // Imposta lo spazio tra gli elementi all'interno del VBox dei risultati
+        resultsBox = new VBox();
+        resultsBox.setPrefWidth(700);
+        resultsBox.setPrefHeight(100);
+        resultsBox.setSpacing(50);
         resultsBox.setStyle("-fx-border-color: #74c69d; -fx-border-radius: 10;");
 
 
-        userTP.getChildren().add(resultsBox); // Aggiunta del VBox dei risultati al TilePane
+        userTP.getChildren().add(resultsBox);
         resultsBox.getChildren().add(entryPane);
 
     }
@@ -78,10 +77,10 @@ public class UserTilePane {
     public  void createUserTilePane(){
         userTP= new TilePane();
         userTP.setPrefColumns(8);
-        userTP.setPrefWidth(700); // Imposta la larghezza desiderata per il TilePane
-        userTP.setPrefHeight(600); // Imposta l'altezza desiderata per il TilePane
-        userTP.setVgap(15); // Imposta uno spazio di 10 pixel tra le righe
-        userTP.setPadding(new Insets(10)); // Imposta uno spazio di 10 pixel intorno al TilePane
+        userTP.setPrefWidth(700);
+        userTP.setPrefHeight(600);
+        userTP.setVgap(15);
+        userTP.setPadding(new Insets(10));
 
     }
 

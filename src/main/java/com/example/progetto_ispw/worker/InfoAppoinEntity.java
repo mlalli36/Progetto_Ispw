@@ -41,7 +41,6 @@ public class InfoAppoinEntity {
     public String getDAppo() { return dateAppoint;}
 
     public String getTime() {return timeDate;}
-    //prova da cancellare in caso non vada bene
     public String getCName(){return clientName;}
     public String getCSurname(){return clientSurname;}
     public String getCEmail(){return clientEmail;}
@@ -63,7 +62,6 @@ public class InfoAppoinEntity {
         statoAppuntamento.elaboraAppuntamento(context, data, orario, email);
     }
 
-    // finisce qui la parte da cancellare
 
 
 }

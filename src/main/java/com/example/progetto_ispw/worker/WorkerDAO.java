@@ -62,7 +62,6 @@ public class WorkerDAO {
     }
 
 
-    //forse questa deve rutornare una List<WorkEntuty> e WorkEntity potrebbe non dover essere Singleton
 
     public List<WorkerEntity> getWorker(String jobWorker, String locationWorker) {
         List<WorkerEntity> workerList = new ArrayList<>();
@@ -79,8 +78,7 @@ public class WorkerDAO {
                 while (rs.next()) {
 
                     WorkerEntity workerEntity = new WorkerEntity();
-                    //WorkerEntity workerEntity = WorkerEntity.getInstance();
-                    workerEntity.setEmail(rs.getString("Email"));
+                     workerEntity.setEmail(rs.getString("Email"));
                     workerEntity.setDescription(rs.getString("Description"));
                     workerEntity.setWork(rs.getString("Work"));
                     workerEntity.setName(rs.getString("Name"));
@@ -152,8 +150,7 @@ public class WorkerDAO {
                 preparedStatement.setInt(9, accept);
                 preparedStatement.executeUpdate();
 
-//                InfoAppoinEntity IAE = InfoAppoinEntity.getInstance();
-                InfoAppoinEntity IAE = new InfoAppoinEntity();
+                 InfoAppoinEntity IAE = new InfoAppoinEntity();
                 IAE.setWEmail(workerEmail);
                 IAE.setCname(clientName);
                 IAE.setCsurname(clientSurname);
@@ -322,8 +319,7 @@ public class WorkerDAO {
         }
     }
 
- //serve per impostare il valore della colonna "Accept" a 1 nel caso in cui il worker accetta il lavoro
-    public void updateAppointmentStatus(String email, String date, String time) {
+     public void updateAppointmentStatus(String email, String date, String time) {
             try (Connection con = getConnector()) {
                 if (con == null)
                     throw new SQLException();
@@ -358,8 +354,7 @@ public class WorkerDAO {
 
                         return return_value;
                     } else {
-                        // Ritorna un valore predefinito (potrebbe essere 0 o un altro valore in base alla tua logica)
-                        return -1;
+                         return -1;
                     }
                 }
 

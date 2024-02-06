@@ -98,8 +98,7 @@ public class FillFormView {
     }
 
     public void favoritesMethod(ActionEvent actionEvent) {
-        //da implementare
-    }
+     }
 
     public void homeMethod(ActionEvent actionEvent) throws IOException {
         UIController viewController = UIController.getUIControllerInstance();//è singletone
@@ -171,7 +170,6 @@ public class FillFormView {
 
             }
 
-            //aggiungere un controllo per far si che solo un check possa essere spuntato!
 
 
            controller.fill(bean);
@@ -181,29 +179,21 @@ public class FillFormView {
 
         } catch (TimeAlreadySelectedException e) {
            errorLabel.setText("The selected time is no longer valid.");
-          // errorTimeNotValid.setOpacity(1);
-       }catch (EmptyNameFieldException e ){
+        }catch (EmptyNameFieldException e ){
            errorLabel.setText("WARNING: NAME FIELD IS EMPTY!");
-          // errorTimeNotValid.setOpacity(1);
-       }catch (EmptySurameFieldException e){
+        }catch (EmptySurameFieldException e){
            errorLabel.setText("WARNING: SURNAME FIELD IS EMPTY!");
-        //   errorTimeNotValid.setOpacity(1);
-       }catch (EmptyDescriptionFieldException e){
+        }catch (EmptyDescriptionFieldException e){
            errorLabel.setText("WARNING: DESCRIPTION FIELD IS EMPTY!");
-        //   errorTimeNotValid.setOpacity(1);
-       }catch(NotValidNumberPhoneException e){
+        }catch(NotValidNumberPhoneException e){
            errorLabel.setText("WARNING: PHONE FIELD ISN'T VALID!");
-          // errorTimeNotValid.setOpacity(1);
-       }catch(InvalidEmailFormatException e){
+        }catch(InvalidEmailFormatException e){
            errorLabel.setText("WARNING: INVALID EMAIL FORMAT!");
-          // errorTimeNotValid.setOpacity(1);
-       }catch(EmptyDateFieldException e){
+        }catch(EmptyDateFieldException e){
            errorLabel.setText("WARNING: DATE FIELD IS EMPTY!");
-          // errorTimeNotValid.setOpacity(1);
-       }catch(NotValidTimeException e){
+        }catch(NotValidTimeException e){
            errorLabel.setText("WARNING: TIME CHECK IS EMPTY!");
-          // errorTimeNotValid.setOpacity(1);
-       } finally{
+        } finally{
            errorLabel.setOpacity(1);
        }
 
@@ -223,14 +213,12 @@ public class FillFormView {
         LocalDate selectedDate = date.getValue();
 
         String dateStringCalendar = selectedDate.toString();
-        bean.setDate(dateStringCalendar);// funzionerà?? da verificare!
+        bean.setDate(dateStringCalendar);
 
-        //data selezionata dall'utente e dobbiamo prendere la mail da un precompile che dobbiamo fare
-        //poi usiamo la query getslots
+
         SlotTilePane slPane= new SlotTilePane();
         slPane.createSlotTilePane();
         paneSlot.setVisible(true);
-        //mostriamo quei dati in una riga che si compila in automatico con dei bottoni
         controller.takeSlot(bean);
         SlotHoursEntity sl=SlotHoursEntity.getInstance();
         String slot1=sl.getSlot1();

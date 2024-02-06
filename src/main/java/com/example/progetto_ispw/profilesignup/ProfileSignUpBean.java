@@ -17,34 +17,16 @@ public class ProfileSignUpBean {
     protected String  address= null;
     protected String  work= null;
 
-    //Regex di una email valida, da usare per confrontarla con quella dell'utente
-    private static final Pattern VALID_EMAIL_ADDRESS_REGEX = Pattern.compile("^[A-Z0-9.%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
+     private static final Pattern VALID_EMAIL_ADDRESS_REGEX = Pattern.compile("^[A-Z0-9.%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
 
 
     public void setEmail(String email) throws LoginFailedException, UserNotFoundException {
         Matcher matcher = VALID_EMAIL_ADDRESS_REGEX.matcher(email);
         if (!matcher.find())
             throw new LoginFailedException("Invalid email, try again!");
-/* // start prova per utente già registrato, modifiche apportate anche alla classe UserDAO
-        else {
-            if (!isEmailAlreadyInDatabase(email)) {
-            } else {
-                throw new LoginFailedException( "This email is already recorded!");
-            }
-            this.email = email;
-        }*/
 
         this.email = email;
 }
-/*
-    private boolean isEmailAlreadyInDatabase(String email)  {
-        UserDAO UD = UserDAO.getInstance();
-        String EMAIL = UD.checkEmail(email);
-        if (EMAIL == email){
-            return true;
-        }
-        return false;
-    }*/
 
 
     public void setName(String name) {

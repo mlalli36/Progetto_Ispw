@@ -33,7 +33,6 @@ public class BookedServicesWorkerController {
 
         }else{
             for (InfoAppoinEntity appointment : appointmentList) {
-                //costruiamo AppointmentResultElement
 
                 AppointmentResultElement appointmentResultElement = new AppointmentResultElement();
                 appointmentResultElement.setWorkerEmail(appointment.getWEmail());
@@ -62,8 +61,7 @@ public class BookedServicesWorkerController {
 
 
     public void deleteAppoW(String email, String date, String time) {
-        //uso la query nello UserDAO per non riscriverla identica nel workerDAO, visto che questa operazione, il worker la riprende dal client
-        UserDAO dao= UserDAO.getInstance();
+         UserDAO dao= UserDAO.getInstance();
         dao.deleteAppointment(email,date,time);
 
         }

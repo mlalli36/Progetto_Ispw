@@ -51,7 +51,7 @@ public class SearchDinamicaView{
 
         String type = user.getTipoaccesso();
         System.out.println(type);
-        UIController viewController = UIController.getUIControllerInstance();//è singletone
+        UIController viewController = UIController.getUIControllerInstance();
 
         SearchDinamicaBean searchDBean = new SearchDinamicaBean();
         searchDBean.setEmail(emailsearch);
@@ -85,60 +85,14 @@ public class SearchDinamicaView{
         viewController.showHome();
     }
 
-    /*public void showResult(SearchDinamicaBean bean2) throws IOException {
-
-
-        ResultSetEntity resultSet = bean2.getResultSet();
-        if (resultSet.getElements().isEmpty()) {
-
-            this.textError.setOpacity(1);
-
-        }else {
-            CustomTilePane customTilePane = new CustomTilePane();
-            customTilePane.createCustomTilePane();
-            scrollPane.setVisible(true);
-
-
-            for (ResultElement r : resultSet.getElements()) {
-                Button newButton = new Button("Fill out form");
-                String name = r.getWorkerName();
-                String jobWorker = r.getJobWorker();
-                String locationWorker = r.getLocationWorker();
-                String descriptionWorker = r.getWorkerDescription();
-                emailWorker = r.getWorkerEmail();
-                newButton.setUserData(emailWorker);
-
-                customTilePane.addElements(name, jobWorker, locationWorker, descriptionWorker, newButton, emailWorker);
-
-                newButton.setOnAction(event -> {
-                    try {
-                        showIntForm(event);
-                    } catch (UserNotFoundException e) {
-                        throw new RuntimeException(e);
-                    }
-                });
-
-            }
-            this.scrollPane.setContent(customTilePane.getCustomTP());
-        }
-
-    }*/
-
     public void showIntForm(ActionEvent event) throws UserNotFoundException {
-        // tieniamo traccia del bottone che abbiamo premuto
-        Button clickedButton =(Button) event.getSource();
-        // tieniamo traccia dell'email associata a quel bottone
-        String email = (String) clickedButton.getUserData() ;
+         Button clickedButton =(Button) event.getSource();
+         String email = (String) clickedButton.getUserData() ;
 
-      //  UserEntity user= UserEntity.getInstance();
-        SearchDinamicaBean searchDBean=new SearchDinamicaBean();
+         SearchDinamicaBean searchDBean=new SearchDinamicaBean();
         searchDBean.setEmail(emailsearch);
         SearchDinamicaController ctrl= new SearchDinamicaController();
         ctrl.searchInfo(searchDBean);
-        System.out.println("search dinamica nome utente: "+user.getName());
-        System.out.println("search dinamica cognnome utente: "+user.getSurname());
-        System.out.println("search dinamica email utente: "+user.getEmail());
-
 
         String emailCl= user.getEmail();
         String nameCl= user.getName();

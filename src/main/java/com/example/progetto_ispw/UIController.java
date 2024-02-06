@@ -33,11 +33,8 @@ public class UIController {
 
     private Stage stage;
     private String[] previousStageStyles;
-    //tiene traccia del file .fxml ( previousStageStyle[0] e di quello .css (previousStageSyle[1])
-    //della schermata precedente, per poterli usare in caso di pulsante back
-    //con static non va
-    private UIController(){} // Singleton GoF Pattern applicato to UIController
 
+    private UIController(){}
     public static UIController getUIControllerInstance() {
         if(UIController.singleUIControllerInstance == null){
             UIController.singleUIControllerInstance = new UIController();
@@ -45,22 +42,21 @@ public class UIController {
         return UIController.singleUIControllerInstance;
     }
 
-    public void showHome() throws IOException{//mostra a schermo la com.example.progetto_ispw.home
+    public void showHome() throws IOException{
         this.loadStage("interfacciaHome.fxml","home.css" );
     }
 
-    public void showLogin() throws IOException {//mostra la schermata login, la invoco dopo la registrazione
+    public void showLogin() throws IOException {
         this.loadStage("login.fxml","login.css");
     }
-    //AGGIUNGO DA QUI
-    public void showLogin2() throws IOException {//mostra la schermata login, la invoco dopo la registrazione
+     public void showLogin2() throws IOException {
         this.loadStage("login2.fxml","login.css");
     }
     //FINO A QUI
-    public void showSignUp() throws IOException {//mostra la schermata login, la invoco dopo la registrazione
+    public void showSignUp() throws IOException {
         this.loadStage("interfaccia SignUp.fxml","signup.css");
     }
-    private void loadStage(String stageFXML, String stageCSS) throws IOException { //mostra a schermo la schermata passato con i parametri
+    private void loadStage(String stageFXML, String stageCSS) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(stageFXML));
         Parent root1 = fxmlLoader.load();
         root1.getStylesheets().add(Objects.requireNonNull(getClass().getResource(stageCSS)).toExternalForm());
@@ -73,15 +69,15 @@ public class UIController {
     public void showExit() throws IOException{
         this.loadStage("login.fxml","login.css");
     }
-   public void showNotificheDaCliente() throws IOException{//mostra le notifiche da cliente
+   public void showNotificheDaCliente() throws IOException{
         this.loadStage("interfaccianotificadacliente.fxml","profileMyDetails.css");
     }
 
-    public void showProfileRecensione() throws IOException{//mostra il profilo sulla sezione recensione
+    public void showProfileRecensione() throws IOException{
         this.loadStage("interfaccia profilerecensione.fxml","p");
     }
 
-    public void showForm(String emailWorker, String emailC, String nameC, String surnameC) {//mostra il form
+    public void showForm(String emailWorker, String emailC, String nameC, String surnameC) {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("interfacciaForm.fxml"));
         Parent root1 = null;
         try {
@@ -101,15 +97,11 @@ public class UIController {
         this.stage.setScene(new Scene(root1));
     }
 
-    public void showProfileMyDetails() throws IOException{//mostra i dettagli del proprio profilo
+    public void showProfileMyDetails() throws IOException{
         this.loadStage("interfacciaprofileMyDetails.fxml","profileMyDetails.css");
     }
 
-/* commento perché showUserProfile non dovrebbe più servire ma lo lasciamo un attimo per vedere se servirà
-    public void showUserProfile() throws  IOException{//mostra il profilo dell'user
-        this.loadStage("interfacciaUserProfile.fxml", "profileMyDetails.css");
-    }*/
-    //prova da homeview
+
 public void insertInfoUser(String namesearch, String surnamesearch,String emailsearch) throws IOException {
     FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("interfacciaUserProfile.fxml"));
     Parent root1 = fxmlLoader.load();
@@ -121,22 +113,6 @@ public void insertInfoUser(String namesearch, String surnamesearch,String emails
 
     this.stage.setScene(new Scene(root1));
 }
-    //fine prova, funziona!
-
-
-
-
-
-
-
-
-
-
-    /*public void showProfilo() throws  IOException{//mostra il profilo del worker
-        this.loadStage("interfacciaWorkerProfile.fxml", "profileMyDetails.css");
-    }*/
-
-    // stessa prova del showUserP.
     public void insertInfoWorker(String namesearch, String surnamesearch,String emailsearch) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("interfacciaWorkerProfile.fxml"));
         Parent root1 = fxmlLoader.load();
@@ -148,9 +124,7 @@ public void insertInfoUser(String namesearch, String surnamesearch,String emails
 
         this.stage.setScene(new Scene(root1));
     }
-    //fine seconda prova
 
-    //prova per interfaccia notification
     public void showNotifications(String namesearch, String surnamesearch,String emailsearch) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("interfacciaNotifications.fxml"));
         Parent root1 = fxmlLoader.load();
@@ -169,7 +143,7 @@ public void insertInfoUser(String namesearch, String surnamesearch,String emails
         root1.getStylesheets().add(Objects.requireNonNull(getClass().getResource("profileMyDetails.css")).toExternalForm());
         AcceptView acceptView = fxmlLoader.getController();
         acceptView.preCompileWorker(namesearch, surnamesearch,emailsearch);
-        ActionEvent dummyEvent = new ActionEvent(); // Crea un oggetto ActionEvent
+        ActionEvent dummyEvent = new ActionEvent();
         acceptView.acceptMethod(dummyEvent);
         this.fadeAnimation(root1, this.stage.getScene().getRoot());
 
@@ -195,7 +169,7 @@ public void insertInfoUser(String namesearch, String surnamesearch,String emails
         root1.getStylesheets().add(Objects.requireNonNull(getClass().getResource("profileMyDetails.css")).toExternalForm());
         BookedServicesWorkerView bookedServicesWorkerView = fxmlLoader.getController();
         bookedServicesWorkerView.preCompileWorker(namesearch, surnamesearch,emailsearch);
-        ActionEvent dummyEvent = new ActionEvent(); // Crea un oggetto ActionEvent
+        ActionEvent dummyEvent = new ActionEvent();
         bookedServicesWorkerView.bookedServicesMethod(dummyEvent);
         this.fadeAnimation(root1, this.stage.getScene().getRoot());
 
@@ -204,21 +178,21 @@ public void insertInfoUser(String namesearch, String surnamesearch,String emails
 
 
 
-    private void fadeAnimation(Parent screenToFadeIn, Parent screenToFadeOut){//Metodo privato perchè deve essere utilizzato
-        this.fadeOut(screenToFadeOut);                                        // solo in loadStage
+    private void fadeAnimation(Parent screenToFadeIn, Parent screenToFadeOut){
+        this.fadeOut(screenToFadeOut);
         this.fadeIn(screenToFadeIn);
     }
 
     private void fadeOut(Parent root){
-        FadeTransition ft = new FadeTransition(Duration.millis(300), root); //Metodo privato perchè deve essere utilizzato
-        ft.setFromValue(1.0);                                               // solo in fadeAnimation
+        FadeTransition ft = new FadeTransition(Duration.millis(300), root);
+        ft.setFromValue(1.0);
         ft.setToValue(0);
         ft.play();
     }
 
     private void fadeIn(Parent root){
-        FadeTransition ft = new FadeTransition(Duration.millis(300), root); //Metodo privato perchè deve essere utilizzato
-        ft.setFromValue(0);                                                 // solo in fadeAnimation
+        FadeTransition ft = new FadeTransition(Duration.millis(300), root);
+        ft.setFromValue(0);
         ft.setToValue(1.0);
         ft.play();
     }
@@ -274,22 +248,12 @@ public void insertInfoUser(String namesearch, String surnamesearch,String emails
         this.stage.setScene(new Scene(root1));
     }
 
-    //per implementare il bottone notification dall'interfaccia SlotHours
-
-
-
-
-
-    //da continuare
-// prova per passaggio di email nome e cognome
-
-    //prova per non duplicare le righe di quando bisogna aprire il profilo
    public void showProfile() throws UserNotFoundException, IOException {
         UserEntity user = UserEntity.getInstance();
         String emailsearch= user.getEmail();
         String type = user.getTipoaccesso();
         System.out.println(type);
-        UIController viewController = UIController.getUIControllerInstance();//è singletone
+        UIController viewController = UIController.getUIControllerInstance();
         String namesearch= user.getName();
         String surnamesearch= user.getSurname();
         SearchDinamicaBean searchDBean=new SearchDinamicaBean();

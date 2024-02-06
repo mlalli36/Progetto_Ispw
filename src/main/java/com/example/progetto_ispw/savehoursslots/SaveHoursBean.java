@@ -55,13 +55,11 @@ public class SaveHoursBean {
             throw new InvalidTimeException("Invalid time form Slot5, try again!");
         this.text5 = text5;
     }
-    //controllare se va bene
-    public void setDateCalendar(String dateCalendar) throws TimeSlotAlreadyExistsException {
+     public void setDateCalendar(String dateCalendar) throws TimeSlotAlreadyExistsException {
         this.dateCalendar = dateCalendar;
     }
 
-    //fino a qui
-    public void setemail(String email) {
+     public void setemail(String email) {
         this.email= email;
     }
 

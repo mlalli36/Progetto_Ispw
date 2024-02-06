@@ -128,7 +128,6 @@ public class BookedServicesUserView {
 
     public void preCompileUser(String namesearch, String surnamesearch, String emailsearch) {
         this.nameLabelUserProfile.setText(namesearch);
-        //this.surnameLabelUserProfile.setText(surnamesearch);
-        this.emailLabelUserProfile.setText(emailsearch);
+         this.emailLabelUserProfile.setText(emailsearch);
     }
 }

@@ -28,10 +28,8 @@ public class DBConnector {
 
             Properties prop = new Properties();
 
-            // carica il file properties
-            prop.load(input);
-            //ritorna la connessione al DB specificato nel file DB.properties
-            con = DriverManager.getConnection(prop.getProperty("db.url"), prop.getProperty("db.user"), prop.getProperty("db.psw"));
+             prop.load(input);
+             con = DriverManager.getConnection(prop.getProperty("db.url"), prop.getProperty("db.user"), prop.getProperty("db.psw"));
 
 
         } catch (IOException ex) {
@@ -42,6 +40,6 @@ public class DBConnector {
     }
 
     private DBConnector() {
-    } //La classe ha metodi statici, non deve essere istanziata
+    }  
 
 }

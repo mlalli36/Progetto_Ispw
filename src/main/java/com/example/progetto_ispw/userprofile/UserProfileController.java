@@ -14,7 +14,7 @@ import java.sql.SQLException;
 
 import static com.example.progetto_ispw.utile.DBConnector.getConnector;
 
-public class UserProfileController {
+public class  UserProfileController {
 
 
     public void searchInfo(UserProfileBean bean) throws UserNotFoundException {

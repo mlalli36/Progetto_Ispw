@@ -51,10 +51,10 @@ public class AcceptTilePane {
 
         entryPane.getChildren().addAll(textLabel1, textLabel2, textLabel3, textLabel4, textLabel5,textLabel6,textLabel7);
 
-        resultsBox = new VBox(); // Creazione del VBox per contenere i risultati
-        resultsBox.setPrefWidth(700); // Imposta la larghezza desiderata per il VBox dei risultati
-        resultsBox.setPrefHeight(100); // Imposta l'altezza desiderata per il VBox dei risultati
-        resultsBox.setSpacing(50); // Imposta lo spazio tra gli elementi all'interno del VBox dei risultati
+        resultsBox = new VBox();
+        resultsBox.setPrefWidth(700);
+        resultsBox.setPrefHeight(100);
+        resultsBox.setSpacing(50);
         resultsBox.setStyle("-fx-border-color: #74c69d; -fx-border-radius: 10;  ");
 
 

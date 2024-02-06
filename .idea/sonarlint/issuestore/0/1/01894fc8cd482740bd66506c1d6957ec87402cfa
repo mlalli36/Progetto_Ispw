@@ -1,15 +1,0 @@
-
-{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÑÀˆşÿÿÿÿ8ˆûŠ£1
-f
-java:S1854"DRemove this useless assignment to local variable "infoAppoinEntity".(ÇâÍùúÿÿÿÿ8’ûŠ£1
-W
-java:S1481"5Remove this unused "infoAppoinEntity" local variable.(ÇâÍùúÿÿÿÿ8“ûŠ£1
-M
-java:S1128	"0Remove this unused import 'java.sql.Connection'.(¥ËôÖ8Ÿ¯¢Š£1
-Y
-java:S1128
-"7Remove this unused import 'java.sql.PreparedStatement'.(òÄ™ƒÿÿÿÿÿ8Ÿ¯¢Š£1
-O
-java:S1128"2Remove this unused import 'java.sql.SQLException'.(ÛïÆŸ8Ÿ¯¢Š£1
-w
-java:S1128"URemove this unused import 'com.example.progetto_ispw.utile.DBConnector.getConnector'.(•¡ Šøÿÿÿÿ8Ÿ¯¢Š£1

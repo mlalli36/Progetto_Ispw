@@ -123,7 +123,6 @@ public class UserProfileView {
         this.emailLabelUserProfile.setText(emailsearch);
 
     }
-    // prova come dice pamela per scrivere da qui
 
 
 }

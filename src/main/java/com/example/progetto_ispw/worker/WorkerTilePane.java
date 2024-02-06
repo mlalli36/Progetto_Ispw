@@ -18,13 +18,11 @@ public class WorkerTilePane {
         AnchorPane entryPane = new AnchorPane();
 
 
-        // dimensioni e coordinate per il bottone "accetta"
-        accepttButton.setPrefWidth(150);
+         accepttButton.setPrefWidth(150);
         accepttButton.setPrefHeight(50);
         AnchorPane.setRightAnchor(accepttButton, 25.0);
         AnchorPane.setTopAnchor(accepttButton, 150.0);
 
-        // dimensioni e coordinate per il bottone "rifiuta"
 
         rejectButton.setPrefWidth(150);
         rejectButton.setPrefHeight(50);
@@ -64,10 +62,10 @@ public class WorkerTilePane {
 
         entryPane.getChildren().addAll(accepttButton,rejectButton, textLabel1, textLabel2, textLabel3, textLabel4, textLabel5,textLabel6,textLabel7);
 
-        resultsBox = new VBox(); // Creazione del VBox per contenere i risultati
-        resultsBox.setPrefWidth(700); // Imposta la larghezza desiderata per il VBox dei risultati
-        resultsBox.setPrefHeight(100); // Imposta l'altezza desiderata per il VBox dei risultati
-        resultsBox.setSpacing(50); // Imposta lo spazio tra gli elementi all'interno del VBox dei risultati
+        resultsBox = new VBox();
+        resultsBox.setPrefWidth(700);
+        resultsBox.setPrefHeight(100);
+        resultsBox.setSpacing(50);
         resultsBox.setStyle("-fx-border-color: #74c69d; -fx-border-radius: 10;  ");
 
 
@@ -79,10 +77,10 @@ public class WorkerTilePane {
     public  void createWorkerTilePane(){
         workerTP= new TilePane();
         workerTP.setPrefColumns(7);
-        workerTP.setPrefWidth(700); // Imposta la larghezza desiderata per il TilePane
-        workerTP.setPrefHeight(600); // Imposta l'altezza desiderata per il TilePane
-        workerTP.setVgap(15); // Imposta uno spazio di 10 pixel tra le righe
-        workerTP.setPadding(new Insets(10)); // Imposta uno spazio di 10 pixel intorno al TilePane
+        workerTP.setPrefWidth(700);
+        workerTP.setPrefHeight(600);
+        workerTP.setVgap(15);
+        workerTP.setPadding(new Insets(10));
 
     }
 

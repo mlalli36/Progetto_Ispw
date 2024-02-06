@@ -8,8 +8,7 @@ public class AcceptState implements AppointementState{
 
     @Override
     public void elaboraAppuntamento(NotificationsController context, String data, String orario, String email) throws UserNotFoundException {
-        //logica per far accettare
-        context.acceptMethod(data,orario,email);
+         context.acceptMethod(data,orario,email);
 
     }
 }

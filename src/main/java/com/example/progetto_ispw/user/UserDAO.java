@@ -179,10 +179,7 @@ public class UserDAO {
                 if (!rs.next()) {
                    return null;
                 }
-          /* prova per far tornare l'email presa da db e non quella che passo in input (stesso nome all'inizio)
-                UserEntity user = UserEntity.getInstance();
-                user.setEmail(rs.getString("Email"));
-                rs.close();*/
+
                 return rs.getString("Email");
 
             }
@@ -190,7 +187,7 @@ public class UserDAO {
         catch (SQLException ex) {
             throw new RuntimeException(ex);
         }
-      //  return email;
+
     }
 
 

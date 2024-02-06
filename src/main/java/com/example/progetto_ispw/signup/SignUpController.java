@@ -20,22 +20,18 @@ public class SignUpController {
         String checkedPassword;
         if (!bean.getPsw().equals(bean.getConfirmPsw()))
             throw new DifferentPasswordException();
-        checkedPassword = bean.getPsw(); //Se sono uguali è indifferente scegliere la prima o la seconda
+        checkedPassword = bean.getPsw();
         String encryptedPassword = this.encryptPassword(checkedPassword);
         String tipoaccesso = bean.isWorker() ? "Worker" : "Client";
 
         dao.addUser(bean.getName(), bean.getSurname(), bean.getEmail(), encryptedPassword,tipoaccesso);
-       // UserEntity user = UserEntity.getInstance();
-    }
+     }
 
 
-    private String encryptPassword(String psw) { //Viene passata la stringa da criptare
+    private String encryptPassword(String psw) {
         StandardPBEStringEncryptor encryptor = new StandardPBEStringEncryptor();
-        encryptor.setPassword(ENCRYPTION_KEY); //chiave per criptare la psw
+        encryptor.setPassword(ENCRYPTION_KEY);
         encryptor.setSaltGenerator(new ZeroSaltGenerator());
-        //Non utilizzare salt per l'encryption, così da avere
-        //risultati uguali ogni volta che si cripta e decripta la
-        //la stessa parola
 
         return encryptor.encrypt(psw);
     }

@@ -49,14 +49,14 @@ public class CustomTilePane {
 
             entryPane.getChildren().addAll(selectButton, textLabel1, textLabel2, textLabel3, textLabel4, textLabel5);
 
-            resultsBox = new VBox(); // Creazione del VBox per contenere i risultati
-            resultsBox.setPrefWidth(1180); // Imposta la larghezza desiderata per il VBox dei risultati
-            resultsBox.setPrefHeight(225); // Imposta l'altezza desiderata per il VBox dei risultati
-            resultsBox.setSpacing(50); // Imposta lo spazio tra gli elementi all'interno del VBox dei risultati
+            resultsBox = new VBox();
+            resultsBox.setPrefWidth(1180);
+            resultsBox.setPrefHeight(225);
+            resultsBox.setSpacing(50);
             resultsBox.setStyle("-fx-border-color: #74c69d; -fx-border-radius: 10;");
 
 
-            customTP.getChildren().add(resultsBox); // Aggiunta del VBox dei risultati al TilePane
+            customTP.getChildren().add(resultsBox);
             resultsBox.getChildren().add(entryPane);
 
         }
@@ -64,10 +64,10 @@ public class CustomTilePane {
         public void createCustomTilePane(){
             customTP= new TilePane();
             customTP.setPrefColumns(7);
-            customTP.setPrefWidth(1180); // Imposta la larghezza desiderata per il TilePane
-            customTP.setPrefHeight(6000); // Imposta l'altezza desiderata per il TilePane
-            customTP.setVgap(15); // Imposta uno spazio di 10 pixel tra le righe
-            customTP.setPadding(new Insets(10)); // Imposta uno spazio di 10 pixel intorno al TilePane
+            customTP.setPrefWidth(1180);
+            customTP.setPrefHeight(6000);
+            customTP.setVgap(15);
+            customTP.setPadding(new Insets(10));
 
         }
     public TilePane getCustomTP(){return customTP;}

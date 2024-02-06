@@ -151,8 +151,6 @@ public class NotificationsView {
                 workerTilePane.addElements(accepttButton, rejectButton, name_client, surname_client, email_client, description_work, phone_client, date, time);
 
                 rejectButton.setOnAction(event -> {
-                    // Qui puoi utilizzare le variabili email_client, date_work e time_work
-                    // per eseguire le azioni necessarie quando il bottone rejectButton viene premuto
 
                     try {
                         controller.deleteAppo(date, time, email);
@@ -191,8 +189,6 @@ public class NotificationsView {
                     }
 
                 });
-                //devo fare il controllo che se il campo della colonna "accept" è =1 allora non lo deve mostrare
-                //controller.
 
             }
             this.scrollPane.setContent(workerTilePane.getWorkerTP());
