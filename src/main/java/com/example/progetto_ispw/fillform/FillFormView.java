@@ -6,7 +6,6 @@ import com.example.progetto_ispw.login.exception.UserNotFoundException;
 import com.example.progetto_ispw.savehoursslots.SlotHoursEntity;
 import com.example.progetto_ispw.user.UserEntity;
 import com.example.progetto_ispw.worker.WorkerEmailEntity;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
@@ -30,7 +29,7 @@ public class FillFormView {
     @FXML
     public Button home;
     @FXML
-    public Button sendForm; //non so se va private o public
+    public Button sendForm;
     @FXML
     public Button back;
     @FXML
@@ -97,7 +96,7 @@ public class FillFormView {
 
 
     public void homeMethod( ) throws IOException {
-        UIController viewController = UIController.getUIControllerInstance();//è singletone
+        UIController viewController = UIController.getUIControllerInstance();
 
         viewController.showHome();    }
 
@@ -196,11 +195,6 @@ public class FillFormView {
     }
 
 
-
-    public void backMethod( ) throws IOException {
-        UIController viewController = UIController.getUIControllerInstance();//è singletone
-        viewController.showHome();
-    }
 
     public void searchDataFormMethod() {
 
