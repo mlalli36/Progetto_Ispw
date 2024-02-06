@@ -71,7 +71,6 @@ public class FillFormView {
     public void profileMethod(ActionEvent actionEvent) throws UserNotFoundException, IOException {
         UserEntity user = UserEntity.getInstance();
         String type = user.getTipoaccesso();
-        System.out.println(type);
         UIController viewController = UIController.getUIControllerInstance();//è singletone
 
         String emailsearch= user.getEmail();
@@ -81,8 +80,6 @@ public class FillFormView {
         fillFormController.searchInfo(fillForm);
         String namesearch= user.getName();
         String surnamesearch= user.getSurname();
-        System.out.println("home view nome utente: "+user.getName());
-        System.out.println("home view cognnome utente: "+user.getSurname());
 
 
         if(!"Worker".equals(type)) {
@@ -91,7 +88,7 @@ public class FillFormView {
         } else{
 
             WorkerEmailEntity wkE= WorkerEmailEntity.getInstance();
-            //WorkerEntity wkE= new WorkerEntity();
+
             wkE.setEmailWEE(emailsearch);
             viewController.insertInfoWorker(namesearch,surnamesearch,emailsearch);
         }
@@ -120,7 +117,7 @@ public class FillFormView {
             bean.setSurname(surnameTextField.getText());
             bean.setDescription(descriptionUserTextField.getText());
             bean.setPhone(phoneUserTextField.getText());
-            //prendo la data
+
             LocalDate selectedDate = date.getValue();
            if(selectedDate==null){
                throw new EmptyDateFieldException("");}

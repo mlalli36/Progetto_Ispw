@@ -78,17 +78,13 @@ public class WorkerProfileView {
 
 
 
-    public void homeMethod(ActionEvent actionEvent) throws IOException {
+    public void homeMethod() throws IOException {
         UIController controller= UIController.getUIControllerInstance();
         controller.showHome();}
 
-    public void favoritesMethod(ActionEvent actionEvent) {
-    }
 
-    public void saveEditsMethod(ActionEvent actionEvent) {
-    }
 
-    public void bookedServicesMethod(ActionEvent actionEvent) throws UserNotFoundException, IOException {
+    public void bookedServicesMethod( ) throws UserNotFoundException, IOException {
         UserEntity user = UserEntity.getInstance();
         UIController viewController = UIController.getUIControllerInstance();//è singletone
 
@@ -106,7 +102,7 @@ public class WorkerProfileView {
         viewController.showBookedServicesWorker(namesearch,surnamesearch,emailsearch);
     }
 
-    public void myDetailsMethod(ActionEvent actionEvent)  throws UserNotFoundException, IOException {
+    public void myDetailsMethod(  )  throws UserNotFoundException, IOException {
         UserEntity user = UserEntity.getInstance();
         UIController viewController = UIController.getUIControllerInstance();//è singletone
 
@@ -120,18 +116,14 @@ public class WorkerProfileView {
         viewController.showMyDetailsWorker(namesearch,surnamesearch,emailsearch);
     }
 
-    public void changePasswordMethod(ActionEvent actionEvent) {
-    }
 
-    public void addressesMethod(ActionEvent actionEvent) {
-    }
 
-    public void exitMethod(ActionEvent actionEvent) throws IOException {
+    public void exitMethod() throws IOException {
         UIController controller= UIController.getUIControllerInstance();
         controller.showExit();
     }
 
-    public void profileMethod(ActionEvent actionEvent) throws IOException {
+    public void profileMethod() throws IOException {
         UserEntity user=UserEntity.getInstance();
         UIController viewController= UIController.getUIControllerInstance();
         String emailsearch= user.getEmail();
@@ -143,7 +135,7 @@ public class WorkerProfileView {
         viewController.insertInfoWorker(namesearch,surnamesearch,emailsearch);
     }
 
-    public void changeOfWorkingHoursMethod(ActionEvent actionEvent) throws IOException, UserNotFoundException {
+    public void changeOfWorkingHoursMethod() throws IOException, UserNotFoundException {
         UserEntity user = UserEntity.getInstance();
         UIController viewController = UIController.getUIControllerInstance();
          SlotHoursEntity slotHoursEntity= SlotHoursEntity.getInstance();
@@ -172,7 +164,7 @@ public class WorkerProfileView {
     }
 
 
-    public void notificationMethod(ActionEvent actionEvent) throws IOException, UserNotFoundException {
+    public void notificationMethod( ) throws IOException, UserNotFoundException {
         UserEntity user=UserEntity.getInstance();
         UIController viewController= UIController.getUIControllerInstance();
 
@@ -187,10 +179,9 @@ public class WorkerProfileView {
         viewController.showNotifications(namesearch,surnamesearch,emailsearch);
 }
 
-    public void needHelpMethod(ActionEvent actionEvent) {
-    }
 
-    public void acceptMethod(ActionEvent actionEvent) throws UserNotFoundException, IOException {
+
+    public void acceptMethod( ) throws UserNotFoundException, IOException {
         UserEntity user=UserEntity.getInstance();
         UIController viewController= UIController.getUIControllerInstance();
 
