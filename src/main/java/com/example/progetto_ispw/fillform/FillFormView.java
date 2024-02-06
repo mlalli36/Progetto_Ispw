@@ -68,7 +68,7 @@ public class FillFormView {
     public Label errorLabel;
 
 
-    public void profileMethod(ActionEvent actionEvent) throws UserNotFoundException, IOException {
+    public void profileMethod( ) throws UserNotFoundException, IOException {
         UserEntity user = UserEntity.getInstance();
         String type = user.getTipoaccesso();
         UIController viewController = UIController.getUIControllerInstance();//è singletone
@@ -94,10 +94,9 @@ public class FillFormView {
         }
     }
 
-    public void favoritesMethod(ActionEvent actionEvent) {
-     }
 
-    public void homeMethod(ActionEvent actionEvent) throws IOException {
+
+    public void homeMethod( ) throws IOException {
         UIController viewController = UIController.getUIControllerInstance();//è singletone
 
         viewController.showHome();    }
@@ -107,7 +106,7 @@ public class FillFormView {
 
 
 
-    public void sendFormMethod(ActionEvent actionEvent) throws IOException  {
+    public void sendFormMethod( ) throws IOException  {
         FillFormController controller= new FillFormController();
 
        try {
@@ -198,12 +197,12 @@ public class FillFormView {
 
 
 
-    public void backMethod(ActionEvent actionEvent) throws IOException {
+    public void backMethod( ) throws IOException {
         UIController viewController = UIController.getUIControllerInstance();//è singletone
         viewController.showHome();
     }
 
-    public void searchDataFormMethod(ActionEvent actionEvent) {
+    public void searchDataFormMethod() {
 
         FillFormController controller= new FillFormController( );
 
