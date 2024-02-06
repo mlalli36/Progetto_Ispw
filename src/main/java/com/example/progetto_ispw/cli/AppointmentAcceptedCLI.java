@@ -1,14 +1,13 @@
 package com.example.progetto_ispw.cli;
 
-import com.example.progetto_ispw.acceptAppointment.AcceptBean;
-import com.example.progetto_ispw.acceptAppointment.AcceptController;
+import com.example.progetto_ispw.acceptappointment.AcceptBean;
+import com.example.progetto_ispw.acceptappointment.AcceptController;
 import com.example.progetto_ispw.login.exception.UserNotFoundException;
 import com.example.progetto_ispw.user.UserEntity;
 import com.example.progetto_ispw.worker.WorkerEmailEntity;
 import com.example.progetto_ispw.workerprofile.AppointmentResultElement;
 import com.example.progetto_ispw.workerprofile.AppointmentResultEntity;
 
-import java.io.IOException;
 import java.util.List;
 
 public class AppointmentAcceptedCLI {

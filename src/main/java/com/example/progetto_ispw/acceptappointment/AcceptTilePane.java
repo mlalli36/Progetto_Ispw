@@ -1,7 +1,6 @@
-package com.example.progetto_ispw.acceptAppointment;
+package com.example.progetto_ispw.acceptappointment;
 
 import javafx.geometry.Insets;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.TilePane;

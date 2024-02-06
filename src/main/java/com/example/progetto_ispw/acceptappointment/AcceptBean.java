@@ -1,4 +1,4 @@
-package com.example.progetto_ispw.acceptAppointment;
+package com.example.progetto_ispw.acceptappointment;
 
 import com.example.progetto_ispw.workerprofile.AppointmentResultEntity;
 

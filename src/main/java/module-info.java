@@ -40,8 +40,8 @@ module com.example.progetto_ispw {
     opens com.example.progetto_ispw.bookedServicesUser to javafx.fxml;
     exports com.example.progetto_ispw.bookedServicesWorker;
     opens com.example.progetto_ispw.bookedServicesWorker to javafx.fxml;
-    exports com.example.progetto_ispw.acceptAppointment;
-    opens com.example.progetto_ispw.acceptAppointment to javafx.fxml;
+    exports com.example.progetto_ispw.acceptappointment;
+    opens com.example.progetto_ispw.acceptappointment to javafx.fxml;
     exports com.example.progetto_ispw.fillform.exception;
     exports com.example.progetto_ispw.worker;
 

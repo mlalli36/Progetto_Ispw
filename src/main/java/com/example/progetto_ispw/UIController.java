@@ -1,6 +1,6 @@
 package com.example.progetto_ispw;
 
-import com.example.progetto_ispw.acceptAppointment.AcceptView;
+import com.example.progetto_ispw.acceptappointment.AcceptView;
 import com.example.progetto_ispw.bookedServicesUser.BookedServicesUserView;
 import com.example.progetto_ispw.bookedServicesWorker.BookedServicesWorkerView;
 import com.example.progetto_ispw.fillform.FillFormView;

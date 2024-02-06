@@ -1,14 +1,9 @@
-package com.example.progetto_ispw.acceptAppointment;
+package com.example.progetto_ispw.acceptappointment;
 
 import com.example.progetto_ispw.UIController;
-import com.example.progetto_ispw.bookedServicesWorker.BookedServicesWorkerBean;
-import com.example.progetto_ispw.bookedServicesWorker.BookedServicesWorkerController;
 import com.example.progetto_ispw.login.exception.UserNotFoundException;
-import com.example.progetto_ispw.notifications.NotificationsBean;
-import com.example.progetto_ispw.notifications.NotificationsController;
 import com.example.progetto_ispw.user.UserEntity;
 import com.example.progetto_ispw.worker.WorkerEmailEntity;
-import com.example.progetto_ispw.worker.WorkerTilePane;
 import com.example.progetto_ispw.workerprofile.AppointmentResultElement;
 import com.example.progetto_ispw.workerprofile.AppointmentResultEntity;
 import javafx.event.ActionEvent;

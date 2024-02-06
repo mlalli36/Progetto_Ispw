@@ -1,4 +1,4 @@
-package com.example.progetto_ispw.acceptAppointment;
+package com.example.progetto_ispw.acceptappointment;
 
 import com.example.progetto_ispw.login.exception.UserNotFoundException;
 import com.example.progetto_ispw.user.UserDAO;
@@ -10,7 +10,7 @@ import com.example.progetto_ispw.workerprofile.AppointmentResultEntity;
 import java.util.List;
 
 public class AcceptController {
-    private AppointmentResultEntity appointmentResultSet = new AppointmentResultEntity();
+    private final AppointmentResultEntity appointmentResultSet = new AppointmentResultEntity();
     public boolean verifica(AcceptBean bean) {
         InfoAppoinEntity infoAppoinEntity = new InfoAppoinEntity();
         WorkerDAO dao = WorkerDAO.getInstance();
