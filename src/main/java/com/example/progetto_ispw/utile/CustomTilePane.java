@@ -21,6 +21,8 @@ public class CustomTilePane {
             AnchorPane entryPane = new AnchorPane();
             selectButton.setPrefWidth(190);
             selectButton.setPrefHeight(56);
+            selectButton.setStyle("-fx-background-color: #74c69d;");
+
             AnchorPane.setRightAnchor(selectButton, 50.0);
             AnchorPane.setTopAnchor(selectButton, 150.0);
 
