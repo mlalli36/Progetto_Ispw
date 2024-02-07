@@ -49,9 +49,7 @@ public class UIController {
     public void showLogin() throws IOException {
         this.loadStage("login.fxml","login.css");
     }
-     public void showLogin2() throws IOException {
-        this.loadStage("login2.fxml","login.css");
-    }
+  
     //FINO A QUI
     public void showSignUp() throws IOException {
         this.loadStage("interfaccia SignUp.fxml","signup.css");

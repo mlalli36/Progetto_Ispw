@@ -236,6 +236,8 @@ public class FillFormView {
         this.surnameTextField.setText(surnameC);
         bean.setEmailWorker(emailWorker);}
 
-    public void backMethod() { //to be implemented
+    public void backMethod() throws IOException {
+        UIController viewController = UIController.getUIControllerInstance();
+        viewController.showHome();
     }
 }

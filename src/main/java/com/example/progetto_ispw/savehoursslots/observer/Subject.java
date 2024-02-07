@@ -4,9 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Subject {
+    public void attach(Observer o){}
+    public void detach(Observer o){}
+    protected void notifyObservers(){
 
+    }
+    public void setState(boolean s){
 
-        private List<Observer> observes = new ArrayList<>();
+    }
+
+        /*private List<Observer> observes = new ArrayList<>();
 
         private boolean state = false;
 
@@ -30,7 +37,7 @@ public abstract class Subject {
             notifyObservers();
         }
 
-
+*/
 
 
 }
