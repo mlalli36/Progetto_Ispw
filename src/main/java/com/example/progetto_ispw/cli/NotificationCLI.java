@@ -29,6 +29,11 @@ public class NotificationCLI {
             ctrl.verifica(bean);
 
             AppointmentResultEntity appointmentResultEntity = bean.getAppointmentResultSet();
+            if (appointmentResultEntity == null) {
+                System.out.println("No appointment results found.");
+                return; // Uscire dal metodo se l'entità è null
+            }
+
             List<AppointmentResultElement> elements = appointmentResultEntity.getElements();
 
             if (elements.isEmpty()) {

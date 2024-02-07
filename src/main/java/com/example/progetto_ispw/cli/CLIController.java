@@ -31,18 +31,12 @@ public class CLIController {
     }
 
     public void insertInfoUser(String namesearch, String surnamesearch, String emailsearch) {
-      /*  System.out.println("User Profile:");
-        System.out.println("Name: " + namesearch);
-        System.out.println("Surname: " + surnamesearch);
-        System.out.println("Email: " + emailsearch);*/
+
         UserProfileCLI userProfileCLI= new UserProfileCLI();
         userProfileCLI.userProfile();
     }
     public void insertInfoWorker(String namesearch, String surnamesearch, String emailsearch) throws UserNotFoundException, IOException {
-       /* System.out.println("Worker Profile:");
-        System.out.println("Name: " + namesearch);
-        System.out.println("Surname: " + surnamesearch);
-        System.out.println("Email: " + emailsearch);*/
+
         WorkerProfileCLI workerProfileCLI = new WorkerProfileCLI();
         workerProfileCLI.showWorkerProfile();
     }
@@ -55,7 +49,7 @@ public class CLIController {
         UserEntity user = UserEntity.getInstance();
         String emailsearch= user.getEmail();
         String type = user.getTipoaccesso();
-        System.out.println(type);
+
         CLIController viewController = CLIController.getIstance();//è singletone
         String namesearch= user.getName();
         String surnamesearch= user.getSurname();
@@ -65,8 +59,7 @@ public class CLIController {
         searchDController.searchInfo(searchDBean);
 
 
-        System.out.println("namesearch "+namesearch);
-        System.out.println("surnamesearch "+surnamesearch);
+
 
 
         if(!"Worker".equals(type)) {
