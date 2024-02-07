@@ -65,13 +65,13 @@ public class NotificationsView {
     }
 
     public void homeMethod(ActionEvent actionEvent) throws IOException {
-        UIController controller= UIController.getUIControllerInstance();
-        controller.showHome();
+        UIController ctrl= UIController.getUIControllerInstance();
+        ctrl.showHome();
     }
 
     public void exitMethod(ActionEvent actionEvent) throws IOException {
-        UIController controller= UIController.getUIControllerInstance();
-        controller.showExit();
+        UIController ctrl= UIController.getUIControllerInstance();
+        ctrl.showExit();
     }
 
     public void changeOfWorkingHoursMethod(ActionEvent actionEvent) throws UserNotFoundException, IOException {
@@ -140,7 +140,7 @@ public class NotificationsView {
                 Button rejectButton = new Button("Reject");
 
 
-                String email_client = a.getCEmail();
+                String emailclient = a.getCEmail();
                 String name_client = a.getCName();
                 String surname_client = a.getCSurname();
                 String phone_client = a.getCNumber();
@@ -148,7 +148,7 @@ public class NotificationsView {
                 String time = a.getTime();
                 String date = a.getDAppo();
 
-                workerTilePane.addElements(accepttButton, rejectButton, name_client, surname_client, email_client, description_work, phone_client, date, time);
+                workerTilePane.addElements(accepttButton, rejectButton, name_client, surname_client, emailclient, description_work, phone_client, date, time);
 
                 rejectButton.setOnAction(event -> {
 
