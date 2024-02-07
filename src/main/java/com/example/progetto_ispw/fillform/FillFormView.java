@@ -6,6 +6,7 @@ import com.example.progetto_ispw.login.exception.UserNotFoundException;
 import com.example.progetto_ispw.savehoursslots.SlotHoursEntity;
 import com.example.progetto_ispw.user.UserEntity;
 import com.example.progetto_ispw.worker.WorkerEmailEntity;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
@@ -234,4 +235,7 @@ public class FillFormView {
         this.nameTextField.setText(nameC);
         this.surnameTextField.setText(surnameC);
         bean.setEmailWorker(emailWorker);}
+
+    public void backMethod() {
+    }
 }
