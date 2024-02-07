@@ -28,6 +28,7 @@ public class SlotHours extends Subject {
         this.state = false;
     }
 
+    @Override
     public void setState(boolean s){
         this.state = s;
         notifyObservers();
