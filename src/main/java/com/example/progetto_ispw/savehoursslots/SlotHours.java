@@ -11,14 +11,16 @@ public class SlotHours extends Subject {
 
     private boolean state = false;
 
+    @Override
     public void attach(Observer o){
         observes.add(o);
     }
-
+    @Override
     public void detach(Observer o){
         observes.remove(o);
     }
 
+    @Override
     protected void notifyObservers(){
         for (Observer o : observes){
             o.update();
