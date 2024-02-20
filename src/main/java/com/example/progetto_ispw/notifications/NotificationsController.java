@@ -19,7 +19,7 @@ public class NotificationsController {
         String e = bean.getemailsearch();
         List<InfoAppoinEntity> appointmentList = dao.getAppointmentforWoker(e);
         if (appointmentList.isEmpty() ) {
-             System.out.println("query nel ctrl:"+dao.getAppointmentforWoker(e));
+
              return false;
         } else {
 

@@ -10,6 +10,7 @@ import com.example.progetto_ispw.worker.WorkerEmailEntity;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
@@ -37,10 +38,17 @@ public class HomeView {
     public Button searchButton;
     @FXML
     public ScrollPane scrollPane;
+    @FXML
 
     public Text errorLabel;
-
+    @FXML
     public String emailWorker;
+    @FXML
+    public CheckBox check5km;
+    @FXML
+    public CheckBox check10km;
+    @FXML
+    public CheckBox check20km;
 
     private  UserEntity user = UserEntity.getInstance();
 
@@ -59,8 +67,7 @@ public class HomeView {
         homeController.searchInfo(homeBean);
         String namesearch= user.getName();
         String surnamesearch= user.getSurname();
-        System.out.println("home view nome utente: "+user.getName());
-        System.out.println("home view cognnome utente: "+user.getSurname());
+
 
 
         if(!"Worker".equals(type)) {
@@ -90,6 +97,17 @@ public class HomeView {
             String normalizedlocationbWorker= locationWorkerTextField.getText().toLowerCase();
             bean.setJobWork(normalizedjobWorker);
             bean.setLocationWork(normalizedlocationbWorker);
+
+            int radius = 0;
+
+            if(check5km.isSelected()){
+                radius=5;
+            } else if (check10km.isSelected()) {
+                radius=10;
+            }else if(check20km.isSelected()){
+                radius=20;
+            }
+        bean.setRadius(radius);
 
         HomeController controller= new HomeController();
         controller.workInfo(bean);
@@ -144,10 +162,6 @@ public class HomeView {
         bean.setEmail(emailsearch);
         HomeController ctrl= new HomeController();
         ctrl.searchInfo(bean);
-        System.out.println("search dinamica nome utente: "+user.getName());
-        System.out.println("search dinamica cognnome utente: "+user.getSurname());
-        System.out.println("search dinamica email utente: "+user.getEmail());
-        System.out.println("search dinamica email worker in form: "+emailWorker);
 
 
         String emailCl= user.getEmail();

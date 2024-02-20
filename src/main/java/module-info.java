@@ -4,6 +4,9 @@ module com.example.progetto_ispw {
     requires java.sql;
     requires jasypt;
     requires java.desktop;
+    requires com.fasterxml.jackson.core;
+    requires com.fasterxml.jackson.databind;
+    requires java.net.http;
 
 
     opens com.example.progetto_ispw to javafx.fxml;

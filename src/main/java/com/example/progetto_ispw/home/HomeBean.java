@@ -8,6 +8,7 @@ public class HomeBean {
     protected String jobWork=null;
     protected String locationWork = null;
     private String emailsearch;
+    private int radius;
 
 
 
@@ -51,5 +52,12 @@ public class HomeBean {
 
     public void setResultSet(ResultSetEntity resultSet) {
         this.resultSet= resultSet;
+    }
+
+    public void setRadius(int radius) {
+        this.radius= radius;
+    }
+
+    public int getRadius() { return radius;
     }
 }

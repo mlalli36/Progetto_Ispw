@@ -1,5 +1,6 @@
 package com.example.progetto_ispw.home;
 
+import com.example.progetto_ispw.geolocator.Geolocator;
 import com.example.progetto_ispw.login.exception.UserNotFoundException;
 import com.example.progetto_ispw.user.UserDAO;
 import com.example.progetto_ispw.worker.WorkerDAO;
@@ -20,10 +21,11 @@ public class HomeController {
 
     public void workInfo(HomeBean bean) {
         WorkerDAO dao = WorkerDAO.getInstance();
+        Geolocator g = Geolocator.getInstance();
 
-        List<WorkerEntity> workerList = dao.getWorker(bean.getJobWork(), bean.getLocationWork());
+        List<WorkerEntity> workerList = dao.getWorker(bean.getJobWork(), g.getLat(bean.getLocationWork()), g.getLng(bean.getLocationWork()), bean.getRadius());
 
-
+      // List<WorkerEntity> workerList = dao.getWorker(bean.getJobWork(), bean.getLocationWork());
 
         for (WorkerEntity worker : workerList) {
 

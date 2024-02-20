@@ -60,10 +60,56 @@ public class WorkerDAO {
 
 
     }
+    public List<WorkerEntity> getWorker(String jobWorker, double userLat, double userLng, int radius) {
+        List<WorkerEntity> workerList = new ArrayList<>();
+
+        try {
+            Connection con = getConnector();
+            if (con == null)
+                throw new SQLException();
+            String query = """
+                    SELECT * , 2*6371 * asin(sqrt(0.5 - cos((Lat-?) * 0.0174532925199432)/2 +
+                                    cos(? * 0.0174532925199432) * cos(Lat * 0.0174532925199432) *
+                                            (1 - cos((Lng - ?) * 0.0174532925199432))/2)) AS distance
+                    FROM `tabellainformazioni`
+                    WHERE Work = ?
+                    HAVING distance < ? 
+                    ORDER BY distance
+                    """;
+
+            try (PreparedStatement preparedStatement = con.prepareStatement(query)) {
+                preparedStatement.setDouble(1, userLat);
+                preparedStatement.setDouble(2, userLat);
+                preparedStatement.setDouble(3, userLng);
+                preparedStatement.setInt(4, radius);
+                preparedStatement.setString(5, jobWorker);
 
 
 
-    public List<WorkerEntity> getWorker(String jobWorker, String locationWorker) {
+                ResultSet rs = preparedStatement.executeQuery();
+                while (rs.next()) {
+
+                    WorkerEntity workerEntity = new WorkerEntity();
+                    workerEntity.setEmail(rs.getString("Email"));
+                    workerEntity.setDescription(rs.getString("Description"));
+                    workerEntity.setWork(rs.getString("Work"));
+                    workerEntity.setName(rs.getString("Name"));
+                    workerEntity.setSurname(rs.getString("Surname"));
+                    workerEntity.setAddress(rs.getString("Address"));
+                    workerEntity.setLocation(rs.getString("Location"));
+                    workerList.add(workerEntity);
+                }
+                rs.close();
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return workerList;
+    }
+
+
+   /* public List<WorkerEntity> getWorker(String jobWorker, String locationWorker) {
         List<WorkerEntity> workerList = new ArrayList<>();
 
         try {
@@ -95,7 +141,7 @@ public class WorkerDAO {
         }
         return workerList;
     }
-
+*/
 
     public void addSlots(String email, String slot1, String slot2, String slot3, String slot4, String slot5, String dateCalendar) throws TimeSlotAlreadyExistsException {
         try (Connection con = getConnector()) {

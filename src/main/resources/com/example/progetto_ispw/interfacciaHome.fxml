@@ -13,7 +13,7 @@
             <Pane layoutX="5.0" prefHeight="53.0" prefWidth="1219.0" style="-fx-background-color: #74c69d;">
                <children>
                   <Button fx:id="profile" layoutX="1144.0" layoutY="-1.0" mnemonicParsing="false" onAction="#profileMethod" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #74c69d;" />
-                  <Button fx:id="favorites" layoutX="1069.0" layoutY="-1.0" mnemonicParsing="false"  prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #74c69d;" />
+                  <Button fx:id="favorites" layoutX="1069.0" layoutY="-1.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #74c69d;" />
                   <Button fx:id="home" layoutX="994.0" layoutY="-1.0" mnemonicParsing="false" onAction="#homeMethod" prefHeight="53.0" prefWidth="75.0" style="-fx-background-color: #40916c;" />
                   <ImageView fitHeight="56.0" fitWidth="66.0" layoutX="1074.0">
                      <image>
@@ -37,19 +37,19 @@
                   </ImageView>
                </children>
             </Pane>
-            <Text layoutX="23.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Insert the Work of the craftsman :">
+            <Text layoutX="23.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Insert the work of the craftsman :">
                <font>
                   <Font name="Bookman Old Style" size="20.0" />
                </font>
             </Text>
-            <TextField fx:id="jobWorkerTextField" layoutX="23.0" layoutY="89.0" prefHeight="41.0" prefWidth="434.0" style="-fx-background-radius: 10;" />
-            <Text layoutX="503.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Insert the Location of the craftsman :">
+            <TextField fx:id="jobWorkerTextField" layoutX="23.0" layoutY="89.0" prefHeight="41.0" prefWidth="339.0" style="-fx-background-radius: 10;" />
+            <Text layoutX="418.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Insert the address:">
                <font>
                   <Font name="Bookman Old Style" size="20.0" />
                </font>
             </Text>
-            <TextField fx:id="locationWorkerTextField" layoutX="503.0" layoutY="89.0" prefHeight="41.0" prefWidth="434.0" style="-fx-background-radius: 10;" />
-            <Button fx:id="searchButton" layoutX="1008.0" layoutY="77.0" mnemonicParsing="false" onAction="#searchMethod" prefHeight="56.0" prefWidth="190.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="Search">
+            <TextField fx:id="locationWorkerTextField" layoutX="418.0" layoutY="89.0" prefHeight="41.0" prefWidth="339.0" style="-fx-background-radius: 10;" />
+            <Button fx:id="searchButton" layoutX="1083.0" layoutY="77.0" mnemonicParsing="false" onAction="#searchMethod" prefHeight="53.0" prefWidth="115.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="Search">
                <font>
                   <Font name="Bookman Old Style" size="22.0" />
                </font>
@@ -65,6 +65,26 @@
                      </children></AnchorPane>
                </content>
             </ScrollPane>
+            <CheckBox fx:id="check5km" layoutX="779.0" layoutY="101.0" mnemonicParsing="false" text="5 km">
+               <font>
+                  <Font name="Bookman Old Style" size="18.0" />
+               </font>
+            </CheckBox>
+            <CheckBox fx:id="check10km" layoutX="871.0" layoutY="101.0" mnemonicParsing="false" text="10 km">
+               <font>
+                  <Font name="Bookman Old Style" size="18.0" />
+               </font>
+            </CheckBox>
+            <CheckBox fx:id="check20km" layoutX="971.0" layoutY="101.0" mnemonicParsing="false" text="20 km">
+               <font>
+                  <Font name="Bookman Old Style" size="18.0" />
+               </font>
+            </CheckBox>
+            <Text layoutX="779.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Check radius search:">
+               <font>
+                  <Font name="Bookman Old Style" size="20.0" />
+               </font>
+            </Text>
 
          </children>
       </Pane>

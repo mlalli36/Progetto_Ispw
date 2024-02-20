@@ -30,8 +30,7 @@ public class FillFormController {
     public void takeSlot(FillFormBean bean) {
         String emailWorker = bean.getEmailWorker();
         String date = bean.getDate();
-        System.out.println("FFC date: "+date);
-        System.out.println("FFC email: "+emailWorker);
+
 
 
         WorkerDAO dao = WorkerDAO.getInstance();

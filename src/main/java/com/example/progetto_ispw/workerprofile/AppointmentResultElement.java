@@ -11,11 +11,11 @@ public class AppointmentResultElement {
     private String descriptionWork;
     private String time;
     public void setWorkerEmail(String wEmail) {this.workerEmail= wEmail;
-        System.out.println("email worker" +workerEmail );
+
     }
 
     public void setClientEmail(String cEmail) { this.clientEmail= cEmail;
-        System.out.println("email client" +clientEmail );
+
     }
 
 

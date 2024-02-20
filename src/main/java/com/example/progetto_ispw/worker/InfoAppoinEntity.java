@@ -33,7 +33,7 @@ public class InfoAppoinEntity {
 
     public void setTime(String timeDate) {this.timeDate=timeDate;}
     public void setAccept(int accept) { this.accept= accept;
-        System.out.println("Setaccept:"+ accept);
+
     }
 
     public String getWEmail() { return workerEmail;}
@@ -48,7 +48,7 @@ public class InfoAppoinEntity {
     public String getdescriptionWork(){return workDescr;}
 
     public Integer getAccept() {
-        System.out.println("accept:"+ accept);
+
         return accept;
 
     }

@@ -10,16 +10,10 @@ public class SaveHoursController {
         WorkerDAO dao = WorkerDAO.getInstance();
 
          SlotHoursEntity slot = dao.getSlots(bean.getemail(), bean.getDateCalendar());
-        System.out.println("email:"+bean.getemail());
 
-        System.out.println("date:"+bean.getDateCalendar());
 
          if (slot != null && slot.getdate().equals(bean.getDateCalendar()) && slot.getemail().equals(bean.getemail())) {
-             System.out.println("slot "+slot);
-            System.out.println("slot email "+slot.getemail());
-            System.out.println("bean email "+bean.getemail());
-            System.out.println("slot date "+slot.getdate());
-            System.out.println("bean date "+bean.getDateCalendar());
+
 
 
             throw new TimeSlotAlreadyExistsException("Lo data selezionato è già esistente");
