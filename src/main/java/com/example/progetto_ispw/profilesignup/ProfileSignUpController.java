@@ -13,6 +13,8 @@ public class ProfileSignUpController {
         Geolocator g = Geolocator.getInstance();
         double lat = g.getLat(bean.getAddress());
         double lng = g.getLng(bean.getAddress());
+        System.out.println("lat"+lat);
+        System.out.println("lng"+lng);
         if (lat == -1 || lng == -1){
             throw new IllegalArgumentException("The address is incorrect, try again");
         }
