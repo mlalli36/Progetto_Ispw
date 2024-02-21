@@ -11,7 +11,22 @@ public class WorkerEntity {
     private String surname;
     private  String work;
 
+    private double[] coordinates = new double[2];
+    public void setCoordinates(double lat, double lng) {
+        double[] coord = new double[2];
+        coord[0] = lat;
+        coord[1] = lng;
+        this.coordinates = coord;
+    }
 
+
+    public double getLat() {
+        return this.coordinates[0];
+    }
+
+    public double getLong() {
+        return this.coordinates[1];
+    }
 
     public  String getName() {
         return name;

@@ -1,6 +1,7 @@
 package com.example.progetto_ispw.home;
 
 import com.example.progetto_ispw.geolocator.Geolocator;
+import com.example.progetto_ispw.home.exception.AddressNotValidException;
 import com.example.progetto_ispw.login.exception.UserNotFoundException;
 import com.example.progetto_ispw.user.UserDAO;
 import com.example.progetto_ispw.worker.WorkerDAO;
@@ -19,9 +20,23 @@ public class HomeController {
         userDAO.getUserInfo(homeBean.getemailsearch());
     }
 
-    public void workInfo(HomeBean bean) {
+    public void workInfo(HomeBean bean) throws AddressNotValidException {
         WorkerDAO dao = WorkerDAO.getInstance();
+        String userAddress = bean.getLocationWork();
         Geolocator g = Geolocator.getInstance();
+        double latitude = g.getLat(userAddress);
+        double longitude = g.getLng(userAddress);
+
+        // Stampa le coordinate
+        if (latitude != -1 && longitude != -1) {
+            System.out.println("Coordinate per l'indirizzo '" + userAddress + "':");
+            System.out.println("Latitudine: " + latitude);
+            System.out.println("Longitudine: " + longitude);
+        } else {
+            System.out.println("Impossibile ottenere le coordinate per l'indirizzo '" + userAddress + "'.");
+        }
+        if (g.getLat(userAddress) == -1 || g.getLng(userAddress) == -1)
+            throw new AddressNotValidException();
 
         List<WorkerEntity> workerList = dao.getWorker(bean.getJobWork(), g.getLat(bean.getLocationWork()), g.getLng(bean.getLocationWork()), bean.getRadius());
 

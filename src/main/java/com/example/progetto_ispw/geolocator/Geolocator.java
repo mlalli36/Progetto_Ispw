@@ -57,7 +57,7 @@ public class Geolocator {
         String requestUri = geocodingResource + "?apiKey=" + apiKey + "&q=" + encodedQuery;
 
         HttpRequest geocodingRequest = HttpRequest.newBuilder().GET().uri(URI.create(requestUri))
-                .timeout(Duration.ofMillis(2000)).build();
+                .timeout(Duration.ofMillis(5000)).build();
 
         HttpResponse<String> geocodingResponse;
         try {

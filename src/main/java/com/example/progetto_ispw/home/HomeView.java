@@ -1,6 +1,7 @@
 package com.example.progetto_ispw.home;
 
 import com.example.progetto_ispw.UIController;
+import com.example.progetto_ispw.home.exception.AddressNotValidException;
 import com.example.progetto_ispw.login.exception.UserNotFoundException;
 
 import com.example.progetto_ispw.user.UserEntity;
@@ -90,7 +91,7 @@ public class HomeView {
     }
 
 
-    public void searchMethod() throws IOException {
+    public void searchMethod() throws IOException, AddressNotValidException {
             HomeBean bean= new HomeBean();
             String normalizedjobWorker= jobWorkerTextField.getText().toLowerCase();
 

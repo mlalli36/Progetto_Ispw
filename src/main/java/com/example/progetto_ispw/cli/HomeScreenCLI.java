@@ -4,6 +4,7 @@ import com.example.progetto_ispw.home.HomeBean;
 import com.example.progetto_ispw.home.HomeController;
 import com.example.progetto_ispw.home.ResultElement;
 import com.example.progetto_ispw.home.ResultSetEntity;
+import com.example.progetto_ispw.home.exception.AddressNotValidException;
 import com.example.progetto_ispw.login.exception.UserNotFoundException;
 import com.example.progetto_ispw.user.UserEntity;
 import com.example.progetto_ispw.worker.WorkerEmailEntity;
@@ -175,6 +176,8 @@ public class HomeScreenCLI {
 
         } catch (IOException e) {
             System.err.println("Error reading input: " + e.getMessage());
+        } catch (AddressNotValidException e) {
+            throw new RuntimeException(e);
         }
     }
 

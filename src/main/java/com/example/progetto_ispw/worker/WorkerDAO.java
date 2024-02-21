@@ -26,11 +26,11 @@ public class WorkerDAO {
     private WorkerDAO() {
     }
 
-    public void addWorker(String email, String description, String work, String nome, String cognome, String indirizzo, String location) throws UserAlreadyExistsException {
+    public void addWorker(String email, String description, String work, String nome, String cognome, String indirizzo, String location, Double lat, Double lng) throws UserAlreadyExistsException {
         try (Connection con = getConnector()) {
             if (con == null)
                 throw new SQLException();
-            String query = "INSERT INTO `databaseispw`.`tabellainformazioni` (`Email`,`Description`,`Work`, `Name`,`Surname`,`Address`,`Location`) VALUES (?, ?, ?, ?, ?, ?, ?);";
+            String query = "INSERT INTO `databaseispw`.`tabellainformazioni` (`Email`,`Description`,`Work`, `Name`,`Surname`,`Address`,`Location`, `Lat`, `Lng` ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);";
             try (PreparedStatement preparedStatement = con.prepareStatement(query)) {
                 preparedStatement.setString(1, email);
                 preparedStatement.setString(2, description);
@@ -39,6 +39,9 @@ public class WorkerDAO {
                 preparedStatement.setString(5, cognome);
                 preparedStatement.setString(6, indirizzo);
                 preparedStatement.setString(7, location);
+                preparedStatement.setDouble(8, lat);
+                preparedStatement.setDouble(9, lng);
+
 
                 preparedStatement.executeUpdate();
                 WorkerEntity worker = new WorkerEntity();
@@ -49,6 +52,7 @@ public class WorkerDAO {
                 worker.setSurname(cognome);
                 worker.setAddress(indirizzo);
                 worker.setLocation(location);
+                worker.setCoordinates(lat,lng);
 
             }
 
@@ -81,8 +85,10 @@ public class WorkerDAO {
                 preparedStatement.setDouble(1, userLat);
                 preparedStatement.setDouble(2, userLat);
                 preparedStatement.setDouble(3, userLng);
-                preparedStatement.setInt(4, radius);
-                preparedStatement.setString(5, jobWorker);
+                preparedStatement.setString(4, jobWorker);
+                preparedStatement.setInt(5, radius);
+
+
 
 
 
