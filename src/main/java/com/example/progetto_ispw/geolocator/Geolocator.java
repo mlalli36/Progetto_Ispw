@@ -26,7 +26,8 @@ public class Geolocator {
     private String lastAddress = "";
     private static Geolocator geolocatorInstance = null;
 
-
+// cambiare qui l'input per dargli anche la città per avere le coordinate giuste
+// grazie anche alla città oltre che all'indirizzo
     public double getLat(String address){
         if (!address.equals(lastAddress)){ //controlla se la richiesta è gia stata fatta, se è così non ricalcola di nuovo le coordinate
             this.lat = -1;
@@ -79,6 +80,7 @@ public class Geolocator {
 
 
     }
+
 
     private double[] parseResponse(String response) throws JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper();

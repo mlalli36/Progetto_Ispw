@@ -61,6 +61,8 @@ public class ProfileSignUpView {
     public Button bookedServices1;
     @FXML
     public Label surnameLabel;
+    @FXML
+    public TextField CAPTextField;
 
     public void signUpMethodPrecompile(String email, String nome, String cognome)  {
         this.emailTextField.setText(email);

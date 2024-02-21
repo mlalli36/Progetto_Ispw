@@ -37,21 +37,21 @@
                   </ImageView>
                </children>
             </Pane>
-            <Text layoutX="23.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Insert the work of the craftsman :">
+            <Text layoutX="23.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Insert the work of the craftsman :" wrappingWidth="193.76953125">
                <font>
-                  <Font name="Bookman Old Style" size="20.0" />
+                  <Font name="Bookman Old Style" size="15.0" />
                </font>
             </Text>
-            <TextField fx:id="jobWorkerTextField" layoutX="23.0" layoutY="89.0" prefHeight="41.0" prefWidth="339.0" style="-fx-background-radius: 10;" />
-            <Text layoutX="418.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Insert the address:">
+            <TextField fx:id="jobWorkerTextField" layoutX="23.0" layoutY="89.0" prefHeight="41.0" prefWidth="172.0" style="-fx-background-radius: 10;" />
+            <Text layoutX="220.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Insert the address:">
                <font>
-                  <Font name="Bookman Old Style" size="20.0" />
+                  <Font name="Bookman Old Style" size="15.0" />
                </font>
             </Text>
-            <TextField fx:id="locationWorkerTextField" layoutX="418.0" layoutY="89.0" prefHeight="41.0" prefWidth="339.0" style="-fx-background-radius: 10;" />
-            <Button fx:id="searchButton" layoutX="1083.0" layoutY="77.0" mnemonicParsing="false" onAction="#searchMethod" prefHeight="53.0" prefWidth="115.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="Search">
+            <TextField fx:id="locationWorkerTextField" layoutX="218.0" layoutY="89.0" prefHeight="41.0" prefWidth="194.0" style="-fx-background-radius: 10;" />
+            <Button fx:id="searchButton" layoutX="1109.0" layoutY="77.0" mnemonicParsing="false" onAction="#searchMethod" prefHeight="53.0" prefWidth="89.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="Search">
                <font>
-                  <Font name="Bookman Old Style" size="22.0" />
+                  <Font name="Bookman Old Style" size="18.0" />
                </font>
             </Button>
             <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" layoutX="5.0" layoutY="153.0" prefHeight="598.0" prefWidth="1219.0">
@@ -65,24 +65,36 @@
                      </children></AnchorPane>
                </content>
             </ScrollPane>
-            <CheckBox fx:id="check5km" layoutX="779.0" layoutY="101.0" mnemonicParsing="false" text="5 km">
+            <CheckBox fx:id="check5km" layoutX="814.0" layoutY="101.0" mnemonicParsing="false" text="5 km">
                <font>
                   <Font name="Bookman Old Style" size="18.0" />
                </font>
             </CheckBox>
-            <CheckBox fx:id="check10km" layoutX="871.0" layoutY="101.0" mnemonicParsing="false" text="10 km">
+            <CheckBox fx:id="check10km" layoutX="903.0" layoutY="101.0" mnemonicParsing="false" text="10 km">
                <font>
                   <Font name="Bookman Old Style" size="18.0" />
                </font>
             </CheckBox>
-            <CheckBox fx:id="check20km" layoutX="971.0" layoutY="101.0" mnemonicParsing="false" text="20 km">
+            <CheckBox fx:id="check20km" layoutX="1002.0" layoutY="101.0" mnemonicParsing="false" text="20 km">
                <font>
                   <Font name="Bookman Old Style" size="18.0" />
                </font>
             </CheckBox>
-            <Text layoutX="779.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Check radius search:">
+            <Text layoutX="814.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Check radius search:">
                <font>
                   <Font name="Bookman Old Style" size="20.0" />
+               </font>
+            </Text>
+            <TextField fx:id="cityWorkerTextField" layoutX="430.0" layoutY="89.0" prefHeight="41.0" prefWidth="172.0" style="-fx-background-radius: 10;" />
+            <Text layoutX="432.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Insert the city:">
+               <font>
+                  <Font name="Bookman Old Style" size="15.0" />
+               </font>
+            </Text>
+            <TextField fx:id="capWorkerTextField" layoutX="621.0" layoutY="89.0" prefHeight="41.0" prefWidth="172.0" style="-fx-background-radius: 10;" />
+            <Text layoutX="621.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Insert the CAP:">
+               <font>
+                  <Font name="Bookman Old Style" size="15.0" />
                </font>
             </Text>
 

@@ -16,8 +16,13 @@ public class ProfileSignUpBean {
     protected String  description= null;
     protected String  address= null;
     protected String  work= null;
+    protected int  cap;
+
 
      private static final Pattern VALID_EMAIL_ADDRESS_REGEX = Pattern.compile("^[A-Z0-9.%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
+
+
+
 
 
     public void setEmail(String email) throws LoginFailedException, UserNotFoundException {
@@ -87,7 +92,22 @@ public class ProfileSignUpBean {
 
     public String getSurname() {return surname;}
 
-    public String getAddress() {return address;}
+   // public String getAddress() {return address;}
+    public String getAddress() {
+        StringBuilder addressBuilder = new StringBuilder();
+        if (address != null && !address.isEmpty()) {
+            addressBuilder.append(address);
+            addressBuilder.append(", ");
+        }
+        if (location != null && !location.isEmpty()) {
+            addressBuilder.append(location);
+            addressBuilder.append(", ");
+        }
+        if (cap != 0) {
+            addressBuilder.append(cap);
+        }
+        return addressBuilder.toString();
+    }
 
     public String getLocation() {return location;}
 }

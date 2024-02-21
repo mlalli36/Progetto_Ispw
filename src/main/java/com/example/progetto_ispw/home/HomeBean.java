@@ -9,6 +9,8 @@ public class HomeBean {
     protected String locationWork = null;
     private String emailsearch;
     private int radius;
+    private int CAP;
+    private String city;
 
 
 
@@ -36,8 +38,25 @@ public class HomeBean {
         return jobWork;
     }
 
+    /*
+    prova per indirizzo completo
     public String getLocationWork() {
         return locationWork;
+    }*/
+    public String getLocationWork() {
+        StringBuilder addressBuilder = new StringBuilder();
+        if (locationWork != null && !locationWork.isEmpty()) {
+            addressBuilder.append(locationWork);
+            addressBuilder.append(", ");
+        }
+        if (city != null && !city.isEmpty()) {
+            addressBuilder.append(city);
+            addressBuilder.append(", ");
+        }
+        if (CAP != 0) {
+            addressBuilder.append(CAP);
+        }
+        return addressBuilder.toString();
     }
 
 
@@ -59,5 +78,21 @@ public class HomeBean {
     }
 
     public int getRadius() { return radius;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public int getCAP() {
+        return CAP;
+    }
+
+    public void setCAP(int CAP) {
+        this.CAP = CAP;
     }
 }

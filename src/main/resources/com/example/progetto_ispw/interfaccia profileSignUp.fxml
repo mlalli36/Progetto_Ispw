@@ -88,8 +88,8 @@
                      <Font name="Bookman Old Style" size="15.0" />
                   </font>
                </Text>
-               <TextField fx:id="locationTextField" layoutX="434.0" layoutY="450.0" prefHeight="44.0" prefWidth="254.0" style="-fx-background-radius: 10;" />
-               <Text layoutX="437.0" layoutY="440.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Location*:">
+               <TextField fx:id="locationTextField" layoutX="434.0" layoutY="420.0" prefHeight="44.0" prefWidth="254.0" style="-fx-background-radius: 10;" />
+               <Text layoutX="437.0" layoutY="410.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Location*:">
                   <font>
                      <Font name="Bookman Old Style" size="15.0" />
                   </font>
@@ -99,6 +99,12 @@
                      <Font name="Bookman Old Style" size="15.0" />
                   </font>
                </Label>
+               <Text layoutX="437.0" layoutY="486.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CAP*:">
+                  <font>
+                     <Font name="Bookman Old Style" size="15.0" />
+                  </font>
+               </Text>
+               <TextField fx:id="CAPTextField" layoutX="434.0" layoutY="495.0" prefHeight="44.0" prefWidth="254.0" style="-fx-background-radius: 10;" />
          </children>
       </Pane>
       <Circle fill="#74c69d" layoutX="95.0" layoutY="128.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
