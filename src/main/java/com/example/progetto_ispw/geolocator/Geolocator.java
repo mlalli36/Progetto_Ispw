@@ -110,9 +110,8 @@ public class Geolocator {
 
 
         } catch (IOException ex) {
-
+            throw new RuntimeException(ex);
         }
-        return null;
     }
 
     private Geolocator(){}
