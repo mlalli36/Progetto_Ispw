@@ -130,12 +130,6 @@ public class FillFormView {
             bean.setDescription(descriptionUserTextField.getText());
             bean.setPhone(phoneUserTextField.getText());
 
-           /* LocalDate selectedDate = date.getValue();
-           if(selectedDate==null){
-               throw new EmptyDateFieldException("");}
-            String dateStringCalendar = selectedDate.toString();
-            bean.setDate(dateStringCalendar);*/
-
             SlotHoursEntity sl = SlotHoursEntity.getInstance();
             String slot1 = sl.getSlot1();
             String slot2 = sl.getSlot2();
@@ -212,12 +206,7 @@ public class FillFormView {
     public void searchDataFormMethod() {
 
         FillFormController controller= new FillFormController( );
-/*
-        LocalDate selectedDate = date.getValue();
 
-        String dateStringCalendar = selectedDate.toString();
-        bean.setDate(dateStringCalendar);
-*/
 
 
         SlotTilePane slPane= new SlotTilePane();

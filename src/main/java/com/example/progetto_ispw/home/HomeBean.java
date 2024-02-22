@@ -1,7 +1,6 @@
 package com.example.progetto_ispw.home;
 
 
-import com.example.progetto_ispw.fillform.exception.EmptyDateFieldException;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -15,7 +14,7 @@ public class HomeBean {
     private boolean availabilityIsImportant = false;
     private String emailsearch;
     private int radius;
-    private String CAP;
+    private String cap1;
     private String city;
     private String date;
 
@@ -48,24 +47,6 @@ public class HomeBean {
     public String getLocation() {
         return locationWork;
     }
-    // prova per indirizzo completo
-   /* public String getLocationWork() {
-        StringBuilder addressBuilder = new StringBuilder();
-        if (locationWork != null && !locationWork.isEmpty()) {
-            addressBuilder.append(locationWork);
-            addressBuilder.append(", ");
-        }
-        if (city != null && !city.isEmpty()) {
-            addressBuilder.append(city);
-            addressBuilder.append(", ");
-        }
-        if (CAP != 0) {
-            addressBuilder.append(CAP);
-        }
-        System.out.println("indirizzo di getlocation"+ addressBuilder);
-        return addressBuilder.toString();
-
-    }*/
 
 
     public void setDistanceIsImportant(boolean distanceIsImportant) {
@@ -120,7 +101,7 @@ public class HomeBean {
     }
 
     public String getCAP() {
-        return CAP;
+        return cap1;
     }
 
     public void setCAP(String CAP) {
@@ -129,6 +110,6 @@ public class HomeBean {
         if (!m.find()){
             throw new IllegalArgumentException("Invalid ZIP code!");
         }
-        this.CAP = CAP;
+        this.cap1 = CAP;
     }
 }

@@ -88,9 +88,9 @@ public class HomeController {
         double pondAvailability = isAvailabilityImportant ? highWeight : lowWeight;
         double distValue=(element.getDistance()/selectDistance)*pondDist;
         double availabilityValue = (element.getAvailability()/(maxAvaibility))*pondAvailability;
-        double result= (distValue + availabilityValue);
 
 
-        return result  ;
+
+        return (distValue + availabilityValue) ;
     }
 }
