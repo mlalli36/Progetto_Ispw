@@ -62,7 +62,7 @@ public class ProfileSignUpView {
     @FXML
     public Label surnameLabel;
     @FXML
-    public TextField CAPTextField;
+    public TextField capTextField;
 
     public void signUpMethodPrecompile(String email, String nome, String cognome)  {
         this.emailTextField.setText(email);
@@ -94,7 +94,7 @@ public class ProfileSignUpView {
             bean.setLocation(locationTextField.getText());
             bean.setAddress(addressTextField.getText());
             bean.setWork(professionTextField.getText());
-            bean.setCAP(CAPTextField.getText());
+            bean.setCAP(capTextField.getText());
             ProfileSignUpController controller  = new ProfileSignUpController();
             controller.signUpWorker(bean);
             UIController viewController = UIController.getUIControllerInstance();//è singletone

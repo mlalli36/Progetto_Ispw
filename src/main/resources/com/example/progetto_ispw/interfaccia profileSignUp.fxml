@@ -104,7 +104,7 @@
                      <Font name="Bookman Old Style" size="15.0" />
                   </font>
                </Text>
-               <TextField fx:id="CAPTextField" layoutX="434.0" layoutY="495.0" prefHeight="44.0" prefWidth="254.0" style="-fx-background-radius: 10;" />
+               <TextField fx:id="capTextField" layoutX="434.0" layoutY="495.0" prefHeight="44.0" prefWidth="254.0" style="-fx-background-radius: 10;" />
          </children>
       </Pane>
       <Circle fill="#74c69d" layoutX="95.0" layoutY="128.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
