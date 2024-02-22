@@ -10,7 +10,7 @@ public class ResultElement {
     private double indexValue;
 
     private String emailWorker;
-    private int availability;
+    private double availability;
 
     public void setNameWorker(String nameWorker) {
         this.nameWorker= nameWorker;
@@ -65,7 +65,7 @@ public class ResultElement {
         return indexValue;
     }
 
-    public void setAvailability(int availability) { this.availability = availability;
+    public void setAvailability(double availability) { this.availability = availability;
     }
 
     public double getAvailability() { return availability;

@@ -105,7 +105,7 @@ public class WorkerDAO {
                     workerEntity.setAddress(rs.getString("Address"));
                     workerEntity.setLocation(rs.getString("Location"));
                     workerEntity.setDistance(rs.getDouble("distance"));
-                    workerEntity.setAvability(rs.getInt("Availability"));
+                    workerEntity.setAvability(rs.getDouble("Availability"));
                     workerList.add(workerEntity);
                 }
                 rs.close();

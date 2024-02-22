@@ -1,7 +1,5 @@
 package com.example.progetto_ispw.worker;
 
-import com.example.progetto_ispw.user.UserEntity;
-
 public class WorkerEntity {
     private String email;
     private String description;
@@ -13,7 +11,7 @@ public class WorkerEntity {
     private Double distance;
 
     private double[] coordinates = new double[2];
-    private int availability;
+    private double availability;
 
     public void setCoordinates(double lat, double lng) {
         double[] coord = new double[2];
@@ -70,9 +68,9 @@ public class WorkerEntity {
     public double getDistance() { return distance;
     }
 
-    public void setAvability(int availability) { this.availability = availability;
+    public void setAvability(double availability) { this.availability = availability;
     }
 
-    public int getAvailability() { return availability;
+    public double getAvailability() { return availability;
     }
 }

@@ -74,41 +74,42 @@ public class HomeController {
         bean.setResultSet(this.resultSet);
     }
 
-
     private void evaluateIndexValues() {
-
-        //Setta l'indexValue di ogni ResultElement
-        for (ResultElement element : resultSet.getElements())
+        // Setta l'indexValue di ogni ResultElement
+        for (ResultElement element : resultSet.getElements()) {
             element.setIndexValue(this.calculateIndexValue(element));
-
-
+        }
 
         Comparator<ResultElement> indexValueComparator = Comparator.comparingDouble(ResultElement::getIndexValue);
-        // Il comparatore compara gli index value dei ResultElement
 
+        // Se isAvailabilityImportant è highWeight, inverti l'ordine del comparatore
+        if (isAvailabilityImportant ) {
+            indexValueComparator = indexValueComparator.reversed();
+        }
 
-        this.resultSet.getElements().sort(indexValueComparator); //ordiniamo gli elementi in ordine crescente d'indexValue
-
-
+        resultSet.getElements().sort(indexValueComparator);
     }
+
+
 
     private double calculateIndexValue(ResultElement element){
 
         double selectDistance= this.radius;
         double maxAvaibility=5;
-        double highWeight = 5;
+        double highWeight = 2;
         double lowWeight = 1;
         double pondDist = isDistanceImportant ? highWeight : lowWeight;
         System.out.println("pondDist"+ pondDist);
         double pondAvailability = isAvailabilityImportant ? highWeight : lowWeight;
-
+        System.out.println("pondAvailability"+ pondAvailability);
         double distValue=(element.getDistance()/selectDistance)*pondDist;
+        System.out.println("distValue"+ distValue);
+        double availabilityValue = (element.getAvailability()/(maxAvaibility))*pondAvailability;
+        System.out.println("availabilityValue"+ availabilityValue);
+        double result= (distValue + availabilityValue);
+        System.out.println("result"+ result);
 
-        double availabilityValue = (element.getAvailability()/maxAvaibility)*pondAvailability;
 
-
-
-
-        return (distValue + availabilityValue)  ;
+        return result  ;
     }
 }
