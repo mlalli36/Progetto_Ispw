@@ -13,6 +13,8 @@ public class WorkerEntity {
     private Double distance;
 
     private double[] coordinates = new double[2];
+    private int availability;
+
     public void setCoordinates(double lat, double lng) {
         double[] coord = new double[2];
         coord[0] = lat;
@@ -66,5 +68,11 @@ public class WorkerEntity {
     }
 
     public double getDistance() { return distance;
+    }
+
+    public void setAvability(int availability) { this.availability = availability;
+    }
+
+    public int getAvailability() { return availability;
     }
 }

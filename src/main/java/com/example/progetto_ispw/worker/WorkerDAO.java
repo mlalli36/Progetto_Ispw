@@ -64,7 +64,7 @@ public class WorkerDAO {
 
 
     }
-    public List<WorkerEntity> getWorker(String jobWorker, double userLat, double userLng, int radius) {
+    public List<WorkerEntity> getWorker(String jobWorker, double userLat, double userLng, int radius, String date) {
         List<WorkerEntity> workerList = new ArrayList<>();
 
         try {
@@ -75,8 +75,12 @@ public class WorkerDAO {
                     SELECT * , 2*6371 * asin(sqrt(0.5 - cos((Lat-?) * 0.0174532925199432)/2 +
                                     cos(? * 0.0174532925199432) * cos(Lat * 0.0174532925199432) *
                                             (1 - cos((Lng - ?) * 0.0174532925199432))/2)) AS distance
-                    FROM `tabellainformazioni`
-                    WHERE Work = ?
+                   /* FROM `tabellainformazioni` 
+                    WHERE Work = ?*/
+                    FROM `tabellainformazioni` ti
+                    JOIN `appointmentavaible` aa ON ti.email = aa.email
+                    WHERE ti.Work = ? AND aa.date = ? 
+                    
                     HAVING distance < ? 
                     ORDER BY distance
                     """;
@@ -86,7 +90,8 @@ public class WorkerDAO {
                 preparedStatement.setDouble(2, userLat);
                 preparedStatement.setDouble(3, userLng);
                 preparedStatement.setString(4, jobWorker);
-                preparedStatement.setInt(5, radius);
+                preparedStatement.setString(5, date);
+                preparedStatement.setInt(6, radius);
 
                 ResultSet rs = preparedStatement.executeQuery();
                 while (rs.next()) {
@@ -100,6 +105,7 @@ public class WorkerDAO {
                     workerEntity.setAddress(rs.getString("Address"));
                     workerEntity.setLocation(rs.getString("Location"));
                     workerEntity.setDistance(rs.getDouble("distance"));
+                    workerEntity.setAvability(rs.getInt("Availability"));
                     workerList.add(workerEntity);
                 }
                 rs.close();
@@ -414,13 +420,13 @@ public class WorkerDAO {
         }
     }
 
-    public void updateAppointmentAvaibility(String emailWorker ) {
+    public void updateAppointmentAvaibility(String emailWorker , String date) {
         try (Connection con = getConnector()) {
             if (con == null)
                 throw new SQLException();
 
             // Recupera il valore corrente di Availability
-            int currentAvailability = getCurrentAvailability(con, emailWorker );
+            int currentAvailability = getCurrentAvailability( emailWorker ,date );
 
             // Sottrae 1 dal valore corrente di Availability
             int newAvailability = currentAvailability - 1;
@@ -439,8 +445,11 @@ public class WorkerDAO {
         }
 
 
+        }
 
-/* prova
+
+
+        /* prova
             String query = "UPDATE `databaseispw`.`appointmentavaible` SET `Availability` = 1 ;";
             try (PreparedStatement preparedStatement = con.prepareStatement(query)) {
                 preparedStatement.setString(1, emailWorker);
@@ -451,21 +460,27 @@ public class WorkerDAO {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }*/
-    }
 
 
 
-    private int getCurrentAvailability(Connection con, String emailWorker) throws SQLException {
-        String query = "SELECT `Availability` FROM `databaseispw`.`appointmentavaible` WHERE `email` = ? ;";
-        try (PreparedStatement preparedStatement = con.prepareStatement(query)) {
-            preparedStatement.setString(1, emailWorker);
+
+    private int getCurrentAvailability(String emailWorker, String date) throws SQLException {
+        try (Connection con = getConnector()) {
+            if (con == null)
+                throw new SQLException();
+
+            String query = "SELECT `Availability` FROM `databaseispw`.`appointmentavaible` WHERE `email` = ? AND `date` =? ;";
+            try (PreparedStatement preparedStatement = con.prepareStatement(query)) {
+                preparedStatement.setString(1, emailWorker);
+                preparedStatement.setString(2, date);
 
 
-            try (ResultSet resultSet = preparedStatement.executeQuery()) {
-                if (resultSet.next()) {
-                    return resultSet.getInt("Availability");
-                } else {
-                    throw new SQLException("Record non trovato per email: " + emailWorker );
+                try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                    if (resultSet.next()) {
+                        return resultSet.getInt("Availability");
+                    } else {
+                        throw new SQLException("Record non trovato per email: " + emailWorker);
+                    }
                 }
             }
         }

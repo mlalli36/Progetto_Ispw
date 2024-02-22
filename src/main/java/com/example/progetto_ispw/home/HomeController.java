@@ -51,7 +51,7 @@ public class HomeController {
 
 
 
-        List<WorkerEntity> workerList = dao.getWorker(bean.getJobWork(), latitude, longitude, bean.getRadius());
+        List<WorkerEntity> workerList = dao.getWorker(bean.getJobWork(), latitude, longitude, bean.getRadius(), bean.getDate());
 
         for (WorkerEntity worker : workerList) {
 
@@ -62,6 +62,8 @@ public class HomeController {
             resultElement.setDescriptionWorker(worker.getDescription());
             resultElement.setEmailWorker(worker.getEmail());
             resultElement.setDistance(worker.getDistance());
+            resultElement.setAvailability(worker.getAvailability());
+
 
             //Si aggiunge il ResultElement al ResultSet
             this.resultSet.addElement(resultElement);
@@ -93,15 +95,20 @@ public class HomeController {
     private double calculateIndexValue(ResultElement element){
 
         double selectDistance= this.radius;
-        double maxAvaibleSlot=5;
+        double maxAvaibility=5;
         double highWeight = 5;
         double lowWeight = 1;
         double pondDist = isDistanceImportant ? highWeight : lowWeight;
         System.out.println("pondDist"+ pondDist);
-        double pondAvailableSlot = isAvailabilityImportant ? highWeight : lowWeight;
+        double pondAvailability = isAvailabilityImportant ? highWeight : lowWeight;
+
         double distValue=(element.getDistance()/selectDistance)*pondDist;
 
+        double availabilityValue = (element.getAvailability()/maxAvaibility)*pondAvailability;
 
-        return distValue;
+
+
+
+        return (distValue + availabilityValue)  ;
     }
 }

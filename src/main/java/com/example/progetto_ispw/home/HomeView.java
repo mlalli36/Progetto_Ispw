@@ -1,6 +1,7 @@
 package com.example.progetto_ispw.home;
 
 import com.example.progetto_ispw.UIController;
+import com.example.progetto_ispw.fillform.exception.EmptyDateFieldException;
 import com.example.progetto_ispw.home.exception.AddressNotValidException;
 import com.example.progetto_ispw.login.exception.UserNotFoundException;
 
@@ -16,6 +17,7 @@ import javafx.scene.text.Text;
 
 
 import java.io.IOException;
+import java.time.LocalDate;
 
 public class HomeView {
     @FXML
@@ -55,6 +57,8 @@ public class HomeView {
     public ToggleButton distanceToggleButton;
     @FXML
     public ToggleButton availabilityToggleButton;
+    @FXML
+    public DatePicker date;
 
     private  UserEntity user = UserEntity.getInstance();
 
@@ -109,6 +113,11 @@ public class HomeView {
             bean.setCAP(cap);
             bean.setAvailabilityIsImportant(availabilityToggleButton.isSelected());
             bean.setDistanceIsImportant(distanceToggleButton.isSelected());
+
+            LocalDate selectedDate = date.getValue();
+            String dateStringCalendar = selectedDate.toString();
+            bean.setDate(dateStringCalendar);
+
 
 
             int radius = 0;

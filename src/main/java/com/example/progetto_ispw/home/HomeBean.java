@@ -1,6 +1,8 @@
 package com.example.progetto_ispw.home;
 
 
+import com.example.progetto_ispw.fillform.exception.EmptyDateFieldException;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -15,8 +17,7 @@ public class HomeBean {
     private int radius;
     private String CAP;
     private String city;
-
-
+    private String date;
 
 
     public void setNameWork(String nameWork) {
@@ -41,7 +42,7 @@ public class HomeBean {
     public String getJobWork() {
         return jobWork;
     }
-
+    public String getDate()          {return date;}
 
 
     public String getLocation() {
@@ -86,7 +87,9 @@ public class HomeBean {
 
 
 
-
+    public void setDate(String date)  {
+        this.date = date;
+    }
 
     public void setEmail(String emailsearch) {
         this.emailsearch= emailsearch;
