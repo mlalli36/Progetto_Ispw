@@ -12,7 +12,6 @@ import java.util.List;
 public class AcceptController {
     private final AppointmentResultEntity appointmentResultSet = new AppointmentResultEntity();
     public boolean verifica(AcceptBean bean) {
-        InfoAppoinEntity infoAppoinEntity = new InfoAppoinEntity();
         WorkerDAO dao = WorkerDAO.getInstance();
         String e = bean.getemailsearch();
         List<InfoAppoinEntity> appointmentList = dao.getAppointmentforWoker(e);

@@ -40,26 +40,26 @@ public class AcceptView {
     public Button acceptButton;
     @FXML
     public Button myDetails;
-    private AcceptController controller= new AcceptController();
+    private AcceptController aController = new AcceptController();
     private AcceptBean bean=new AcceptBean();
     private UserEntity user = UserEntity.getInstance();
 
-    public void profileMethod(ActionEvent actionEvent) throws UserNotFoundException, IOException {
+    public void profileMethod() throws UserNotFoundException, IOException {
         UIController controller = UIController.getUIControllerInstance();
         controller.showProfile();
     }
 
-    public void homeMethod(ActionEvent actionEvent) throws IOException {
+    public void homeMethod(   ) throws IOException {
         UIController viewController = UIController.getUIControllerInstance();//è singletone
         viewController.showHome();
     }
 
-    public void exitMethod(ActionEvent actionEvent) throws IOException {
+    public void exitMethod(     ) throws IOException {
         UIController controller= UIController.getUIControllerInstance();
         controller.showExit();
     }
 
-    public void changeOfWorkingHoursMethod(ActionEvent actionEvent) throws UserNotFoundException, IOException {
+    public void changeOfWorkingHoursMethod() throws UserNotFoundException, IOException {
 
         UIController viewController = UIController.getUIControllerInstance();//è singletone
 
@@ -67,13 +67,13 @@ public class AcceptView {
 
         bean.setEmail(emailsearch);
 
-        controller.searchInfo(bean);
+        aController.searchInfo(bean);
         String namesearch= user.getName();
         String surnamesearch= user.getSurname();
         viewController.insertInfo(namesearch,surnamesearch,emailsearch);
     }
 
-    public void notificationMethod(ActionEvent actionEvent) throws UserNotFoundException, IOException {
+    public void notificationMethod() throws UserNotFoundException, IOException {
 
         UIController viewController= UIController.getUIControllerInstance();
 
@@ -81,14 +81,14 @@ public class AcceptView {
 
         bean.setEmail(user.getEmail());
 
-        controller.searchInfo(bean);
+        aController.searchInfo(bean);
         String namesearch= user.getName();
         String surnamesearch= user.getSurname();
 
         viewController.showNotifications(namesearch,surnamesearch,emailsearch);
     }
 
-    public void acceptMethod(ActionEvent actionEvent) {
+    public void acceptMethod(ActionEvent dummyEvent) {
         acceptButton.setOnAction(event -> {
 
             UIController viewController = UIController.getUIControllerInstance();//è singletone
@@ -98,7 +98,7 @@ public class AcceptView {
             bean.setEmail(emailsearch);
 
             try {
-                controller.searchInfo(bean);
+                aController.searchInfo(bean);
             } catch (UserNotFoundException e) {
                 throw new RuntimeException(e);
             }
@@ -116,7 +116,7 @@ public class AcceptView {
         WorkerEmailEntity wkE= WorkerEmailEntity.getInstance();
         String email= wkE.getEmailWEE();
         bean.setEmail(email);
-        if(controller.verifica(bean)) {
+        if(aController.verifica(bean)) {
 
             AppointmentResultEntity appointmentResultEntity = bean.getAppointmentResultSet();
 
@@ -151,14 +151,14 @@ public class AcceptView {
         this.emailLabelWorkerProfile.setText(emailsearch);
     }
 
-    public void bookedServicesMethod(ActionEvent actionEvent) throws UserNotFoundException, IOException {
+    public void bookedServicesMethod() throws UserNotFoundException, IOException {
 
         UIController viewController = UIController.getUIControllerInstance();//è singletone
 
         String emailsearch= user.getEmail();
 
         bean.setEmail(emailsearch);
-        controller.searchInfo(bean);
+        aController.searchInfo(bean);
         String namesearch= user.getName();
         String surnamesearch= user.getSurname();
 
@@ -166,13 +166,13 @@ public class AcceptView {
 
     }
 
-    public void myDetailsMethod(ActionEvent actionEvent) throws UserNotFoundException, IOException {
+    public void myDetailsMethod() throws UserNotFoundException, IOException {
         UIController viewController = UIController.getUIControllerInstance();//è singletone
 
         String emailsearch= user.getEmail();
 
         bean.setEmail(emailsearch);
-        controller.searchInfo(bean);
+        aController.searchInfo(bean);
         String namesearch= user.getName();
         String surnamesearch= user.getSurname();
 
