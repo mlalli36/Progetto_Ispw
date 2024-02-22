@@ -24,6 +24,9 @@ public class FillFormController {
         int accept = 0;
         dao.addAppointment(bean.getEmailWorker(), bean.getName(),bean.getSurname(),bean.getEmailUser(),bean.getDate(),bean.getPhone(),bean.getDescription(),bean.getTime(), accept);
 
+        dao.updateAppointmentAvaibility(bean.getEmailWorker() );
+
+
     }
 
 

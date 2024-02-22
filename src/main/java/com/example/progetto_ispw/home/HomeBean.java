@@ -9,6 +9,8 @@ public class HomeBean {
     protected String nameWork= null;
     protected String jobWork=null;
     protected String locationWork = null;
+    private boolean distanceIsImportant = false;
+    private boolean availabilityIsImportant = false;
     private String emailsearch;
     private int radius;
     private String CAP;
@@ -63,6 +65,27 @@ public class HomeBean {
         return addressBuilder.toString();
 
     }*/
+
+
+    public void setDistanceIsImportant(boolean distanceIsImportant) {
+        this.distanceIsImportant = distanceIsImportant;
+    }
+    public void setAvailabilityIsImportant(boolean availabilityIsImportant) {
+        this.availabilityIsImportant = availabilityIsImportant;
+    }
+
+
+    public boolean getIsDistanceIsImportant() {
+        return distanceIsImportant;
+    }
+
+    public boolean getIsAvailabilityIsImportant() {
+        return availabilityIsImportant;
+    }
+
+
+
+
 
 
     public void setEmail(String emailsearch) {

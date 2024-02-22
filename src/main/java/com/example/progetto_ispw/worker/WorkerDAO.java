@@ -150,7 +150,7 @@ public class WorkerDAO {
         try (Connection con = getConnector()) {
             if (con == null)
                 throw new SQLException();
-            String query = "INSERT INTO `databaseispw`.`appointmentavaible` (`email`,`slot1`, `slot2`,`slot3`,`slot4`,`slot5`,`date`) VALUES (?, ?, ?, ?, ?, ?, ?);";
+            String query = "INSERT INTO `databaseispw`.`appointmentavaible` (`email`,`slot1`, `slot2`,`slot3`,`slot4`,`slot5`,`date`,`Availability`) VALUES (?, ?, ?, ?, ?, ?, ?,5);";
             try (PreparedStatement preparedStatement = con.prepareStatement(query)) {
                 preparedStatement.setString(1, email);
                 preparedStatement.setString(2, slot1);
@@ -168,6 +168,7 @@ public class WorkerDAO {
                 slot.setSlot3(slot3);
                 slot.setSlot4(slot4);
                 slot.setSlot5(slot5);
+                slot.setAvaibility(5);
                 slot.setDateCalendar(dateCalendar);
 
             }
@@ -409,6 +410,63 @@ public class WorkerDAO {
 
             }catch (SQLException e){
                 throw  new RuntimeException(e);
+            }
+        }
+    }
+
+    public void updateAppointmentAvaibility(String emailWorker ) {
+        try (Connection con = getConnector()) {
+            if (con == null)
+                throw new SQLException();
+
+            // Recupera il valore corrente di Availability
+            int currentAvailability = getCurrentAvailability(con, emailWorker );
+
+            // Sottrae 1 dal valore corrente di Availability
+            int newAvailability = currentAvailability - 1;
+
+            // Aggiorna il record nel database con il nuovo valore di Availability
+            String query = "UPDATE `databaseispw`.`appointmentavaible` SET `Availability` = ? WHERE `email` = ?  ;";
+            try (PreparedStatement preparedStatement = con.prepareStatement(query)) {
+                preparedStatement.setInt(1, newAvailability);
+                preparedStatement.setString(2, emailWorker);
+
+
+                preparedStatement.executeUpdate();
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+
+
+/* prova
+            String query = "UPDATE `databaseispw`.`appointmentavaible` SET `Availability` = 1 ;";
+            try (PreparedStatement preparedStatement = con.prepareStatement(query)) {
+                preparedStatement.setString(1, emailWorker);
+                preparedStatement.setInt(2, i);
+
+                preparedStatement.executeUpdate();
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }*/
+    }
+
+
+
+    private int getCurrentAvailability(Connection con, String emailWorker) throws SQLException {
+        String query = "SELECT `Availability` FROM `databaseispw`.`appointmentavaible` WHERE `email` = ? ;";
+        try (PreparedStatement preparedStatement = con.prepareStatement(query)) {
+            preparedStatement.setString(1, emailWorker);
+
+
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                if (resultSet.next()) {
+                    return resultSet.getInt("Availability");
+                } else {
+                    throw new SQLException("Record non trovato per email: " + emailWorker );
+                }
             }
         }
     }

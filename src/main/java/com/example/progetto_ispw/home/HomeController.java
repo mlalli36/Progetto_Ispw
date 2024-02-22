@@ -16,7 +16,7 @@ import java.util.Map;
 public class HomeController {
     private double radius; // Raggio impostato dall'utente
     private boolean isDistanceImportant;
-    private boolean isAvailableSlotImportant;
+    private boolean isAvailabilityImportant;
     private ResultSetEntity resultSet= new ResultSetEntity();
     public void searchInfo(HomeBean homeBean) throws UserNotFoundException {
 
@@ -30,6 +30,10 @@ public class HomeController {
         Geolocator g = Geolocator.getInstance();
         double latitude = g.getLat(userAddress);
         double longitude = g.getLng(userAddress);
+
+        this.isDistanceImportant=bean.getIsDistanceIsImportant();
+        this.isAvailabilityImportant=bean.getIsAvailabilityIsImportant();
+
 
         // Stampa le coordinate
         if (latitude != -1 && longitude != -1) {
@@ -94,7 +98,7 @@ public class HomeController {
         double lowWeight = 1;
         double pondDist = isDistanceImportant ? highWeight : lowWeight;
         System.out.println("pondDist"+ pondDist);
-        double pondAvailableSlot = isAvailableSlotImportant ? highWeight : lowWeight;
+        double pondAvailableSlot = isAvailabilityImportant ? highWeight : lowWeight;
         double distValue=(element.getDistance()/selectDistance)*pondDist;
 
 

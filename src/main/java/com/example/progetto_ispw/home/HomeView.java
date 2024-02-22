@@ -10,10 +10,7 @@ import com.example.progetto_ispw.worker.WorkerEmailEntity;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 
@@ -54,6 +51,10 @@ public class HomeView {
     public TextField cityTextField;
     @FXML
     public TextField capTextField;
+    @FXML
+    public ToggleButton distanceToggleButton;
+    @FXML
+    public ToggleButton availabilityToggleButton;
 
     private  UserEntity user = UserEntity.getInstance();
 
@@ -106,6 +107,9 @@ public class HomeView {
             bean.setLocationWork(normalizedlocationbWorker);
             bean.setCity(city);
             bean.setCAP(cap);
+            bean.setAvailabilityIsImportant(availabilityToggleButton.isSelected());
+            bean.setDistanceIsImportant(distanceToggleButton.isSelected());
+
 
             int radius = 0;
 

@@ -66,5 +66,8 @@ public class SlotHoursEntity {
 
     public String getEmail() { return email;
     }
+
+    public void setAvaibility(int i) {
+    }
 }
 

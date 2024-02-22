@@ -65,17 +65,17 @@
                      </children></AnchorPane>
                </content>
             </ScrollPane>
-            <CheckBox fx:id="check5km" layoutX="814.0" layoutY="101.0" mnemonicParsing="false" text="5 km">
+            <CheckBox fx:id="check5km" layoutX="814.0" layoutY="74.0" mnemonicParsing="false" text="5 km">
                <font>
                   <Font name="Bookman Old Style" size="15.0" />
                </font>
             </CheckBox>
-            <CheckBox fx:id="check10km" layoutX="903.0" layoutY="101.0" mnemonicParsing="false" text="10 km">
+            <CheckBox fx:id="check10km" layoutX="903.0" layoutY="74.0" mnemonicParsing="false" text="10 km">
                <font>
                   <Font name="Bookman Old Style" size="15.0" />
                </font>
             </CheckBox>
-            <CheckBox fx:id="check20km" layoutX="1002.0" layoutY="101.0" mnemonicParsing="false" text="20 km">
+            <CheckBox fx:id="check20km" layoutX="1002.0" layoutY="74.0" mnemonicParsing="false" text="20 km">
                <font>
                   <Font name="Bookman Old Style" size="15.0" />
                </font>
@@ -97,6 +97,21 @@
                   <Font name="Bookman Old Style" size="15.0" />
                </font>
             </Text>
+            <Text layoutX="813.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Check your priority:">
+               <font>
+                  <Font name="Bookman Old Style" size="15.0" />
+               </font>
+            </Text>
+            <ToggleButton fx:id="distanceToggleButton" layoutX="813.0" layoutY="118.0" mnemonicParsing="false" text="Distance">
+               <font>
+                  <Font name="Bookman Old Style" size="12.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton fx:id="availabilityToggleButton" layoutX="958.0" layoutY="118.0" mnemonicParsing="false" text="Availability">
+               <font>
+                  <Font name="Bookman Old Style" size="12.0" />
+               </font>
+            </ToggleButton>
 
          </children>
       </Pane>
