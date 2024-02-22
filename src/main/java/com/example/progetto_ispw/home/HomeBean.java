@@ -104,12 +104,12 @@ public class HomeBean {
         return cap1;
     }
 
-    public void setCAP(String CAP) {
+    public void setCAP(String capp) {
         Pattern validCAP = Pattern.compile("^\\d{5}$"); //valida sintatticamente il CAP
-        Matcher m = validCAP.matcher(CAP);
+        Matcher m = validCAP.matcher(capp);
         if (!m.find()){
             throw new IllegalArgumentException("Invalid ZIP code!");
         }
-        this.cap1 = CAP;
+        this.cap1 = capp;
     }
 }
