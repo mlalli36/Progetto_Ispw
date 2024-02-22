@@ -181,8 +181,8 @@ public class WorkerDAO {
                 IAE.setTime(timeDate);
                 IAE.setAccept(accept);
     }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+        } catch (SQLException ignored) {
+
         }
     }
 
