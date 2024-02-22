@@ -32,9 +32,6 @@ public class HomeController {
         this.isAvailabilityImportant=bean.getIsAvailabilityIsImportant();
 
 
-         if (latitude != -1 && longitude != -1) {
-           } else {
-        }
         if (g.getLat(userAddress) == -1 || g.getLng(userAddress) == -1)
             throw new AddressNotValidException();
 
