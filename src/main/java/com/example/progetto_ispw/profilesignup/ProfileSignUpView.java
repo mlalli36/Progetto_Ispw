@@ -94,6 +94,7 @@ public class ProfileSignUpView {
             bean.setLocation(locationTextField.getText());
             bean.setAddress(addressTextField.getText());
             bean.setWork(professionTextField.getText());
+            bean.setCAP(CAPTextField.getText());
             ProfileSignUpController controller  = new ProfileSignUpController();
             controller.signUpWorker(bean);
             UIController viewController = UIController.getUIControllerInstance();//è singletone

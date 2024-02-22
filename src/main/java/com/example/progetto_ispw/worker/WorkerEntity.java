@@ -10,6 +10,7 @@ public class WorkerEntity {
     private  String name;
     private String surname;
     private  String work;
+    private Double distance;
 
     private double[] coordinates = new double[2];
     public void setCoordinates(double lat, double lng) {
@@ -24,7 +25,7 @@ public class WorkerEntity {
         return this.coordinates[0];
     }
 
-    public double getLong() {
+    public double getLng() {
         return this.coordinates[1];
     }
 
@@ -61,5 +62,9 @@ public class WorkerEntity {
     public void setLocation(String località) {this.location= località;}
 
 
+    public void setDistance(double distance) {this.distance=distance;
+    }
 
+    public double getDistance() { return distance;
+    }
 }

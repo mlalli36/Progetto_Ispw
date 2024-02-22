@@ -1,6 +1,8 @@
 package com.example.progetto_ispw.home;
 
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class HomeBean {
     private ResultSetEntity resultSet;
@@ -9,7 +11,7 @@ public class HomeBean {
     protected String locationWork = null;
     private String emailsearch;
     private int radius;
-    private int CAP;
+    private String CAP;
     private String city;
 
 
@@ -38,12 +40,13 @@ public class HomeBean {
         return jobWork;
     }
 
-    /*
-    prova per indirizzo completo
-    public String getLocationWork() {
+
+
+    public String getLocation() {
         return locationWork;
-    }*/
-    public String getLocationWork() {
+    }
+    // prova per indirizzo completo
+   /* public String getLocationWork() {
         StringBuilder addressBuilder = new StringBuilder();
         if (locationWork != null && !locationWork.isEmpty()) {
             addressBuilder.append(locationWork);
@@ -56,8 +59,10 @@ public class HomeBean {
         if (CAP != 0) {
             addressBuilder.append(CAP);
         }
+        System.out.println("indirizzo di getlocation"+ addressBuilder);
         return addressBuilder.toString();
-    }
+
+    }*/
 
 
     public void setEmail(String emailsearch) {
@@ -88,11 +93,16 @@ public class HomeBean {
         this.city = city;
     }
 
-    public int getCAP() {
+    public String getCAP() {
         return CAP;
     }
 
-    public void setCAP(int CAP) {
+    public void setCAP(String CAP) {
+        Pattern validCAP = Pattern.compile("^\\d{5}$"); //valida sintatticamente il CAP
+        Matcher m = validCAP.matcher(CAP);
+        if (!m.find()){
+            throw new IllegalArgumentException("Invalid ZIP code!");
+        }
         this.CAP = CAP;
     }
 }

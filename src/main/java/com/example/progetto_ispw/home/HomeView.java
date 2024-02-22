@@ -50,6 +50,10 @@ public class HomeView {
     public CheckBox check10km;
     @FXML
     public CheckBox check20km;
+    @FXML
+    public TextField cityTextField;
+    @FXML
+    public TextField capTextField;
 
     private  UserEntity user = UserEntity.getInstance();
 
@@ -96,8 +100,12 @@ public class HomeView {
             String normalizedjobWorker= jobWorkerTextField.getText().toLowerCase();
 
             String normalizedlocationbWorker= locationWorkerTextField.getText().toLowerCase();
+            String city= cityTextField.getText().toLowerCase();
+            String cap= capTextField.getText().toLowerCase();
             bean.setJobWork(normalizedjobWorker);
             bean.setLocationWork(normalizedlocationbWorker);
+            bean.setCity(city);
+            bean.setCAP(cap);
 
             int radius = 0;
 

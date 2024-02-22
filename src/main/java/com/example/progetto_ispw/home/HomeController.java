@@ -9,10 +9,14 @@ import com.example.progetto_ispw.worker.WorkerEmailEntity;
 import com.example.progetto_ispw.worker.WorkerEntity;
 
 import java.io.IOException;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 
 public class HomeController {
+    private double radius; // Raggio impostato dall'utente
+    private boolean isDistanceImportant;
+    private boolean isAvailableSlotImportant;
     private ResultSetEntity resultSet= new ResultSetEntity();
     public void searchInfo(HomeBean homeBean) throws UserNotFoundException {
 
@@ -22,7 +26,7 @@ public class HomeController {
 
     public void workInfo(HomeBean bean) throws AddressNotValidException {
         WorkerDAO dao = WorkerDAO.getInstance();
-        String userAddress = bean.getLocationWork();
+        String userAddress = bean.getLocation()+ ", " + bean.getCity() + ", " + bean.getCAP();
         Geolocator g = Geolocator.getInstance();
         double latitude = g.getLat(userAddress);
         double longitude = g.getLng(userAddress);
@@ -38,9 +42,12 @@ public class HomeController {
         if (g.getLat(userAddress) == -1 || g.getLng(userAddress) == -1)
             throw new AddressNotValidException();
 
-        List<WorkerEntity> workerList = dao.getWorker(bean.getJobWork(), g.getLat(bean.getLocationWork()), g.getLng(bean.getLocationWork()), bean.getRadius());
 
-      // List<WorkerEntity> workerList = dao.getWorker(bean.getJobWork(), bean.getLocationWork());
+        this.radius = bean.getRadius();
+
+
+
+        List<WorkerEntity> workerList = dao.getWorker(bean.getJobWork(), latitude, longitude, bean.getRadius());
 
         for (WorkerEntity worker : workerList) {
 
@@ -50,12 +57,47 @@ public class HomeController {
             resultElement.setLocationWork(worker.getLocation());
             resultElement.setDescriptionWorker(worker.getDescription());
             resultElement.setEmailWorker(worker.getEmail());
+            resultElement.setDistance(worker.getDistance());
+
             //Si aggiunge il ResultElement al ResultSet
             this.resultSet.addElement(resultElement);
         }
          assert !this.resultSet.getElements().isEmpty();
 
-
+        this.evaluateIndexValues();
         bean.setResultSet(this.resultSet);
+    }
+
+
+    private void evaluateIndexValues() {
+
+        //Setta l'indexValue di ogni ResultElement
+        for (ResultElement element : resultSet.getElements())
+            element.setIndexValue(this.calculateIndexValue(element));
+
+
+
+        Comparator<ResultElement> indexValueComparator = Comparator.comparingDouble(ResultElement::getIndexValue);
+        // Il comparatore compara gli index value dei ResultElement
+
+
+        this.resultSet.getElements().sort(indexValueComparator); //ordiniamo gli elementi in ordine crescente d'indexValue
+
+
+    }
+
+    private double calculateIndexValue(ResultElement element){
+
+        double selectDistance= this.radius;
+        double maxAvaibleSlot=5;
+        double highWeight = 5;
+        double lowWeight = 1;
+        double pondDist = isDistanceImportant ? highWeight : lowWeight;
+        System.out.println("pondDist"+ pondDist);
+        double pondAvailableSlot = isAvailableSlotImportant ? highWeight : lowWeight;
+        double distValue=(element.getDistance()/selectDistance)*pondDist;
+        //double availableSlotValue =();
+
+        return distValue;
     }
 }

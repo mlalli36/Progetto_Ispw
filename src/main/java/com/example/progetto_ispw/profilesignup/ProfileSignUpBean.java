@@ -16,7 +16,7 @@ public class ProfileSignUpBean {
     protected String  description= null;
     protected String  address= null;
     protected String  work= null;
-    protected int  cap;
+    private String cap;
 
 
      private static final Pattern VALID_EMAIL_ADDRESS_REGEX = Pattern.compile("^[A-Z0-9.%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
@@ -92,8 +92,8 @@ public class ProfileSignUpBean {
 
     public String getSurname() {return surname;}
 
-   // public String getAddress() {return address;}
-    public String getAddress() {
+    public String getAddress() {return address;}
+   /* public String getAddress() {
         StringBuilder addressBuilder = new StringBuilder();
         if (address != null && !address.isEmpty()) {
             addressBuilder.append(address);
@@ -107,7 +107,20 @@ public class ProfileSignUpBean {
             addressBuilder.append(cap);
         }
         return addressBuilder.toString();
-    }
+    }*/
 
     public String getLocation() {return location;}
+
+    public void setCAP(String cap) {
+        Pattern validCAP = Pattern.compile("^\\d{5}$"); //valida sintatticamente il CAP
+        Matcher m = validCAP.matcher(cap);
+        if (!m.find()){
+            throw new IllegalArgumentException("Invalid ZIP code!");
+        }
+        this.cap = cap;
+    }
+
+    public String getCap() {
+        return cap;
+    }
 }

@@ -55,6 +55,7 @@ public class Geolocator {
 
         String encodedQuery = URLEncoder.encode(address, StandardCharsets.UTF_8);
         String geocodingResource = "https://geocode.search.hereapi.com/v1/geocode";
+
         String requestUri = geocodingResource + "?apiKey=" + apiKey + "&q=" + encodedQuery;
 
         HttpRequest geocodingRequest = HttpRequest.newBuilder().GET().uri(URI.create(requestUri))
@@ -85,8 +86,9 @@ public class Geolocator {
     private double[] parseResponse(String response) throws JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper();
         JsonNode responseJsonNode = mapper.readTree(response);
-
+        System.out.println("Response JSON: " + response);
         JsonNode items = responseJsonNode.get("items");
+
 
         JsonNode item = items.get(0);
         if (item == null)

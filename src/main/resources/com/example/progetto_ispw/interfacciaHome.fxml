@@ -49,7 +49,7 @@
                </font>
             </Text>
             <TextField fx:id="locationWorkerTextField" layoutX="218.0" layoutY="89.0" prefHeight="41.0" prefWidth="194.0" style="-fx-background-radius: 10;" />
-            <Button fx:id="searchButton" layoutX="1109.0" layoutY="77.0" mnemonicParsing="false" onAction="#searchMethod" prefHeight="53.0" prefWidth="89.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="Search">
+            <Button fx:id="searchButton" layoutX="1099.0" layoutY="77.0" mnemonicParsing="false" onAction="#searchMethod" prefHeight="53.0" prefWidth="107.0" style="-fx-background-color: #74c69d; -fx-background-radius: 10;" text="Search">
                <font>
                   <Font name="Bookman Old Style" size="18.0" />
                </font>
@@ -67,31 +67,31 @@
             </ScrollPane>
             <CheckBox fx:id="check5km" layoutX="814.0" layoutY="101.0" mnemonicParsing="false" text="5 km">
                <font>
-                  <Font name="Bookman Old Style" size="18.0" />
+                  <Font name="Bookman Old Style" size="15.0" />
                </font>
             </CheckBox>
             <CheckBox fx:id="check10km" layoutX="903.0" layoutY="101.0" mnemonicParsing="false" text="10 km">
                <font>
-                  <Font name="Bookman Old Style" size="18.0" />
+                  <Font name="Bookman Old Style" size="15.0" />
                </font>
             </CheckBox>
             <CheckBox fx:id="check20km" layoutX="1002.0" layoutY="101.0" mnemonicParsing="false" text="20 km">
                <font>
-                  <Font name="Bookman Old Style" size="18.0" />
+                  <Font name="Bookman Old Style" size="15.0" />
                </font>
             </CheckBox>
-            <Text layoutX="814.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Check radius search:">
+            <Text layoutX="814.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Check radius search:">
                <font>
-                  <Font name="Bookman Old Style" size="20.0" />
+                  <Font name="Bookman Old Style" size="15.0" />
                </font>
             </Text>
-            <TextField fx:id="cityWorkerTextField" layoutX="430.0" layoutY="89.0" prefHeight="41.0" prefWidth="172.0" style="-fx-background-radius: 10;" />
+            <TextField fx:id="cityTextField" layoutX="430.0" layoutY="89.0" prefHeight="41.0" prefWidth="172.0" style="-fx-background-radius: 10;" />
             <Text layoutX="432.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Insert the city:">
                <font>
                   <Font name="Bookman Old Style" size="15.0" />
                </font>
             </Text>
-            <TextField fx:id="capWorkerTextField" layoutX="621.0" layoutY="89.0" prefHeight="41.0" prefWidth="172.0" style="-fx-background-radius: 10;" />
+            <TextField fx:id="capTextField" layoutX="621.0" layoutY="89.0" prefHeight="41.0" prefWidth="172.0" style="-fx-background-radius: 10;" />
             <Text layoutX="621.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Insert the CAP:">
                <font>
                   <Font name="Bookman Old Style" size="15.0" />

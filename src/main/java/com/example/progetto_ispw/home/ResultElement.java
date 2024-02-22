@@ -6,6 +6,8 @@ public class ResultElement {
     private String jobWork;
     private String locationWorker;
     private String descriptionWorker;
+    private Double distance;
+    private double indexValue;
 
     private String emailWorker;
 
@@ -48,4 +50,17 @@ public class ResultElement {
         return locationWorker;
     }
     public String getWorkerEmail(){return emailWorker;}
+
+    public void setDistance(double distance) {this.distance=distance;
+
+    }
+
+    public double getDistance() { return distance;
+    }
+    public void setIndexValue(double indexValue) {
+        this.indexValue = indexValue;
+    }
+    public double getIndexValue() {
+        return indexValue;
+    }
 }

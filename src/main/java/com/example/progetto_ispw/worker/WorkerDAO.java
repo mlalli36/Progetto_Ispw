@@ -88,10 +88,6 @@ public class WorkerDAO {
                 preparedStatement.setString(4, jobWorker);
                 preparedStatement.setInt(5, radius);
 
-
-
-
-
                 ResultSet rs = preparedStatement.executeQuery();
                 while (rs.next()) {
 
@@ -103,6 +99,7 @@ public class WorkerDAO {
                     workerEntity.setSurname(rs.getString("Surname"));
                     workerEntity.setAddress(rs.getString("Address"));
                     workerEntity.setLocation(rs.getString("Location"));
+                    workerEntity.setDistance(rs.getDouble("distance"));
                     workerList.add(workerEntity);
                 }
                 rs.close();
