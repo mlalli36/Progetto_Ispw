@@ -26,26 +26,23 @@ public class Geolocator {
     private String lastAddress = "";
     private static Geolocator geolocatorInstance = null;
 
-// cambiare qui l'input per dargli anche la città per avere le coordinate giuste
-// grazie anche alla città oltre che all'indirizzo
+
     public double getLat(String address){
-        if (!address.equals(lastAddress)){ //controlla se la richiesta è gia stata fatta, se è così non ricalcola di nuovo le coordinate
+        if (!address.equals(lastAddress)){
             this.lat = -1;
         }
-        if (this.lat == -1)//Se la coordinata richiesta è ancora "-1" allora procede a ricalcolarla. Se dopo il calcolo sarà ancora
-            // uguale a -1 c'è stato un errore nel calcolo
-            this.setCoordinates(address);
+        if (this.lat == -1)
+             this.setCoordinates(address);
         return this.lat;
     }
 
-    public double getLng(String address){ //controlla se la richiesta è gia stata fatta, se è così non ricalcola di nuovo le coordinate
+    public double getLng(String address){
         if (!address.equals(lastAddress)){
             this.lng = -1;
         }
         if (this.lng == -1)
-            this.setCoordinates(address); //Se la coordinata richiesta è ancora "-1" allora procede a ricalcolarla. Se dopo il calcolo sarà ancora
-        // uguale a -1 c'è stato un errore nel calcolo
-        return this.lng;
+            this.setCoordinates(address);
+         return this.lng;
     }
 
 
@@ -66,7 +63,7 @@ public class Geolocator {
             geocodingResponse = httpClient.send(geocodingRequest,
                     HttpResponse.BodyHandlers.ofString());
             double[] response = this.parseResponse(Objects.requireNonNull(geocodingResponse).body());
-            if (response.length < 2) { //se le due coordinate non vengono ottenute
+            if (response.length < 2) {
                 this.lat = -1;
                 this.lng = -1;
                 return;
@@ -113,7 +110,8 @@ public class Geolocator {
 
 
         } catch (IOException ex) {
-         }
+            ex.printStackTrace();
+        }
         return null;
     }
 
