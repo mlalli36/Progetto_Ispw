@@ -1,6 +1,8 @@
 package com.example.progetto_ispw.savehoursslots;
 
 public class SlotHoursEntity {
+    private int i;
+
     public static SlotHoursEntity getInstance() {
         if (singleInstance == null)
             singleInstance = new SlotHoursEntity();
@@ -67,7 +69,7 @@ public class SlotHoursEntity {
     public String getEmail() { return email;
     }
 
-    public void setAvaibility(int i) {
+    public void setAvaibility(int i) { this.i= i;
     }
 }
 

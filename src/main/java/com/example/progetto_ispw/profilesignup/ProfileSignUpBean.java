@@ -2,7 +2,7 @@ package com.example.progetto_ispw.profilesignup;
 
 import com.example.progetto_ispw.login.exception.LoginFailedException;
 import com.example.progetto_ispw.login.exception.UserNotFoundException;
-import com.example.progetto_ispw.user.UserDAO;
+
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -93,21 +93,6 @@ public class ProfileSignUpBean {
     public String getSurname() {return surname;}
 
     public String getAddress() {return address;}
-   /* public String getAddress() {
-        StringBuilder addressBuilder = new StringBuilder();
-        if (address != null && !address.isEmpty()) {
-            addressBuilder.append(address);
-            addressBuilder.append(", ");
-        }
-        if (location != null && !location.isEmpty()) {
-            addressBuilder.append(location);
-            addressBuilder.append(", ");
-        }
-        if (cap != 0) {
-            addressBuilder.append(cap);
-        }
-        return addressBuilder.toString();
-    }*/
 
     public String getLocation() {return location;}
 

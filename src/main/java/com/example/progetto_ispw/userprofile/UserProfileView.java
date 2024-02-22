@@ -23,7 +23,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
 import java.io.IOException;
-import java.util.List;
+
 
 public class UserProfileView {
     @FXML
@@ -61,9 +61,9 @@ public class UserProfileView {
     @FXML
     public Text noAppointmentText;
 
-    public void profileMethod(ActionEvent actionEvent) throws UserNotFoundException, IOException {//da implementare
+    public void profileMethod(ActionEvent actionEvent) throws UserNotFoundException, IOException {
       UIController controller= UIController.getUIControllerInstance();
-  //    controller.showProfile();
+      controller.showProfile();
     }
 
     public void homeMethod(ActionEvent actionEvent) throws IOException {
