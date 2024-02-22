@@ -426,7 +426,7 @@ public class WorkerDAO {
                 throw new SQLException();
 
             // Recupera il valore corrente di Availability
-            int currentAvailability = getCurrentAvailability( emailWorker ,date );
+            int currentAvailability = getCurrentAvailability(con, emailWorker ,date );
 
             // Sottrae 1 dal valore corrente di Availability
             int newAvailability = currentAvailability - 1;
@@ -464,10 +464,10 @@ public class WorkerDAO {
 
 
 
-    private int getCurrentAvailability(String emailWorker, String date) throws SQLException {
-        try (Connection con = getConnector()) {
+    private int getCurrentAvailability(Connection con,String emailWorker, String date) throws SQLException {
+        /*try (Connection con = getConnector()) {
             if (con == null)
-                throw new SQLException();
+                throw new SQLException();*/
 
             String query = "SELECT `Availability` FROM `databaseispw`.`appointmentavaible` WHERE `email` = ? AND `date` =? ;";
             try (PreparedStatement preparedStatement = con.prepareStatement(query)) {
@@ -484,6 +484,6 @@ public class WorkerDAO {
                 }
             }
         }
-    }
+    //}
 
 }

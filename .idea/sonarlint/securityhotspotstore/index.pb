@@ -11,8 +11,6 @@ r
 Bsrc/main/java/com/example/progetto_ispw/geolocator/Geolocator.java,e\b\ebb3877aa165259c26d6640b09c95f1d5238cdc8
 |
 Lsrc/main/java/com/example/progetto_ispw/notifications/NotificationsView.java,c\8\c824868ba7d19a9d4908042f971e5b1109bd395b
-i
-9src/main/java/com/example/progetto_ispw/UIController.java,8\4\842b801d61f704170ddfeb7e912ad03afb118c22
 Š
 Zsrc/main/java/com/example/progetto_ispw/bookedServicesWorker/BookedServicesWorkerView.java,d\6\d65afca6b8f1b8a16cafaf817487cd30e8107c69
 y

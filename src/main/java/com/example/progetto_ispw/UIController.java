@@ -4,12 +4,12 @@ import com.example.progetto_ispw.acceptappointment.AcceptView;
 import com.example.progetto_ispw.bookedServicesUser.BookedServicesUserView;
 import com.example.progetto_ispw.bookedServicesWorker.BookedServicesWorkerView;
 import com.example.progetto_ispw.fillform.FillFormView;
+import com.example.progetto_ispw.home.HomeBean;
+import com.example.progetto_ispw.home.HomeController;
 import com.example.progetto_ispw.login.exception.UserNotFoundException;
 import com.example.progetto_ispw.notifications.NotificationsView;
 import com.example.progetto_ispw.profilesignup.ProfileSignUpView;
 import com.example.progetto_ispw.savehoursslots.SlotHoursView;
-import com.example.progetto_ispw.searchdinamica.SearchDinamicaBean;
-import com.example.progetto_ispw.searchdinamica.SearchDinamicaController;
 import com.example.progetto_ispw.signup.SignUpView;
 import com.example.progetto_ispw.user.UserEntity;
 import com.example.progetto_ispw.userprofile.UserProfileView;
@@ -75,7 +75,7 @@ public class UIController {
         this.loadStage("interfaccia profilerecensione.fxml","p");
     }
 
-    public void showForm(String emailWorker, String emailC, String nameC, String surnameC) {
+    public void showForm(String emailWorker, String emailC, String nameC, String surnameC, String date) {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("interfacciaForm.fxml"));
         Parent root1 = null;
         try {
@@ -85,7 +85,7 @@ public class UIController {
         }
         root1.getStylesheets().add(Objects.requireNonNull(getClass().getResource("form.css")).toExternalForm());
         FillFormView ffV = fxmlLoader.getController();
-        ffV.preCompileInfo(emailWorker,emailC,nameC,surnameC);
+        ffV.preCompileInfo(emailWorker,emailC,nameC,surnameC,date);
 
 
 
@@ -254,10 +254,10 @@ public void insertInfoUser(String namesearch, String surnamesearch,String emails
         UIController viewController = UIController.getUIControllerInstance();
         String namesearch= user.getName();
         String surnamesearch= user.getSurname();
-        SearchDinamicaBean searchDBean=new SearchDinamicaBean();
-        searchDBean.setEmail(emailsearch);
-        SearchDinamicaController searchDController =new SearchDinamicaController();
-        searchDController.searchInfo(searchDBean);
+        HomeBean hBean=new HomeBean();
+        hBean.setEmail(emailsearch);
+        HomeController searchDController =new HomeController();
+        searchDController.searchInfo(hBean);
 
 
         System.out.println("namesearch "+namesearch);

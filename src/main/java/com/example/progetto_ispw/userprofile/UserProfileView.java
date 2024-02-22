@@ -4,8 +4,6 @@ import com.example.progetto_ispw.UIController;
 import com.example.progetto_ispw.bookedServicesUser.BookedServicesUserBean;
 import com.example.progetto_ispw.bookedServicesUser.BookedServicesUserController;
 import com.example.progetto_ispw.login.exception.UserNotFoundException;
-import com.example.progetto_ispw.searchdinamica.SearchDinamicaBean;
-import com.example.progetto_ispw.searchdinamica.SearchDinamicaController;
 import com.example.progetto_ispw.user.UserDAO;
 import com.example.progetto_ispw.user.UserEntity;
 import com.example.progetto_ispw.worker.InfoAppoinEntity;
@@ -65,7 +63,7 @@ public class UserProfileView {
 
     public void profileMethod(ActionEvent actionEvent) throws UserNotFoundException, IOException {//da implementare
       UIController controller= UIController.getUIControllerInstance();
-      controller.showProfile();
+  //    controller.showProfile();
     }
 
     public void homeMethod(ActionEvent actionEvent) throws IOException {

@@ -25,8 +25,6 @@ module com.example.progetto_ispw {
     opens com.example.progetto_ispw.profilesignup to javafx.fxml;
     exports com.example.progetto_ispw.home;
     opens com.example.progetto_ispw.home to javafx.fxml;
-    exports com.example.progetto_ispw.searchdinamica;
-    opens com.example.progetto_ispw.searchdinamica to javafx.fxml;
     exports com.example.progetto_ispw.savehoursslots;
     opens com.example.progetto_ispw.savehoursslots to javafx.fxml;
     exports com.example.progetto_ispw.savehoursslots.exception;

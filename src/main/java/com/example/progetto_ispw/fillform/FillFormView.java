@@ -6,7 +6,7 @@ import com.example.progetto_ispw.login.exception.UserNotFoundException;
 import com.example.progetto_ispw.savehoursslots.SlotHoursEntity;
 import com.example.progetto_ispw.user.UserEntity;
 import com.example.progetto_ispw.worker.WorkerEmailEntity;
-import javafx.event.ActionEvent;
+import com.sun.javafx.collections.ObservableMapWrapper;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
@@ -66,7 +66,20 @@ public class FillFormView {
     public CheckBox check5;
     @FXML
     public Label errorLabel;
+    @FXML
+    public TextField dateTextField;
 
+
+    public void preCompileInfo(String emailWorker, String emailC, String nameC, String surnameC, String date) {
+        this.emailWorkerTextField.setText(emailWorker);
+        this.emailUserTextField.setText(emailC);
+        this.nameTextField.setText(nameC);
+        this.surnameTextField.setText(surnameC);
+        bean.setEmailWorker(emailWorker);
+        this.dateTextField.setText(date);
+        bean.setDate(date);
+
+    }
 
     public void profileMethod( ) throws UserNotFoundException, IOException {
         UserEntity user = UserEntity.getInstance();
@@ -117,12 +130,11 @@ public class FillFormView {
             bean.setDescription(descriptionUserTextField.getText());
             bean.setPhone(phoneUserTextField.getText());
 
-            LocalDate selectedDate = date.getValue();
+           /* LocalDate selectedDate = date.getValue();
            if(selectedDate==null){
                throw new EmptyDateFieldException("");}
             String dateStringCalendar = selectedDate.toString();
-            bean.setDate(dateStringCalendar);
-
+            bean.setDate(dateStringCalendar);*/
 
             SlotHoursEntity sl = SlotHoursEntity.getInstance();
             String slot1 = sl.getSlot1();
@@ -200,11 +212,12 @@ public class FillFormView {
     public void searchDataFormMethod() {
 
         FillFormController controller= new FillFormController( );
-
+/*
         LocalDate selectedDate = date.getValue();
 
         String dateStringCalendar = selectedDate.toString();
         bean.setDate(dateStringCalendar);
+*/
 
 
         SlotTilePane slPane= new SlotTilePane();
@@ -228,13 +241,6 @@ public class FillFormView {
 
         }
 
-
-    public void preCompileInfo(String emailWorker, String emailC, String nameC, String surnameC) {
-        this.emailWorkerTextField.setText(emailWorker);
-        this.emailUserTextField.setText(emailC);
-        this.nameTextField.setText(nameC);
-        this.surnameTextField.setText(surnameC);
-        bean.setEmailWorker(emailWorker);}
 
     public void backMethod() throws IOException {
        //to be implemented

@@ -2,10 +2,10 @@ package com.example.progetto_ispw.cli;
 
 import com.example.progetto_ispw.UIController;
 import com.example.progetto_ispw.bookedServicesUser.BookedServicesUserView;
+import com.example.progetto_ispw.home.HomeBean;
+import com.example.progetto_ispw.home.HomeController;
 import com.example.progetto_ispw.login.exception.UserNotFoundException;
 import com.example.progetto_ispw.savehoursslots.SlotHoursView;
-import com.example.progetto_ispw.searchdinamica.SearchDinamicaBean;
-import com.example.progetto_ispw.searchdinamica.SearchDinamicaController;
 import com.example.progetto_ispw.user.UserEntity;
 
 import java.io.IOException;
@@ -53,10 +53,10 @@ public class CLIController {
         CLIController viewController = CLIController.getIstance();//è singletone
         String namesearch= user.getName();
         String surnamesearch= user.getSurname();
-        SearchDinamicaBean searchDBean=new SearchDinamicaBean();
-        searchDBean.setEmail(emailsearch);
-        SearchDinamicaController searchDController =new SearchDinamicaController();
-        searchDController.searchInfo(searchDBean);
+        HomeBean hBean=new HomeBean();
+        hBean.setEmail(emailsearch);
+        HomeController hController =new HomeController();
+        hController.searchInfo(hBean);
 
 
 

@@ -115,6 +115,8 @@ public class HomeView {
             bean.setDistanceIsImportant(distanceToggleButton.isSelected());
 
             LocalDate selectedDate = date.getValue();
+            if(selectedDate==null){
+            throw new EmptyDateFieldException("");}
             String dateStringCalendar = selectedDate.toString();
             bean.setDate(dateStringCalendar);
 
@@ -189,9 +191,12 @@ public class HomeView {
         String emailCl= user.getEmail();
         String nameCl= user.getName();
         String surnameCl= user.getSurname();
+        LocalDate selectedDate = date.getValue();
+        String dateStringCalendar = selectedDate.toString();
+
 
         UIController viewController = UIController.getUIControllerInstance();
-        viewController.showForm(email,emailCl,nameCl,surnameCl);
+        viewController.showForm(email,emailCl,nameCl,surnameCl,dateStringCalendar);
 
     }
 
