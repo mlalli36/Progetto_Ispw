@@ -13,6 +13,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.List;
+import java.util.Random;
+import java.util.Scanner;
 
 public class HomeScreenCLI {
     public void showHome() throws UserNotFoundException, IOException {
@@ -106,6 +108,8 @@ public class HomeScreenCLI {
     }
 
     public static void searchMethod() {
+        HomeBean bean = new HomeBean();
+
         try {
             System.out.println("Enter job title, or press 'q' to quit:");
             String job = reader.readLine().toLowerCase();
@@ -115,16 +119,66 @@ public class HomeScreenCLI {
                 return; // Esci dalla funzione di ricerca
             }
 
-            System.out.println("Enter location, or press 'q' to quit:");
+            System.out.println("Enter address, or press 'q' to quit:");
             String location = reader.readLine().toLowerCase();
             if (location.equals("q")) {
                 System.out.println("Exiting search...");
                 return; // Esci dalla funzione di ricerca
             }
 
-            HomeBean bean = new HomeBean();
+
+            System.out.println("Enter city, or press 'q' to quit:");
+            String city = reader.readLine().toLowerCase();
+            if (city.equals("q")) {
+                System.out.println("Exiting search...");
+                return; // Esci dalla funzione di ricerca
+            }
+
+            System.out.println("Enter CAP, or press 'q' to quit:");
+            String cap = reader.readLine().toLowerCase();
+            if (cap.equals("q")) {
+                System.out.println("Exiting search...");
+                return; // Esci dalla funzione di ricerca
+            }
+
+
+            System.out.println("Set radius : 5, 10, 20, or press '0' to quit:");
+            Scanner scanner = new Scanner(System.in);
+            int radius = scanner.nextInt();
+            if (radius==0) {
+                System.out.println("Exiting search...");
+                return; // Esci dalla funzione di ricerca
+            }
+
+            System.out.println("Set preference : Distance (d) or Availabilty (a), or press 'q' to quit:");
+            String preferences = reader.readLine().toLowerCase();
+            if(preferences.equals("d")){
+                bean.setDistanceIsImportant(Boolean.parseBoolean(preferences));
+            }
+            else if(preferences.equals("a")){
+                bean.setAvailabilityIsImportant(Boolean.parseBoolean(preferences));
+            }
+
+            else if (preferences.equals("q")) {
+                System.out.println("Exiting search...");
+                return; // Esci dalla funzione di ricerca
+            }
+
+            System.out.println("Enter date (yyyy/mm/dd), or press 'q' to quit:");
+            String date = reader.readLine().toLowerCase();
+            if (date.equals("q")) {
+                System.out.println("Exiting search...");
+                return; // Esci dalla funzione di ricerca
+            }
+
+
+
             bean.setJobWork(job);
             bean.setLocationWork(location);
+            bean.setCity(city);
+            bean.setCAP(cap);
+            bean.setRadius(radius);
+            bean.setDate(date);
 
             HomeController homeController = new HomeController();
             homeController.workInfo(bean);
