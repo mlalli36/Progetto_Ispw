@@ -110,7 +110,7 @@ public class Geolocator {
 
 
         } catch (IOException ex) {
-            ex.printStackTrace();
+
         }
         return null;
     }
