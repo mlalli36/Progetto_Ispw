@@ -5,16 +5,13 @@ import com.example.progetto_ispw.home.exception.AddressNotValidException;
 import com.example.progetto_ispw.login.exception.UserNotFoundException;
 import com.example.progetto_ispw.user.UserDAO;
 import com.example.progetto_ispw.worker.WorkerDAO;
-import com.example.progetto_ispw.worker.WorkerEmailEntity;
 import com.example.progetto_ispw.worker.WorkerEntity;
 
-import java.io.IOException;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Map;
 
 public class HomeController {
-    private double radius; // Raggio impostato dall'utente
+    private double radius;
     private boolean isDistanceImportant;
     private boolean isAvailabilityImportant;
     private ResultSetEntity resultSet= new ResultSetEntity();
@@ -35,13 +32,8 @@ public class HomeController {
         this.isAvailabilityImportant=bean.getIsAvailabilityIsImportant();
 
 
-        // Stampa le coordinate
-        if (latitude != -1 && longitude != -1) {
-            System.out.println("Coordinate per l'indirizzo '" + userAddress + "':");
-            System.out.println("Latitudine: " + latitude);
-            System.out.println("Longitudine: " + longitude);
-        } else {
-            System.out.println("Impossibile ottenere le coordinate per l'indirizzo '" + userAddress + "'.");
+         if (latitude != -1 && longitude != -1) {
+           } else {
         }
         if (g.getLat(userAddress) == -1 || g.getLng(userAddress) == -1)
             throw new AddressNotValidException();
@@ -65,8 +57,7 @@ public class HomeController {
             resultElement.setAvailability(worker.getAvailability());
 
 
-            //Si aggiunge il ResultElement al ResultSet
-            this.resultSet.addElement(resultElement);
+             this.resultSet.addElement(resultElement);
         }
          assert !this.resultSet.getElements().isEmpty();
 
@@ -75,15 +66,13 @@ public class HomeController {
     }
 
     private void evaluateIndexValues() {
-        // Setta l'indexValue di ogni ResultElement
-        for (ResultElement element : resultSet.getElements()) {
+         for (ResultElement element : resultSet.getElements()) {
             element.setIndexValue(this.calculateIndexValue(element));
         }
 
         Comparator<ResultElement> indexValueComparator = Comparator.comparingDouble(ResultElement::getIndexValue);
 
-        // Se isAvailabilityImportant è highWeight, inverti l'ordine del comparatore
-        if (isAvailabilityImportant ) {
+         if (isAvailabilityImportant ) {
             indexValueComparator = indexValueComparator.reversed();
         }
 
@@ -99,15 +88,10 @@ public class HomeController {
         double highWeight = 2;
         double lowWeight = 1;
         double pondDist = isDistanceImportant ? highWeight : lowWeight;
-        System.out.println("pondDist"+ pondDist);
         double pondAvailability = isAvailabilityImportant ? highWeight : lowWeight;
-        System.out.println("pondAvailability"+ pondAvailability);
         double distValue=(element.getDistance()/selectDistance)*pondDist;
-        System.out.println("distValue"+ distValue);
         double availabilityValue = (element.getAvailability()/(maxAvaibility))*pondAvailability;
-        System.out.println("availabilityValue"+ availabilityValue);
         double result= (distValue + availabilityValue);
-        System.out.println("result"+ result);
 
 
         return result  ;

@@ -13,16 +13,15 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.List;
-import java.util.Random;
+
 import java.util.Scanner;
 
 public class HomeScreenCLI {
     public void showHome() throws UserNotFoundException, IOException {
         while (this.homeMenu() > 0) {
-            //interagisci con l'utente fino a ottenere un input corretto o fino a tornare alla home
         }
         CLIController controller = CLIController.getIstance();
-        controller.loadHomeScreen(); //ritorna alla home screen
+        controller.loadHomeScreen();
     }
     private static HomeScreenCLI instance = null;
 
