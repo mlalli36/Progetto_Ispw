@@ -10,41 +10,41 @@ public class AcceptTilePane {
     TilePane acceptTP;
     VBox resultsBox;
 
-    public void addElements(String name_client, String surname_client, String email_client, String description_work, String phone_client, String date_work, String time_work){
+    public void addElements(String nameClient, String surnameClient, String emailClient, String descriptionWork, String phoneClient, String dateWork, String timeWork){
 
         AnchorPane entryPane = new AnchorPane();
 
 
 
 
-        Label textLabel1= new Label("NAME: "+ name_client);
+        Label textLabel1= new Label("NAME: "+ nameClient);
         AnchorPane.setLeftAnchor(textLabel1, 10.0);
         AnchorPane.setTopAnchor(textLabel1, 10.0);
 
 
-        Label textLabel2= new Label("SURNAME: "+ surname_client);
+        Label textLabel2= new Label("SURNAME: "+ surnameClient);
         AnchorPane.setLeftAnchor(textLabel2, 10.0);
         AnchorPane.setTopAnchor(textLabel2, 40.0);
 
 
-        Label textLabel3= new Label("EMAIL CLIENT: "+ email_client);
+        Label textLabel3= new Label("EMAIL CLIENT: "+ emailClient);
         AnchorPane.setLeftAnchor(textLabel3, 10.0);
         AnchorPane.setTopAnchor(textLabel3, 70.0);
 
 
-        Label textLabel4 =new Label("DESCRIPTION CLIENT: "+ description_work);
+        Label textLabel4 =new Label("DESCRIPTION CLIENT: "+ descriptionWork);
         AnchorPane.setLeftAnchor(textLabel4, 10.0);
         AnchorPane.setTopAnchor(textLabel4, 100.0);
 
-        Label textLabel5 =new Label("PHONE CLIENT: "+ phone_client);
+        Label textLabel5 =new Label("PHONE CLIENT: "+ phoneClient);
         AnchorPane.setLeftAnchor(textLabel5, 10.0);
         AnchorPane.setTopAnchor(textLabel5, 130.0);
 
-        Label textLabel6 =new Label("DATE APPOINTMENT: "+ date_work);
+        Label textLabel6 =new Label("DATE APPOINTMENT: "+ dateWork);
         AnchorPane.setLeftAnchor(textLabel6, 10.0);
         AnchorPane.setTopAnchor(textLabel6, 160.0);
 
-        Label textLabel7 =new Label("TIME APPOINTMENT: "+ time_work);
+        Label textLabel7 =new Label("TIME APPOINTMENT: "+ timeWork);
         AnchorPane.setLeftAnchor(textLabel7, 10.0);
         AnchorPane.setTopAnchor(textLabel7, 190.0);
 
