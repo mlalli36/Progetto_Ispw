@@ -96,7 +96,7 @@ public class HomeController {
         System.out.println("pondDist"+ pondDist);
         double pondAvailableSlot = isAvailableSlotImportant ? highWeight : lowWeight;
         double distValue=(element.getDistance()/selectDistance)*pondDist;
-        //double availableSlotValue =();
+
 
         return distValue;
     }
