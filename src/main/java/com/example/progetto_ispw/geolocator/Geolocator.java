@@ -75,7 +75,7 @@ public class Geolocator {
             this.lng = response[1];
             this.lastAddress = address;
         } catch (IOException | InterruptedException e) {
-            e.printStackTrace();
+
             Thread.currentThread().interrupt();
         }
 
@@ -113,8 +113,7 @@ public class Geolocator {
 
 
         } catch (IOException ex) {
-            ex.printStackTrace();
-        }
+         }
         return null;
     }
 
