@@ -20,7 +20,10 @@ import java.util.Properties;
 
 public class Geolocator {
 
-    private final String apiKey = this.getApiKey();
+    private final String apiKey=this.getApiKey();
+
+
+
     private double lat = -1;
     private double lng = -1;
     private String lastAddress = "";
@@ -97,7 +100,7 @@ public class Geolocator {
     }
 
 
-    private String getApiKey() throws ApiKeyReadException {
+    private String getApiKey() {
         try (InputStream input = new FileInputStream("src/main/resources/com/example/progetto_ispw/geolocation/ApiKey.properties")) {
 
             Properties prop = new Properties();
@@ -107,11 +110,13 @@ public class Geolocator {
 
 
         } catch (IOException ex) {
-            throw new ApiKeyReadException("Failed to read API key from properties file", ex);
+            ex.printStackTrace();
+            //throw new ApiKeyReadException("Failed to read API key from properties file", ex);
         }
+        return null;
     }
 
-    private Geolocator() throws ApiKeyReadException {}
+    private Geolocator() {}
 
     public static Geolocator getInstance() throws ApiKeyReadException {
         if (geolocatorInstance == null)
