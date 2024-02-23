@@ -111,7 +111,7 @@ public class Geolocator {
 
         } catch (IOException ex) {
             ex.printStackTrace();
-            //throw new ApiKeyReadException("Failed to read API key from properties file", ex);
+
         }
         return null;
     }
