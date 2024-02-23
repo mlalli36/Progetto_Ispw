@@ -1,4 +1,4 @@
-package com.example.progetto_ispw.worker;
+package com.example.progetto_ispw.worker.exception;
 
 public class AppointmentAdditionException extends Exception {
     public AppointmentAdditionException(String message) {

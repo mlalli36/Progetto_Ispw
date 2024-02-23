@@ -21,8 +21,6 @@ x
 Hsrc/main/java/com/example/progetto_ispw/fillform/FillFormController.java,8\8\88b90b775d106fe43dc7567344e8ef29546d7eb6
 j
 :src/main/java/com/example/progetto_ispw/home/HomeView.java,c\4\c4d6835ff718d91467728abc3298fa078cdb9adb
-N
-src/main/java/module-info.java,1\c\1c89a5491fbfda3fb050196d6a239f20200296e7
 n
 >src/main/java/com/example/progetto_ispw/cli/CLIController.java,e\2\e2d6212d80e346febd20e13cface9df2e0fef7d2
 h
@@ -47,11 +45,5 @@ Lsrc/main/java/com/example/progetto_ispw/profilesignup/ProfileSignUpBean.java,c
 Rsrc/main/java/com/example/progetto_ispw/profilesignup/ProfileSignUpController.java,c\6\c60c7622a13a91c5d0794294c77cc19a1f037440
 j
 :src/main/java/com/example/progetto_ispw/home/HomeBean.java,1\f\1fba1b4bc4b2861eaa7256acbfdc42b5e3b72b41
-i
-9src/main/java/com/example/progetto_ispw/UIController.java,8\4\842b801d61f704170ddfeb7e912ad03afb118c22
-y
-Isrc/main/java/com/example/progetto_ispw/acceptappointment/AcceptView.java,9\1\91199f55197b42681fc04498651e97e56c699ea8
 
 Osrc/main/java/com/example/progetto_ispw/acceptappointment/AcceptController.java,6\6\66f56bf84b309d3b05a3677ed515be9d557fba03
-r
-Bsrc/main/java/com/example/progetto_ispw/geolocator/Geolocator.java,e\b\ebb3877aa165259c26d6640b09c95f1d5238cdc8

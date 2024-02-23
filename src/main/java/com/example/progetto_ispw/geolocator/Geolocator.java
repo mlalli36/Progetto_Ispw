@@ -83,7 +83,6 @@ public class Geolocator {
     private double[] parseResponse(String response) throws JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper();
         JsonNode responseJsonNode = mapper.readTree(response);
-        System.out.println("Response JSON: " + response);
         JsonNode items = responseJsonNode.get("items");
 
 
@@ -98,25 +97,23 @@ public class Geolocator {
     }
 
 
-    private String getApiKey(){
+    private String getApiKey() throws ApiKeyReadException {
         try (InputStream input = new FileInputStream("src/main/resources/com/example/progetto_ispw/geolocation/ApiKey.properties")) {
 
             Properties prop = new Properties();
 
-            // carica il file properties
-            prop.load(input);
-            //ritorna la connessione al DB specificato nel file DB.properties
-            return prop.getProperty("api.key");
+             prop.load(input);
+             return prop.getProperty("api.key");
 
 
         } catch (IOException ex) {
-            throw new RuntimeException(ex);
+            throw new ApiKeyReadException("Failed to read API key from properties file", ex);
         }
     }
 
-    private Geolocator(){}
+    private Geolocator() throws ApiKeyReadException {}
 
-    public static Geolocator getInstance(){
+    public static Geolocator getInstance() throws ApiKeyReadException {
         if (geolocatorInstance == null)
             geolocatorInstance = new Geolocator();
         return geolocatorInstance;

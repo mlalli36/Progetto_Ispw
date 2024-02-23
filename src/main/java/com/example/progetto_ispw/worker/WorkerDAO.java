@@ -3,6 +3,8 @@ package com.example.progetto_ispw.worker;
 import com.example.progetto_ispw.savehoursslots.SlotHoursEntity;
 import com.example.progetto_ispw.savehoursslots.exception.TimeSlotAlreadyExistsException;
 import com.example.progetto_ispw.signup.exception.UserAlreadyExistsException;
+import com.example.progetto_ispw.worker.exception.AppointmentAdditionException;
+import com.example.progetto_ispw.worker.exception.UpdateAppointmentAvailabilityException;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -384,7 +386,7 @@ public class WorkerDAO {
         }
     }
 
-    public void updateAppointmentAvaibility(String emailWorker , String date) {
+    public void updateAppointmentAvaibility(String emailWorker , String date) throws UpdateAppointmentAvailabilityException {
         try (Connection con = getConnector()) {
             if (con == null)
                 throw new SQLException();
@@ -402,7 +404,7 @@ public class WorkerDAO {
                 preparedStatement.executeUpdate();
             }
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new UpdateAppointmentAvailabilityException("Failed to update appointment availability", e);
         }
 
 
