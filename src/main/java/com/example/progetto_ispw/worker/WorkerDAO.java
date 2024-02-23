@@ -153,7 +153,7 @@ public class WorkerDAO {
 
 
 
-    public void addAppointment(String workerEmail,String clientName,String clientSurname,String clientEmail,String dateAppoint, String clientNumber, String workDescr, String timeDate, Integer accept){
+    public void addAppointment(String workerEmail,String clientName,String clientSurname,String clientEmail,String dateAppoint, String clientNumber, String workDescr, String timeDate, Integer accept) throws AppointmentAdditionException {
         try (Connection con = getConnector()) {
             if (con == null)
                 throw new SQLException();
@@ -181,8 +181,8 @@ public class WorkerDAO {
                 IAE.setTime(timeDate);
                 IAE.setAccept(accept);
     }
-        } catch (SQLException ignored) {
-
+        } catch (SQLException e) {
+            throw new AppointmentAdditionException("Failed to add appointment", e);
         }
     }
 
