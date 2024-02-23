@@ -6,11 +6,13 @@ import com.example.progetto_ispw.savehoursslots.SlotHoursEntity;
 import com.example.progetto_ispw.user.UserDAO;
 import com.example.progetto_ispw.worker.InfoAppoinEntity;
 import com.example.progetto_ispw.worker.WorkerDAO;
+import com.example.progetto_ispw.worker.exception.AppointmentAdditionException;
+import com.example.progetto_ispw.worker.exception.UpdateAppointmentAvailabilityException;
 
 
 public class FillFormController {
 
-    public void fill(FillFormBean bean) {
+    public void fill(FillFormBean bean) throws AppointmentAdditionException, UpdateAppointmentAvailabilityException {
         WorkerDAO dao = WorkerDAO.getInstance();
 
         if(bean.getTime()==null){

@@ -20,15 +20,8 @@ import java.util.Properties;
 
 public class Geolocator {
 
-    private final String apiKey;
+    private final String apiKey= this.getApiKey();
 
-    {
-        try {
-            apiKey = this.getApiKey();
-        } catch (ApiKeyReadException e) {
-            throw new RuntimeException(e);
-        }
-    }
 
 
     private double lat = -1;
@@ -125,11 +118,12 @@ public class Geolocator {
 
     private Geolocator() {}
 
-    public static Geolocator getInstance() throws ApiKeyReadException {
+    public static Geolocator getInstance()  {
         if (geolocatorInstance == null)
             geolocatorInstance = new Geolocator();
         return geolocatorInstance;
     }
+
 
 }
 

@@ -10,6 +10,7 @@ public class WorkerEntity {
     private  String work;
     private Double distance;
 
+
     private double[] coordinates = new double[2];
     private double availability;
 

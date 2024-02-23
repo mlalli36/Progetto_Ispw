@@ -15,10 +15,6 @@ r
 Bsrc/main/java/com/example/progetto_ispw/fillform/FillFormBean.java,8\2\82887a6b3d14b724d3349f48a3e7804443d46f97
 o
 ?src/main/java/com/example/progetto_ispw/home/ResultElement.java,a\6\a64c6b2c2924a8b3da25bc6470813cb1be369cb0
-p
-@src/main/java/com/example/progetto_ispw/worker/WorkerEntity.java,4\6\46ae5e03d3b6d9eadd6395466f0b28e41ecd0aed
-x
-Hsrc/main/java/com/example/progetto_ispw/fillform/FillFormController.java,8\8\88b90b775d106fe43dc7567344e8ef29546d7eb6
 j
 :src/main/java/com/example/progetto_ispw/home/HomeView.java,c\4\c4d6835ff718d91467728abc3298fa078cdb9adb
 n
